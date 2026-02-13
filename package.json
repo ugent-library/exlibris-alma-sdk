@@ -39,7 +39,7 @@
 		"type-check": "tsc --noEmit"
 	},
 	"simple-git-hooks": {
-		"pre-commit": "bun run lint && bun run type-check",
+		"pre-commit": "bun run lint && bun run type-check && bun run test",
 		"commit-msg": "bunx commitlint --edit $1"
 	},
 	"dependencies": {},
