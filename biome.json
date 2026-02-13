@@ -19,10 +19,7 @@
 		"useEditorconfig": true
 	},
 	"javascript": {
-		"formatter": {
-			"quoteStyle": "single",
-			"semicolons": "asNeeded"
-		}
+		"formatter": {}
 	},
 	"vcs": {
 		"enabled": true,
