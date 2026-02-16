@@ -11,9 +11,9 @@ bun add alma-sdk
 ## Usage
 
 ```typescript
-import { greet } from 'alma-sdk';
+import { greet } from "alma-sdk";
 
-console.log(greet('World')); // Hello, World!
+console.log(greet("World")); // Hello, World!
 ```
 
 ## Contributing
@@ -22,4 +22,4 @@ Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for contribution guidelines.
 
 ## License
 
-MIT
+See [LICENSE](./LICENSE) for license information.
