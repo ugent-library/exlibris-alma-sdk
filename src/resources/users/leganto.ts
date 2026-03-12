@@ -26,7 +26,7 @@ export class UsersLegantoResource {
 		},
 	): Promise<LegantoNotifications> {
 		return this.client.get<LegantoNotifications>(
-			`/almaws/v1/users/${encodeURIComponent(userName)}/leganto-notifications`,
+			`/users/${encodeURIComponent(userName)}/leganto-notifications`,
 			params,
 		);
 	}

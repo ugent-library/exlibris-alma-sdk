@@ -30,7 +30,7 @@ export class ConfSetsResource {
 		offset?: number;
 		set_origin?: string;
 	}): Promise<Sets> {
-		return this.client.get<Sets>("/almaws/v1/conf/sets", params);
+		return this.client.get<Sets>("/conf/sets", params);
 	}
 
 	/**
@@ -40,9 +40,7 @@ export class ConfSetsResource {
 	 * @returns The set object.
 	 */
 	async retrieveSet(setId: string): Promise<AlmaSet> {
-		return this.client.get<AlmaSet>(
-			`/almaws/v1/conf/sets/${encodeURIComponent(setId)}`,
-		);
+		return this.client.get<AlmaSet>(`/conf/sets/${encodeURIComponent(setId)}`);
 	}
 
 	/**
@@ -72,7 +70,7 @@ export class ConfSetsResource {
 			indication_rule?: string;
 		},
 	): Promise<AlmaSet> {
-		return this.client.post<AlmaSet>("/almaws/v1/conf/sets", body, params);
+		return this.client.post<AlmaSet>("/conf/sets", body, params);
 	}
 
 	/**
@@ -84,7 +82,7 @@ export class ConfSetsResource {
 	 */
 	async updateSet(setId: string, body: AlmaSet): Promise<AlmaSet> {
 		return this.client.put<AlmaSet>(
-			`/almaws/v1/conf/sets/${encodeURIComponent(setId)}`,
+			`/conf/sets/${encodeURIComponent(setId)}`,
 			body,
 		);
 	}
@@ -104,7 +102,7 @@ export class ConfSetsResource {
 		params?: { op?: string; async?: boolean; job_name?: string },
 	): Promise<AlmaSet> {
 		return this.client.post<AlmaSet>(
-			`/almaws/v1/conf/sets/${encodeURIComponent(setId)}`,
+			`/conf/sets/${encodeURIComponent(setId)}`,
 			body,
 			params,
 		);
@@ -116,9 +114,7 @@ export class ConfSetsResource {
 	 * @param setId - The set ID.
 	 */
 	async deleteSet(setId: string): Promise<void> {
-		return this.client.delete<void>(
-			`/almaws/v1/conf/sets/${encodeURIComponent(setId)}`,
-		);
+		return this.client.delete<void>(`/conf/sets/${encodeURIComponent(setId)}`);
 	}
 
 	/**
@@ -135,7 +131,7 @@ export class ConfSetsResource {
 		params?: { limit?: number; offset?: number },
 	): Promise<SetMembers> {
 		return this.client.get<SetMembers>(
-			`/almaws/v1/conf/sets/${encodeURIComponent(setId)}/members`,
+			`/conf/sets/${encodeURIComponent(setId)}/members`,
 			params,
 		);
 	}

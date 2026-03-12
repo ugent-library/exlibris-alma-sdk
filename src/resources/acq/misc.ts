@@ -34,7 +34,7 @@ export class AcqMiscResource {
 		target_currency?: string;
 		exchange_date?: string;
 	}): Promise<Currencies> {
-		return this.client.get<Currencies>("/almaws/v1/acq/currencies", params);
+		return this.client.get<Currencies>("/acq/currencies", params);
 	}
 
 	/**
@@ -47,10 +47,7 @@ export class AcqMiscResource {
 	async retrieveFiscalPeriods(params?: {
 		mode?: string;
 	}): Promise<FiscalPeriods> {
-		return this.client.get<FiscalPeriods>(
-			"/almaws/v1/acq/fiscal-periods",
-			params,
-		);
+		return this.client.get<FiscalPeriods>("/acq/fiscal-periods", params);
 	}
 
 	/**
@@ -67,10 +64,7 @@ export class AcqMiscResource {
 		limit?: number;
 		offset?: number;
 	}): Promise<PurchaseRequests> {
-		return this.client.get<PurchaseRequests>(
-			"/almaws/v1/acq/purchase-requests/",
-			params,
-		);
+		return this.client.get<PurchaseRequests>("/acq/purchase-requests/", params);
 	}
 
 	/**
@@ -81,7 +75,7 @@ export class AcqMiscResource {
 	 */
 	async retrievePurchaseRequest(id: string): Promise<PurchaseRequest> {
 		return this.client.get<PurchaseRequest>(
-			`/almaws/v1/acq/purchase-requests/${encodeURIComponent(id)}`,
+			`/acq/purchase-requests/${encodeURIComponent(id)}`,
 		);
 	}
 
@@ -100,7 +94,7 @@ export class AcqMiscResource {
 		params?: { op?: string },
 	): Promise<PurchaseRequest> {
 		return this.client.post<PurchaseRequest>(
-			`/almaws/v1/acq/purchase-requests/${encodeURIComponent(id)}`,
+			`/acq/purchase-requests/${encodeURIComponent(id)}`,
 			body,
 			params,
 		);
@@ -118,7 +112,7 @@ export class AcqMiscResource {
 		body: PurchaseRequest,
 	): Promise<PurchaseRequest> {
 		return this.client.put<PurchaseRequest>(
-			`/almaws/v1/acq/purchase-requests/${encodeURIComponent(id)}`,
+			`/acq/purchase-requests/${encodeURIComponent(id)}`,
 			body,
 		);
 	}
@@ -130,7 +124,7 @@ export class AcqMiscResource {
 	 */
 	async deletePurchaseRequest(id: string): Promise<void> {
 		return this.client.delete<void>(
-			`/almaws/v1/acq/purchase-requests/${encodeURIComponent(id)}`,
+			`/acq/purchase-requests/${encodeURIComponent(id)}`,
 		);
 	}
 
@@ -140,6 +134,6 @@ export class AcqMiscResource {
 	 * @returns API response confirming access.
 	 */
 	async test(): Promise<unknown> {
-		return this.client.get<unknown>("/almaws/v1/acq/test");
+		return this.client.get<unknown>("/acq/test");
 	}
 }

@@ -68,15 +68,17 @@ type Path = `/${string}`;
  * @example
  * ```typescript
  * const http = new AlmaHttpClient({ apiKey: 'xxx', region: 'eu' });
- * const data = await http.get('/almaws/v1/conf/test');
+ * const data = await http.get('/conf/test');
  * ```
  */
 export class AlmaHttpClient {
 	readonly baseUrl: string;
+	readonly version: string;
 	private readonly apiKey: string;
 
 	constructor(config: AlmaClientConfig) {
 		this.apiKey = config.apiKey;
+		this.version = config.version ?? "v1";
 		if (config.baseUrl) {
 			this.baseUrl = config.baseUrl.replace(/\/$/, "");
 		} else if (config.region) {
@@ -96,7 +98,7 @@ export class AlmaHttpClient {
 		path: Path,
 		query?: Record<string, string | number | boolean | undefined | null>,
 	): string {
-		const url = new URL(path, this.baseUrl);
+		const url = new URL(`/almaws/${this.version}${path}`, this.baseUrl);
 
 		if (query) {
 			for (const [key, value] of Object.entries(query)) {
@@ -192,7 +194,7 @@ export class AlmaHttpClient {
 	/**
 	 * Performs a GET request.
 	 *
-	 * @param path - The API path (e.g. `/almaws/v1/conf/libraries`).
+	 * @param path - The API path (e.g. `/conf/libraries`).
 	 * @param query - Optional query parameters.
 	 * @returns The parsed JSON response.
 	 * @throws {AlmaError} On non-2xx responses.

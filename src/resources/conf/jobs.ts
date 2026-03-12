@@ -32,7 +32,7 @@ export class ConfJobsResource {
 		type?: string;
 		profile_id?: string;
 	}): Promise<Jobs> {
-		return this.client.get<Jobs>("/almaws/v1/conf/jobs", params);
+		return this.client.get<Jobs>("/conf/jobs", params);
 	}
 
 	/**
@@ -42,9 +42,7 @@ export class ConfJobsResource {
 	 * @returns The job object.
 	 */
 	async retrieveJob(jobId: string): Promise<Job> {
-		return this.client.get<Job>(
-			`/almaws/v1/conf/jobs/${encodeURIComponent(jobId)}`,
-		);
+		return this.client.get<Job>(`/conf/jobs/${encodeURIComponent(jobId)}`);
 	}
 
 	/**
@@ -62,7 +60,7 @@ export class ConfJobsResource {
 		params?: { op?: string },
 	): Promise<JobInstance> {
 		return this.client.post<JobInstance>(
-			`/almaws/v1/conf/jobs/${encodeURIComponent(jobId)}`,
+			`/conf/jobs/${encodeURIComponent(jobId)}`,
 			body,
 			params,
 		);
@@ -91,7 +89,7 @@ export class ConfJobsResource {
 		},
 	): Promise<JobInstances> {
 		return this.client.get<JobInstances>(
-			`/almaws/v1/conf/jobs/${encodeURIComponent(jobId)}/instances`,
+			`/conf/jobs/${encodeURIComponent(jobId)}/instances`,
 			params,
 		);
 	}
@@ -108,7 +106,7 @@ export class ConfJobsResource {
 		instanceId: string,
 	): Promise<JobInstance> {
 		return this.client.get<JobInstance>(
-			`/almaws/v1/conf/jobs/${encodeURIComponent(jobId)}/instances/${encodeURIComponent(instanceId)}`,
+			`/conf/jobs/${encodeURIComponent(jobId)}/instances/${encodeURIComponent(instanceId)}`,
 		);
 	}
 
@@ -127,7 +125,7 @@ export class ConfJobsResource {
 		params?: { op?: string },
 	): Promise<JobInstance> {
 		return this.client.post<JobInstance>(
-			`/almaws/v1/conf/jobs/${encodeURIComponent(jobId)}/instances/${encodeURIComponent(instanceId)}`,
+			`/conf/jobs/${encodeURIComponent(jobId)}/instances/${encodeURIComponent(instanceId)}`,
 			{},
 			params,
 		);
@@ -146,7 +144,7 @@ export class ConfJobsResource {
 		params?: { limit?: number; offset?: number },
 	): Promise<JobInstanceEvents> {
 		return this.client.get<JobInstanceEvents>(
-			`/almaws/v1/conf/jobs/${encodeURIComponent(jobId)}/instances/${encodeURIComponent(instanceId)}/events`,
+			`/conf/jobs/${encodeURIComponent(jobId)}/instances/${encodeURIComponent(instanceId)}/events`,
 			params,
 		);
 	}
@@ -164,7 +162,7 @@ export class ConfJobsResource {
 		params?: { population?: string; limit?: number; offset?: number },
 	): Promise<JobInstanceMatches> {
 		return this.client.get<JobInstanceMatches>(
-			`/almaws/v1/conf/jobs/${encodeURIComponent(jobId)}/instances/${encodeURIComponent(instanceId)}/matches`,
+			`/conf/jobs/${encodeURIComponent(jobId)}/instances/${encodeURIComponent(instanceId)}/matches`,
 			params,
 		);
 	}

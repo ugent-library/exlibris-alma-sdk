@@ -36,7 +36,7 @@ export class ConfRemindersResource {
 		limit?: number;
 		offset?: number;
 	}): Promise<Reminders> {
-		return this.client.get<Reminders>("/almaws/v1/conf/reminders", params);
+		return this.client.get<Reminders>("/conf/reminders", params);
 	}
 
 	/**
@@ -47,7 +47,7 @@ export class ConfRemindersResource {
 	 */
 	async retrieveReminder(reminderId: string): Promise<Reminder> {
 		return this.client.get<Reminder>(
-			`/almaws/v1/conf/reminders/${encodeURIComponent(reminderId)}`,
+			`/conf/reminders/${encodeURIComponent(reminderId)}`,
 		);
 	}
 
@@ -58,7 +58,7 @@ export class ConfRemindersResource {
 	 * @returns The created reminder.
 	 */
 	async createReminder(body: Reminder): Promise<Reminder> {
-		return this.client.post<Reminder>("/almaws/v1/conf/reminders", body);
+		return this.client.post<Reminder>("/conf/reminders", body);
 	}
 
 	/**
@@ -70,7 +70,7 @@ export class ConfRemindersResource {
 	 */
 	async updateReminder(reminderId: string, body: Reminder): Promise<Reminder> {
 		return this.client.put<Reminder>(
-			`/almaws/v1/conf/reminders/${encodeURIComponent(reminderId)}`,
+			`/conf/reminders/${encodeURIComponent(reminderId)}`,
 			body,
 		);
 	}
@@ -82,7 +82,7 @@ export class ConfRemindersResource {
 	 */
 	async deleteReminder(reminderId: string): Promise<void> {
 		return this.client.delete<void>(
-			`/almaws/v1/conf/reminders/${encodeURIComponent(reminderId)}`,
+			`/conf/reminders/${encodeURIComponent(reminderId)}`,
 		);
 	}
 
@@ -92,7 +92,7 @@ export class ConfRemindersResource {
 	 * @returns A list of license terms.
 	 */
 	async retrieveLicenseTerms(): Promise<LicenseTerms> {
-		return this.client.get<LicenseTerms>("/almaws/v1/conf/license-terms");
+		return this.client.get<LicenseTerms>("/conf/license-terms");
 	}
 
 	/**
@@ -103,7 +103,7 @@ export class ConfRemindersResource {
 	 */
 	async retrieveLicenseTerm(licenseTermCode: string): Promise<LicenseTerm> {
 		return this.client.get<LicenseTerm>(
-			`/almaws/v1/conf/license-terms/${encodeURIComponent(licenseTermCode)}`,
+			`/conf/license-terms/${encodeURIComponent(licenseTermCode)}`,
 		);
 	}
 
@@ -114,7 +114,7 @@ export class ConfRemindersResource {
 	 * @returns The created license term.
 	 */
 	async createLicenseTerm(body: LicenseTerm): Promise<LicenseTerm> {
-		return this.client.post<LicenseTerm>("/almaws/v1/conf/license-terms", body);
+		return this.client.post<LicenseTerm>("/conf/license-terms", body);
 	}
 
 	/**
@@ -129,7 +129,7 @@ export class ConfRemindersResource {
 		body: LicenseTerm,
 	): Promise<LicenseTerm> {
 		return this.client.put<LicenseTerm>(
-			`/almaws/v1/conf/license-terms/${encodeURIComponent(licenseTermCode)}`,
+			`/conf/license-terms/${encodeURIComponent(licenseTermCode)}`,
 			body,
 		);
 	}
@@ -141,7 +141,7 @@ export class ConfRemindersResource {
 	 */
 	async deleteLicenseTerm(licenseTermCode: string): Promise<void> {
 		return this.client.delete<void>(
-			`/almaws/v1/conf/license-terms/${encodeURIComponent(licenseTermCode)}`,
+			`/conf/license-terms/${encodeURIComponent(licenseTermCode)}`,
 		);
 	}
 }

@@ -29,7 +29,7 @@ export class BibsRequestsResource {
 		params?: { request_type?: string; limit?: number; offset?: number },
 	): Promise<BibRequests> {
 		return this.client.get<BibRequests>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/requests`,
+			`/bibs/${encodeURIComponent(mmsId)}/requests`,
 			params,
 		);
 	}
@@ -46,7 +46,7 @@ export class BibsRequestsResource {
 		requestId: string,
 	): Promise<BibRequest> {
 		return this.client.get<BibRequest>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/requests/${encodeURIComponent(requestId)}`,
+			`/bibs/${encodeURIComponent(mmsId)}/requests/${encodeURIComponent(requestId)}`,
 		);
 	}
 
@@ -65,7 +65,7 @@ export class BibsRequestsResource {
 		params?: { user_id?: string; user_id_type?: string },
 	): Promise<BibRequest> {
 		return this.client.post<BibRequest>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/requests`,
+			`/bibs/${encodeURIComponent(mmsId)}/requests`,
 			body,
 			params,
 		);
@@ -85,7 +85,7 @@ export class BibsRequestsResource {
 		body: BibRequest,
 	): Promise<BibRequest> {
 		return this.client.put<BibRequest>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/requests/${encodeURIComponent(requestId)}`,
+			`/bibs/${encodeURIComponent(mmsId)}/requests/${encodeURIComponent(requestId)}`,
 			body,
 		);
 	}
@@ -107,7 +107,7 @@ export class BibsRequestsResource {
 		params?: { op?: string },
 	): Promise<BibRequest> {
 		return this.client.post<BibRequest>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/requests/${encodeURIComponent(requestId)}`,
+			`/bibs/${encodeURIComponent(mmsId)}/requests/${encodeURIComponent(requestId)}`,
 			body,
 			params,
 		);
@@ -128,7 +128,7 @@ export class BibsRequestsResource {
 		params: { reason: string; note?: string; notify_user?: boolean },
 	): Promise<void> {
 		return this.client.delete<void>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/requests/${encodeURIComponent(requestId)}`,
+			`/bibs/${encodeURIComponent(mmsId)}/requests/${encodeURIComponent(requestId)}`,
 			params,
 		);
 	}
@@ -146,7 +146,7 @@ export class BibsRequestsResource {
 		params?: { user_id?: string },
 	): Promise<RequestOptions> {
 		return this.client.get<RequestOptions>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/request-options`,
+			`/bibs/${encodeURIComponent(mmsId)}/request-options`,
 			params,
 		);
 	}
@@ -167,7 +167,7 @@ export class BibsRequestsResource {
 		params?: { request_type?: string; status?: string },
 	): Promise<BibRequests> {
 		return this.client.get<BibRequests>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemId)}/requests`,
+			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemId)}/requests`,
 			params,
 		);
 	}
@@ -188,7 +188,7 @@ export class BibsRequestsResource {
 		requestId: string,
 	): Promise<BibRequest> {
 		return this.client.get<BibRequest>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemId)}/requests/${encodeURIComponent(requestId)}`,
+			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemId)}/requests/${encodeURIComponent(requestId)}`,
 		);
 	}
 
@@ -210,7 +210,7 @@ export class BibsRequestsResource {
 		params?: { user_id?: string; user_id_type?: string },
 	): Promise<BibRequest> {
 		return this.client.post<BibRequest>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}/requests`,
+			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}/requests`,
 			body,
 			params,
 		);
@@ -234,7 +234,7 @@ export class BibsRequestsResource {
 		body: BibRequest,
 	): Promise<BibRequest> {
 		return this.client.put<BibRequest>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}/requests/${encodeURIComponent(requestId)}`,
+			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}/requests/${encodeURIComponent(requestId)}`,
 			body,
 		);
 	}
@@ -259,7 +259,7 @@ export class BibsRequestsResource {
 		params?: { op?: string },
 	): Promise<BibRequest> {
 		return this.client.post<BibRequest>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}/requests/${encodeURIComponent(requestId)}`,
+			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}/requests/${encodeURIComponent(requestId)}`,
 			body,
 			params,
 		);
@@ -282,7 +282,7 @@ export class BibsRequestsResource {
 		params: { reason: string; note?: string; notify_user?: boolean },
 	): Promise<void> {
 		return this.client.delete<void>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}/requests/${encodeURIComponent(requestId)}`,
+			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}/requests/${encodeURIComponent(requestId)}`,
 			params,
 		);
 	}
@@ -304,7 +304,7 @@ export class BibsRequestsResource {
 		params?: { user_id?: string },
 	): Promise<RequestOptions> {
 		return this.client.get<RequestOptions>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}/request-options`,
+			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}/request-options`,
 			params,
 		);
 	}
@@ -330,7 +330,7 @@ export class BibsRequestsResource {
 		},
 	): Promise<BookingAvailability> {
 		return this.client.get<BookingAvailability>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}/booking-availability`,
+			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}/booking-availability`,
 			params,
 		);
 	}

@@ -26,7 +26,7 @@ export class ConfPrintersResource {
 		limit?: number;
 		offset?: number;
 	}): Promise<Printers> {
-		return this.client.get<Printers>("/almaws/v1/conf/printers", params);
+		return this.client.get<Printers>("/conf/printers", params);
 	}
 
 	/**
@@ -37,7 +37,7 @@ export class ConfPrintersResource {
 	 */
 	async retrievePrinter(printerId: string): Promise<Printer> {
 		return this.client.get<Printer>(
-			`/almaws/v1/conf/printers/${encodeURIComponent(printerId)}`,
+			`/conf/printers/${encodeURIComponent(printerId)}`,
 		);
 	}
 }

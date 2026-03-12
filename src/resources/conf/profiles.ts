@@ -25,10 +25,7 @@ export class ConfProfilesResource {
 		type?: string;
 		ie_type?: string;
 	}): Promise<ImportProfiles> {
-		return this.client.get<ImportProfiles>(
-			"/almaws/v1/conf/md-import-profiles",
-			params,
-		);
+		return this.client.get<ImportProfiles>("/conf/md-import-profiles", params);
 	}
 
 	/**
@@ -39,7 +36,7 @@ export class ConfProfilesResource {
 	 */
 	async retrieveImportProfile(profileId: string): Promise<ImportProfile> {
 		return this.client.get<ImportProfile>(
-			`/almaws/v1/conf/md-import-profiles/${encodeURIComponent(profileId)}`,
+			`/conf/md-import-profiles/${encodeURIComponent(profileId)}`,
 		);
 	}
 
@@ -58,7 +55,7 @@ export class ConfProfilesResource {
 		params?: { op?: string },
 	): Promise<Record<string, unknown>> {
 		return this.client.post<Record<string, unknown>>(
-			`/almaws/v1/conf/md-import-profiles/${encodeURIComponent(profileId)}`,
+			`/conf/md-import-profiles/${encodeURIComponent(profileId)}`,
 			body,
 			params,
 		);
@@ -81,7 +78,7 @@ export class ConfProfilesResource {
 		offset?: number;
 	}): Promise<IntegrationProfiles> {
 		return this.client.get<IntegrationProfiles>(
-			"/almaws/v1/conf/integration-profiles",
+			"/conf/integration-profiles",
 			params,
 		);
 	}
@@ -94,7 +91,7 @@ export class ConfProfilesResource {
 	 */
 	async retrieveIntegrationProfile(id: string): Promise<IntegrationProfile> {
 		return this.client.get<IntegrationProfile>(
-			`/almaws/v1/conf/integration-profiles/${encodeURIComponent(id)}`,
+			`/conf/integration-profiles/${encodeURIComponent(id)}`,
 		);
 	}
 
@@ -108,7 +105,7 @@ export class ConfProfilesResource {
 		body: IntegrationProfile,
 	): Promise<IntegrationProfile> {
 		return this.client.post<IntegrationProfile>(
-			"/almaws/v1/conf/integration-profiles",
+			"/conf/integration-profiles",
 			body,
 		);
 	}
@@ -125,7 +122,7 @@ export class ConfProfilesResource {
 		body: IntegrationProfile,
 	): Promise<IntegrationProfile> {
 		return this.client.put<IntegrationProfile>(
-			`/almaws/v1/conf/integration-profiles/${encodeURIComponent(id)}`,
+			`/conf/integration-profiles/${encodeURIComponent(id)}`,
 			body,
 		);
 	}
@@ -137,7 +134,7 @@ export class ConfProfilesResource {
 	 */
 	async deleteIntegrationProfile(id: string): Promise<void> {
 		return this.client.delete<void>(
-			`/almaws/v1/conf/integration-profiles/${encodeURIComponent(id)}`,
+			`/conf/integration-profiles/${encodeURIComponent(id)}`,
 		);
 	}
 
@@ -153,10 +150,7 @@ export class ConfProfilesResource {
 		limit?: number;
 		offset?: number;
 	}): Promise<DepositProfiles> {
-		return this.client.get<DepositProfiles>(
-			"/almaws/v1/conf/deposit-profiles",
-			params,
-		);
+		return this.client.get<DepositProfiles>("/conf/deposit-profiles", params);
 	}
 
 	/**
@@ -169,7 +163,7 @@ export class ConfProfilesResource {
 		depositProfileId: string,
 	): Promise<DepositProfile> {
 		return this.client.get<DepositProfile>(
-			`/almaws/v1/conf/deposit-profiles/${encodeURIComponent(depositProfileId)}`,
+			`/conf/deposit-profiles/${encodeURIComponent(depositProfileId)}`,
 		);
 	}
 
@@ -187,7 +181,7 @@ export class ConfProfilesResource {
 		params?: Record<string, string | number | boolean | undefined | null>,
 	): Promise<Record<string, unknown>> {
 		return this.client.post<Record<string, unknown>>(
-			`/almaws/v1/conf/workflows/${encodeURIComponent(workflowId)}`,
+			`/conf/workflows/${encodeURIComponent(workflowId)}`,
 			body,
 			params,
 		);

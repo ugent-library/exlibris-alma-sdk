@@ -28,7 +28,7 @@ export class BibsAuthoritiesResource {
 		offset?: number;
 		view?: string;
 	}): Promise<Authorities> {
-		return this.client.get<Authorities>("/almaws/v1/bibs/authorities", params);
+		return this.client.get<Authorities>("/bibs/authorities", params);
 	}
 
 	/**
@@ -44,7 +44,7 @@ export class BibsAuthoritiesResource {
 		params?: { view?: string },
 	): Promise<Authority> {
 		return this.client.get<Authority>(
-			`/almaws/v1/bibs/authorities/${encodeURIComponent(authorityRecordId)}`,
+			`/bibs/authorities/${encodeURIComponent(authorityRecordId)}`,
 			params,
 		);
 	}
@@ -71,11 +71,7 @@ export class BibsAuthoritiesResource {
 			import_profile?: string;
 		},
 	): Promise<Authority> {
-		return this.client.post<Authority>(
-			"/almaws/v1/bibs/authorities",
-			body,
-			params,
-		);
+		return this.client.post<Authority>("/bibs/authorities", body, params);
 	}
 
 	/**
@@ -107,7 +103,7 @@ export class BibsAuthoritiesResource {
 		},
 	): Promise<Authority> {
 		return this.client.put<Authority>(
-			`/almaws/v1/bibs/authorities/${encodeURIComponent(authorityRecordId)}`,
+			`/bibs/authorities/${encodeURIComponent(authorityRecordId)}`,
 			body,
 			params,
 		);
@@ -126,7 +122,7 @@ export class BibsAuthoritiesResource {
 		params?: { override?: string; cataloger_level?: string },
 	): Promise<void> {
 		return this.client.delete<void>(
-			`/almaws/v1/bibs/authorities/${encodeURIComponent(authorityRecordId)}`,
+			`/bibs/authorities/${encodeURIComponent(authorityRecordId)}`,
 			params,
 		);
 	}

@@ -21,7 +21,7 @@ export class BibsCollectionsResource {
 		level?: string;
 		q?: string;
 	}): Promise<Collections> {
-		return this.client.get<Collections>("/almaws/v1/bibs/collections", params);
+		return this.client.get<Collections>("/bibs/collections", params);
 	}
 
 	/**
@@ -37,7 +37,7 @@ export class BibsCollectionsResource {
 		params?: { level?: string },
 	): Promise<Collection> {
 		return this.client.get<Collection>(
-			`/almaws/v1/bibs/collections/${encodeURIComponent(pid)}`,
+			`/bibs/collections/${encodeURIComponent(pid)}`,
 			params,
 		);
 	}
@@ -54,11 +54,7 @@ export class BibsCollectionsResource {
 		body: Collection,
 		params?: { record_format?: string },
 	): Promise<Collection> {
-		return this.client.post<Collection>(
-			"/almaws/v1/bibs/collections",
-			body,
-			params,
-		);
+		return this.client.post<Collection>("/bibs/collections", body, params);
 	}
 
 	/**
@@ -70,7 +66,7 @@ export class BibsCollectionsResource {
 	 */
 	async updateCollection(pid: string, body: Collection): Promise<Collection> {
 		return this.client.put<Collection>(
-			`/almaws/v1/bibs/collections/${encodeURIComponent(pid)}`,
+			`/bibs/collections/${encodeURIComponent(pid)}`,
 			body,
 		);
 	}
@@ -82,7 +78,7 @@ export class BibsCollectionsResource {
 	 */
 	async deleteCollection(pid: string): Promise<void> {
 		return this.client.delete<void>(
-			`/almaws/v1/bibs/collections/${encodeURIComponent(pid)}`,
+			`/bibs/collections/${encodeURIComponent(pid)}`,
 		);
 	}
 
@@ -98,7 +94,7 @@ export class BibsCollectionsResource {
 		params?: { limit?: number; offset?: number },
 	): Promise<Bibs> {
 		return this.client.get<Bibs>(
-			`/almaws/v1/bibs/collections/${encodeURIComponent(pid)}/bibs`,
+			`/bibs/collections/${encodeURIComponent(pid)}/bibs`,
 			params,
 		);
 	}
@@ -115,7 +111,7 @@ export class BibsCollectionsResource {
 		body: Record<string, unknown>,
 	): Promise<Record<string, unknown>> {
 		return this.client.post<Record<string, unknown>>(
-			`/almaws/v1/bibs/collections/${encodeURIComponent(pid)}/bibs`,
+			`/bibs/collections/${encodeURIComponent(pid)}/bibs`,
 			body,
 		);
 	}
@@ -128,7 +124,7 @@ export class BibsCollectionsResource {
 	 */
 	async removeBibFromCollection(pid: string, mmsId: string): Promise<void> {
 		return this.client.delete<void>(
-			`/almaws/v1/bibs/collections/${encodeURIComponent(pid)}/bibs/${encodeURIComponent(mmsId)}`,
+			`/bibs/collections/${encodeURIComponent(pid)}/bibs/${encodeURIComponent(mmsId)}`,
 		);
 	}
 }

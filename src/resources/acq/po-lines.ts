@@ -27,7 +27,7 @@ export class AcqPoLinesResource {
 		min_expected_arrival_date?: string;
 		max_expected_arrival_date?: string;
 	}): Promise<PoLines> {
-		return this.client.get<PoLines>("/almaws/v1/acq/po-lines", params);
+		return this.client.get<PoLines>("/acq/po-lines", params);
 	}
 
 	/**
@@ -38,7 +38,7 @@ export class AcqPoLinesResource {
 	 */
 	async retrievePoLine(poLineId: string): Promise<PoLine> {
 		return this.client.get<PoLine>(
-			`/almaws/v1/acq/po-lines/${encodeURIComponent(poLineId)}`,
+			`/acq/po-lines/${encodeURIComponent(poLineId)}`,
 		);
 	}
 
@@ -52,7 +52,7 @@ export class AcqPoLinesResource {
 		body: PoLine,
 		params?: { profile_code?: string; requires_manual_review?: string },
 	): Promise<PoLine> {
-		return this.client.post<PoLine>("/almaws/v1/acq/po-lines", body, params);
+		return this.client.post<PoLine>("/acq/po-lines", body, params);
 	}
 
 	/**
@@ -68,7 +68,7 @@ export class AcqPoLinesResource {
 		params?: { update_inventory?: string; redistribute_funds?: string },
 	): Promise<PoLine> {
 		return this.client.put<PoLine>(
-			`/almaws/v1/acq/po-lines/${encodeURIComponent(poLineId)}`,
+			`/acq/po-lines/${encodeURIComponent(poLineId)}`,
 			body,
 			params,
 		);
@@ -90,7 +90,7 @@ export class AcqPoLinesResource {
 		},
 	): Promise<void> {
 		return this.client.delete<void>(
-			`/almaws/v1/acq/po-lines/${encodeURIComponent(poLineId)}`,
+			`/acq/po-lines/${encodeURIComponent(poLineId)}`,
 			params,
 		);
 	}
@@ -107,7 +107,7 @@ export class AcqPoLinesResource {
 		params?: { limit?: number; offset?: number },
 	): Promise<PoLineItems> {
 		return this.client.get<PoLineItems>(
-			`/almaws/v1/acq/po-lines/${encodeURIComponent(poLineId)}/items`,
+			`/acq/po-lines/${encodeURIComponent(poLineId)}/items`,
 			params,
 		);
 	}
@@ -124,7 +124,7 @@ export class AcqPoLinesResource {
 		body: PoLineItem,
 	): Promise<PoLineItem> {
 		return this.client.post<PoLineItem>(
-			`/almaws/v1/acq/po-lines/${encodeURIComponent(poLineId)}/items`,
+			`/acq/po-lines/${encodeURIComponent(poLineId)}/items`,
 			body,
 		);
 	}
@@ -151,7 +151,7 @@ export class AcqPoLinesResource {
 		},
 	): Promise<PoLineItem> {
 		return this.client.post<PoLineItem>(
-			`/almaws/v1/acq/po-lines/${encodeURIComponent(poLineId)}/items/${encodeURIComponent(itemId)}`,
+			`/acq/po-lines/${encodeURIComponent(poLineId)}/items/${encodeURIComponent(itemId)}`,
 			body,
 			params,
 		);

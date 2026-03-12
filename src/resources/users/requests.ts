@@ -31,7 +31,7 @@ export class UsersRequestsResource {
 		},
 	): Promise<UserRequests> {
 		return this.client.get<UserRequests>(
-			`/almaws/v1/users/${encodeURIComponent(userId)}/requests`,
+			`/users/${encodeURIComponent(userId)}/requests`,
 			params,
 		);
 	}
@@ -49,7 +49,7 @@ export class UsersRequestsResource {
 		params?: { user_id_type?: string },
 	): Promise<UserRequest> {
 		return this.client.get<UserRequest>(
-			`/almaws/v1/users/${encodeURIComponent(userId)}/requests/${encodeURIComponent(requestId)}`,
+			`/users/${encodeURIComponent(userId)}/requests/${encodeURIComponent(requestId)}`,
 			params,
 		);
 	}
@@ -73,7 +73,7 @@ export class UsersRequestsResource {
 		},
 	): Promise<UserRequest> {
 		return this.client.post<UserRequest>(
-			`/almaws/v1/users/${encodeURIComponent(userId)}/requests`,
+			`/users/${encodeURIComponent(userId)}/requests`,
 			body,
 			params,
 		);
@@ -93,7 +93,7 @@ export class UsersRequestsResource {
 		body: UserRequest,
 	): Promise<UserRequest> {
 		return this.client.put<UserRequest>(
-			`/almaws/v1/users/${encodeURIComponent(userId)}/requests/${encodeURIComponent(requestId)}`,
+			`/users/${encodeURIComponent(userId)}/requests/${encodeURIComponent(requestId)}`,
 			body,
 		);
 	}
@@ -115,7 +115,7 @@ export class UsersRequestsResource {
 		params?: { op?: string },
 	): Promise<UserRequest> {
 		return this.client.post<UserRequest>(
-			`/almaws/v1/users/${encodeURIComponent(userId)}/requests/${encodeURIComponent(requestId)}`,
+			`/users/${encodeURIComponent(userId)}/requests/${encodeURIComponent(requestId)}`,
 			body,
 			params,
 		);
@@ -137,7 +137,7 @@ export class UsersRequestsResource {
 		params: { reason: string; note?: string; notify_user?: boolean },
 	): Promise<void> {
 		return this.client.delete<void>(
-			`/almaws/v1/users/${encodeURIComponent(userId)}/requests/${encodeURIComponent(requestId)}`,
+			`/users/${encodeURIComponent(userId)}/requests/${encodeURIComponent(requestId)}`,
 			params,
 		);
 	}
@@ -154,7 +154,7 @@ export class UsersRequestsResource {
 		requestId: string,
 	): Promise<ResourceSharingRequest> {
 		return this.client.get<ResourceSharingRequest>(
-			`/almaws/v1/users/${encodeURIComponent(userId)}/resource-sharing-requests/${encodeURIComponent(requestId)}`,
+			`/users/${encodeURIComponent(userId)}/resource-sharing-requests/${encodeURIComponent(requestId)}`,
 		);
 	}
 
@@ -171,7 +171,7 @@ export class UsersRequestsResource {
 		params?: { user_id_type?: string; override_blocks?: string },
 	): Promise<ResourceSharingRequest> {
 		return this.client.post<ResourceSharingRequest>(
-			`/almaws/v1/users/${encodeURIComponent(userId)}/resource-sharing-requests`,
+			`/users/${encodeURIComponent(userId)}/resource-sharing-requests`,
 			body,
 			params,
 		);
@@ -199,7 +199,7 @@ export class UsersRequestsResource {
 		},
 	): Promise<ResourceSharingRequest> {
 		return this.client.post<ResourceSharingRequest>(
-			`/almaws/v1/users/${encodeURIComponent(userId)}/resource-sharing-requests/${encodeURIComponent(requestId)}`,
+			`/users/${encodeURIComponent(userId)}/resource-sharing-requests/${encodeURIComponent(requestId)}`,
 			body,
 			params,
 		);
@@ -222,7 +222,7 @@ export class UsersRequestsResource {
 		},
 	): Promise<void> {
 		return this.client.delete<void>(
-			`/almaws/v1/users/${encodeURIComponent(userId)}/resource-sharing-requests/${encodeURIComponent(requestId)}`,
+			`/users/${encodeURIComponent(userId)}/resource-sharing-requests/${encodeURIComponent(requestId)}`,
 			params,
 		);
 	}

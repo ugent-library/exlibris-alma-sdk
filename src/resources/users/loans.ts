@@ -28,7 +28,7 @@ export class UsersLoansResource {
 		},
 	): Promise<UserLoans> {
 		return this.client.get<UserLoans>(
-			`/almaws/v1/users/${encodeURIComponent(userId)}/loans`,
+			`/users/${encodeURIComponent(userId)}/loans`,
 			params,
 		);
 	}
@@ -42,7 +42,7 @@ export class UsersLoansResource {
 	 */
 	async retrieveUserLoan(userId: string, loanId: string): Promise<UserLoan> {
 		return this.client.get<UserLoan>(
-			`/almaws/v1/users/${encodeURIComponent(userId)}/loans/${encodeURIComponent(loanId)}`,
+			`/users/${encodeURIComponent(userId)}/loans/${encodeURIComponent(loanId)}`,
 		);
 	}
 
@@ -64,7 +64,7 @@ export class UsersLoansResource {
 		},
 	): Promise<UserLoan> {
 		return this.client.post<UserLoan>(
-			`/almaws/v1/users/${encodeURIComponent(userId)}/loans`,
+			`/users/${encodeURIComponent(userId)}/loans`,
 			body,
 			params,
 		);
@@ -85,7 +85,7 @@ export class UsersLoansResource {
 		params?: { notify_user?: boolean },
 	): Promise<UserLoan> {
 		return this.client.put<UserLoan>(
-			`/almaws/v1/users/${encodeURIComponent(userId)}/loans/${encodeURIComponent(loanId)}`,
+			`/users/${encodeURIComponent(userId)}/loans/${encodeURIComponent(loanId)}`,
 			body,
 			params,
 		);
@@ -108,7 +108,7 @@ export class UsersLoansResource {
 		params?: { user_id_type?: string; op?: string },
 	): Promise<UserLoan> {
 		return this.client.post<UserLoan>(
-			`/almaws/v1/users/${encodeURIComponent(userId)}/loans/${encodeURIComponent(loanId)}`,
+			`/users/${encodeURIComponent(userId)}/loans/${encodeURIComponent(loanId)}`,
 			body,
 			params,
 		);

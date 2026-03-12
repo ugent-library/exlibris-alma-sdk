@@ -46,7 +46,7 @@ export class BibsCatalogResource {
 		other_system_id?: string;
 		lod_uri?: string;
 	}): Promise<Bibs> {
-		return this.client.get<Bibs>("/almaws/v1/bibs", params);
+		return this.client.get<Bibs>("/bibs", params);
 	}
 
 	/**
@@ -63,10 +63,7 @@ export class BibsCatalogResource {
 		mmsId: string,
 		params?: { view?: string; expand?: string },
 	): Promise<Bib> {
-		return this.client.get<Bib>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}`,
-			params,
-		);
+		return this.client.get<Bib>(`/bibs/${encodeURIComponent(mmsId)}`, params);
 	}
 
 	/**
@@ -95,7 +92,7 @@ export class BibsCatalogResource {
 			import_profile?: string;
 		},
 	): Promise<Bib> {
-		return this.client.post<Bib>("/almaws/v1/bibs", body, params);
+		return this.client.post<Bib>("/bibs", body, params);
 	}
 
 	/**
@@ -127,7 +124,7 @@ export class BibsCatalogResource {
 		},
 	): Promise<Bib> {
 		return this.client.put<Bib>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}`,
+			`/bibs/${encodeURIComponent(mmsId)}`,
 			body,
 			params,
 		);
@@ -148,7 +145,7 @@ export class BibsCatalogResource {
 		params?: { op?: string },
 	): Promise<Bib> {
 		return this.client.post<Bib>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}`,
+			`/bibs/${encodeURIComponent(mmsId)}`,
 			body,
 			params,
 		);
@@ -167,7 +164,7 @@ export class BibsCatalogResource {
 		params?: { override?: string; cataloger_level?: string },
 	): Promise<void> {
 		return this.client.delete<void>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}`,
+			`/bibs/${encodeURIComponent(mmsId)}`,
 			params,
 		);
 	}
@@ -180,7 +177,7 @@ export class BibsCatalogResource {
 	 */
 	async retrieveHoldingsList(mmsId: string): Promise<Holdings> {
 		return this.client.get<Holdings>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings`,
+			`/bibs/${encodeURIComponent(mmsId)}/holdings`,
 		);
 	}
 
@@ -193,7 +190,7 @@ export class BibsCatalogResource {
 	 */
 	async retrieveHolding(mmsId: string, holdingId: string): Promise<Holding> {
 		return this.client.get<Holding>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}`,
+			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}`,
 		);
 	}
 
@@ -206,7 +203,7 @@ export class BibsCatalogResource {
 	 */
 	async createHolding(mmsId: string, body: Holding): Promise<Holding> {
 		return this.client.post<Holding>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings`,
+			`/bibs/${encodeURIComponent(mmsId)}/holdings`,
 			body,
 		);
 	}
@@ -225,7 +222,7 @@ export class BibsCatalogResource {
 		body: Holding,
 	): Promise<Holding> {
 		return this.client.put<Holding>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}`,
+			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}`,
 			body,
 		);
 	}
@@ -243,7 +240,7 @@ export class BibsCatalogResource {
 		params?: { bib?: string },
 	): Promise<void> {
 		return this.client.delete<void>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}`,
+			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}`,
 			params,
 		);
 	}
@@ -299,7 +296,7 @@ export class BibsCatalogResource {
 		},
 	): Promise<Items> {
 		return this.client.get<Items>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items`,
+			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items`,
 			params,
 		);
 	}
@@ -323,7 +320,7 @@ export class BibsCatalogResource {
 		params?: { view?: string; expand?: string; user_id?: string },
 	): Promise<Item> {
 		return this.client.get<Item>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}`,
+			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}`,
 			params,
 		);
 	}
@@ -349,7 +346,7 @@ export class BibsCatalogResource {
 		},
 	): Promise<Item> {
 		return this.client.post<Item>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items`,
+			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items`,
 			body,
 			params,
 		);
@@ -378,7 +375,7 @@ export class BibsCatalogResource {
 		},
 	): Promise<Item> {
 		return this.client.put<Item>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}`,
+			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}`,
 			body,
 			params,
 		);
@@ -429,7 +426,7 @@ export class BibsCatalogResource {
 		},
 	): Promise<Item> {
 		return this.client.post<Item>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}`,
+			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}`,
 			body,
 			params,
 		);
@@ -453,7 +450,7 @@ export class BibsCatalogResource {
 		params?: { override?: string; holdings?: string; bib?: string },
 	): Promise<void> {
 		return this.client.delete<void>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}`,
+			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}`,
 			params,
 		);
 	}
@@ -470,7 +467,7 @@ export class BibsCatalogResource {
 		params?: { limit?: number; offset?: number },
 	): Promise<Portfolios> {
 		return this.client.get<Portfolios>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/portfolios`,
+			`/bibs/${encodeURIComponent(mmsId)}/portfolios`,
 			params,
 		);
 	}
@@ -487,7 +484,7 @@ export class BibsCatalogResource {
 		portfolioId: string,
 	): Promise<Portfolio> {
 		return this.client.get<Portfolio>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/portfolios/${encodeURIComponent(portfolioId)}`,
+			`/bibs/${encodeURIComponent(mmsId)}/portfolios/${encodeURIComponent(portfolioId)}`,
 		);
 	}
 
@@ -500,7 +497,7 @@ export class BibsCatalogResource {
 	 */
 	async createPortfolio(mmsId: string, body: Portfolio): Promise<Portfolio> {
 		return this.client.post<Portfolio>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/portfolios/`,
+			`/bibs/${encodeURIComponent(mmsId)}/portfolios/`,
 			body,
 		);
 	}
@@ -519,7 +516,7 @@ export class BibsCatalogResource {
 		body: Portfolio,
 	): Promise<Portfolio> {
 		return this.client.put<Portfolio>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/portfolios/${encodeURIComponent(portfolioId)}`,
+			`/bibs/${encodeURIComponent(mmsId)}/portfolios/${encodeURIComponent(portfolioId)}`,
 			body,
 		);
 	}
@@ -532,7 +529,7 @@ export class BibsCatalogResource {
 	 */
 	async deletePortfolio(mmsId: string, portfolioId: string): Promise<void> {
 		return this.client.delete<void>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/portfolios/${encodeURIComponent(portfolioId)}`,
+			`/bibs/${encodeURIComponent(mmsId)}/portfolios/${encodeURIComponent(portfolioId)}`,
 		);
 	}
 
@@ -557,7 +554,7 @@ export class BibsCatalogResource {
 		},
 	): Promise<Record<string, unknown>> {
 		return this.client.get<Record<string, unknown>>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/booking-availability`,
+			`/bibs/${encodeURIComponent(mmsId)}/booking-availability`,
 			params,
 		);
 	}
@@ -568,6 +565,6 @@ export class BibsCatalogResource {
 	 * @returns A test response confirming the API is reachable.
 	 */
 	async test(): Promise<Record<string, unknown>> {
-		return this.client.get<Record<string, unknown>>("/almaws/v1/bibs/test");
+		return this.client.get<Record<string, unknown>>("/bibs/test");
 	}
 }

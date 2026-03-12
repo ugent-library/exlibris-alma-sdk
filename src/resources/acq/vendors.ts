@@ -23,7 +23,7 @@ export class AcqVendorsResource {
 		status?: string;
 		type?: string;
 	}): Promise<Vendors> {
-		return this.client.get<Vendors>("/almaws/v1/acq/vendors", params);
+		return this.client.get<Vendors>("/acq/vendors", params);
 	}
 
 	/**
@@ -34,7 +34,7 @@ export class AcqVendorsResource {
 	 */
 	async retrieveVendor(vendorCode: string): Promise<Vendor> {
 		return this.client.get<Vendor>(
-			`/almaws/v1/acq/vendors/${encodeURIComponent(vendorCode)}`,
+			`/acq/vendors/${encodeURIComponent(vendorCode)}`,
 		);
 	}
 
@@ -45,7 +45,7 @@ export class AcqVendorsResource {
 	 * @returns The created vendor.
 	 */
 	async createVendor(body: Vendor): Promise<Vendor> {
-		return this.client.post<Vendor>("/almaws/v1/acq/vendors", body);
+		return this.client.post<Vendor>("/acq/vendors", body);
 	}
 
 	/**
@@ -57,7 +57,7 @@ export class AcqVendorsResource {
 	 */
 	async updateVendor(vendorCode: string, body: Vendor): Promise<Vendor> {
 		return this.client.put<Vendor>(
-			`/almaws/v1/acq/vendors/${encodeURIComponent(vendorCode)}`,
+			`/acq/vendors/${encodeURIComponent(vendorCode)}`,
 			body,
 		);
 	}
@@ -69,7 +69,7 @@ export class AcqVendorsResource {
 	 */
 	async deleteVendor(vendorCode: string): Promise<void> {
 		return this.client.delete<void>(
-			`/almaws/v1/acq/vendors/${encodeURIComponent(vendorCode)}`,
+			`/acq/vendors/${encodeURIComponent(vendorCode)}`,
 		);
 	}
 
@@ -85,7 +85,7 @@ export class AcqVendorsResource {
 		params?: { limit?: number; offset?: number },
 	): Promise<Invoices> {
 		return this.client.get<Invoices>(
-			`/almaws/v1/acq/vendors/${encodeURIComponent(vendorCode)}/invoices`,
+			`/acq/vendors/${encodeURIComponent(vendorCode)}/invoices`,
 			params,
 		);
 	}
@@ -102,7 +102,7 @@ export class AcqVendorsResource {
 		params?: { limit?: number; offset?: number },
 	): Promise<PoLines> {
 		return this.client.get<PoLines>(
-			`/almaws/v1/acq/vendors/${encodeURIComponent(vendorCode)}/po-lines`,
+			`/acq/vendors/${encodeURIComponent(vendorCode)}/po-lines`,
 			params,
 		);
 	}

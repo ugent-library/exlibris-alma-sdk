@@ -42,7 +42,7 @@ export class AcqFundsResource {
 		parent_id?: string;
 		owner?: string;
 	}): Promise<Funds> {
-		return this.client.get<Funds>("/almaws/v1/acq/funds", params);
+		return this.client.get<Funds>("/acq/funds", params);
 	}
 
 	/**
@@ -58,7 +58,7 @@ export class AcqFundsResource {
 		params?: { view?: string },
 	): Promise<Fund> {
 		return this.client.get<Fund>(
-			`/almaws/v1/acq/funds/${encodeURIComponent(fundId)}`,
+			`/acq/funds/${encodeURIComponent(fundId)}`,
 			params,
 		);
 	}
@@ -75,7 +75,7 @@ export class AcqFundsResource {
 		body: Fund,
 		params?: { rules_level?: string },
 	): Promise<Fund> {
-		return this.client.post<Fund>("/almaws/v1/acq/funds", body, params);
+		return this.client.post<Fund>("/acq/funds", body, params);
 	}
 
 	/**
@@ -93,7 +93,7 @@ export class AcqFundsResource {
 		params?: { rules_level?: string },
 	): Promise<Fund> {
 		return this.client.put<Fund>(
-			`/almaws/v1/acq/funds/${encodeURIComponent(fundId)}`,
+			`/acq/funds/${encodeURIComponent(fundId)}`,
 			body,
 			params,
 		);
@@ -114,7 +114,7 @@ export class AcqFundsResource {
 		params?: { op?: string },
 	): Promise<Fund> {
 		return this.client.post<Fund>(
-			`/almaws/v1/acq/funds/${encodeURIComponent(fundId)}`,
+			`/acq/funds/${encodeURIComponent(fundId)}`,
 			body,
 			params,
 		);
@@ -126,9 +126,7 @@ export class AcqFundsResource {
 	 * @param fundId - The fund ID.
 	 */
 	async deleteFund(fundId: string): Promise<void> {
-		return this.client.delete<void>(
-			`/almaws/v1/acq/funds/${encodeURIComponent(fundId)}`,
-		);
+		return this.client.delete<void>(`/acq/funds/${encodeURIComponent(fundId)}`);
 	}
 
 	/**
@@ -147,7 +145,7 @@ export class AcqFundsResource {
 		params?: { limit?: number; offset?: number; q?: string; filter?: string },
 	): Promise<FundTransactions> {
 		return this.client.get<FundTransactions>(
-			`/almaws/v1/acq/funds/${encodeURIComponent(fundId)}/transactions`,
+			`/acq/funds/${encodeURIComponent(fundId)}/transactions`,
 			params,
 		);
 	}
@@ -164,7 +162,7 @@ export class AcqFundsResource {
 		body: FundTransaction,
 	): Promise<FundTransaction> {
 		return this.client.post<FundTransaction>(
-			`/almaws/v1/acq/funds/${encodeURIComponent(fundId)}/transactions`,
+			`/acq/funds/${encodeURIComponent(fundId)}/transactions`,
 			body,
 		);
 	}

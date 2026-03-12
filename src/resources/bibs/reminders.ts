@@ -23,7 +23,7 @@ export class BibsRemindersResource {
 		params?: { type?: string; limit?: number; offset?: number },
 	): Promise<BibReminders> {
 		return this.client.get<BibReminders>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/reminders`,
+			`/bibs/${encodeURIComponent(mmsId)}/reminders`,
 			params,
 		);
 	}
@@ -40,7 +40,7 @@ export class BibsRemindersResource {
 		reminderId: string,
 	): Promise<BibReminder> {
 		return this.client.get<BibReminder>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/reminders/${encodeURIComponent(reminderId)}`,
+			`/bibs/${encodeURIComponent(mmsId)}/reminders/${encodeURIComponent(reminderId)}`,
 		);
 	}
 
@@ -56,7 +56,7 @@ export class BibsRemindersResource {
 		body: BibReminder,
 	): Promise<BibReminder> {
 		return this.client.post<BibReminder>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/reminders`,
+			`/bibs/${encodeURIComponent(mmsId)}/reminders`,
 			body,
 		);
 	}
@@ -75,7 +75,7 @@ export class BibsRemindersResource {
 		body: BibReminder,
 	): Promise<BibReminder> {
 		return this.client.put<BibReminder>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/reminders/${encodeURIComponent(reminderId)}`,
+			`/bibs/${encodeURIComponent(mmsId)}/reminders/${encodeURIComponent(reminderId)}`,
 			body,
 		);
 	}
@@ -88,7 +88,7 @@ export class BibsRemindersResource {
 	 */
 	async deleteBibReminder(mmsId: string, reminderId: string): Promise<void> {
 		return this.client.delete<void>(
-			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/reminders/${encodeURIComponent(reminderId)}`,
+			`/bibs/${encodeURIComponent(mmsId)}/reminders/${encodeURIComponent(reminderId)}`,
 		);
 	}
 }

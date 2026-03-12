@@ -33,7 +33,7 @@ export class AcqInvoicesResource {
 		owner?: string;
 		creation_form?: string;
 	}): Promise<Invoices> {
-		return this.client.get<Invoices>("/almaws/v1/acq/invoices/", params);
+		return this.client.get<Invoices>("/acq/invoices/", params);
 	}
 
 	/**
@@ -47,7 +47,7 @@ export class AcqInvoicesResource {
 		params?: { view?: string; expand?: string },
 	): Promise<Invoice> {
 		return this.client.get<Invoice>(
-			`/almaws/v1/acq/invoices/${encodeURIComponent(invoiceId)}`,
+			`/acq/invoices/${encodeURIComponent(invoiceId)}`,
 			params,
 		);
 	}
@@ -59,7 +59,7 @@ export class AcqInvoicesResource {
 	 * @returns The created invoice.
 	 */
 	async createInvoice(body: Invoice): Promise<Invoice> {
-		return this.client.post<Invoice>("/almaws/v1/acq/invoices", body);
+		return this.client.post<Invoice>("/acq/invoices", body);
 	}
 
 	/**
@@ -71,7 +71,7 @@ export class AcqInvoicesResource {
 	 */
 	async updateInvoice(invoiceId: string, body: Invoice): Promise<Invoice> {
 		return this.client.put<Invoice>(
-			`/almaws/v1/acq/invoices/${encodeURIComponent(invoiceId)}`,
+			`/acq/invoices/${encodeURIComponent(invoiceId)}`,
 			body,
 		);
 	}
@@ -91,7 +91,7 @@ export class AcqInvoicesResource {
 		params?: { op?: string; create_rt_invoice?: boolean },
 	): Promise<Invoice> {
 		return this.client.post<Invoice>(
-			`/almaws/v1/acq/invoices/${encodeURIComponent(invoiceId)}`,
+			`/acq/invoices/${encodeURIComponent(invoiceId)}`,
 			body,
 			params,
 		);
@@ -108,7 +108,7 @@ export class AcqInvoicesResource {
 		params?: { limit?: number; offset?: number },
 	): Promise<InvoiceAttachments> {
 		return this.client.get<InvoiceAttachments>(
-			`/almaws/v1/acq/invoices/${encodeURIComponent(invoiceId)}/attachments`,
+			`/acq/invoices/${encodeURIComponent(invoiceId)}/attachments`,
 			params,
 		);
 	}
@@ -126,7 +126,7 @@ export class AcqInvoicesResource {
 		params?: { expand?: string },
 	): Promise<InvoiceAttachment> {
 		return this.client.get<InvoiceAttachment>(
-			`/almaws/v1/acq/invoices/${encodeURIComponent(invoiceId)}/attachments/${encodeURIComponent(attachmentId)}`,
+			`/acq/invoices/${encodeURIComponent(invoiceId)}/attachments/${encodeURIComponent(attachmentId)}`,
 			params,
 		);
 	}
@@ -143,7 +143,7 @@ export class AcqInvoicesResource {
 		body: InvoiceAttachment,
 	): Promise<InvoiceAttachment> {
 		return this.client.post<InvoiceAttachment>(
-			`/almaws/v1/acq/invoices/${encodeURIComponent(invoiceId)}/attachments`,
+			`/acq/invoices/${encodeURIComponent(invoiceId)}/attachments`,
 			body,
 		);
 	}
@@ -160,7 +160,7 @@ export class AcqInvoicesResource {
 		params?: { q?: string; limit?: number; offset?: number },
 	): Promise<InvoiceLines> {
 		return this.client.get<InvoiceLines>(
-			`/almaws/v1/acq/invoices/${encodeURIComponent(invoiceId)}/lines`,
+			`/acq/invoices/${encodeURIComponent(invoiceId)}/lines`,
 			params,
 		);
 	}
@@ -177,7 +177,7 @@ export class AcqInvoicesResource {
 		invoiceLineId: string,
 	): Promise<InvoiceLine> {
 		return this.client.get<InvoiceLine>(
-			`/almaws/v1/acq/invoices/${encodeURIComponent(invoiceId)}/lines/${encodeURIComponent(invoiceLineId)}`,
+			`/acq/invoices/${encodeURIComponent(invoiceId)}/lines/${encodeURIComponent(invoiceLineId)}`,
 		);
 	}
 
@@ -193,7 +193,7 @@ export class AcqInvoicesResource {
 		body: InvoiceLine,
 	): Promise<InvoiceLine> {
 		return this.client.post<InvoiceLine>(
-			`/almaws/v1/acq/invoices/${encodeURIComponent(invoiceId)}/lines`,
+			`/acq/invoices/${encodeURIComponent(invoiceId)}/lines`,
 			body,
 		);
 	}
@@ -212,7 +212,7 @@ export class AcqInvoicesResource {
 		body: InvoiceLine,
 	): Promise<InvoiceLine> {
 		return this.client.put<InvoiceLine>(
-			`/almaws/v1/acq/invoices/${encodeURIComponent(invoiceId)}/lines/${encodeURIComponent(invoiceLineId)}`,
+			`/acq/invoices/${encodeURIComponent(invoiceId)}/lines/${encodeURIComponent(invoiceLineId)}`,
 			body,
 		);
 	}

@@ -25,7 +25,7 @@ export class ConfOrganizationsResource {
 	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9saWJyYXJpZXM=/
 	 */
 	async retrieveLibraries(): Promise<Libraries> {
-		return this.client.get<Libraries>("/almaws/v1/conf/libraries");
+		return this.client.get<Libraries>("/conf/libraries");
 	}
 
 	/**
@@ -36,7 +36,7 @@ export class ConfOrganizationsResource {
 	 */
 	async retrieveLibrary(libraryCode: string): Promise<Library> {
 		return this.client.get<Library>(
-			`/almaws/v1/conf/libraries/${encodeURIComponent(libraryCode)}`,
+			`/conf/libraries/${encodeURIComponent(libraryCode)}`,
 		);
 	}
 
@@ -49,7 +49,7 @@ export class ConfOrganizationsResource {
 	 */
 	async updateLibrary(libraryCode: string, body: Library): Promise<Library> {
 		return this.client.put<Library>(
-			`/almaws/v1/conf/libraries/${encodeURIComponent(libraryCode)}`,
+			`/conf/libraries/${encodeURIComponent(libraryCode)}`,
 			body,
 		);
 	}
@@ -68,7 +68,7 @@ export class ConfOrganizationsResource {
 		view?: string;
 		library?: string;
 	}): Promise<Departments> {
-		return this.client.get<Departments>("/almaws/v1/conf/departments", params);
+		return this.client.get<Departments>("/conf/departments", params);
 	}
 
 	/**
@@ -85,7 +85,7 @@ export class ConfOrganizationsResource {
 		params?: { limit?: number; offset?: number },
 	): Promise<CircDesks> {
 		return this.client.get<CircDesks>(
-			`/almaws/v1/conf/libraries/${encodeURIComponent(libraryCode)}/circ-desks/`,
+			`/conf/libraries/${encodeURIComponent(libraryCode)}/circ-desks/`,
 			params,
 		);
 	}
@@ -102,7 +102,7 @@ export class ConfOrganizationsResource {
 		circDeskCode: string,
 	): Promise<CircDesk> {
 		return this.client.get<CircDesk>(
-			`/almaws/v1/conf/libraries/${encodeURIComponent(libraryCode)}/circ-desks/${encodeURIComponent(circDeskCode)}`,
+			`/conf/libraries/${encodeURIComponent(libraryCode)}/circ-desks/${encodeURIComponent(circDeskCode)}`,
 		);
 	}
 
@@ -114,7 +114,7 @@ export class ConfOrganizationsResource {
 	 */
 	async retrieveLocations(libraryCode: string): Promise<Locations> {
 		return this.client.get<Locations>(
-			`/almaws/v1/conf/libraries/${encodeURIComponent(libraryCode)}/locations`,
+			`/conf/libraries/${encodeURIComponent(libraryCode)}/locations`,
 		);
 	}
 
@@ -130,7 +130,7 @@ export class ConfOrganizationsResource {
 		locationCode: string,
 	): Promise<Location> {
 		return this.client.get<Location>(
-			`/almaws/v1/conf/libraries/${encodeURIComponent(libraryCode)}/locations/${encodeURIComponent(locationCode)}`,
+			`/conf/libraries/${encodeURIComponent(libraryCode)}/locations/${encodeURIComponent(locationCode)}`,
 		);
 	}
 
@@ -143,7 +143,7 @@ export class ConfOrganizationsResource {
 	 */
 	async createLocation(libraryCode: string, body: Location): Promise<Location> {
 		return this.client.post<Location>(
-			`/almaws/v1/conf/libraries/${encodeURIComponent(libraryCode)}/locations`,
+			`/conf/libraries/${encodeURIComponent(libraryCode)}/locations`,
 			body,
 		);
 	}
@@ -162,7 +162,7 @@ export class ConfOrganizationsResource {
 		body: Location,
 	): Promise<Location> {
 		return this.client.put<Location>(
-			`/almaws/v1/conf/libraries/${encodeURIComponent(libraryCode)}/locations/${encodeURIComponent(locationCode)}`,
+			`/conf/libraries/${encodeURIComponent(libraryCode)}/locations/${encodeURIComponent(locationCode)}`,
 			body,
 		);
 	}
@@ -178,7 +178,7 @@ export class ConfOrganizationsResource {
 		locationCode: string,
 	): Promise<void> {
 		return this.client.delete<void>(
-			`/almaws/v1/conf/libraries/${encodeURIComponent(libraryCode)}/locations/${encodeURIComponent(locationCode)}`,
+			`/conf/libraries/${encodeURIComponent(libraryCode)}/locations/${encodeURIComponent(locationCode)}`,
 		);
 	}
 
@@ -196,7 +196,7 @@ export class ConfOrganizationsResource {
 		params?: { from?: string; to?: string },
 	): Promise<OpenHours> {
 		return this.client.get<OpenHours>(
-			`/almaws/v1/conf/libraries/${encodeURIComponent(libraryCode)}/open-hours`,
+			`/conf/libraries/${encodeURIComponent(libraryCode)}/open-hours`,
 			params,
 		);
 	}

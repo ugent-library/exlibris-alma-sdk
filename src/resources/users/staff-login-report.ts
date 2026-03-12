@@ -24,7 +24,7 @@ export class UsersStaffLoginReportResource {
 		offset?: number;
 	}): Promise<StaffLoginReport> {
 		return this.client.get<StaffLoginReport>(
-			"/almaws/v1/users/staff-login-report",
+			"/users/staff-login-report",
 			params,
 		);
 	}

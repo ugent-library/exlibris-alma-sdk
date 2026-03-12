@@ -25,7 +25,7 @@ export class UsersPurchaseRequestsResource {
 		},
 	): Promise<UserPurchaseRequests> {
 		return this.client.get<UserPurchaseRequests>(
-			`/almaws/v1/users/${encodeURIComponent(userId)}/purchase-requests`,
+			`/users/${encodeURIComponent(userId)}/purchase-requests`,
 			params,
 		);
 	}
@@ -43,7 +43,7 @@ export class UsersPurchaseRequestsResource {
 		params: { user_id_type: string },
 	): Promise<UserPurchaseRequest> {
 		return this.client.get<UserPurchaseRequest>(
-			`/almaws/v1/users/${encodeURIComponent(userId)}/purchase-requests/${encodeURIComponent(purchaseRequestId)}`,
+			`/users/${encodeURIComponent(userId)}/purchase-requests/${encodeURIComponent(purchaseRequestId)}`,
 			params,
 		);
 	}
@@ -61,7 +61,7 @@ export class UsersPurchaseRequestsResource {
 		params: { user_id_type: string },
 	): Promise<UserPurchaseRequest> {
 		return this.client.post<UserPurchaseRequest>(
-			`/almaws/v1/users/${encodeURIComponent(userId)}/purchase-requests`,
+			`/users/${encodeURIComponent(userId)}/purchase-requests`,
 			body,
 			params,
 		);
@@ -84,7 +84,7 @@ export class UsersPurchaseRequestsResource {
 		params?: { op?: string },
 	): Promise<UserPurchaseRequest> {
 		return this.client.post<UserPurchaseRequest>(
-			`/almaws/v1/users/${encodeURIComponent(userId)}/purchase-requests/${encodeURIComponent(purchaseRequestId)}`,
+			`/users/${encodeURIComponent(userId)}/purchase-requests/${encodeURIComponent(purchaseRequestId)}`,
 			body,
 			params,
 		);
@@ -104,7 +104,7 @@ export class UsersPurchaseRequestsResource {
 		body: UserPurchaseRequest,
 	): Promise<UserPurchaseRequest> {
 		return this.client.put<UserPurchaseRequest>(
-			`/almaws/v1/users/${encodeURIComponent(userId)}/purchase-requests/${encodeURIComponent(purchaseRequestId)}`,
+			`/users/${encodeURIComponent(userId)}/purchase-requests/${encodeURIComponent(purchaseRequestId)}`,
 			body,
 		);
 	}

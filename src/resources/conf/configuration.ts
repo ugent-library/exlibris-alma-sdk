@@ -30,7 +30,7 @@ export class ConfConfigurationResource {
 	async retrieveGeneralConfig(params?: {
 		expand?: string;
 	}): Promise<GeneralConfig> {
-		return this.client.get<GeneralConfig>("/almaws/v1/conf/general", params);
+		return this.client.get<GeneralConfig>("/conf/general", params);
 	}
 
 	/**
@@ -47,7 +47,7 @@ export class ConfConfigurationResource {
 		limit?: number;
 		offset?: number;
 	}): Promise<CodeTables> {
-		return this.client.get<CodeTables>("/almaws/v1/conf/code-tables", params);
+		return this.client.get<CodeTables>("/conf/code-tables", params);
 	}
 
 	/**
@@ -64,7 +64,7 @@ export class ConfConfigurationResource {
 		params?: { scope?: string; lang?: string },
 	): Promise<CodeTable> {
 		return this.client.get<CodeTable>(
-			`/almaws/v1/conf/code-tables/${encodeURIComponent(codeTableName)}`,
+			`/conf/code-tables/${encodeURIComponent(codeTableName)}`,
 			params,
 		);
 	}
@@ -81,7 +81,7 @@ export class ConfConfigurationResource {
 		body: CodeTable,
 	): Promise<CodeTable> {
 		return this.client.put<CodeTable>(
-			`/almaws/v1/conf/code-tables/${encodeURIComponent(codeTableName)}`,
+			`/conf/code-tables/${encodeURIComponent(codeTableName)}`,
 			body,
 		);
 	}
@@ -92,7 +92,7 @@ export class ConfConfigurationResource {
 	 * @returns A list of mapping tables.
 	 */
 	async retrieveMappingTables(): Promise<MappingTables> {
-		return this.client.get<MappingTables>("/almaws/v1/conf/mapping-tables");
+		return this.client.get<MappingTables>("/conf/mapping-tables");
 	}
 
 	/**
@@ -108,7 +108,7 @@ export class ConfConfigurationResource {
 		params?: { scope?: string },
 	): Promise<MappingTable> {
 		return this.client.get<MappingTable>(
-			`/almaws/v1/conf/mapping-tables/${encodeURIComponent(mappingTableName)}`,
+			`/conf/mapping-tables/${encodeURIComponent(mappingTableName)}`,
 			params,
 		);
 	}
@@ -125,7 +125,7 @@ export class ConfConfigurationResource {
 		body: MappingTable,
 	): Promise<MappingTable> {
 		return this.client.put<MappingTable>(
-			`/almaws/v1/conf/mapping-tables/${encodeURIComponent(mappingTableName)}`,
+			`/conf/mapping-tables/${encodeURIComponent(mappingTableName)}`,
 			body,
 		);
 	}
@@ -138,7 +138,7 @@ export class ConfConfigurationResource {
 	 * @returns The open hours definition.
 	 */
 	async retrieveOpenHours(params: { scope: string }): Promise<OpenHours> {
-		return this.client.get<OpenHours>("/almaws/v1/conf/open-hours", params);
+		return this.client.get<OpenHours>("/conf/open-hours", params);
 	}
 
 	/**
@@ -152,11 +152,7 @@ export class ConfConfigurationResource {
 		body: OpenHours,
 		params: { scope: string },
 	): Promise<OpenHours> {
-		return this.client.put<OpenHours>(
-			"/almaws/v1/conf/open-hours",
-			body,
-			params,
-		);
+		return this.client.put<OpenHours>("/conf/open-hours", body, params);
 	}
 
 	/**
@@ -165,7 +161,7 @@ export class ConfConfigurationResource {
 	 * @param params - Optional parameters.
 	 */
 	async deleteOpenHours(params: { scope: string }): Promise<void> {
-		return this.client.delete<void>("/almaws/v1/conf/open-hours", params);
+		return this.client.delete<void>("/conf/open-hours", params);
 	}
 
 	/**
@@ -176,7 +172,7 @@ export class ConfConfigurationResource {
 	 * @returns A list of letters.
 	 */
 	async retrieveLetters(params?: { type?: string }): Promise<Letters> {
-		return this.client.get<Letters>("/almaws/v1/conf/letters", params);
+		return this.client.get<Letters>("/conf/letters", params);
 	}
 
 	/**
@@ -187,7 +183,7 @@ export class ConfConfigurationResource {
 	 */
 	async retrieveLetter(letterCode: string): Promise<Letter> {
 		return this.client.get<Letter>(
-			`/almaws/v1/conf/letters/${encodeURIComponent(letterCode)}`,
+			`/conf/letters/${encodeURIComponent(letterCode)}`,
 		);
 	}
 
@@ -200,7 +196,7 @@ export class ConfConfigurationResource {
 	 */
 	async updateLetter(letterCode: string, body: Letter): Promise<Letter> {
 		return this.client.put<Letter>(
-			`/almaws/v1/conf/letters/${encodeURIComponent(letterCode)}`,
+			`/conf/letters/${encodeURIComponent(letterCode)}`,
 			body,
 		);
 	}
@@ -213,7 +209,7 @@ export class ConfConfigurationResource {
 	 * @returns The relations object.
 	 */
 	async retrieveRelations(params: { scope: string }): Promise<Relations> {
-		return this.client.get<Relations>("/almaws/v1/conf/relations", params);
+		return this.client.get<Relations>("/conf/relations", params);
 	}
 
 	/**
@@ -226,11 +222,7 @@ export class ConfConfigurationResource {
 		body: Relations,
 		params: { scope: string },
 	): Promise<Relations> {
-		return this.client.put<Relations>(
-			"/almaws/v1/conf/relations",
-			body,
-			params,
-		);
+		return this.client.put<Relations>("/conf/relations", body, params);
 	}
 
 	/**
@@ -240,7 +232,7 @@ export class ConfConfigurationResource {
 		scope: string;
 		libraryCode: string;
 	}): Promise<void> {
-		return this.client.delete<void>("/almaws/v1/conf/relations", params);
+		return this.client.delete<void>("/conf/relations", params);
 	}
 
 	/**
@@ -253,7 +245,7 @@ export class ConfConfigurationResource {
 		params?: Record<string, string | number | boolean | undefined | null>,
 	): Promise<FeeTransactions> {
 		return this.client.get<FeeTransactions>(
-			"/almaws/v1/conf/utilities/fee-transactions",
+			"/conf/utilities/fee-transactions",
 			params,
 		);
 	}
@@ -264,6 +256,6 @@ export class ConfConfigurationResource {
 	 * @returns A test response confirming the API is reachable.
 	 */
 	async test(): Promise<Record<string, unknown>> {
-		return this.client.get<Record<string, unknown>>("/almaws/v1/conf/test");
+		return this.client.get<Record<string, unknown>>("/conf/test");
 	}
 }
