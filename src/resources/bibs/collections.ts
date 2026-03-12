@@ -18,7 +18,7 @@ export class BibsCollectionsResource {
 	 * @returns A list of collections.
 	 */
 	async retrieveCollections(params?: {
-		level?: string;
+		level?: number;
 		q?: string;
 	}): Promise<Collections> {
 		return this.client.get<Collections>("/bibs/collections", params);
