@@ -5,7 +5,6 @@
 		"moduleDetection": "force",
 
 		"moduleResolution": "bundler",
-		"allowImportingTsExtensions": true,
 		"verbatimModuleSyntax": true,
 		"noEmit": true,
 
@@ -22,7 +21,12 @@
 		"noUnusedParameters": false,
 		"noPropertyAccessFromIndexSignature": false,
 
-		"forceConsistentCasingInFileNames": true
+		"forceConsistentCasingInFileNames": true,
+
+		"paths": {
+			"alma-sdk": ["./src/index"],
+			"@/*": ["./src/*"]
+		}
 	},
 
 	"include": ["src/**/*"],

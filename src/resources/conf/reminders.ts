@@ -1,10 +1,6 @@
-import type { AlmaHttpClient } from "../../client.ts";
-import type {
-	LicenseTerm,
-	LicenseTerms,
-	Reminder,
-	Reminders,
-} from "./types.ts";
+import type { AlmaHttpClient } from "@/client";
+
+import type { LicenseTerm, LicenseTerms, Reminder, Reminders } from "./types";
 
 /**
  * Methods for managing reminders in the Alma Configuration API.

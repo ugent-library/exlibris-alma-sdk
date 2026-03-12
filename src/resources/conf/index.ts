@@ -1,11 +1,12 @@
-import type { AlmaHttpClient } from "../../client.ts";
-import { ConfConfigurationResource } from "./configuration.ts";
-import { ConfJobsResource } from "./jobs.ts";
-import { ConfOrganizationsResource } from "./organizations.ts";
-import { ConfPrintersResource } from "./printers.ts";
-import { ConfProfilesResource } from "./profiles.ts";
-import { ConfRemindersResource } from "./reminders.ts";
-import { ConfSetsResource } from "./sets.ts";
+import type { AlmaHttpClient } from "@/client";
+
+import { ConfConfigurationResource } from "./configuration";
+import { ConfJobsResource } from "./jobs";
+import { ConfOrganizationsResource } from "./organizations";
+import { ConfPrintersResource } from "./printers";
+import { ConfProfilesResource } from "./profiles";
+import { ConfRemindersResource } from "./reminders";
+import { ConfSetsResource } from "./sets";
 
 export type {
 	AlmaSet,
@@ -46,7 +47,7 @@ export type {
 	Reminders,
 	SetMembers,
 	Sets,
-} from "./types.ts";
+} from "./types";
 
 /**
  * Resource client for the Alma Configuration API.

@@ -1,4 +1,5 @@
-import type { AlmaHttpClient } from "../../client.ts";
+import type { AlmaHttpClient } from "@/client";
+
 import type {
 	Invoice,
 	InvoiceAttachment,
@@ -6,7 +7,7 @@ import type {
 	InvoiceLine,
 	InvoiceLines,
 	Invoices,
-} from "./types.ts";
+} from "./types";
 
 /**
  * Methods for managing invoices, invoice lines, and invoice attachments

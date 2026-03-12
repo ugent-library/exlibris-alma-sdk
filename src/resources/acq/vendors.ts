@@ -1,5 +1,6 @@
-import type { AlmaHttpClient } from "../../client.ts";
-import type { Invoices, PoLines, Vendor, Vendors } from "./types.ts";
+import type { AlmaHttpClient } from "@/client";
+
+import type { Invoices, PoLines, Vendor, Vendors } from "./types";
 
 /**
  * Methods for managing vendors in the Alma Acquisitions API.

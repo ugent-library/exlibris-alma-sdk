@@ -1,4 +1,5 @@
-import type { AlmaHttpClient } from "../../client.ts";
+import type { AlmaHttpClient } from "@/client";
+
 import type {
 	Job,
 	JobInstance,
@@ -6,7 +7,7 @@ import type {
 	JobInstanceMatches,
 	JobInstances,
 	Jobs,
-} from "./types.ts";
+} from "./types";
 
 /**
  * Methods for managing scheduled jobs and job instances in the Alma

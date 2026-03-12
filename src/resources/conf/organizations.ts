@@ -1,4 +1,5 @@
-import type { AlmaHttpClient } from "../../client.ts";
+import type { AlmaHttpClient } from "@/client";
+
 import type {
 	CircDesk,
 	CircDesks,
@@ -8,7 +9,7 @@ import type {
 	Location,
 	Locations,
 	OpenHours,
-} from "./types.ts";
+} from "./types";
 
 /**
  * Methods for managing libraries, circulation desks, locations, and departments

@@ -1,4 +1,5 @@
-import type { AlmaHttpClient } from "../../client.ts";
+import type { AlmaHttpClient } from "@/client";
+
 import type {
 	License,
 	LicenseAmendment,
@@ -6,7 +7,7 @@ import type {
 	LicenseAttachment,
 	LicenseAttachments,
 	Licenses,
-} from "./types.ts";
+} from "./types";
 
 /**
  * Methods for managing licenses, amendments, and attachments

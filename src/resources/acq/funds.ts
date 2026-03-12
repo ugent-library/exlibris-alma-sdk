@@ -1,10 +1,10 @@
-import type { AlmaHttpClient } from "../../client.ts";
+import type { AlmaHttpClient } from "@/client";
 import type {
 	Fund,
 	Funds,
 	FundTransaction,
 	FundTransactions,
-} from "./types.ts";
+} from "@/resources/acq/types";
 
 /**
  * Methods for managing funds and fund transactions in the Alma Acquisitions API.

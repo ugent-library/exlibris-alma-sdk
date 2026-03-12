@@ -1,5 +1,6 @@
-import type { AlmaHttpClient } from "../../client.ts";
-import type { LegantoNotifications } from "./types.ts";
+import type { AlmaHttpClient } from "@/client";
+
+import type { LegantoNotifications } from "./types";
 
 /**
  * Methods for retrieving Leganto notifications for a user.

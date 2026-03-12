@@ -1,4 +1,5 @@
-import type { AlmaHttpClient } from "../../client.ts";
+import type { AlmaHttpClient } from "@/client";
+
 import type {
 	Bib,
 	Bibs,
@@ -8,7 +9,7 @@ import type {
 	Items,
 	Portfolio,
 	Portfolios,
-} from "./types.ts";
+} from "./types";
 
 /**
  * Methods for managing bibliographic records, holdings, items, and portfolios

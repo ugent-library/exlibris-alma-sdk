@@ -1,5 +1,6 @@
-import type { AlmaHttpClient } from "../../client.ts";
-import type { PoLine, PoLineItem, PoLineItems, PoLines } from "./types.ts";
+import type { AlmaHttpClient } from "@/client";
+
+import type { PoLine, PoLineItem, PoLineItems, PoLines } from "./types";
 
 /**
  * Methods for managing PO lines and PO line items in the Alma Acquisitions API.

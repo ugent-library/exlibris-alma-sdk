@@ -1,11 +1,12 @@
-import type { AlmaHttpClient } from "../../client.ts";
-import { BibsAuthoritiesResource } from "./authorities.ts";
-import { BibsCatalogResource } from "./catalog.ts";
-import { BibsCollectionsResource } from "./collections.ts";
-import { BibsDigitalResource } from "./digital.ts";
-import { BibsLoansResource } from "./loans.ts";
-import { BibsRemindersResource } from "./reminders.ts";
-import { BibsRequestsResource } from "./requests.ts";
+import type { AlmaHttpClient } from "@/client";
+
+import { BibsAuthoritiesResource } from "./authorities";
+import { BibsCatalogResource } from "./catalog";
+import { BibsCollectionsResource } from "./collections";
+import { BibsDigitalResource } from "./digital";
+import { BibsLoansResource } from "./loans";
+import { BibsRemindersResource } from "./reminders";
+import { BibsRequestsResource } from "./requests";
 
 export type {
 	Authorities,
@@ -34,7 +35,7 @@ export type {
 	RepresentationFiles,
 	Representations,
 	RequestOptions,
-} from "./types.ts";
+} from "./types";
 
 /**
  * Resource client for the Alma Bibliographic API.

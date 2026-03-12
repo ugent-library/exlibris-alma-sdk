@@ -1,10 +1,11 @@
-import type { AlmaHttpClient } from "../../client.ts";
-import { AcqFundsResource } from "./funds.ts";
-import { AcqInvoicesResource } from "./invoices.ts";
-import { AcqLicensesResource } from "./licenses.ts";
-import { AcqMiscResource } from "./misc.ts";
-import { AcqPoLinesResource } from "./po-lines.ts";
-import { AcqVendorsResource } from "./vendors.ts";
+import type { AlmaHttpClient } from "@/client";
+
+import { AcqFundsResource } from "./funds";
+import { AcqInvoicesResource } from "./invoices";
+import { AcqLicensesResource } from "./licenses";
+import { AcqMiscResource } from "./misc";
+import { AcqPoLinesResource } from "./po-lines";
+import { AcqVendorsResource } from "./vendors";
 
 export type {
 	Currencies,
@@ -35,7 +36,7 @@ export type {
 	PurchaseRequests,
 	Vendor,
 	Vendors,
-} from "./types.ts";
+} from "./types";
 
 /**
  * Resource client for the Alma Acquisitions API.

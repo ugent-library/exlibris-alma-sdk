@@ -1,5 +1,6 @@
-import type { AlmaHttpClient } from "../../client.ts";
-import type { User, UserAttachment, UserPersonalData, Users } from "./types.ts";
+import type { AlmaHttpClient } from "@/client";
+
+import type { User, UserAttachment, UserPersonalData, Users } from "./types";
 
 /**
  * Methods for managing user records and user-level resources in the Alma Users API.

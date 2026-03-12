@@ -1,5 +1,6 @@
-import type { AlmaHttpClient } from "../../client.ts";
-import type { BibReminder, BibReminders } from "./types.ts";
+import type { AlmaHttpClient } from "@/client";
+
+import type { BibReminder, BibReminders } from "./types";
 
 /**
  * Methods for managing reminders on bibliographic records.

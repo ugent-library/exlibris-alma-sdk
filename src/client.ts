@@ -2,7 +2,7 @@ import {
 	AlmaError,
 	AlmaUnauthorizedError,
 	extractXmlErrorMessage,
-} from "./errors.ts";
+} from "@/errors";
 
 /**
  * The Alma API region, used to construct the base URL.

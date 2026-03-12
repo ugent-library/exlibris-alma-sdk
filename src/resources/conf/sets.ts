@@ -1,5 +1,6 @@
-import type { AlmaHttpClient } from "../../client.ts";
-import type { AlmaSet, SetMembers, Sets } from "./types.ts";
+import type { AlmaHttpClient } from "@/client";
+
+import type { AlmaSet, SetMembers, Sets } from "./types";
 
 /**
  * Methods for managing sets and set members in the Alma Configuration API.

@@ -1,4 +1,5 @@
-import type { AlmaHttpClient } from "../../client.ts";
+import type { AlmaHttpClient } from "@/client";
+
 import type {
 	CodeTable,
 	CodeTables,
@@ -10,7 +11,7 @@ import type {
 	MappingTables,
 	OpenHours,
 	Relations,
-} from "./types.ts";
+} from "./types";
 
 /**
  * Methods for managing general configuration, code tables, mapping tables,

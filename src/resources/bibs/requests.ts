@@ -1,10 +1,11 @@
-import type { AlmaHttpClient } from "../../client.ts";
+import type { AlmaHttpClient } from "@/client";
+
 import type {
 	BibRequest,
 	BibRequests,
 	BookingAvailability,
 	RequestOptions,
-} from "./types.ts";
+} from "./types";
 
 /**
  * Methods for managing requests and request options for bibliographic records

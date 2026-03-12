@@ -1,5 +1,6 @@
-import type { AlmaHttpClient } from "../../client.ts";
-import type { UserDeposit, UserDeposits, UserFee, UserFees } from "./types.ts";
+import type { AlmaHttpClient } from "@/client";
+
+import type { UserDeposit, UserDeposits, UserFee, UserFees } from "./types";
 
 /**
  * Methods for managing user fees and deposits in the Alma Users API.

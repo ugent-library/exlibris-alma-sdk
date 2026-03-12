@@ -1,5 +1,6 @@
-import type { AlmaHttpClient } from "../../client.ts";
-import type { UserPurchaseRequest, UserPurchaseRequests } from "./types.ts";
+import type { AlmaHttpClient } from "@/client";
+
+import type { UserPurchaseRequest, UserPurchaseRequests } from "./types";
 
 /**
  * Methods for managing user purchase requests in the Alma Users API.

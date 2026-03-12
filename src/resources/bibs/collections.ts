@@ -1,5 +1,6 @@
-import type { AlmaHttpClient } from "../../client.ts";
-import type { Bibs, Collection, Collections } from "./types.ts";
+import type { AlmaHttpClient } from "@/client";
+
+import type { Bibs, Collection, Collections } from "./types";
 
 /**
  * Methods for managing physical collections and their bibliographic records

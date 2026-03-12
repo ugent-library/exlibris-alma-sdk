@@ -1,11 +1,12 @@
-import type { AlmaHttpClient } from "../../client.ts";
-import { UsersFeesResource } from "./fees.ts";
-import { UsersLegantoResource } from "./leganto.ts";
-import { UsersLoansResource } from "./loans.ts";
-import { UsersPurchaseRequestsResource } from "./purchase-requests.ts";
-import { UsersRequestsResource } from "./requests.ts";
-import { UsersStaffLoginReportResource } from "./staff-login-report.ts";
-import { UsersUsersResource } from "./users.ts";
+import type { AlmaHttpClient } from "@/client";
+
+import { UsersFeesResource } from "./fees";
+import { UsersLegantoResource } from "./leganto";
+import { UsersLoansResource } from "./loans";
+import { UsersPurchaseRequestsResource } from "./purchase-requests";
+import { UsersRequestsResource } from "./requests";
+import { UsersStaffLoginReportResource } from "./staff-login-report";
+import { UsersUsersResource } from "./users";
 
 export type {
 	LegantoNotifications,
@@ -25,7 +26,7 @@ export type {
 	UserRequest,
 	UserRequests,
 	Users,
-} from "./types.ts";
+} from "./types";
 
 /**
  * Resource client for the Alma Users API.

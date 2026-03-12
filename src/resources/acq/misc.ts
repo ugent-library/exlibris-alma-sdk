@@ -1,10 +1,11 @@
-import type { AlmaHttpClient } from "../../client.ts";
+import type { AlmaHttpClient } from "@/client";
+
 import type {
 	Currencies,
 	FiscalPeriods,
 	PurchaseRequest,
 	PurchaseRequests,
-} from "./types.ts";
+} from "./types";
 
 /**
  * Methods for miscellaneous acquisitions resources: currencies, fiscal periods,

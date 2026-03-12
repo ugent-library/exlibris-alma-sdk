@@ -1,5 +1,6 @@
-import type { AlmaHttpClient } from "../../client.ts";
-import type { Loan, Loans } from "./types.ts";
+import type { AlmaHttpClient } from "@/client";
+
+import type { Loan, Loans } from "./types";
 
 /**
  * Methods for managing loans on bibliographic records and items

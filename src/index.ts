@@ -1,5 +1,5 @@
-export type { AlmaClientConfig, AlmaRegion } from "./client.ts";
-export { AlmaError, AlmaUnauthorizedError } from "./errors.ts";
+export type { AlmaClientConfig, AlmaRegion } from "@/client";
+export { AlmaError, AlmaUnauthorizedError } from "@/errors";
 export type {
 	Currencies,
 	Currency,
@@ -29,8 +29,8 @@ export type {
 	PurchaseRequests,
 	Vendor,
 	Vendors,
-} from "./resources/acq/index.ts";
-export { AcqResource } from "./resources/acq/index.ts";
+} from "@/resources/acq/index";
+export { AcqResource } from "@/resources/acq/index";
 export type {
 	Authorities,
 	Authority,
@@ -58,8 +58,8 @@ export type {
 	RepresentationFiles,
 	Representations,
 	RequestOptions,
-} from "./resources/bibs/index.ts";
-export { BibsResource } from "./resources/bibs/index.ts";
+} from "@/resources/bibs/index";
+export { BibsResource } from "@/resources/bibs/index";
 export type {
 	AlmaSet,
 	CircDesk,
@@ -99,8 +99,8 @@ export type {
 	Reminders,
 	SetMembers,
 	Sets,
-} from "./resources/conf/index.ts";
-export { ConfResource } from "./resources/conf/index.ts";
+} from "@/resources/conf/index";
+export { ConfResource } from "@/resources/conf/index";
 export type {
 	LegantoNotifications,
 	ResourceSharingRequest,
@@ -119,15 +119,15 @@ export type {
 	UserRequest,
 	UserRequests,
 	Users,
-} from "./resources/users/index.ts";
-export { UsersResource } from "./resources/users/index.ts";
+} from "@/resources/users/index";
+export { UsersResource } from "@/resources/users/index";
 
-import type { AlmaClientConfig } from "./client.ts";
-import { AlmaHttpClient } from "./client.ts";
-import { AcqResource } from "./resources/acq/index.ts";
-import { BibsResource } from "./resources/bibs/index.ts";
-import { ConfResource } from "./resources/conf/index.ts";
-import { UsersResource } from "./resources/users/index.ts";
+import type { AlmaClientConfig } from "@/client";
+import { AlmaHttpClient } from "@/client";
+import { AcqResource } from "@/resources/acq/index";
+import { BibsResource } from "@/resources/bibs/index";
+import { ConfResource } from "@/resources/conf/index";
+import { UsersResource } from "@/resources/users/index";
 
 /**
  * Top-level Alma API client.

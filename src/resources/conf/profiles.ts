@@ -1,4 +1,5 @@
-import type { AlmaHttpClient } from "../../client.ts";
+import type { AlmaHttpClient } from "@/client";
+
 import type {
 	DepositProfile,
 	DepositProfiles,
@@ -6,7 +7,7 @@ import type {
 	ImportProfiles,
 	IntegrationProfile,
 	IntegrationProfiles,
-} from "./types.ts";
+} from "./types";
 
 /**
  * Methods for managing import profiles, integration profiles, and deposit

@@ -1,9 +1,10 @@
-import type { AlmaHttpClient } from "../../client.ts";
+import type { AlmaHttpClient } from "@/client";
+
 import type {
 	ResourceSharingRequest,
 	UserRequest,
 	UserRequests,
-} from "./types.ts";
+} from "./types";
 
 /**
  * Methods for managing user requests and resource sharing requests

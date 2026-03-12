@@ -1,5 +1,6 @@
-import type { AlmaHttpClient } from "../../client.ts";
-import type { Authorities, Authority } from "./types.ts";
+import type { AlmaHttpClient } from "@/client";
+
+import type { Authorities, Authority } from "./types";
 
 /**
  * Methods for managing authority records in the Alma Bibliographic API.

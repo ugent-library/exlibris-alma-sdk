@@ -1,5 +1,6 @@
-import type { AlmaHttpClient } from "../../client.ts";
-import type { UserLoan, UserLoans } from "./types.ts";
+import type { AlmaHttpClient } from "@/client";
+
+import type { UserLoan, UserLoans } from "./types";
 
 /**
  * Methods for managing user loans in the Alma Users API.
