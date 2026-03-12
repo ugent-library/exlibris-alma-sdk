@@ -56,6 +56,8 @@ interface RequestOptions {
 	headers?: Record<string, string>;
 }
 
+type Path = `/${string}`;
+
 /**
  * Low-level HTTP client for the Alma REST API.
  *
@@ -91,18 +93,20 @@ export class AlmaHttpClient {
 	 * Always appends the `apikey` query parameter.
 	 */
 	private buildUrl(
-		path: string,
+		path: Path,
 		query?: Record<string, string | number | boolean | undefined | null>,
 	): string {
-		const params = new URLSearchParams();
+		const url = new URL(path, this.baseUrl);
+
 		if (query) {
 			for (const [key, value] of Object.entries(query)) {
 				if (value !== undefined && value !== null) {
-					params.set(key, String(value));
+					url.searchParams.set(key, String(value));
 				}
 			}
 		}
-		return `${this.baseUrl}${path}?${params.toString()}`;
+
+		return url.toString();
 	}
 
 	/**
@@ -113,7 +117,7 @@ export class AlmaHttpClient {
 	 */
 	async request<T>(
 		method: "GET" | "POST" | "PUT" | "DELETE",
-		path: string,
+		path: Path,
 		options: RequestOptions = {},
 	): Promise<T> {
 		const url = this.buildUrl(path, options.query);
@@ -194,7 +198,7 @@ export class AlmaHttpClient {
 	 * @throws {AlmaError} On non-2xx responses.
 	 */
 	async get<T>(
-		path: string,
+		path: Path,
 		query?: Record<string, string | number | boolean | undefined | null>,
 	): Promise<T> {
 		return this.request<T>("GET", path, { query });
@@ -210,7 +214,7 @@ export class AlmaHttpClient {
 	 * @throws {AlmaError} On non-2xx responses.
 	 */
 	async post<T>(
-		path: string,
+		path: Path,
 		body: unknown,
 		query?: Record<string, string | number | boolean | undefined | null>,
 	): Promise<T> {
@@ -227,7 +231,7 @@ export class AlmaHttpClient {
 	 * @throws {AlmaError} On non-2xx responses.
 	 */
 	async put<T>(
-		path: string,
+		path: Path,
 		body: unknown,
 		query?: Record<string, string | number | boolean | undefined | null>,
 	): Promise<T> {
@@ -243,7 +247,7 @@ export class AlmaHttpClient {
 	 * @throws {AlmaError} On non-2xx responses.
 	 */
 	async delete<T = void>(
-		path: string,
+		path: Path,
 		query?: Record<string, string | number | boolean | undefined | null>,
 	): Promise<T> {
 		return this.request<T>("DELETE", path, { query });
