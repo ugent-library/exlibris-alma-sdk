@@ -17,7 +17,7 @@ export class BibsCollectionsResource {
 	 * @param params.q - Search query.
 	 * @returns A list of collections.
 	 */
-	async retrieveCollectionsList(params?: {
+	async retrieveCollections(params?: {
 		level?: string;
 		q?: string;
 	}): Promise<Collections> {

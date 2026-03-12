@@ -41,9 +41,9 @@ describe("bibs - catalog", () => {
 });
 
 describe("bibs - collections", () => {
-	it("retrieveCollectionsList returns a result", async () => {
+	it("retrieveCollections returns a result", async () => {
 		if (skip || !client) return;
-		const result = await client.bibs.retrieveCollectionsList({ limit: 10 });
+		const result = await client.bibs.retrieveCollections({ limit: 10 });
 		expect(result).toBeDefined();
 	});
 });

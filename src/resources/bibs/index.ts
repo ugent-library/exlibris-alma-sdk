@@ -285,9 +285,10 @@ export class BibsResource {
 
 	// ── Collections ───────────────────────────────────────────────────────────
 
-	/** @see {@link BibsCollectionsResource.retrieveCollectionsList} */
-	retrieveCollectionsList: BibsCollectionsResource["retrieveCollectionsList"] =
-		(...args) => this.collections.retrieveCollectionsList(...args);
+	/** @see {@link BibsCollectionsResource.retrieveCollections} */
+	retrieveCollections: BibsCollectionsResource["retrieveCollections"] = (
+		...args
+	) => this.collections.retrieveCollections(...args);
 
 	/** @see {@link BibsCollectionsResource.retrieveCollection} */
 	retrieveCollection: BibsCollectionsResource["retrieveCollection"] = (
