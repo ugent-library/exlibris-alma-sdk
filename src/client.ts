@@ -102,7 +102,6 @@ export class AlmaHttpClient {
 				}
 			}
 		}
-		params.set("apikey", this.apiKey);
 		return `${this.baseUrl}${path}?${params.toString()}`;
 	}
 
@@ -120,8 +119,10 @@ export class AlmaHttpClient {
 		const url = this.buildUrl(path, options.query);
 		const headers: Record<string, string> = {
 			Accept: "application/json",
+			Authorization: `apikey ${this.apiKey}`,
 			...options.headers,
 		};
+
 		if (options.body !== undefined) {
 			headers["Content-Type"] = "application/json";
 		}
