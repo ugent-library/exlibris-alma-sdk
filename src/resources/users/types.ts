@@ -1,0 +1,17 @@
+export type User = Record<string, unknown>;
+export type Users = Record<string, unknown>;
+export type UserPersonalData = Record<string, unknown>;
+export type UserAttachment = Record<string, unknown>;
+export type UserLoan = Record<string, unknown>;
+export type UserLoans = Record<string, unknown>;
+export type UserRequest = Record<string, unknown>;
+export type UserRequests = Record<string, unknown>;
+export type ResourceSharingRequest = Record<string, unknown>;
+export type UserFee = Record<string, unknown>;
+export type UserFees = Record<string, unknown>;
+export type UserDeposit = Record<string, unknown>;
+export type UserDeposits = Record<string, unknown>;
+export type UserPurchaseRequest = Record<string, unknown>;
+export type UserPurchaseRequests = Record<string, unknown>;
+export type LegantoNotifications = Record<string, unknown>;
+export type StaffLoginReport = Record<string, unknown>;
