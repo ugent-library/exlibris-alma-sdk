@@ -52,7 +52,13 @@ export class BibsLoansResource {
 		mmsId: string,
 		holdingId: string,
 		itemId: string,
-		params?: { limit?: number; offset?: number },
+		params?: {
+			limit?: number;
+			offset?: number;
+			order_by?: string;
+			direction?: string;
+			loan_status?: string;
+		},
 	): Promise<Loans> {
 		return this.client.get<Loans>(
 			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemId)}/loans`,
@@ -94,10 +100,12 @@ export class BibsLoansResource {
 		holdingId: string,
 		itemPid: string,
 		body: Loan,
+		params?: { user_id?: string; user_id_type?: string },
 	): Promise<Loan> {
 		return this.client.post<Loan>(
 			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}/loans`,
 			body,
+			params,
 		);
 	}
 

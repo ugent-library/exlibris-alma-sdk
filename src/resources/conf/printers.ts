@@ -20,6 +20,8 @@ export class ConfPrintersResource {
 	 */
 	async retrievePrinters(params?: {
 		library?: string;
+		printout_queue?: string;
+		name?: string;
 		code?: string;
 		limit?: number;
 		offset?: number;

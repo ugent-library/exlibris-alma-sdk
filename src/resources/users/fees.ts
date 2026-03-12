@@ -17,11 +17,7 @@ export class UsersFeesResource {
 	 */
 	async retrieveUserFeesList(
 		userId: string,
-		params?: {
-			status?: string;
-			limit?: number;
-			offset?: number;
-		},
+		params?: { user_id_type?: string; status?: string },
 	): Promise<UserFees> {
 		return this.client.get<UserFees>(
 			`/almaws/v1/users/${encodeURIComponent(userId)}/fees`,
@@ -56,7 +52,15 @@ export class UsersFeesResource {
 		userId: string,
 		feeId: string,
 		body: UserFee,
-		params?: { op?: string },
+		params?: {
+			user_id_type?: string;
+			op?: string;
+			amount?: string;
+			method?: string;
+			reason?: string;
+			comment?: string;
+			external_transaction_id?: string;
+		},
 	): Promise<UserFee> {
 		return this.client.post<UserFee>(
 			`/almaws/v1/users/${encodeURIComponent(userId)}/fees/${encodeURIComponent(feeId)}`,
@@ -77,7 +81,14 @@ export class UsersFeesResource {
 	async operateAllUserFees(
 		userId: string,
 		body: UserFee,
-		params?: { op?: string },
+		params?: {
+			user_id_type?: string;
+			op?: string;
+			amount?: string;
+			method?: string;
+			comment?: string;
+			external_transaction_id?: string;
+		},
 	): Promise<UserFees> {
 		return this.client.post<UserFees>(
 			`/almaws/v1/users/${encodeURIComponent(userId)}/fees/all`,
@@ -95,7 +106,14 @@ export class UsersFeesResource {
 	 */
 	async retrieveUserDepositsList(
 		userId: string,
-		params?: { limit?: number; offset?: number },
+		params?: {
+			user_id_type?: string;
+			status?: string;
+			limit?: number;
+			offset?: number;
+			order_by?: string;
+			direction?: string;
+		},
 	): Promise<UserDeposits> {
 		return this.client.get<UserDeposits>(
 			`/almaws/v1/users/${encodeURIComponent(userId)}/deposits`,
@@ -113,9 +131,11 @@ export class UsersFeesResource {
 	async retrieveUserDeposit(
 		userId: string,
 		depositId: string,
+		params?: { user_id_type?: string },
 	): Promise<UserDeposit> {
 		return this.client.get<UserDeposit>(
 			`/almaws/v1/users/${encodeURIComponent(userId)}/deposits/${encodeURIComponent(depositId)}`,
+			params,
 		);
 	}
 
@@ -129,10 +149,12 @@ export class UsersFeesResource {
 	async createUserDeposit(
 		userId: string,
 		body: UserDeposit,
+		params?: { user_id_type?: string; draft?: string },
 	): Promise<UserDeposit> {
 		return this.client.post<UserDeposit>(
 			`/almaws/v1/users/${encodeURIComponent(userId)}/deposits`,
 			body,
+			params,
 		);
 	}
 
@@ -150,7 +172,7 @@ export class UsersFeesResource {
 		userId: string,
 		depositId: string,
 		body: UserDeposit,
-		params?: { op?: string },
+		params?: { user_id_type?: string; op?: string },
 	): Promise<UserDeposit> {
 		return this.client.post<UserDeposit>(
 			`/almaws/v1/users/${encodeURIComponent(userId)}/deposits/${encodeURIComponent(depositId)}`,

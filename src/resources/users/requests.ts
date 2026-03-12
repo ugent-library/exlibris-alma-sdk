@@ -24,8 +24,10 @@ export class UsersRequestsResource {
 		userId: string,
 		params?: {
 			request_type?: string;
+			user_id_type?: string;
 			limit?: number;
 			offset?: number;
+			status?: string;
 		},
 	): Promise<UserRequests> {
 		return this.client.get<UserRequests>(
@@ -44,9 +46,11 @@ export class UsersRequestsResource {
 	async retrieveUserRequest(
 		userId: string,
 		requestId: string,
+		params?: { user_id_type?: string },
 	): Promise<UserRequest> {
 		return this.client.get<UserRequest>(
 			`/almaws/v1/users/${encodeURIComponent(userId)}/requests/${encodeURIComponent(requestId)}`,
+			params,
 		);
 	}
 
@@ -61,7 +65,12 @@ export class UsersRequestsResource {
 	async createUserRequest(
 		userId: string,
 		body: UserRequest,
-		params?: { mms_id?: string; copy?: string },
+		params?: {
+			user_id_type?: string;
+			mms_id?: string;
+			item_pid?: string;
+			allow_same_request?: boolean;
+		},
 	): Promise<UserRequest> {
 		return this.client.post<UserRequest>(
 			`/almaws/v1/users/${encodeURIComponent(userId)}/requests`,
@@ -125,7 +134,7 @@ export class UsersRequestsResource {
 	async deleteUserRequest(
 		userId: string,
 		requestId: string,
-		params?: { reason?: string; note?: string; notify_user?: string },
+		params: { reason: string; note?: string; notify_user?: boolean },
 	): Promise<void> {
 		return this.client.delete<void>(
 			`/almaws/v1/users/${encodeURIComponent(userId)}/requests/${encodeURIComponent(requestId)}`,
@@ -159,10 +168,12 @@ export class UsersRequestsResource {
 	async createResourceSharingRequest(
 		userId: string,
 		body: ResourceSharingRequest,
+		params?: { user_id_type?: string; override_blocks?: string },
 	): Promise<ResourceSharingRequest> {
 		return this.client.post<ResourceSharingRequest>(
 			`/almaws/v1/users/${encodeURIComponent(userId)}/resource-sharing-requests`,
 			body,
+			params,
 		);
 	}
 
@@ -180,7 +191,12 @@ export class UsersRequestsResource {
 		userId: string,
 		requestId: string,
 		body: ResourceSharingRequest,
-		params?: { op?: string },
+		params?: {
+			request_id_type?: string;
+			op?: string;
+			shipping_cost?: string;
+			fund_code?: string;
+		},
 	): Promise<ResourceSharingRequest> {
 		return this.client.post<ResourceSharingRequest>(
 			`/almaws/v1/users/${encodeURIComponent(userId)}/resource-sharing-requests/${encodeURIComponent(requestId)}`,
@@ -198,9 +214,16 @@ export class UsersRequestsResource {
 	async deleteResourceSharingRequest(
 		userId: string,
 		requestId: string,
+		params?: {
+			remove_request?: boolean;
+			reason?: string;
+			note?: string;
+			notify_user?: boolean;
+		},
 	): Promise<void> {
 		return this.client.delete<void>(
 			`/almaws/v1/users/${encodeURIComponent(userId)}/resource-sharing-requests/${encodeURIComponent(requestId)}`,
+			params,
 		);
 	}
 }

@@ -16,7 +16,10 @@ export class UsersStaffLoginReportResource {
 	 * @param params.offset - Results offset.
 	 * @returns The staff login report.
 	 */
-	async retrieveStaffLoginReport(params?: {
+	async retrieveStaffLoginReport(params: {
+		login_date_from: string;
+		login_date_to: string;
+		successful?: string;
 		limit?: number;
 		offset?: number;
 	}): Promise<StaffLoginReport> {

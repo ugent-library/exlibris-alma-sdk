@@ -17,7 +17,13 @@ export class UsersLegantoResource {
 	 */
 	async retrieveLegantoNotifications(
 		userName: string,
-		params?: { limit?: number; offset?: number },
+		params: {
+			notificationType: string;
+			from: string;
+			to: string;
+			limit?: number;
+			unread?: string;
+		},
 	): Promise<LegantoNotifications> {
 		return this.client.get<LegantoNotifications>(
 			`/almaws/v1/users/${encodeURIComponent(userName)}/leganto-notifications`,

@@ -19,22 +19,28 @@ export class AcqFundsResource {
 	 * @param params.q - Search query.
 	 * @param params.limit - Maximum results.
 	 * @param params.offset - Results offset.
-	 * @param params.order_by - Sort field.
-	 * @param params.direction - Sort direction.
 	 * @param params.library - Filter by library code.
-	 * @param params.ledger_id - Filter by ledger ID.
-	 * @param params.fiscal_period_id - Filter by fiscal period ID.
+	 * @param params.view - View type.
+	 * @param params.mode - Mode filter.
+	 * @param params.status - Filter by fund status.
+	 * @param params.entity_type - Filter by entity type.
+	 * @param params.fiscal_period - Filter by fiscal period.
+	 * @param params.parent_id - Filter by parent fund ID.
+	 * @param params.owner - Filter by owner.
 	 * @returns A list of funds.
 	 */
 	async retrieveFundsList(params?: {
 		q?: string;
 		limit?: number;
 		offset?: number;
-		order_by?: string;
-		direction?: string;
 		library?: string;
-		ledger_id?: string;
-		fiscal_period_id?: string;
+		view?: string;
+		mode?: string;
+		status?: string;
+		entity_type?: string;
+		fiscal_period?: string;
+		parent_id?: string;
+		owner?: string;
 	}): Promise<Funds> {
 		return this.client.get<Funds>("/almaws/v1/acq/funds", params);
 	}
@@ -44,13 +50,12 @@ export class AcqFundsResource {
 	 *
 	 * @param fundId - The fund ID.
 	 * @param params - Optional parameters.
-	 * @param params.fiscal_period_id - The fiscal period ID.
 	 * @param params.view - View type.
 	 * @returns The fund.
 	 */
 	async retrieveFund(
 		fundId: string,
-		params?: { fiscal_period_id?: string; view?: string },
+		params?: { view?: string },
 	): Promise<Fund> {
 		return this.client.get<Fund>(
 			`/almaws/v1/acq/funds/${encodeURIComponent(fundId)}`,
@@ -62,10 +67,15 @@ export class AcqFundsResource {
 	 * Creates a new fund.
 	 *
 	 * @param body - The fund data.
+	 * @param params - Optional parameters.
+	 * @param params.rules_level - The rules level to apply.
 	 * @returns The created fund.
 	 */
-	async createFund(body: Fund): Promise<Fund> {
-		return this.client.post<Fund>("/almaws/v1/acq/funds", body);
+	async createFund(
+		body: Fund,
+		params?: { rules_level?: string },
+	): Promise<Fund> {
+		return this.client.post<Fund>("/almaws/v1/acq/funds", body, params);
 	}
 
 	/**
@@ -73,12 +83,19 @@ export class AcqFundsResource {
 	 *
 	 * @param fundId - The fund ID.
 	 * @param body - The updated fund data.
+	 * @param params - Optional parameters.
+	 * @param params.rules_level - The rules level to apply.
 	 * @returns The updated fund.
 	 */
-	async updateFund(fundId: string, body: Fund): Promise<Fund> {
+	async updateFund(
+		fundId: string,
+		body: Fund,
+		params?: { rules_level?: string },
+	): Promise<Fund> {
 		return this.client.put<Fund>(
 			`/almaws/v1/acq/funds/${encodeURIComponent(fundId)}`,
 			body,
+			params,
 		);
 	}
 
@@ -118,12 +135,16 @@ export class AcqFundsResource {
 	 * Retrieves a list of transactions for a fund.
 	 *
 	 * @param fundId - The fund ID.
-	 * @param params - Optional pagination.
+	 * @param params - Optional filters and pagination.
+	 * @param params.limit - Maximum results.
+	 * @param params.offset - Results offset.
+	 * @param params.q - Search query.
+	 * @param params.filter - Additional filter.
 	 * @returns A list of fund transactions.
 	 */
 	async retrieveFundTransactionsList(
 		fundId: string,
-		params?: { limit?: number; offset?: number },
+		params?: { limit?: number; offset?: number; q?: string; filter?: string },
 	): Promise<FundTransactions> {
 		return this.client.get<FundTransactions>(
 			`/almaws/v1/acq/funds/${encodeURIComponent(fundId)}/transactions`,

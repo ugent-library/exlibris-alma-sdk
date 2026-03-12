@@ -18,10 +18,13 @@ export class UsersLoansResource {
 	async retrieveUserLoansList(
 		userId: string,
 		params?: {
+			user_id_type?: string;
 			limit?: number;
 			offset?: number;
 			order_by?: string;
 			direction?: string;
+			expand?: string;
+			loan_status?: string;
 		},
 	): Promise<UserLoans> {
 		return this.client.get<UserLoans>(
@@ -50,10 +53,20 @@ export class UsersLoansResource {
 	 * @param body - The loan data.
 	 * @returns The created loan.
 	 */
-	async createUserLoan(userId: string, body: UserLoan): Promise<UserLoan> {
+	async createUserLoan(
+		userId: string,
+		body: UserLoan,
+		params?: {
+			item_pid?: string;
+			user_id_type?: string;
+			item_barcode?: string;
+			generate_linked_user?: string;
+		},
+	): Promise<UserLoan> {
 		return this.client.post<UserLoan>(
 			`/almaws/v1/users/${encodeURIComponent(userId)}/loans`,
 			body,
+			params,
 		);
 	}
 
@@ -69,10 +82,12 @@ export class UsersLoansResource {
 		userId: string,
 		loanId: string,
 		body: UserLoan,
+		params?: { notify_user?: boolean },
 	): Promise<UserLoan> {
 		return this.client.put<UserLoan>(
 			`/almaws/v1/users/${encodeURIComponent(userId)}/loans/${encodeURIComponent(loanId)}`,
 			body,
+			params,
 		);
 	}
 
@@ -90,7 +105,7 @@ export class UsersLoansResource {
 		userId: string,
 		loanId: string,
 		body: UserLoan,
-		params?: { op?: string },
+		params?: { user_id_type?: string; op?: string },
 	): Promise<UserLoan> {
 		return this.client.post<UserLoan>(
 			`/almaws/v1/users/${encodeURIComponent(userId)}/loans/${encodeURIComponent(loanId)}`,

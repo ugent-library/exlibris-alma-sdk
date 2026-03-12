@@ -21,9 +21,13 @@ export class ConfProfilesResource {
 	 *
 	 * @returns A list of MD import profiles.
 	 */
-	async retrieveImportProfiles(): Promise<ImportProfiles> {
+	async retrieveImportProfiles(params?: {
+		type?: string;
+		ie_type?: string;
+	}): Promise<ImportProfiles> {
 		return this.client.get<ImportProfiles>(
 			"/almaws/v1/conf/md-import-profiles",
+			params,
 		);
 	}
 

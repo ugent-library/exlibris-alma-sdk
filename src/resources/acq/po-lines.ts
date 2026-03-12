@@ -22,6 +22,10 @@ export class AcqPoLinesResource {
 		order_by?: string;
 		direction?: string;
 		acquisition_method?: string;
+		expand?: string;
+		library?: string;
+		min_expected_arrival_date?: string;
+		max_expected_arrival_date?: string;
 	}): Promise<PoLines> {
 		return this.client.get<PoLines>("/almaws/v1/acq/po-lines", params);
 	}
@@ -44,8 +48,11 @@ export class AcqPoLinesResource {
 	 * @param body - The PO line data.
 	 * @returns The created PO line.
 	 */
-	async createPoLine(body: PoLine): Promise<PoLine> {
-		return this.client.post<PoLine>("/almaws/v1/acq/po-lines", body);
+	async createPoLine(
+		body: PoLine,
+		params?: { profile_code?: string; requires_manual_review?: string },
+	): Promise<PoLine> {
+		return this.client.post<PoLine>("/almaws/v1/acq/po-lines", body, params);
 	}
 
 	/**
@@ -55,10 +62,15 @@ export class AcqPoLinesResource {
 	 * @param body - The updated PO line data.
 	 * @returns The updated PO line.
 	 */
-	async updatePoLine(poLineId: string, body: PoLine): Promise<PoLine> {
+	async updatePoLine(
+		poLineId: string,
+		body: PoLine,
+		params?: { update_inventory?: string; redistribute_funds?: string },
+	): Promise<PoLine> {
 		return this.client.put<PoLine>(
 			`/almaws/v1/acq/po-lines/${encodeURIComponent(poLineId)}`,
 			body,
+			params,
 		);
 	}
 
@@ -67,9 +79,19 @@ export class AcqPoLinesResource {
 	 *
 	 * @param poLineId - The PO line ID.
 	 */
-	async deletePoLine(poLineId: string): Promise<void> {
+	async deletePoLine(
+		poLineId: string,
+		params: {
+			reason: string;
+			comment?: string;
+			inform_vendor?: boolean;
+			override?: boolean;
+			bib?: string;
+		},
+	): Promise<void> {
 		return this.client.delete<void>(
 			`/almaws/v1/acq/po-lines/${encodeURIComponent(poLineId)}`,
+			params,
 		);
 	}
 
@@ -121,7 +143,12 @@ export class AcqPoLinesResource {
 		poLineId: string,
 		itemId: string,
 		body: PoLineItem,
-		params?: { op?: string },
+		params?: {
+			op?: string;
+			receive_date?: string;
+			department?: string;
+			department_library?: string;
+		},
 	): Promise<PoLineItem> {
 		return this.client.post<PoLineItem>(
 			`/almaws/v1/acq/po-lines/${encodeURIComponent(poLineId)}/items/${encodeURIComponent(itemId)}`,

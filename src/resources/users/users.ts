@@ -19,7 +19,10 @@ export class UsersUsersResource {
 		limit?: number;
 		offset?: number;
 		order_by?: string;
-		direction?: string;
+		source_institution_code?: string;
+		source_user_id?: string;
+		expand?: string;
+		modify_date_from?: string;
 	}): Promise<Users> {
 		return this.client.get<Users>("/almaws/v1/users", params);
 	}
@@ -35,7 +38,12 @@ export class UsersUsersResource {
 	 */
 	async retrieveUser(
 		userId: string,
-		params?: { view?: string; expand?: string },
+		params?: {
+			user_id_type?: string;
+			view?: string;
+			expand?: string;
+			source_institution_code?: string;
+		},
 	): Promise<User> {
 		return this.client.get<User>(
 			`/almaws/v1/users/${encodeURIComponent(userId)}`,
@@ -71,11 +79,18 @@ export class UsersUsersResource {
 	 *
 	 * @param body - The user data.
 	 * @param params - Optional parameters.
-	 * @returning The created user.
+	 * @returns The created user.
 	 */
 	async createUser(
 		body: User,
-		params?: { source_user_id?: string; source_institution_code?: string },
+		params?: {
+			social_authentication?: string;
+			send_pin_number_letter?: string;
+			source_institution_code?: string;
+			source_user_id?: string;
+			registration_rules?: string;
+			library?: string;
+		},
 	): Promise<User> {
 		return this.client.post<User>("/almaws/v1/users", body, params);
 	}
@@ -91,7 +106,14 @@ export class UsersUsersResource {
 	async updateUser(
 		userId: string,
 		body: User,
-		params?: { override?: string },
+		params?: {
+			user_id_type?: string;
+			override?: string;
+			send_pin_number_letter?: string;
+			recalculate_roles?: string;
+			registration_rules?: string;
+			library?: string;
+		},
 	): Promise<User> {
 		return this.client.put<User>(
 			`/almaws/v1/users/${encodeURIComponent(userId)}`,
@@ -112,7 +134,7 @@ export class UsersUsersResource {
 	async operateUser(
 		userId: string,
 		body: User,
-		params?: { op?: string },
+		params?: { user_id_type?: string; op?: string; password?: string },
 	): Promise<User> {
 		return this.client.post<User>(
 			`/almaws/v1/users/${encodeURIComponent(userId)}`,
@@ -126,9 +148,13 @@ export class UsersUsersResource {
 	 *
 	 * @param userId - The user ID.
 	 */
-	async deleteUser(userId: string): Promise<void> {
+	async deleteUser(
+		userId: string,
+		params?: { user_id_type?: string },
+	): Promise<void> {
 		return this.client.delete<void>(
 			`/almaws/v1/users/${encodeURIComponent(userId)}`,
+			params,
 		);
 	}
 
@@ -142,9 +168,11 @@ export class UsersUsersResource {
 	async retrieveUserAttachment(
 		userId: string,
 		attachmentId: string,
+		params?: { user_id_type?: string; expand?: string },
 	): Promise<UserAttachment> {
 		return this.client.get<UserAttachment>(
 			`/almaws/v1/users/${encodeURIComponent(userId)}/attachments/${encodeURIComponent(attachmentId)}`,
+			params,
 		);
 	}
 
@@ -158,10 +186,12 @@ export class UsersUsersResource {
 	async createUserAttachment(
 		userId: string,
 		body: UserAttachment,
+		params?: { user_id_type?: string },
 	): Promise<UserAttachment> {
 		return this.client.post<UserAttachment>(
 			`/almaws/v1/users/${encodeURIComponent(userId)}/attachments`,
 			body,
+			params,
 		);
 	}
 

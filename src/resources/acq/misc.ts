@@ -17,10 +17,24 @@ export class AcqMiscResource {
 	/**
 	 * Retrieves a list of currencies.
 	 *
+	 * @param params - Optional filters.
+	 * @param params.limit - Maximum results.
+	 * @param params.offset - Results offset.
+	 * @param params.mode - Mode filter.
+	 * @param params.source_currency - Source currency code.
+	 * @param params.target_currency - Target currency code.
+	 * @param params.exchange_date - Date for exchange rate lookup.
 	 * @returns A list of currencies.
 	 */
-	async retrieveCurrencies(): Promise<Currencies> {
-		return this.client.get<Currencies>("/almaws/v1/acq/currencies");
+	async retrieveCurrencies(params?: {
+		limit?: number;
+		offset?: number;
+		mode?: string;
+		source_currency?: string;
+		target_currency?: string;
+		exchange_date?: string;
+	}): Promise<Currencies> {
+		return this.client.get<Currencies>("/almaws/v1/acq/currencies", params);
 	}
 
 	/**
@@ -31,7 +45,7 @@ export class AcqMiscResource {
 	 * @returns A list of fiscal periods.
 	 */
 	async retrieveFiscalPeriods(params?: {
-		library?: string;
+		mode?: string;
 	}): Promise<FiscalPeriods> {
 		return this.client.get<FiscalPeriods>(
 			"/almaws/v1/acq/fiscal-periods",
@@ -46,10 +60,12 @@ export class AcqMiscResource {
 	 * @returns A list of purchase requests.
 	 */
 	async retrievePurchaseRequestsList(params?: {
-		q?: string;
+		format?: string;
+		owning_library?: string;
+		status?: string;
+		citation_type?: string;
 		limit?: number;
 		offset?: number;
-		status?: string;
 	}): Promise<PurchaseRequests> {
 		return this.client.get<PurchaseRequests>(
 			"/almaws/v1/acq/purchase-requests/",

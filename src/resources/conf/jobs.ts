@@ -29,6 +29,8 @@ export class ConfJobsResource {
 		limit?: number;
 		offset?: number;
 		category?: string;
+		type?: string;
+		profile_id?: string;
 	}): Promise<Jobs> {
 		return this.client.get<Jobs>("/almaws/v1/conf/jobs", params);
 	}
@@ -70,14 +72,23 @@ export class ConfJobsResource {
 	 * Retrieves a list of instances (runs) for a job.
 	 *
 	 * @param jobId - The job ID.
-	 * @param params - Optional pagination.
+	 * @param params - Filter and pagination parameters.
+	 * @param params.submit_date_from - Filter instances submitted from this date.
+	 * @param params.submit_date_to - Filter instances submitted up to this date.
+	 * @param params.status - Filter by instance status.
 	 * @param params.limit - Maximum results.
 	 * @param params.offset - Results offset.
 	 * @returns A list of job instances.
 	 */
 	async retrieveJobInstances(
 		jobId: string,
-		params?: { limit?: number; offset?: number },
+		params: {
+			submit_date_from: string;
+			submit_date_to: string;
+			status: string;
+			limit?: number;
+			offset?: number;
+		},
 	): Promise<JobInstances> {
 		return this.client.get<JobInstances>(
 			`/almaws/v1/conf/jobs/${encodeURIComponent(jobId)}/instances`,
@@ -132,9 +143,11 @@ export class ConfJobsResource {
 	async retrieveJobInstanceEvents(
 		jobId: string,
 		instanceId: string,
+		params?: { limit?: number; offset?: number },
 	): Promise<JobInstanceEvents> {
 		return this.client.get<JobInstanceEvents>(
 			`/almaws/v1/conf/jobs/${encodeURIComponent(jobId)}/instances/${encodeURIComponent(instanceId)}/events`,
+			params,
 		);
 	}
 
@@ -148,9 +161,11 @@ export class ConfJobsResource {
 	async retrieveJobInstanceMatches(
 		jobId: string,
 		instanceId: string,
+		params?: { population?: string; limit?: number; offset?: number },
 	): Promise<JobInstanceMatches> {
 		return this.client.get<JobInstanceMatches>(
 			`/almaws/v1/conf/jobs/${encodeURIComponent(jobId)}/instances/${encodeURIComponent(instanceId)}/matches`,
+			params,
 		);
 	}
 }

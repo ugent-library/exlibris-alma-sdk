@@ -125,7 +125,7 @@ export class BibsRequestsResource {
 	async deleteBibRequest(
 		mmsId: string,
 		requestId: string,
-		params?: { reason?: string; notify_user?: string; note?: string },
+		params: { reason: string; note?: string; notify_user?: boolean },
 	): Promise<void> {
 		return this.client.delete<void>(
 			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/requests/${encodeURIComponent(requestId)}`,
@@ -164,7 +164,7 @@ export class BibsRequestsResource {
 		mmsId: string,
 		holdingId: string,
 		itemId: string,
-		params?: { request_type?: string; limit?: number; offset?: number },
+		params?: { request_type?: string; status?: string },
 	): Promise<BibRequests> {
 		return this.client.get<BibRequests>(
 			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemId)}/requests`,
@@ -279,7 +279,7 @@ export class BibsRequestsResource {
 		holdingId: string,
 		itemPid: string,
 		requestId: string,
-		params?: { reason?: string; notify_user?: string },
+		params: { reason: string; note?: string; notify_user?: boolean },
 	): Promise<void> {
 		return this.client.delete<void>(
 			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}/requests/${encodeURIComponent(requestId)}`,
@@ -322,7 +322,12 @@ export class BibsRequestsResource {
 		mmsId: string,
 		holdingId: string,
 		itemPid: string,
-		params?: Record<string, string | number | boolean | undefined | null>,
+		params: {
+			period: number;
+			period_type: string;
+			user_id?: string;
+			user_id_type?: string;
+		},
 	): Promise<BookingAvailability> {
 		return this.client.get<BookingAvailability>(
 			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}/booking-availability`,

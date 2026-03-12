@@ -24,10 +24,16 @@ export class AcqLicensesResource {
 	 */
 	async retrieveLicensesList(params?: {
 		q?: string;
+		status?: string;
+		type?: string;
+		review_status?: string;
 		limit?: number;
 		offset?: number;
-		order_by?: string;
-		direction?: string;
+		expand?: string;
+		create_date_from?: string;
+		create_date_to?: string;
+		modify_date_from?: string;
+		modify_date_to?: string;
 	}): Promise<Licenses> {
 		return this.client.get<Licenses>("/almaws/v1/acq/licenses/", params);
 	}
@@ -38,9 +44,13 @@ export class AcqLicensesResource {
 	 * @param licenseCode - The license code.
 	 * @returns The license.
 	 */
-	async retrieveLicense(licenseCode: string): Promise<License> {
+	async retrieveLicense(
+		licenseCode: string,
+		params?: { expand?: string; include_blank_terms?: string },
+	): Promise<License> {
 		return this.client.get<License>(
 			`/almaws/v1/acq/licenses/${encodeURIComponent(licenseCode)}`,
+			params,
 		);
 	}
 
@@ -73,9 +83,13 @@ export class AcqLicensesResource {
 	 *
 	 * @param licenseCode - The license code.
 	 */
-	async deleteLicense(licenseCode: string): Promise<void> {
+	async deleteLicense(
+		licenseCode: string,
+		params?: { permanent_delete?: boolean },
+	): Promise<void> {
 		return this.client.delete<void>(
 			`/almaws/v1/acq/licenses/${encodeURIComponent(licenseCode)}`,
+			params,
 		);
 	}
 
@@ -168,9 +182,11 @@ export class AcqLicensesResource {
 	 */
 	async retrieveLicenseAttachmentsList(
 		licenseCode: string,
+		params?: { limit?: number; offset?: number },
 	): Promise<LicenseAttachments> {
 		return this.client.get<LicenseAttachments>(
 			`/almaws/v1/acq/licenses/${encodeURIComponent(licenseCode)}/attachments`,
+			params,
 		);
 	}
 
@@ -184,9 +200,11 @@ export class AcqLicensesResource {
 	async retrieveLicenseAttachment(
 		licenseCode: string,
 		attachmentId: string,
+		params?: { expand?: string },
 	): Promise<LicenseAttachment> {
 		return this.client.get<LicenseAttachment>(
 			`/almaws/v1/acq/licenses/${encodeURIComponent(licenseCode)}/attachments/${encodeURIComponent(attachmentId)}`,
+			params,
 		);
 	}
 

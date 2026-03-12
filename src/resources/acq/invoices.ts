@@ -26,9 +26,12 @@ export class AcqInvoicesResource {
 		q?: string;
 		limit?: number;
 		offset?: number;
-		order_by?: string;
-		direction?: string;
 		view?: string;
+		expand?: string;
+		base_status?: string;
+		invoice_workflow_status?: string;
+		owner?: string;
+		creation_form?: string;
 	}): Promise<Invoices> {
 		return this.client.get<Invoices>("/almaws/v1/acq/invoices/", params);
 	}
@@ -39,9 +42,13 @@ export class AcqInvoicesResource {
 	 * @param invoiceId - The invoice ID.
 	 * @returns The invoice.
 	 */
-	async retrieveInvoice(invoiceId: string): Promise<Invoice> {
+	async retrieveInvoice(
+		invoiceId: string,
+		params?: { view?: string; expand?: string },
+	): Promise<Invoice> {
 		return this.client.get<Invoice>(
 			`/almaws/v1/acq/invoices/${encodeURIComponent(invoiceId)}`,
+			params,
 		);
 	}
 
@@ -81,7 +88,7 @@ export class AcqInvoicesResource {
 	async operateInvoice(
 		invoiceId: string,
 		body: Invoice,
-		params?: { op?: string },
+		params?: { op?: string; create_rt_invoice?: boolean },
 	): Promise<Invoice> {
 		return this.client.post<Invoice>(
 			`/almaws/v1/acq/invoices/${encodeURIComponent(invoiceId)}`,
@@ -98,9 +105,11 @@ export class AcqInvoicesResource {
 	 */
 	async retrieveInvoiceAttachmentsList(
 		invoiceId: string,
+		params?: { limit?: number; offset?: number },
 	): Promise<InvoiceAttachments> {
 		return this.client.get<InvoiceAttachments>(
 			`/almaws/v1/acq/invoices/${encodeURIComponent(invoiceId)}/attachments`,
+			params,
 		);
 	}
 
@@ -114,9 +123,11 @@ export class AcqInvoicesResource {
 	async retrieveInvoiceAttachment(
 		invoiceId: string,
 		attachmentId: string,
+		params?: { expand?: string },
 	): Promise<InvoiceAttachment> {
 		return this.client.get<InvoiceAttachment>(
 			`/almaws/v1/acq/invoices/${encodeURIComponent(invoiceId)}/attachments/${encodeURIComponent(attachmentId)}`,
+			params,
 		);
 	}
 
@@ -146,7 +157,7 @@ export class AcqInvoicesResource {
 	 */
 	async retrieveInvoiceLinesList(
 		invoiceId: string,
-		params?: { limit?: number; offset?: number },
+		params?: { q?: string; limit?: number; offset?: number },
 	): Promise<InvoiceLines> {
 		return this.client.get<InvoiceLines>(
 			`/almaws/v1/acq/invoices/${encodeURIComponent(invoiceId)}/lines`,

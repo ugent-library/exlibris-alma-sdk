@@ -14,16 +14,12 @@ export class BibsCollectionsResource {
 	 *
 	 * @param params - Optional filters.
 	 * @param params.level - Collection level (1 for top-level).
-	 * @param params.query - Search query.
-	 * @param params.limit - Maximum results.
-	 * @param params.offset - Results offset.
+	 * @param params.q - Search query.
 	 * @returns A list of collections.
 	 */
 	async retrieveCollectionsList(params?: {
-		level?: number;
-		query?: string;
-		limit?: number;
-		offset?: number;
+		level?: string;
+		q?: string;
 	}): Promise<Collections> {
 		return this.client.get<Collections>("/almaws/v1/bibs/collections", params);
 	}
@@ -32,11 +28,17 @@ export class BibsCollectionsResource {
 	 * Retrieves a single collection.
 	 *
 	 * @param pid - The collection PID.
+	 * @param params - Optional parameters.
+	 * @param params.level - Depth level of sub-collections to include.
 	 * @returns The collection.
 	 */
-	async retrieveCollection(pid: string): Promise<Collection> {
+	async retrieveCollection(
+		pid: string,
+		params?: { level?: string },
+	): Promise<Collection> {
 		return this.client.get<Collection>(
 			`/almaws/v1/bibs/collections/${encodeURIComponent(pid)}`,
+			params,
 		);
 	}
 
@@ -44,10 +46,19 @@ export class BibsCollectionsResource {
 	 * Creates a new collection.
 	 *
 	 * @param body - The collection data.
+	 * @param params - Optional parameters.
+	 * @param params.record_format - The record format to use.
 	 * @returns The created collection.
 	 */
-	async createCollection(body: Collection): Promise<Collection> {
-		return this.client.post<Collection>("/almaws/v1/bibs/collections", body);
+	async createCollection(
+		body: Collection,
+		params?: { record_format?: string },
+	): Promise<Collection> {
+		return this.client.post<Collection>(
+			"/almaws/v1/bibs/collections",
+			body,
+			params,
+		);
 	}
 
 	/**

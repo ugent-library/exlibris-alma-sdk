@@ -22,14 +22,25 @@ export class BibsCatalogResource {
 	 * Retrieves a list of bibliographic records by MMS IDs.
 	 *
 	 * @param params - Required and optional parameters.
-	 * @param params.mms_id - Comma-separated list of MMS IDs (required).
-	 * @param params.view - View type (e.g. `"full"`).
+	 * @param params.mms_id - Comma-separated list of MMS IDs.
+	 * @param params.ie_id - The IE ID.
+	 * @param params.holdings_id - The holdings record ID.
+	 * @param params.representation_id - The digital representation ID.
+	 * @param params.nz_mms_id - The Network Zone MMS ID.
+	 * @param params.cz_mms_id - The Community Zone MMS ID.
+	 * @param params.view - View type.
 	 * @param params.expand - Additional fields to expand.
 	 * @param params.other_system_id - Other system ID filter.
+	 * @param params.lod_uri - Linked Open Data URI.
 	 * @returns A list of bibliographic records.
 	 */
 	async retrieveBibs(params: {
 		mms_id?: string;
+		ie_id?: string;
+		holdings_id?: string;
+		representation_id?: string;
+		nz_mms_id?: string;
+		cz_mms_id?: string;
 		view?: string;
 		expand?: string;
 		other_system_id?: string;
@@ -45,11 +56,12 @@ export class BibsCatalogResource {
 	 * @param params - Optional parameters.
 	 * @param params.view - View type.
 	 * @param params.expand - Fields to expand.
+	 * @param params.other_system_id - Other system identifier.
 	 * @returns The bibliographic record.
 	 */
 	async retrieveBib(
 		mmsId: string,
-		params?: { view?: string; expand?: string; other_system_id?: string },
+		params?: { view?: string; expand?: string },
 	): Promise<Bib> {
 		return this.client.get<Bib>(
 			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}`,
@@ -62,12 +74,20 @@ export class BibsCatalogResource {
 	 *
 	 * @param body - The bib record data.
 	 * @param params - Optional parameters.
+	 * @param params.from_nz_mms_id - Create from a Network Zone MMS ID.
+	 * @param params.from_cz_mms_id - Create from a Community Zone MMS ID.
+	 * @param params.normalization - Normalization profile to run.
+	 * @param params.validate - Whether to validate the record.
+	 * @param params.override_warning - Whether to override validation warnings.
+	 * @param params.check_match - Whether to check for duplicate matches.
+	 * @param params.import_profile - Import profile to use.
 	 * @returns The created bibliographic record.
 	 */
 	async createBib(
 		body: Bib,
 		params?: {
 			from_nz_mms_id?: string;
+			from_cz_mms_id?: string;
 			normalization?: string;
 			validate?: boolean;
 			override_warning?: boolean;
@@ -84,6 +104,13 @@ export class BibsCatalogResource {
 	 * @param mmsId - The MMS ID.
 	 * @param body - The updated bib record.
 	 * @param params - Optional parameters.
+	 * @param params.normalization - Normalization profile to run.
+	 * @param params.validate - Whether to validate the record.
+	 * @param params.override_warning - Whether to override validation warnings.
+	 * @param params.override_lock - Whether to override a record lock.
+	 * @param params.stale_version_check - Whether to check for stale version.
+	 * @param params.cataloger_level - Minimum cataloger level required.
+	 * @param params.check_match - Whether to check for duplicate matches.
 	 * @returns The updated bibliographic record.
 	 */
 	async updateBib(
@@ -93,8 +120,10 @@ export class BibsCatalogResource {
 			normalization?: string;
 			validate?: boolean;
 			override_warning?: boolean;
+			override_lock?: boolean;
 			stale_version_check?: boolean;
 			cataloger_level?: string;
+			check_match?: boolean;
 		},
 	): Promise<Bib> {
 		return this.client.put<Bib>(
@@ -131,6 +160,7 @@ export class BibsCatalogResource {
 	 * @param mmsId - The MMS ID.
 	 * @param params - Optional parameters.
 	 * @param params.override - Override deletion warnings.
+	 * @param params.cataloger_level - Minimum cataloger level required.
 	 */
 	async deleteBib(
 		mmsId: string,
@@ -210,7 +240,7 @@ export class BibsCatalogResource {
 	async deleteHolding(
 		mmsId: string,
 		holdingId: string,
-		params?: { override?: string },
+		params?: { bib?: string },
 	): Promise<void> {
 		return this.client.delete<void>(
 			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}`,
@@ -224,6 +254,24 @@ export class BibsCatalogResource {
 	 * @param mmsId - The MMS ID.
 	 * @param holdingId - The holdings record ID.
 	 * @param params - Optional filters and pagination.
+	 * @param params.limit - Maximum number of results.
+	 * @param params.offset - Results offset for pagination.
+	 * @param params.expand - Additional fields to expand.
+	 * @param params.user_id - Filter by user ID.
+	 * @param params.current_library - Filter by current library.
+	 * @param params.current_location - Filter by current location.
+	 * @param params.q - Search query.
+	 * @param params.order_by - Sort field.
+	 * @param params.direction - Sort direction.
+	 * @param params.create_date_from - Filter items created from this date.
+	 * @param params.create_date_to - Filter items created up to this date.
+	 * @param params.modify_date_from - Filter items modified from this date.
+	 * @param params.modify_date_to - Filter items modified up to this date.
+	 * @param params.receive_date_from - Filter items received from this date.
+	 * @param params.receive_date_to - Filter items received up to this date.
+	 * @param params.expected_receive_date_from - Filter by expected receive date from.
+	 * @param params.expected_receive_date_to - Filter by expected receive date to.
+	 * @param params.view - View type.
 	 * @returns A list of items.
 	 */
 	async retrieveItemsList(
@@ -238,6 +286,16 @@ export class BibsCatalogResource {
 			current_location?: string;
 			q?: string;
 			order_by?: string;
+			direction?: string;
+			create_date_from?: string;
+			create_date_to?: string;
+			modify_date_from?: string;
+			modify_date_to?: string;
+			receive_date_from?: string;
+			receive_date_to?: string;
+			expected_receive_date_from?: string;
+			expected_receive_date_to?: string;
+			view?: string;
 		},
 	): Promise<Items> {
 		return this.client.get<Items>(
@@ -253,13 +311,16 @@ export class BibsCatalogResource {
 	 * @param holdingId - The holdings record ID.
 	 * @param itemPid - The item PID.
 	 * @param params - Optional parameters.
+	 * @param params.view - View type.
+	 * @param params.expand - Fields to expand.
+	 * @param params.user_id - User ID for loan-related info.
 	 * @returns The item.
 	 */
 	async retrieveItem(
 		mmsId: string,
 		holdingId: string,
 		itemPid: string,
-		params?: { view?: string; expand?: string },
+		params?: { view?: string; expand?: string; user_id?: string },
 	): Promise<Item> {
 		return this.client.get<Item>(
 			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}`,
@@ -273,16 +334,24 @@ export class BibsCatalogResource {
 	 * @param mmsId - The MMS ID.
 	 * @param holdingId - The holdings record ID.
 	 * @param body - The item data.
+	 * @param params - Optional parameters.
+	 * @param params.generate_description - Whether to generate a description.
+	 * @param params.generate_inventory_num_name - Inventory number generation profile.
 	 * @returns The created item.
 	 */
 	async createItem(
 		mmsId: string,
 		holdingId: string,
 		body: Item,
+		params?: {
+			generate_description?: boolean;
+			generate_inventory_num_name?: string;
+		},
 	): Promise<Item> {
 		return this.client.post<Item>(
 			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items`,
 			body,
+			params,
 		);
 	}
 
@@ -293,6 +362,9 @@ export class BibsCatalogResource {
 	 * @param holdingId - The holdings record ID.
 	 * @param itemPid - The item PID.
 	 * @param body - The updated item data.
+	 * @param params - Optional parameters.
+	 * @param params.generate_description - Whether to regenerate the description.
+	 * @param params.generate_inventory_num_name - Inventory number generation profile.
 	 * @returns The updated item.
 	 */
 	async updateItem(
@@ -300,10 +372,15 @@ export class BibsCatalogResource {
 		holdingId: string,
 		itemPid: string,
 		body: Item,
+		params?: {
+			generate_description?: boolean;
+			generate_inventory_num_name?: string;
+		},
 	): Promise<Item> {
 		return this.client.put<Item>(
 			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}`,
 			body,
+			params,
 		);
 	}
 
@@ -315,7 +392,19 @@ export class BibsCatalogResource {
 	 * @param itemPid - The item PID.
 	 * @param body - Action body.
 	 * @param params - Action parameters.
-	 * @param params.op - The operation.
+	 * @param params.op - The operation (e.g. `"scan"`, `"loan"`, `"return"`).
+	 * @param params.external_id - External ID for the operation.
+	 * @param params.request_id - Request ID to fulfill.
+	 * @param params.library - Library code.
+	 * @param params.circ_desk - Circulation desk code.
+	 * @param params.work_order_type - Work order type code.
+	 * @param params.department - Department code.
+	 * @param params.status - New item status.
+	 * @param params.done - Whether the work order step is done.
+	 * @param params.auto_print_slip - Whether to auto-print a slip.
+	 * @param params.place_on_hold_shelf - Whether to place the item on the hold shelf.
+	 * @param params.confirm - Whether to confirm the operation.
+	 * @param params.register_in_house_use - Whether to register in-house use.
 	 * @returns The resulting item.
 	 */
 	async operateItem(
@@ -325,6 +414,8 @@ export class BibsCatalogResource {
 		body: Record<string, unknown>,
 		params?: {
 			op?: string;
+			external_id?: string;
+			request_id?: string;
 			library?: string;
 			circ_desk?: string;
 			work_order_type?: string;
@@ -332,6 +423,9 @@ export class BibsCatalogResource {
 			status?: string;
 			done?: boolean;
 			auto_print_slip?: string;
+			place_on_hold_shelf?: boolean;
+			confirm?: boolean;
+			register_in_house_use?: boolean;
 		},
 	): Promise<Item> {
 		return this.client.post<Item>(
@@ -348,12 +442,15 @@ export class BibsCatalogResource {
 	 * @param holdingId - The holdings record ID.
 	 * @param itemPid - The item PID.
 	 * @param params - Optional parameters.
+	 * @param params.override - Override deletion warnings.
+	 * @param params.holdings - Whether to also delete the holdings record if empty.
+	 * @param params.bib - Whether to also delete the bib record if empty.
 	 */
 	async deleteItem(
 		mmsId: string,
 		holdingId: string,
 		itemPid: string,
-		params?: { override?: string; holdings?: string },
+		params?: { override?: string; holdings?: string; bib?: string },
 	): Promise<void> {
 		return this.client.delete<void>(
 			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}`,
@@ -443,12 +540,21 @@ export class BibsCatalogResource {
 	 * Retrieves booking availability for a bibliographic record.
 	 *
 	 * @param mmsId - The MMS ID.
-	 * @param params - Optional parameters.
+	 * @param params - Required and optional parameters.
+	 * @param params.period - The booking period length.
+	 * @param params.period_type - The booking period type (e.g. `"days"`, `"hours"`).
+	 * @param params.user_id - The user ID to check availability for.
+	 * @param params.user_id_type - The user ID type.
 	 * @returns Booking availability.
 	 */
 	async retrieveBookingAvailability(
 		mmsId: string,
-		params?: Record<string, string | number | boolean | undefined | null>,
+		params: {
+			period: number;
+			period_type: string;
+			user_id?: string;
+			user_id_type?: string;
+		},
 	): Promise<Record<string, unknown>> {
 		return this.client.get<Record<string, unknown>>(
 			`/almaws/v1/bibs/${encodeURIComponent(mmsId)}/booking-availability`,

@@ -150,7 +150,7 @@ export class ConfConfigurationResource {
 	 */
 	async updateOpenHours(
 		body: OpenHours,
-		params?: { scope?: string },
+		params: { scope: string },
 	): Promise<OpenHours> {
 		return this.client.put<OpenHours>(
 			"/almaws/v1/conf/open-hours",
@@ -164,7 +164,7 @@ export class ConfConfigurationResource {
 	 *
 	 * @param params - Optional parameters.
 	 */
-	async deleteOpenHours(params?: { scope?: string }): Promise<void> {
+	async deleteOpenHours(params: { scope: string }): Promise<void> {
 		return this.client.delete<void>("/almaws/v1/conf/open-hours", params);
 	}
 
@@ -222,15 +222,25 @@ export class ConfConfigurationResource {
 	 * @param body - The updated relations.
 	 * @returns The updated relations.
 	 */
-	async updateRelations(body: Relations): Promise<Relations> {
-		return this.client.put<Relations>("/almaws/v1/conf/relations", body);
+	async updateRelations(
+		body: Relations,
+		params: { scope: string },
+	): Promise<Relations> {
+		return this.client.put<Relations>(
+			"/almaws/v1/conf/relations",
+			body,
+			params,
+		);
 	}
 
 	/**
 	 * Deletes institution/library relations.
 	 */
-	async deleteRelations(): Promise<void> {
-		return this.client.delete<void>("/almaws/v1/conf/relations");
+	async deleteRelations(params: {
+		scope: string;
+		libraryCode: string;
+	}): Promise<void> {
+		return this.client.delete<void>("/almaws/v1/conf/relations", params);
 	}
 
 	/**

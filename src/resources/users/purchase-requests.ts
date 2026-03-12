@@ -17,7 +17,8 @@ export class UsersPurchaseRequestsResource {
 	 */
 	async retrieveUserPurchaseRequestsList(
 		userId: string,
-		params?: {
+		params: {
+			user_id_type: string;
 			status?: string;
 			limit?: number;
 			offset?: number;
@@ -39,9 +40,11 @@ export class UsersPurchaseRequestsResource {
 	async retrieveUserPurchaseRequest(
 		userId: string,
 		purchaseRequestId: string,
+		params: { user_id_type: string },
 	): Promise<UserPurchaseRequest> {
 		return this.client.get<UserPurchaseRequest>(
 			`/almaws/v1/users/${encodeURIComponent(userId)}/purchase-requests/${encodeURIComponent(purchaseRequestId)}`,
+			params,
 		);
 	}
 
@@ -55,10 +58,12 @@ export class UsersPurchaseRequestsResource {
 	async createUserPurchaseRequest(
 		userId: string,
 		body: UserPurchaseRequest,
+		params: { user_id_type: string },
 	): Promise<UserPurchaseRequest> {
 		return this.client.post<UserPurchaseRequest>(
 			`/almaws/v1/users/${encodeURIComponent(userId)}/purchase-requests`,
 			body,
+			params,
 		);
 	}
 
