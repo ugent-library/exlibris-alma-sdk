@@ -4,4451 +4,4451 @@
  */
 
 export interface paths {
-	"/almaws/v1/conf": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		get?: never;
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/code-tables": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Code Tables
-		 * @description This API returns a list of all Code Tables for the configuration API.
-		 */
-		get: operations["get/almaws/v1/conf/code-tables"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/code-tables/{codeTableName}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Code-table
-		 * @description This API returns all rows defined for a code-table.
-		 */
-		get: operations["get/almaws/v1/conf/code-tables/{codeTableName}"];
-		/**
-		 * Update Code-table
-		 * @description This Web service updates a code-table.
-		 *
-		 *     It doesn't currently support restoring a row, and 'Manage in Network' functionality.
-		 */
-		put: operations["put/almaws/v1/conf/code-tables/{codeTableName}"];
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/departments": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Departments
-		 * @description This API returns a list of all Departments configured for the Institution.
-		 */
-		get: operations["get/almaws/v1/conf/departments"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/deposit-profiles": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Deposit Profiles
-		 * @description This web service returns a list of Deposit Profiles.
-		 */
-		get: operations["get/almaws/v1/conf/deposit-profiles"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/deposit-profiles/{deposit_profile_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Deposit Profile
-		 * @description This web service returns a specific Deposit Profile.
-		 */
-		get: operations["get/almaws/v1/conf/deposit-profiles/{deposit_profile_id}"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/general": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve General Configuration
-		 * @description This Web service returns the general configuration of the institution.
-		 */
-		get: operations["get/almaws/v1/conf/general"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/integration-profiles": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve a list of Integration Profiles
-		 * @description This Web service returns a list of Integration Profiles.
-		 */
-		get: operations["get/almaws/v1/conf/integration-profiles"];
-		put?: never;
-		/**
-		 * Retrieve an Integration Profile
-		 * @description This Web service creates an Integration Profile
-		 */
-		post: operations["post/almaws/v1/conf/integration-profiles"];
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/integration-profiles/{id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve an Integration Profile
-		 * @description This Web service returns an Integration Profile given an Integration Profile ID.
-		 */
-		get: operations["get/almaws/v1/conf/integration-profiles/{id}"];
-		/**
-		 * Update an Integration Profile
-		 * @description This Web service updates an Integration Profile.
-		 */
-		put: operations["put/almaws/v1/conf/integration-profiles/{id}"];
-		post?: never;
-		/**
-		 * Delete an Integration Profile
-		 * @description This Web service deletes an Integration Profile.
-		 */
-		delete: operations["delete/almaws/v1/conf/integration-profiles/{id}"];
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/jobs": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Jobs
-		 * @description This Web service returns a list of jobs that can be submitted.
-		 *
-		 *     The Jobs API supports 2 job types:
-		 *
-		 *     Manual jobs - Perform actions on a pre-defined set of records. Available in the Run a job list in the Alma UI.
-		 *
-		 *     Scheduled jobs  - Jobs that might be running periodically. In the Alma UI, it is possible to see these jobs (if they have a defined schedule) in the Scheduled tab of the Monitor Jobs page.
-		 *
-		 *     See [Working with the Alma Jobs API](https://developers.exlibrisgroup.com/blog/Working-with-the-Alma-Jobs-API) for more details.
-		 */
-		get: operations["get/almaws/v1/conf/jobs"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/jobs/{job_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Job Details
-		 * @description This Web service returns job details for a given job id.
-		 */
-		get: operations["get/almaws/v1/conf/jobs/{job_id}"];
-		put?: never;
-		/**
-		 * Submit a manual or scheduled job
-		 * @description This Web service submits a job according to a given job id.
-		 *
-		 *     The Jobs API supports 2 job types:
-		 *
-		 *     Manual jobs - Perform actions on a pre-defined set of records. Available in the Run a job list in the Alma UI.
-		 *
-		 *     Scheduled jobs  - Jobs that might be running periodically. In the Alma UI, it is possible to see these jobs (if they have a defined schedule) in the Scheduled tab of the Monitor Jobs page.
-		 *
-		 *     In order to submit a manual job by API, the relevant parameters should be supplied in the input.
-		 *
-		 *     See [Working with the Alma Jobs API](https://developers.exlibrisgroup.com/blog/Working-with-the-Alma-Jobs-API) for more details.
-		 *
-		 *      To maintain optimum performance the following threshold will be used: The job will run only if:
-		 *
-		 *      a. not more than 3 jobs initiated by the API are running currently.
-		 *
-		 *      b. not more of 5 of the specific job were started in the previous hour.
-		 *
-		 *      The submission of scheduled jobs is supported for: ERP (Export Invoices, Import confirmation), Metadata Import, Remote Storage (Inventory Update, Send Requests to Remote Storage), Export/Import to Bursar,Finance (Funds Allocation Loader)General Publishing ('republish' action is currently not supported), Activate/Deactivate Courses and Student Information System (Import, Synchronize and Export).
-		 */
-		post: operations["post/almaws/v1/conf/jobs/{job_id}"];
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/jobs/{job_id}/instances": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Job Instances
-		 * @description This Web service returns all the job instances (runs) for a given job id.
-		 */
-		get: operations["get/almaws/v1/conf/jobs/{job_id}/instances"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/jobs/{job_id}/instances/{instance_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Job Instance Details
-		 * @description This Web service returns a job instance for given job id and instance id. [info!Note: It is possible to retrieve a job instance by using 'ALL' in place of a job id. ]
-		 */
-		get: operations["get/almaws/v1/conf/jobs/{job_id}/instances/{instance_id}"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/jobs/{job_id}/instances/{instance_id}/download": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Download MD import input file
-		 * @description This Web service download a file which contains the loaded records of MARC MD import job instance for given job id and instance id, the file content can be XML/binary MARC records
-		 */
-		get: operations["get/almaws/v1/conf/jobs/{job_id}/instances/{instance_id}/download"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/jobs/{job_id}/instances/{instance_id}/events": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Job Instance Event Details
-		 * @description This Web service returns a list of events for a job-instance for the given job id and instance id.  For now it accepts jobs in the category and type of USERS/SIS and returns events only for rejected entries.
-		 */
-		get: operations["get/almaws/v1/conf/jobs/{job_id}/instances/{instance_id}/events"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/jobs/{job_id}/instances/{instance_id}/matches": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Job Matching Details
-		 * @description This Web service returns single and multi match details for an import job.
-		 */
-		get: operations["get/almaws/v1/conf/jobs/{job_id}/instances/{instance_id}/matches"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/letters": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Letters
-		 * @description This API returns a list of all Letters configured for the Institution.
-		 */
-		get: operations["get/almaws/v1/conf/letters"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/letters/{letterCode}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Letter
-		 * @description This API retrieves details for a single Letter.
-		 */
-		get: operations["get/almaws/v1/conf/letters/{letterCode}"];
-		/**
-		 * Update Letter
-		 * @description This API updates a Letter. Note: JSON is not supported
-		 */
-		put: operations["put/almaws/v1/conf/letters/{letterCode}"];
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/libraries": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Libraries
-		 * @description This API returns a list of all Libraries configured for the Institution.
-		 */
-		get: operations["get/almaws/v1/conf/libraries"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/libraries/{libraryCode}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Library
-		 * @description This API retrieves details for a single Library.
-		 */
-		get: operations["get/almaws/v1/conf/libraries/{libraryCode}"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/libraries/{libraryCode}/circ-desks/": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Circulation Desks
-		 * @description This API returns a list of Circulation Desk at a specific library.
-		 */
-		get: operations["get/almaws/v1/conf/libraries/{libraryCode}/circ-desks/"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/libraries/{libraryCode}/circ-desks/{circDeskCode}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Circulation Desk
-		 * @description This API returns a Circulation Desk.
-		 */
-		get: operations["get/almaws/v1/conf/libraries/{libraryCode}/circ-desks/{circDeskCode}"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/libraries/{libraryCode}/locations": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Locations
-		 * @description This API returns a list of Physical Locations for a given Library.
-		 */
-		get: operations["get/almaws/v1/conf/libraries/{libraryCode}/locations"];
-		put?: never;
-		/**
-		 * Create a Location
-		 * @description This Web service creates a Physical Location.
-		 */
-		post: operations["post/almaws/v1/conf/libraries/{libraryCode}/locations"];
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/libraries/{libraryCode}/locations/{locationCode}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Location
-		 * @description This API returns a Physical Location.
-		 */
-		get: operations["get/almaws/v1/conf/libraries/{libraryCode}/locations/{locationCode}"];
-		/**
-		 * Update a Location
-		 * @description This Web service updates a Physical Location.
-		 */
-		put: operations["put/almaws/v1/conf/libraries/{libraryCode}/locations/{locationCode}"];
-		post?: never;
-		/**
-		 * Delete Location
-		 * @description This Web service deletes a Physical Location.
-		 */
-		delete: operations["delete/almaws/v1/conf/libraries/{libraryCode}/locations/{locationCode}"];
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/libraries/{libraryCode}/open-hours": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Library Open Hours
-		 * @description This API returns a list of open days and hours for a given library.
-		 *
-		 *     Note that the library-hours do not necessarily reflect when the library doors are actually open, but rather start and end times that effect loan period.
-		 *
-		 *     This API is limited to one month of days from 1 year ago to 3 years ahead for a single request.
-		 */
-		get: operations["get/almaws/v1/conf/libraries/{libraryCode}/open-hours"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/license-terms": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve License Terms
-		 * @description This API returns a list of all license terms.
-		 */
-		get: operations["get/almaws/v1/conf/license-terms"];
-		put?: never;
-		/**
-		 * Create License Term
-		 * @description This API creates license term.
-		 */
-		post: operations["post/almaws/v1/conf/license-terms"];
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/license-terms/{license_term_code}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve License Term:
-		 * @description This API retrieves license term.
-		 */
-		get: operations["get/almaws/v1/conf/license-terms/{license_term_code}"];
-		/**
-		 * Update License Term
-		 * @description This API updates a license term.
-		 */
-		put: operations["put/almaws/v1/conf/license-terms/{license_term_code}"];
-		post?: never;
-		/**
-		 * Delete License Term
-		 * @description This Web service deletes a license term.
-		 */
-		delete: operations["delete/almaws/v1/conf/license-terms/{license_term_code}"];
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/mapping-tables": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Mapping Tables
-		 * @description This API returns a list of all mapping tables.
-		 */
-		get: operations["get/almaws/v1/conf/mapping-tables"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/mapping-tables/{mappingTableName}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Mapping-table
-		 * @description This API returns all rows defined for a mapping-table.
-		 */
-		get: operations["get/almaws/v1/conf/mapping-tables/{mappingTableName}"];
-		/**
-		 * Update Mapping-table
-		 * @description This Web service updates a mapping-table.
-		 */
-		put: operations["put/almaws/v1/conf/mapping-tables/{mappingTableName}"];
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/md-import-profiles": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Import Profiles
-		 * @description This Web service returns a list of Import Profiles. In default mode, with no query parameters, all import profiles are returned.
-		 */
-		get: operations["get/almaws/v1/conf/md-import-profiles"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/md-import-profiles/{profile_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Import Profile
-		 * @description This web service returns an Import profile given a Profile ID.
-		 */
-		get: operations["get/almaws/v1/conf/md-import-profiles/{profile_id}"];
-		put?: never;
-		/**
-		 * MD Import op - Deprecated
-		 * @description DEPRECATED - use the 'Submit Job' API instead.
-		 *
-		 *      This web service runs an MD import according to a defined Import Profile. Supported for FTP, OAI and Digital.
-		 */
-		post: operations["post/almaws/v1/conf/md-import-profiles/{profile_id}"];
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/open-hours": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Open Hours
-		 * @description This Web service returns the open-hours as configured in Alma.
-		 */
-		get: operations["get/almaws/v1/conf/open-hours"];
-		/**
-		 * Update Open Hours
-		 * @description This Web service updates a open-hours as configured in Alma.
-		 */
-		put: operations["put/almaws/v1/conf/open-hours"];
-		post?: never;
-		/**
-		 * Delete Open Hours
-		 * @description This Web service delete a open-hours as configured in Alma.
-		 */
-		delete: operations["delete/almaws/v1/conf/open-hours"];
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/printers": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Printers
-		 * @description This API returns a list of Printers.
-		 */
-		get: operations["get/almaws/v1/conf/printers"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/printers/{printer_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve a Printer
-		 * @description This Web service returns a Printer given a Printer ID.
-		 */
-		get: operations["get/almaws/v1/conf/printers/{printer_id}"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/relations": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Relation List
-		 * @description List of all library's relations with other libraries.
-		 */
-		get: operations["get/almaws/v1/conf/relations"];
-		/**
-		 * Create / Replace Relations
-		 * @description Create or replace a library's relations with other libraries.
-		 */
-		put: operations["put/almaws/v1/conf/relations"];
-		post?: never;
-		/**
-		 * Delete Relations
-		 * @description Delete a library's relations with other libraries.
-		 */
-		delete: operations["delete/almaws/v1/conf/relations"];
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/reminders": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve a list of Reminders
-		 * @description This Web service returns a list of Reminders.
-		 */
-		get: operations["get/almaws/v1/conf/reminders"];
-		put?: never;
-		/**
-		 * Create a Reminder
-		 * @description This Web service creates a Reminder.
-		 */
-		post: operations["post/almaws/v1/conf/reminders"];
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/reminders/{reminder_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve a Reminder
-		 * @description This Web service returns a Reminder.
-		 */
-		get: operations["get/almaws/v1/conf/reminders/{reminder_id}"];
-		/**
-		 * Update a Reminder
-		 * @description This Web service updates a Reminder.
-		 */
-		put: operations["put/almaws/v1/conf/reminders/{reminder_id}"];
-		post?: never;
-		/**
-		 * Delete a Reminder
-		 * @description This Web service deletes a Reminder.
-		 */
-		delete: operations["delete/almaws/v1/conf/reminders/{reminder_id}"];
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/sets": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve a list of Sets
-		 * @description This Web service returns a list of Sets.
-		 */
-		get: operations["get/almaws/v1/conf/sets"];
-		put?: never;
-		/**
-		 * Create a Set
-		 * @description Web service for creating or combining a set.
-		 *
-		 *     If you are creating a new set, you can use this API to create 2 types of sets: Itemized set, Logical set
-		 *
-		 *     In order to create an itemized set, first create an empty set using this API, and then use the [Manage Members](https://developers.exlibrisgroup.com/alma/apis/docs/conf/UE9TVCAvYWxtYXdzL3YxL2NvbmYvc2V0cy97c2V0X2lkfQ==/) API to populate it.
-		 *
-		 *     Creating logical sets is supported for Inventory related entities, Users and Vendors (not supported for PO-Lines, etc).
-		 *
-		 *      Details regarding the syntax for creating Logical Sets can be found [here](https://developers.exlibrisgroup.com/alma/integrations/indexdoc-technical).
-		 *
-		 *     In addtion, it is possible to create an itemized set and populate it from a logical set by setting the logical set id in the from_logical_set parameter.
-		 *
-		 *     It is also possible to create an itemized Bib record set which is based on MD Import job by providing job instance id and population.
-		 *
-		 *     For more details about MD import based itemized set [see here](https://developers.exlibrisgroup.com/blog/Creating-sets-from-MD-import-job-results-using-Alma-API).
-		 *
-		 *     If you are combining sets, then set1 and set2 must be provided. Those two sets will be combined with a new combined set created.
-		 */
-		post: operations["post/almaws/v1/conf/sets"];
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/sets/{set_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve a Set
-		 * @description This Web service returns a Set given a Set ID.
-		 */
-		get: operations["get/almaws/v1/conf/sets/{set_id}"];
-		/**
-		 * Update a Set
-		 * @description This Web service updates a Set.
-		 */
-		put: operations["put/almaws/v1/conf/sets/{set_id}"];
-		/**
-		 * Manage Members
-		 * @description This Web service manages the operations of add, delete and replace for members of a Set given a Set ID.
-		 */
-		post: operations["post/almaws/v1/conf/sets/{set_id}"];
-		/**
-		 * Delete a Set
-		 * @description Web service for deleting a set.
-		 */
-		delete: operations["delete/almaws/v1/conf/sets/{set_id}"];
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/sets/{set_id}/members": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Set Members
-		 * @description This Web service returns the members of a Set given a Set ID.
-		 */
-		get: operations["get/almaws/v1/conf/sets/{set_id}/members"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/test": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * GET Conf Test API
-		 * @description This API is used to test if the API key was configured correctly.It returns a short XML (no schema available - the output is subject to changes) with the following structure:<test>GET - OK - institutionCode: 01ABC_INST</test>
-		 */
-		get: operations["get/almaws/v1/conf/test"];
-		put?: never;
-		/**
-		 * POST Conf Test API
-		 * @description This API is used to test if the API key was configured correctly, including read/write permissions.It returns a short XML (no schema available - the output is subject to changes) with the following structure:<test>POST - OK</test>
-		 */
-		post: operations["post/almaws/v1/conf/test"];
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/utilities/fee-transactions": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Fine Fee Report
-		 * @description This API returns a fine and fee report.
-		 */
-		get: operations["get/almaws/v1/conf/utilities/fee-transactions"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/conf/workflows/{workflow_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		get?: never;
-		put?: never;
-		/**
-		 * Run Workflow
-		 * @description Triggers the execution of a LibOW workflow using the provided workflow ID.
-		 *
-		 *     The request JSON body is forwarded as the REST trigger payload to the workflow's Alma Trigger node.
-		 *
-		 *     For production mode, the workflow must be active and must include an Alma Trigger node with 'Execute via REST API' selected.
-		 *
-		 *     For test mode, use test=true to execute while the trigger node is listening and accepting requests. Note that the workflow must be saved/persisted.
-		 */
-		post: operations["post/almaws/v1/conf/workflows/{workflow_id}"];
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
+    "/almaws/v1/conf": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/code-tables": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Code Tables
+         * @description This API returns a list of all Code Tables for the configuration API.
+         */
+        get: operations["get/almaws/v1/conf/code-tables"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/code-tables/{codeTableName}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Code-table
+         * @description This API returns all rows defined for a code-table.
+         */
+        get: operations["get/almaws/v1/conf/code-tables/{codeTableName}"];
+        /**
+         * Update Code-table
+         * @description This Web service updates a code-table.
+         *
+         *     It doesn't currently support restoring a row, and 'Manage in Network' functionality.
+         */
+        put: operations["put/almaws/v1/conf/code-tables/{codeTableName}"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/departments": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Departments
+         * @description This API returns a list of all Departments configured for the Institution.
+         */
+        get: operations["get/almaws/v1/conf/departments"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/deposit-profiles": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Deposit Profiles
+         * @description This web service returns a list of Deposit Profiles.
+         */
+        get: operations["get/almaws/v1/conf/deposit-profiles"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/deposit-profiles/{deposit_profile_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Deposit Profile
+         * @description This web service returns a specific Deposit Profile.
+         */
+        get: operations["get/almaws/v1/conf/deposit-profiles/{deposit_profile_id}"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/general": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve General Configuration
+         * @description This Web service returns the general configuration of the institution.
+         */
+        get: operations["get/almaws/v1/conf/general"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/integration-profiles": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve a list of Integration Profiles
+         * @description This Web service returns a list of Integration Profiles.
+         */
+        get: operations["get/almaws/v1/conf/integration-profiles"];
+        put?: never;
+        /**
+         * Retrieve an Integration Profile
+         * @description This Web service creates an Integration Profile
+         */
+        post: operations["post/almaws/v1/conf/integration-profiles"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/integration-profiles/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve an Integration Profile
+         * @description This Web service returns an Integration Profile given an Integration Profile ID.
+         */
+        get: operations["get/almaws/v1/conf/integration-profiles/{id}"];
+        /**
+         * Update an Integration Profile
+         * @description This Web service updates an Integration Profile.
+         */
+        put: operations["put/almaws/v1/conf/integration-profiles/{id}"];
+        post?: never;
+        /**
+         * Delete an Integration Profile
+         * @description This Web service deletes an Integration Profile.
+         */
+        delete: operations["delete/almaws/v1/conf/integration-profiles/{id}"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/jobs": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Jobs
+         * @description This Web service returns a list of jobs that can be submitted.
+         *
+         *     The Jobs API supports 2 job types:
+         *
+         *     Manual jobs - Perform actions on a pre-defined set of records. Available in the Run a job list in the Alma UI.
+         *
+         *     Scheduled jobs  - Jobs that might be running periodically. In the Alma UI, it is possible to see these jobs (if they have a defined schedule) in the Scheduled tab of the Monitor Jobs page.
+         *
+         *     See [Working with the Alma Jobs API](https://developers.exlibrisgroup.com/blog/Working-with-the-Alma-Jobs-API) for more details.
+         */
+        get: operations["get/almaws/v1/conf/jobs"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/jobs/{job_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Job Details
+         * @description This Web service returns job details for a given job id.
+         */
+        get: operations["get/almaws/v1/conf/jobs/{job_id}"];
+        put?: never;
+        /**
+         * Submit a manual or scheduled job
+         * @description This Web service submits a job according to a given job id.
+         *
+         *     The Jobs API supports 2 job types:
+         *
+         *     Manual jobs - Perform actions on a pre-defined set of records. Available in the Run a job list in the Alma UI.
+         *
+         *     Scheduled jobs  - Jobs that might be running periodically. In the Alma UI, it is possible to see these jobs (if they have a defined schedule) in the Scheduled tab of the Monitor Jobs page.
+         *
+         *     In order to submit a manual job by API, the relevant parameters should be supplied in the input.
+         *
+         *     See [Working with the Alma Jobs API](https://developers.exlibrisgroup.com/blog/Working-with-the-Alma-Jobs-API) for more details.
+         *
+         *      To maintain optimum performance the following threshold will be used: The job will run only if:
+         *
+         *      a. not more than 3 jobs initiated by the API are running currently.
+         *
+         *      b. not more of 5 of the specific job were started in the previous hour.
+         *
+         *      The submission of scheduled jobs is supported for: ERP (Export Invoices, Import confirmation), Metadata Import, Remote Storage (Inventory Update, Send Requests to Remote Storage), Export/Import to Bursar,Finance (Funds Allocation Loader)General Publishing ('republish' action is currently not supported), Activate/Deactivate Courses and Student Information System (Import, Synchronize and Export).
+         */
+        post: operations["post/almaws/v1/conf/jobs/{job_id}"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/jobs/{job_id}/instances": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Job Instances
+         * @description This Web service returns all the job instances (runs) for a given job id.
+         */
+        get: operations["get/almaws/v1/conf/jobs/{job_id}/instances"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/jobs/{job_id}/instances/{instance_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Job Instance Details
+         * @description This Web service returns a job instance for given job id and instance id. [info!Note: It is possible to retrieve a job instance by using 'ALL' in place of a job id. ]
+         */
+        get: operations["get/almaws/v1/conf/jobs/{job_id}/instances/{instance_id}"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/jobs/{job_id}/instances/{instance_id}/download": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Download MD import input file
+         * @description This Web service download a file which contains the loaded records of MARC MD import job instance for given job id and instance id, the file content can be XML/binary MARC records
+         */
+        get: operations["get/almaws/v1/conf/jobs/{job_id}/instances/{instance_id}/download"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/jobs/{job_id}/instances/{instance_id}/events": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Job Instance Event Details
+         * @description This Web service returns a list of events for a job-instance for the given job id and instance id.  For now it accepts jobs in the category and type of USERS/SIS and returns events only for rejected entries.
+         */
+        get: operations["get/almaws/v1/conf/jobs/{job_id}/instances/{instance_id}/events"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/jobs/{job_id}/instances/{instance_id}/matches": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Job Matching Details
+         * @description This Web service returns single and multi match details for an import job.
+         */
+        get: operations["get/almaws/v1/conf/jobs/{job_id}/instances/{instance_id}/matches"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/letters": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Letters
+         * @description This API returns a list of all Letters configured for the Institution.
+         */
+        get: operations["get/almaws/v1/conf/letters"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/letters/{letterCode}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Letter
+         * @description This API retrieves details for a single Letter.
+         */
+        get: operations["get/almaws/v1/conf/letters/{letterCode}"];
+        /**
+         * Update Letter
+         * @description This API updates a Letter. Note: JSON is not supported
+         */
+        put: operations["put/almaws/v1/conf/letters/{letterCode}"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/libraries": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Libraries
+         * @description This API returns a list of all Libraries configured for the Institution.
+         */
+        get: operations["get/almaws/v1/conf/libraries"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/libraries/{libraryCode}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Library
+         * @description This API retrieves details for a single Library.
+         */
+        get: operations["get/almaws/v1/conf/libraries/{libraryCode}"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/libraries/{libraryCode}/circ-desks/": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Circulation Desks
+         * @description This API returns a list of Circulation Desk at a specific library.
+         */
+        get: operations["get/almaws/v1/conf/libraries/{libraryCode}/circ-desks/"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/libraries/{libraryCode}/circ-desks/{circDeskCode}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Circulation Desk
+         * @description This API returns a Circulation Desk.
+         */
+        get: operations["get/almaws/v1/conf/libraries/{libraryCode}/circ-desks/{circDeskCode}"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/libraries/{libraryCode}/locations": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Locations
+         * @description This API returns a list of Physical Locations for a given Library.
+         */
+        get: operations["get/almaws/v1/conf/libraries/{libraryCode}/locations"];
+        put?: never;
+        /**
+         * Create a Location
+         * @description This Web service creates a Physical Location.
+         */
+        post: operations["post/almaws/v1/conf/libraries/{libraryCode}/locations"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/libraries/{libraryCode}/locations/{locationCode}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Location
+         * @description This API returns a Physical Location.
+         */
+        get: operations["get/almaws/v1/conf/libraries/{libraryCode}/locations/{locationCode}"];
+        /**
+         * Update a Location
+         * @description This Web service updates a Physical Location.
+         */
+        put: operations["put/almaws/v1/conf/libraries/{libraryCode}/locations/{locationCode}"];
+        post?: never;
+        /**
+         * Delete Location
+         * @description This Web service deletes a Physical Location.
+         */
+        delete: operations["delete/almaws/v1/conf/libraries/{libraryCode}/locations/{locationCode}"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/libraries/{libraryCode}/open-hours": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Library Open Hours
+         * @description This API returns a list of open days and hours for a given library.
+         *
+         *     Note that the library-hours do not necessarily reflect when the library doors are actually open, but rather start and end times that effect loan period.
+         *
+         *     This API is limited to one month of days from 1 year ago to 3 years ahead for a single request.
+         */
+        get: operations["get/almaws/v1/conf/libraries/{libraryCode}/open-hours"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/license-terms": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve License Terms
+         * @description This API returns a list of all license terms.
+         */
+        get: operations["get/almaws/v1/conf/license-terms"];
+        put?: never;
+        /**
+         * Create License Term
+         * @description This API creates license term.
+         */
+        post: operations["post/almaws/v1/conf/license-terms"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/license-terms/{license_term_code}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve License Term:
+         * @description This API retrieves license term.
+         */
+        get: operations["get/almaws/v1/conf/license-terms/{license_term_code}"];
+        /**
+         * Update License Term
+         * @description This API updates a license term.
+         */
+        put: operations["put/almaws/v1/conf/license-terms/{license_term_code}"];
+        post?: never;
+        /**
+         * Delete License Term
+         * @description This Web service deletes a license term.
+         */
+        delete: operations["delete/almaws/v1/conf/license-terms/{license_term_code}"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/mapping-tables": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Mapping Tables
+         * @description This API returns a list of all mapping tables.
+         */
+        get: operations["get/almaws/v1/conf/mapping-tables"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/mapping-tables/{mappingTableName}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Mapping-table
+         * @description This API returns all rows defined for a mapping-table.
+         */
+        get: operations["get/almaws/v1/conf/mapping-tables/{mappingTableName}"];
+        /**
+         * Update Mapping-table
+         * @description This Web service updates a mapping-table.
+         */
+        put: operations["put/almaws/v1/conf/mapping-tables/{mappingTableName}"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/md-import-profiles": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Import Profiles
+         * @description This Web service returns a list of Import Profiles. In default mode, with no query parameters, all import profiles are returned.
+         */
+        get: operations["get/almaws/v1/conf/md-import-profiles"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/md-import-profiles/{profile_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Import Profile
+         * @description This web service returns an Import profile given a Profile ID.
+         */
+        get: operations["get/almaws/v1/conf/md-import-profiles/{profile_id}"];
+        put?: never;
+        /**
+         * MD Import op - Deprecated
+         * @description DEPRECATED - use the 'Submit Job' API instead.
+         *
+         *      This web service runs an MD import according to a defined Import Profile. Supported for FTP, OAI and Digital.
+         */
+        post: operations["post/almaws/v1/conf/md-import-profiles/{profile_id}"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/open-hours": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Open Hours
+         * @description This Web service returns the open-hours as configured in Alma.
+         */
+        get: operations["get/almaws/v1/conf/open-hours"];
+        /**
+         * Update Open Hours
+         * @description This Web service updates a open-hours as configured in Alma.
+         */
+        put: operations["put/almaws/v1/conf/open-hours"];
+        post?: never;
+        /**
+         * Delete Open Hours
+         * @description This Web service delete a open-hours as configured in Alma.
+         */
+        delete: operations["delete/almaws/v1/conf/open-hours"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/printers": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Printers
+         * @description This API returns a list of Printers.
+         */
+        get: operations["get/almaws/v1/conf/printers"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/printers/{printer_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve a Printer
+         * @description This Web service returns a Printer given a Printer ID.
+         */
+        get: operations["get/almaws/v1/conf/printers/{printer_id}"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/relations": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Relation List
+         * @description List of all library's relations with other libraries.
+         */
+        get: operations["get/almaws/v1/conf/relations"];
+        /**
+         * Create / Replace Relations
+         * @description Create or replace a library's relations with other libraries.
+         */
+        put: operations["put/almaws/v1/conf/relations"];
+        post?: never;
+        /**
+         * Delete Relations
+         * @description Delete a library's relations with other libraries.
+         */
+        delete: operations["delete/almaws/v1/conf/relations"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/reminders": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve a list of Reminders
+         * @description This Web service returns a list of Reminders.
+         */
+        get: operations["get/almaws/v1/conf/reminders"];
+        put?: never;
+        /**
+         * Create a Reminder
+         * @description This Web service creates a Reminder.
+         */
+        post: operations["post/almaws/v1/conf/reminders"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/reminders/{reminder_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve a Reminder
+         * @description This Web service returns a Reminder.
+         */
+        get: operations["get/almaws/v1/conf/reminders/{reminder_id}"];
+        /**
+         * Update a Reminder
+         * @description This Web service updates a Reminder.
+         */
+        put: operations["put/almaws/v1/conf/reminders/{reminder_id}"];
+        post?: never;
+        /**
+         * Delete a Reminder
+         * @description This Web service deletes a Reminder.
+         */
+        delete: operations["delete/almaws/v1/conf/reminders/{reminder_id}"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/sets": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve a list of Sets
+         * @description This Web service returns a list of Sets.
+         */
+        get: operations["get/almaws/v1/conf/sets"];
+        put?: never;
+        /**
+         * Create a Set
+         * @description Web service for creating or combining a set.
+         *
+         *     If you are creating a new set, you can use this API to create 2 types of sets: Itemized set, Logical set
+         *
+         *     In order to create an itemized set, first create an empty set using this API, and then use the [Manage Members](https://developers.exlibrisgroup.com/alma/apis/docs/conf/UE9TVCAvYWxtYXdzL3YxL2NvbmYvc2V0cy97c2V0X2lkfQ==/) API to populate it.
+         *
+         *     Creating logical sets is supported for Inventory related entities, Users and Vendors (not supported for PO-Lines, etc).
+         *
+         *      Details regarding the syntax for creating Logical Sets can be found [here](https://developers.exlibrisgroup.com/alma/integrations/indexdoc-technical).
+         *
+         *     In addtion, it is possible to create an itemized set and populate it from a logical set by setting the logical set id in the from_logical_set parameter.
+         *
+         *     It is also possible to create an itemized Bib record set which is based on MD Import job by providing job instance id and population.
+         *
+         *     For more details about MD import based itemized set [see here](https://developers.exlibrisgroup.com/blog/Creating-sets-from-MD-import-job-results-using-Alma-API).
+         *
+         *     If you are combining sets, then set1 and set2 must be provided. Those two sets will be combined with a new combined set created.
+         */
+        post: operations["post/almaws/v1/conf/sets"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/sets/{set_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve a Set
+         * @description This Web service returns a Set given a Set ID.
+         */
+        get: operations["get/almaws/v1/conf/sets/{set_id}"];
+        /**
+         * Update a Set
+         * @description This Web service updates a Set.
+         */
+        put: operations["put/almaws/v1/conf/sets/{set_id}"];
+        /**
+         * Manage Members
+         * @description This Web service manages the operations of add, delete and replace for members of a Set given a Set ID.
+         */
+        post: operations["post/almaws/v1/conf/sets/{set_id}"];
+        /**
+         * Delete a Set
+         * @description Web service for deleting a set.
+         */
+        delete: operations["delete/almaws/v1/conf/sets/{set_id}"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/sets/{set_id}/members": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Set Members
+         * @description This Web service returns the members of a Set given a Set ID.
+         */
+        get: operations["get/almaws/v1/conf/sets/{set_id}/members"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/test": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * GET Conf Test API
+         * @description This API is used to test if the API key was configured correctly.It returns a short XML (no schema available - the output is subject to changes) with the following structure:<test>GET - OK - institutionCode: 01ABC_INST</test>
+         */
+        get: operations["get/almaws/v1/conf/test"];
+        put?: never;
+        /**
+         * POST Conf Test API
+         * @description This API is used to test if the API key was configured correctly, including read/write permissions.It returns a short XML (no schema available - the output is subject to changes) with the following structure:<test>POST - OK</test>
+         */
+        post: operations["post/almaws/v1/conf/test"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/utilities/fee-transactions": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Fine Fee Report
+         * @description This API returns a fine and fee report.
+         */
+        get: operations["get/almaws/v1/conf/utilities/fee-transactions"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/conf/workflows/{workflow_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Run Workflow
+         * @description Triggers the execution of a LibOW workflow using the provided workflow ID.
+         *
+         *     The request JSON body is forwarded as the REST trigger payload to the workflow's Alma Trigger node.
+         *
+         *     For production mode, the workflow must be active and must include an Alma Trigger node with 'Execute via REST API' selected.
+         *
+         *     For test mode, use test=true to execute while the trigger node is listening and accepting requests. Note that the workflow must be saved/persisted.
+         */
+        post: operations["post/almaws/v1/conf/workflows/{workflow_id}"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
-	schemas: never;
-	responses: never;
-	parameters: never;
-	requestBodies: never;
-	headers: {
-		/** @description The number of remaining calls according to the [Governance Threshold](https://developers.exlibrisgroup.com/alma/apis/#threshold) */
-		remaining: number;
-	};
-	pathItems: never;
+    schemas: never;
+    responses: never;
+    parameters: never;
+    requestBodies: never;
+    headers: {
+        /** @description The number of remaining calls according to the [Governance Threshold](https://developers.exlibrisgroup.com/alma/apis/#threshold) */
+        remaining: number;
+    };
+    pathItems: never;
 }
 export type $defs = Record<string, never>;
 export interface operations {
-	"get/almaws/v1/conf/code-tables": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_code_tables.xsd. See [here](/alma/apis/docs/xsd/rest_code_tables.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 *
-			 *     40166411 - 'Failed to find scope.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/code-tables/{codeTableName}": {
-		parameters: {
-			query?: {
-				/** @description Requested language. */
-				lang?: string;
-				/** @description Institution or Library code */
-				scope?: string;
-			};
-			header?: never;
-			path: {
-				/** @description Code table name. */
-				codeTableName: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_code_table.xsd. See [here](/alma/apis/docs/xsd/rest_code_table.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 *
-			 *     40166411 - 'Param value is invalid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"put/almaws/v1/conf/code-tables/{codeTableName}": {
-		parameters: {
-			query?: {
-				/** @description Requested language. */
-				lang?: string;
-			};
-			header?: never;
-			path: {
-				/** @description Code table name. */
-				codeTableName: string;
-			};
-			cookie?: never;
-		};
-		/** @description This method takes a code-table object. See [here](/alma/apis/docs/xsd/rest_code_table.xsd?tags=PUT) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_code_table.xsd. See [here](/alma/apis/docs/xsd/rest_code_table.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 *
-			 *     90100 - 'Code table name is empty.'
-			 *
-			 *     90101 - 'Table does not exist.'
-			 *
-			 *     90102 - 'Requested table is hidden.'
-			 *
-			 *     90121 - 'Requested table scope is not legal.'
-			 *
-			 *     90122 - 'Multiple default codes.'
-			 *
-			 *     90123 - 'Requested table is not customizable'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/departments": {
-		parameters: {
-			query?: {
-				/** @description Department type. The type DIGI (digitization) or ALL is supported. Default is ALL. */
-				type?: string;
-				/** @description Add optional parameter view=brief to get a list of departments without operators. */
-				view?: string;
-				/** @description Library code. Optional. Default: The institutional level. */
-				library?: string;
-			};
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_departments.xsd. See [here](/alma/apis/docs/xsd/rest_departments.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/deposit-profiles": {
-		parameters: {
-			query?: {
-				/** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
-				limit?: number;
-				/** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
-				offset?: number;
-				/** @description An option to filter by user group. Optional. Default value: Empty String which means that all the results will be returned. */
-				user_group?: string;
-			};
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_deposit_profiles.xsd. See [here](/alma/apis/docs/xsd/rest_deposit_profiles.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/** @description Bad Request */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/deposit-profiles/{deposit_profile_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description The Deposit Profile ID. */
-				deposit_profile_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_deposit_profile.xsd. See [here](/alma/apis/docs/xsd/rest_deposit_profile.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/** @description Bad Request */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/general": {
-		parameters: {
-			query?: {
-				/** @description Parameter for enhancing result with additional information. Currently supported: ingest_form */
-				expand?: string;
-			};
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_general.xsd. See [here](/alma/apis/docs/xsd/rest_general.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General Error - An error has occurred while processing the request.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/integration-profiles": {
-		parameters: {
-			query?: {
-				/** @description Type for filtering. Optional. Valid values are from the IntegrationTypes code table */
-				type?: string;
-				/** @description Search query. Optional. Searching for words in created_by or name (see [Brief Search](https://developers.exlibrisgroup.com/blog/How-we-re-building-APIs-at-Ex-Libris#BriefSearch)) */
-				q?: string;
-				/** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
-				limit?: number;
-				/** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
-				offset?: number;
-			};
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_integration_profile.xsd. See [here](/alma/apis/docs/xsd/rest_integration_profile.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     40166410 - 'Parameter value invalid.'
-			 *
-			 *     40166404 - 'Invalid type.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"post/almaws/v1/conf/integration-profiles": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/** @description This method takes a Integration-Profile object. See [here](/alma/apis/docs/xsd/rest_integration_profile.xsd?tags=POST) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_integration_profile.xsd. See [here](/alma/apis/docs/xsd/rest_integration_profile.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     60304 - 'Invalid profile ID.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/integration-profiles/{id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description The Integration Profile ID */
-				id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_integration_profile.xsd. See [here](/alma/apis/docs/xsd/rest_integration_profile.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     60304 - 'Invalid profile ID.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"put/almaws/v1/conf/integration-profiles/{id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description The Integration Profile ID */
-				id: string;
-			};
-			cookie?: never;
-		};
-		/** @description This method takes a Integration-Profile object. See [here](/alma/apis/docs/xsd/rest_integration_profile.xsd?tags=PUT) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_integration_profile.xsd. See [here](/alma/apis/docs/xsd/rest_integration_profile.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     60304 - 'Invalid profile ID.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"delete/almaws/v1/conf/integration-profiles/{id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description The Integration Profile ID */
-				id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description Deleted */
-			204: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     60304 - 'Invalid profile ID.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/jobs": {
-		parameters: {
-			query?: {
-				/** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
-				limit?: number;
-				/** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
-				offset?: number;
-				/** @description For filtering jobs by their category. Optional. For manual, possible values are from HPaTaskChain.type code table. For scheduled and other, possible values are from the systemJobsGroups code table. By default, all jobs will be retrieved. */
-				category?: string;
-				/** @description For filtering jobs by their type. Optional. Possible values are MANUAL/SCHEDULED/OTHER. If no type is given, all types of jobs will be retrieved. */
-				type?: string;
-				/** @description For filtering jobs by their profile ID. Optional. Relevant only for scheduled jobs. */
-				profile_id?: string;
-			};
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_jobs.xsd. See [here](/alma/apis/docs/xsd/rest_jobs.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     40166410 - 'Invalid category.'
-			 *
-			 *     40166410 - 'Invalid type.'
-			 *
-			 *     402219 - 'Failed to retrieve jobs list.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/jobs/{job_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description Unique id of the job. Mandatory. */
-				job_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_job.xsd. See [here](/alma/apis/docs/xsd/rest_job.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402215 - 'Invalid job id format.'
-			 *
-			 *     402216 - 'Invalid job id.'
-			 *
-			 *     402249 - 'Invalid scheduled job category.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"post/almaws/v1/conf/jobs/{job_id}": {
-		parameters: {
-			query: {
-				/** @description The operation to perform on the job. Currently op=run is supported for manual and scheduled jobs. */
-				op: string;
-			};
-			header?: never;
-			path: {
-				/** @description Unique id of the job. Mandatory. */
-				job_id: string;
-			};
-			cookie?: never;
-		};
-		/** @description This method takes a Job object. See [here](/alma/apis/docs/xsd/rest_job.xsd?tags=POST) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_job.xsd. See [here](/alma/apis/docs/xsd/rest_job.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402215 - 'Invalid job id format.'
-			 *
-			 *     402216 - 'Invalid job id.'
-			 *
-			 *     402220 - 'Operation was not provided.'
-			 *
-			 *     402221 - 'Operation is not supported.'
-			 *
-			 *     402222/402223 - 'Execution threshold reached.'
-			 *
-			 *     402224/402225/402226 - 'An internal error occured.'
-			 *
-			 *     402228 - 'Mandatory parameter is missing from input.'
-			 *
-			 *     402229 - 'Mandatory parameter value is empty.'
-			 *
-			 *     402248 - 'Cannot submit scheduled job.'
-			 *
-			 *     402249 - 'Invalid scheduled job category.'
-			 *
-			 *     402231 - 'Job in consisted of more than one task - executing such job is currently not supported via the API.'
-			 *
-			 *     60347 - 'Job overlapps with running job - cannot execute.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/jobs/{job_id}/instances": {
-		parameters: {
-			query: {
-				/** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
-				limit?: number;
-				/** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
-				offset?: number;
-				/** @description Retrieve instances from this Date (YYYY-MM-DD). Optional. */
-				submit_date_from: string;
-				/** @description Retrieve instances until this Date, included (YYYY-MM-DD). Optional. */
-				submit_date_to: string;
-				/** @description Only instances with the specified status will be retrieved. Optional. */
-				status: string;
-			};
-			header?: never;
-			path: {
-				/** @description Unique id of the job. Mandatory. */
-				job_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_job_instances.xsd. See [here](/alma/apis/docs/xsd/rest_job_instances.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402215 - 'Invalid job id format.'
-			 *
-			 *     402216 - 'Invalid job id.'
-			 *
-			 *     402217 - 'Invalid date format.'
-			 *
-			 *     40166410 - 'Invalid status.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/jobs/{job_id}/instances/{instance_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description Unique id of the job. May be ALL to retrieve instance id for a job. Mandatory. */
-				job_id: string;
-				/** @description Unique id of the specific job instance. Mandatory. */
-				instance_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_job_instance.xsd. See [here](/alma/apis/docs/xsd/rest_job_instance.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402215 - 'Invalid job id format.'
-			 *
-			 *     402216 - 'Invalid job id.'
-			 *
-			 *     402218 - 'Invalid job instance id.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/jobs/{job_id}/instances/{instance_id}/download": {
-		parameters: {
-			query?: {
-				/** @description MARC format XML/BINARY */
-				download_format?: string;
-				/** @description Line Type as appears in /jobs/{job_id}/instances/{instance_id} api result */
-				line_type?: string;
-			};
-			header?: never;
-			path: {
-				/** @description Unique id of the job. May be ALL to retrieve instance id for a job. Mandatory. */
-				job_id: string;
-				/** @description Unique id of the specific job instance. Mandatory. */
-				instance_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": Record<string, never>;
-					"application/xml": Record<string, never>;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402215 - 'Invalid job id format.'
-			 *
-			 *     402216 - 'Invalid job id.'
-			 *
-			 *     402218 - 'Invalid job instance id.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/jobs/{job_id}/instances/{instance_id}/events": {
-		parameters: {
-			query?: {
-				/** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
-				limit?: number;
-				/** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
-				offset?: number;
-			};
-			header?: never;
-			path: {
-				/** @description Unique id of the job. Mandatory. */
-				job_id: string;
-				/** @description Unique id of the specific job instance. Mandatory. */
-				instance_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_events.xsd. See [here](/alma/apis/docs/xsd/rest_events.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402215 - 'Invalid job id format.'
-			 *
-			 *     402216 - 'Invalid job id.'
-			 *
-			 *     402218 - 'Invalid job instance id.'
-			 *
-			 *     60333 - 'Error retrieving events.'
-			 *
-			 *     60332 - 'This service will only work for the job category and type of USERS/SIS.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/jobs/{job_id}/instances/{instance_id}/matches": {
-		parameters: {
-			query?: {
-				/** @description The population of match results to return. Valid values are SINGLE_MATCHES and MULTI_MATCHES. Mandatory. */
-				population?: string;
-				/** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
-				limit?: number;
-				/** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
-				offset?: number;
-			};
-			header?: never;
-			path: {
-				/** @description Unique id of the job. Mandatory. */
-				job_id: string;
-				/** @description Unique id of the specific job instance. Mandatory. */
-				instance_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_matches.xsd. See [here](/alma/apis/docs/xsd/rest_matches.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402215 - 'Invalid job id format.'
-			 *
-			 *     402216 - 'Invalid job id.'
-			 *
-			 *     402218 - 'Invalid job instance id.'
-			 *
-			 *     402119 - 'General error.'
-			 *
-			 *     40166410 - 'Population value is invalid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/letters": {
-		parameters: {
-			query?: {
-				/** @description Type of letters (LETTER or COMPONENT) */
-				type?: string;
-			};
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_letters.xsd. See [here](/alma/apis/docs/xsd/rest_letters.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 *
-			 *     60344 - 'Problem retrieving letter data.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/letters/{letterCode}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description The code of the letter. */
-				letterCode: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_letter.xsd. See [here](/alma/apis/docs/xsd/rest_letter.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 *
-			 *     40166411 - 'Letter code is not valid.'
-			 *
-			 *     60344 - 'Problem retrieving letter data.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"put/almaws/v1/conf/letters/{letterCode}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description The code of the letter. */
-				letterCode: string;
-			};
-			cookie?: never;
-		};
-		/** @description This method takes a letter object. See [here](/alma/apis/docs/xsd/rest_letter.xsd?tags=PUT) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_letter.xsd. See [here](/alma/apis/docs/xsd/rest_letter.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     60105 - 'JSON is not supported for this API.'
-			 *
-			 *     402119 - 'General error.'
-			 *
-			 *     40166411 - 'Letter code or other parameter is not valid.'
-			 *
-			 *     60344 - 'Problem retrieving letter data.'
-			 *
-			 *     60343 - 'The update failed.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/libraries": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_libraries.xsd. See [here](/alma/apis/docs/xsd/rest_libraries.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/libraries/{libraryCode}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description The code of the library. */
-				libraryCode: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_library.xsd. See [here](/alma/apis/docs/xsd/rest_library.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/libraries/{libraryCode}/circ-desks/": {
-		parameters: {
-			query?: {
-				/** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
-				limit?: number;
-				/** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
-				offset?: number;
-			};
-			header?: never;
-			path: {
-				/** @description The code of the library for which the location belongs to. */
-				libraryCode: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_circ_desks.xsd. See [here](/alma/apis/docs/xsd/rest_circ_desks.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/libraries/{libraryCode}/circ-desks/{circDeskCode}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description The code of the library for which the location belongs to. */
-				libraryCode: string;
-				/** @description The code of the Circulation Desk to be retrieved. */
-				circDeskCode: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_circ_desk.xsd. See [here](/alma/apis/docs/xsd/rest_circ_desk.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 *
-			 *     401664 - 'Parameter value missing or invalid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/libraries/{libraryCode}/locations": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description The code of the library for which the locations should be retrieved. */
-				libraryCode: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_locations.xsd. See [here](/alma/apis/docs/xsd/rest_locations.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"post/almaws/v1/conf/libraries/{libraryCode}/locations": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description The code of the library for which the locations should be retrieved. */
-				libraryCode: string;
-			};
-			cookie?: never;
-		};
-		/** @description See [here](/alma/apis/docs/xsd/rest_location.xsd?tags=POST) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_location.xsd. See [here](/alma/apis/docs/xsd/rest_location.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401664 - 'Parameter value invalid.'
-			 *
-			 *     60297 - 'Location type is not valid.'
-			 *
-			 *     60298 - 'Remote storage code is not valid.'
-			 *
-			 *     60299 - 'Fulfillment unit is not valid.'
-			 *
-			 *     60300 - 'Accession placement is not valid.'
-			 *
-			 *     60301 - 'Call number type is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/libraries/{libraryCode}/locations/{locationCode}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description The code of the library for which the location belongs to. */
-				libraryCode: string;
-				/** @description Location CODE. Required. */
-				locationCode: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_location.xsd. See [here](/alma/apis/docs/xsd/rest_location.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"put/almaws/v1/conf/libraries/{libraryCode}/locations/{locationCode}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description The code of the library for which the location belongs to. */
-				libraryCode: string;
-				/** @description Location CODE. Required. */
-				locationCode: string;
-			};
-			cookie?: never;
-		};
-		/** @description This method takes a location object. See [here](/alma/apis/docs/xsd/rest_location.xsd?tags=PUT) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_location.xsd. See [here](/alma/apis/docs/xsd/rest_location.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401664 - 'Parameter value invalid.'
-			 *
-			 *     60297 - 'Location type is not valid.'
-			 *
-			 *     60298 - 'Remote storage code is not valid.'
-			 *
-			 *     60299 - 'Fulfillment unit is not valid.'
-			 *
-			 *     60300 - 'Accession placement is not valid.'
-			 *
-			 *     60301 - 'Call number type is not valid.'
-			 *
-			 *     60302 - 'Update of location failed.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"delete/almaws/v1/conf/libraries/{libraryCode}/locations/{locationCode}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description The code of the library for which the location belongs to. */
-				libraryCode: string;
-				/** @description Location CODE. Required. */
-				locationCode: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description Deleted */
-			204: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/libraries/{libraryCode}/open-hours": {
-		parameters: {
-			query?: {
-				/** @description From this Date (YYYY-MM-DD). Defaults to today. */
-				from?: string;
-				/** @description To this Date (YYYY-MM-DD). Defaults to the From Date plus one week. */
-				to?: string;
-			};
-			header?: never;
-			path: {
-				/** @description The code for the institution from which the open hours should be retrieved. */
-				libraryCode: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_open_days.xsd. See [here](/alma/apis/docs/xsd/rest_open_days.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/license-terms": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_license_terms.xsd. See [here](/alma/apis/docs/xsd/rest_license_terms.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     403401 - 'Failed to retrieve license.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"post/almaws/v1/conf/license-terms": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/** @description This method takes a License Term object. See [here](/alma/apis/docs/xsd/rest_license_term.xsd?tags=POST) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_license_term.xsd. See [here](/alma/apis/docs/xsd/rest_license_term.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     500021 - 'Mandatory field is missing.'
-			 *
-			 *     60198 - 'License code not unique.'
-			 *
-			 *     60195 - 'License term codes not valid.'
-			 *
-			 *     60190 - 'License licensor not valid.'
-			 *
-			 *     60196 - 'License not created.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/license-terms/{license_term_code}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description The code of the license term. */
-				license_term_code: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_license_term.xsd. See [here](/alma/apis/docs/xsd/rest_license_term.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     403400 - 'License with code not found.'
-			 *
-			 *     403401 - 'Failed to retrieve license.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"put/almaws/v1/conf/license-terms/{license_term_code}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description The code of the license term. */
-				license_term_code: string;
-			};
-			cookie?: never;
-		};
-		/** @description This method takes a License Term object. See [here](/alma/apis/docs/xsd/rest_license_term.xsd?tags=PUT) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_license_term.xsd. See [here](/alma/apis/docs/xsd/rest_license_term.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     403400 - 'License with code not found.'
-			 *
-			 *     500021 - 'Mandatory field is missing.'
-			 *
-			 *     60198 - 'License code not unique.'
-			 *
-			 *     60195 - 'License term codes not valid.'
-			 *
-			 *     60190 - 'License licensor not valid.'
-			 *
-			 *     60202 - 'License not updated.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"delete/almaws/v1/conf/license-terms/{license_term_code}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description The code of the license term. */
-				license_term_code: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description Deleted */
-			204: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     403400 - 'License with code not found.'
-			 *
-			 *     60200 - 'License could not be deleted.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/mapping-tables": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_mapping_tables.xsd. See [here](/alma/apis/docs/xsd/rest_mapping_tables.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 *
-			 *     40166411 - 'Failed to find scope.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/mapping-tables/{mappingTableName}": {
-		parameters: {
-			query?: {
-				/** @description Institution or Library code */
-				scope?: string;
-			};
-			header?: never;
-			path: {
-				/** @description Mapping table name. */
-				mappingTableName: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_mapping_table.xsd. See [here](/alma/apis/docs/xsd/rest_mapping_table.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 *
-			 *     40166411 - 'Param value is invalid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"put/almaws/v1/conf/mapping-tables/{mappingTableName}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description Mapping table name. */
-				mappingTableName: string;
-			};
-			cookie?: never;
-		};
-		/** @description This method takes a mapping-table object. See [here](/alma/apis/docs/xsd/rest_mapping_table.xsd?tags=PUT) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_mapping_table.xsd. See [here](/alma/apis/docs/xsd/rest_mapping_table.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 *
-			 *     90126 - 'Mapping table name is empty.'
-			 *
-			 *     90101 - 'Table does not exist.'
-			 *
-			 *     90102 - 'Requested table is hidden.'
-			 *
-			 *     90127 - 'Requested table scope is not legal.'
-			 *
-			 *     90125 - 'Requested table is not customizable'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/md-import-profiles": {
-		parameters: {
-			query?: {
-				/** @description The Import Profile Type. Optional. Default is no Import Type. */
-				type?: string;
-				/** @description The type of IE Entity created by this import. Optional. Default is to include all entities. */
-				ie_type?: string;
-			};
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_import_profiles.xsd. See [here](/alma/apis/docs/xsd/rest_import_profiles.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General Error - An error has occurred while processing the request.'
-			 *
-			 *     402123 - 'Invalid parameter value.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/md-import-profiles/{profile_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description The profile identifier. */
-				profile_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_import_profile.xsd. See [here](/alma/apis/docs/xsd/rest_import_profile.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401871 - 'Failed to find the Profile ID.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"post/almaws/v1/conf/md-import-profiles/{profile_id}": {
-		parameters: {
-			query: {
-				/** @description The operation to perform on the import profile. The operation op=run is supported. */
-				op: string;
-			};
-			header?: never;
-			path: {
-				/** @description The profile identifier. */
-				profile_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_import_profile.xsd. See [here](/alma/apis/docs/xsd/rest_import_profile.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401871 - 'Failed to find the Profile ID.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/open-hours": {
-		parameters: {
-			query: {
-				/** @description This optional parameter specifies a library scope. Default will be institution, e.g. 01AAA_INST. */
-				scope: string;
-			};
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_open_hours.xsd. See [here](/alma/apis/docs/xsd/rest_open_hours.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/** @description Bad Request */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"put/almaws/v1/conf/open-hours": {
-		parameters: {
-			query: {
-				/** @description This optional parameter specifies a library scope. Default will be institution, e.g. 01AAA_INST. */
-				scope: string;
-			};
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/** @description This method takes an openHours object. See [here](/alma/apis/docs/xsd/rest_open_hours.xsd?tags=PUT) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_open_hours.xsd. See [here](/alma/apis/docs/xsd/rest_open_hours.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/** @description Bad Request */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"delete/almaws/v1/conf/open-hours": {
-		parameters: {
-			query: {
-				/** @description This optional parameter specifies a library scope. Default will be institution, e.g. 01AAA_INST. */
-				scope: string;
-			};
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description Deleted */
-			204: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Bad Request */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/printers": {
-		parameters: {
-			query?: {
-				/** @description Printer library code. Optional. */
-				library?: string;
-				/** @description Printer printout queue indication. Optional. */
-				printout_queue?: string;
-				/** @description Printer Name. Optional. */
-				name?: string;
-				/** @description Printer Code. Optional. */
-				code?: string;
-				/** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
-				limit?: number;
-				/** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
-				offset?: number;
-			};
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_printers.xsd. See [here](/alma/apis/docs/xsd/rest_printers.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402469 - 'The library code is not valid.'
-			 *
-			 *     40166410 - 'Invalid parameter.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/printers/{printer_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				printer_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_printer.xsd. See [here](/alma/apis/docs/xsd/rest_printer.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402899 - 'Invalid Printer ID.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/relations": {
-		parameters: {
-			query: {
-				/** @description The code of the library. Can be All. Mandatory. */
-				scope: string;
-			};
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": Record<string, never>;
-					"application/xml": Record<string, never>;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 *
-			 *     40166413 - 'Parameter value is mandatory.'
-			 *
-			 *     40166411 - 'Parameter value invalid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"put/almaws/v1/conf/relations": {
-		parameters: {
-			query: {
-				/** @description The code of the source library. Can be All. Mandatory. */
-				scope: string;
-			};
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/** @description This method takes a Relations object. See [here](/alma/apis/docs/xsd/?tags=PUT) */
-		requestBody: {
-			content: {
-				"application/json": Record<string, never>;
-				"application/xml": Record<string, never>;
-			};
-		};
-		responses: {
-			/** @description OK */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": Record<string, never>;
-					"application/xml": Record<string, never>;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 *
-			 *     40166413 - 'Parameter value is mandatory.'
-			 *
-			 *     40166411 - 'Parameter value invalid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"delete/almaws/v1/conf/relations": {
-		parameters: {
-			query: {
-				/** @description The code of the source library. Can be All. Mandatory. */
-				scope: string;
-				/** @description The code of the target library. To delete more than one, use a comma separator. */
-				libraryCode: string;
-			};
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description Deleted */
-			204: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 *
-			 *     40166413 - 'Parameter value is mandatory.'
-			 *
-			 *     40166411 - 'Parameter value invalid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/reminders": {
-		parameters: {
-			query?: {
-				/** @description Type for filtering. Optional. Valid values are from the ReminderTypes code table */
-				type?: string;
-				/** @description Status for filtering. Optional. Valid values are from the ReminderStatuses code table */
-				status?: string;
-				/** @description From this Date (YYYY-MM-DD). Optional. Defaults to today. */
-				from?: string;
-				/** @description To this Date (YYYY-MM-DD). Optional. Defaults to the From Date. */
-				to?: string;
-				/** @description Order by parameter. Optional. Valid values are type, status, reminder_date. */
-				order_by?: string;
-				/** @description Direction parameter. Optional. Valid values are asc, desc. */
-				direction?: string;
-				/** @description Entity ID parameter. Optional. Valid value is an entity id. */
-				entity_id?: string;
-				/** @description Entity Type parameter. Optional. Valid value is BIB_MMS. */
-				entity_type?: string;
-				/** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
-				limit?: number;
-				/** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
-				offset?: number;
-			};
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_reminders.xsd. See [here](/alma/apis/docs/xsd/rest_reminders.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     40166410 - 'Parameter value invalid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"post/almaws/v1/conf/reminders": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/** @description This method takes a reminder object. See [here](/alma/apis/docs/xsd/rest_reminder.xsd?tags=POST) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_reminder.xsd. See [here](/alma/apis/docs/xsd/rest_reminder.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     40166410 - 'Parameter value invalid.'
-			 *
-			 *     60178 - 'Reminder Type is not valid.'
-			 *
-			 *     60179 - 'Reminder Status is not valid.'
-			 *
-			 *     60180 - 'Reminder not created.'
-			 *
-			 *     60182 - 'Reminder Entity ID is not valid.'
-			 *
-			 *     60183 - 'Reminder Entity Type is not valid.'
-			 *
-			 *     60184 - 'Reminder Entity Id is required.'
-			 *
-			 *     60185 - 'Reminder Date is required.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/reminders/{reminder_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description Reminder ID. Required. */
-				reminder_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_reminder.xsd. See [here](/alma/apis/docs/xsd/rest_reminder.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     60177 - 'Reminder ID is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"put/almaws/v1/conf/reminders/{reminder_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description Reminder ID. Required. */
-				reminder_id: string;
-			};
-			cookie?: never;
-		};
-		/** @description This method takes a reminder object. See [here](/alma/apis/docs/xsd/rest_reminder.xsd?tags=PUT) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_reminder.xsd. See [here](/alma/apis/docs/xsd/rest_reminder.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     40166410 - 'Parameter value invalid.'
-			 *
-			 *     60177 - 'Reminder ID is not valid.'
-			 *
-			 *     60178 - 'Reminder Type is not valid.'
-			 *
-			 *     60179 - 'Reminder Status is not valid.'
-			 *
-			 *     60181 - 'Reminder not updated.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"delete/almaws/v1/conf/reminders/{reminder_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description Reminder ID. Required. */
-				reminder_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description Deleted */
-			204: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     60177 - 'Reminder ID is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/sets": {
-		parameters: {
-			query?: {
-				/** @description Content type for filtering. Optional. Valid values are from the SetContentType code table */
-				content_type?: string;
-				/** @description Set type for filtering. Optional. Valid values are 'ITEMIZED' or 'LOGICAL'. */
-				set_type?: string;
-				/** @description Search query. Optional. Searching for words in created_by or name (see [Brief Search](https://developers.exlibrisgroup.com/blog/How-we-re-building-APIs-at-Ex-Libris#BriefSearch)) */
-				q?: string;
-				/** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
-				limit?: number;
-				/** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
-				offset?: number;
-				/** @description Set origin for filtering. Optional. Valid values are 'UI' or 'UI_CZ'. */
-				set_origin?: string;
-			};
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_sets.xsd. See [here](/alma/apis/docs/xsd/rest_sets.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     40166410 - 'Parameter value invalid.'
-			 *
-			 *     60106 - 'Invalid query format.'
-			 *
-			 *     60107 - 'Invalid set ID.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"post/almaws/v1/conf/sets": {
-		parameters: {
-			query?: {
-				/** @description The population on which a set should be created. Optional. */
-				population?: string;
-				/** @description The id of MD Import Job instance from which a set should be created. Supported for sets of Bib records. Optional. */
-				job_instance_id?: string;
-				/** @description An id of a logical set to create an Itemized Set based on it. Optional. */
-				from_logical_set?: string;
-				/** @description The logical operator. Choose between AND, OR, NOT. Default is AND. Optional */
-				combine?: string;
-				/** @description The primary combining set. Optional. */
-				set1?: string;
-				/** @description The secondary combining set. Optional. */
-				set2?: string;
-				/** @description An id of an Institution Zone set which will be used as a base to create a set in the Network Zone. The new set will include the Network Zone records to which the Institution Zone records are linked. Optional. */
-				nz_set_from_iz_set?: string;
-				/** @description An id of a set to create a new filtered set based on it, according to the indication_rule parameter. Optional. */
-				filter_set?: string;
-				/** @description The name of the Indication Rule to be used to filter the set defined in filter_set. Relevant if filter_set is used. */
-				indication_rule?: string;
-			};
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/** @description This method takes a Set object. See [here](/alma/apis/docs/xsd/rest_set.xsd?tags=POST) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_set.xsd. See [here](/alma/apis/docs/xsd/rest_set.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General Error - An error has occurred while processing the request.'
-			 *
-			 *     500127 - ''job_instance_id' and 'population' must be provided together.'
-			 *
-			 *     402262 - 'Set type is invalid. Only 'ITEMIZED' and 'LOGICAL' sets are supported.'
-			 *
-			 *     402263 - 'The set name already exists. Please choose a different name.'
-			 *
-			 *     402264 - 'Set ID is invalid.'
-			 *
-			 *     402265 - 'Failed to create a set.'
-			 *
-			 *     402266 - 'Population value is invalid.'
-			 *
-			 *     402267 - 'Job instance type for the provided job_instance_id is not MD_IMPORT - the operation is not supported.'
-			 *
-			 *     60204 - 'Set combine operator not valid.'
-			 *
-			 *     60205 - 'Combining sets are not the same type.'
-			 *
-			 *     60206 - 'Sets combine operation failed.'
-			 *
-			 *     60209 - 'Set private value not valid.'
-			 *
-			 *     60210 - 'Set status not valid.'
-			 *
-			 *     60311 - 'Combining sets are not the same origin.'
-			 *
-			 *     402218 - 'Invalid job instance id.'
-			 *
-			 *     60334 - 'Failed to create a set in Network.'
-			 *
-			 *     60335 - 'The From Institution Zone is not allowed for institution not in Network.'
-			 *
-			 *     60107 - 'The set ID provided for the Institution Zone set is not valid.'
-			 *
-			 *     60336 - 'The set type is not allowed for creation as network set.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/sets/{set_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description Unique id of the set. Mandatory. */
-				set_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_set.xsd. See [here](/alma/apis/docs/xsd/rest_set.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     60107 - 'Invalid set ID.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"put/almaws/v1/conf/sets/{set_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description Unique id of the set. Mandatory. */
-				set_id: string;
-			};
-			cookie?: never;
-		};
-		/** @description This method takes a Set object. See [here](/alma/apis/docs/xsd/rest_set.xsd?tags=PUT) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_set.xsd. See [here](/alma/apis/docs/xsd/rest_set.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     60107 - 'Invalid set ID.'
-			 *
-			 *     402261 - 'Invalid Set object.'
-			 *
-			 *     402228 - 'Mandatory parameter is missing from input.'
-			 *
-			 *     402263 - 'The set name already exists. Please choose a different name.'
-			 *
-			 *     402269 - 'Invalid query content type in query string.'
-			 *
-			 *     402270 - 'Failed parsing quer.'
-			 *
-			 *     40166408 - 'Failed updating set.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"post/almaws/v1/conf/sets/{set_id}": {
-		parameters: {
-			query: {
-				/**
-				 * @description The type of the identifier that is used to identify members. Optional.
-				 *
-				 *     For physical items: BARCODE.
-				 *
-				 *     For Bib records: SYSTEM_NUMBER, OCLC_NUMBER, ISBN, ISSN. For regular MMS-IDs no need to defined this parameter.
-				 *
-				 *     For users: any type that is defined in UserIdentifierTypes Code Table
-				 */
-				id_type?: string;
-				/** @description The operation to perform on the set. Mandatory. The supported operations are add_members, delete_members or replace_members. */
-				op: string;
-				/** @description If false, the API will ignore invalid IDs. Relevant for sets of Bibs, Items and Users. */
-				fail_on_invalid_id?: boolean;
-			};
-			header?: never;
-			path: {
-				/** @description Unique id of the set. Mandatory. */
-				set_id: string;
-			};
-			cookie?: never;
-		};
-		/** @description This method takes a Set object including list of members to add/remove. Up to 1000 members can be supplied. See [here](/alma/apis/docs/xsd/rest_set.xsd?tags=POST) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_set.xsd. See [here](/alma/apis/docs/xsd/rest_set.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     60107 - 'Invalid set ID.'
-			 *
-			 *     60111 - 'Invalid operation.'
-			 *
-			 *     60112 - 'Invalid set type.'
-			 *
-			 *     60113 - 'Input set with no members.'
-			 *
-			 *     60114 - 'Input set with no member ID.'
-			 *
-			 *     60115 - 'A member ID is already in the set.'
-			 *
-			 *     60116 - 'A member ID is not valid for the content.'
-			 *
-			 *     60117 - 'Input set member ID is not in set.'
-			 *
-			 *     60118 - 'Input set member list exceeds limit.'
-			 *
-			 *     60119 - 'Input set with duplicate member.'
-			 *
-			 *     60120 - 'A member ID is not valid for the content and identifier.'
-			 *
-			 *     60176 - 'A member ID which is represented by an id_type identifier is already in the set.'
-			 *
-			 *     40166410 - 'Invalid parameter identifier type.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"delete/almaws/v1/conf/sets/{set_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description Unique id of the set. Mandatory. */
-				set_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description Deleted */
-			204: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402264 - 'Invalid Set ID.'
-			 *
-			 *     402282 - 'Delete of Set Failed.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/sets/{set_id}/members": {
-		parameters: {
-			query?: {
-				/** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
-				limit?: number;
-				/** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
-				offset?: number;
-			};
-			header?: never;
-			path: {
-				/** @description The set ID */
-				set_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_members.xsd. See [here](/alma/apis/docs/xsd/rest_members.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     60107 - 'Invalid set ID.'
-			 *
-			 *     60108 - 'Invalid set member.'
-			 *
-			 *     60110 - 'Invalid set member details.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/test": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": Record<string, never>;
-					"application/xml": Record<string, never>;
-				};
-			};
-			/** @description Bad Request */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"post/almaws/v1/conf/test": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": Record<string, never>;
-					"application/xml": Record<string, never>;
-				};
-			};
-			/** @description Bad Request */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/conf/utilities/fee-transactions": {
-		parameters: {
-			query?: {
-				/** @description Limits the number of fees not transactions. Optional. Valid values are 0-100. Default value: 10. */
-				limit?: number;
-				/** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
-				offset?: number;
-				/** @description From this Date (YYYY-MM-DD). Defaults to today. */
-				transaction_from_date?: string;
-				/** @description To this Date (YYYY-MM-DD). Defaults to from date. Limit of 7 days period. */
-				transaction_to_date?: string;
-				/** @description Add fine fee transaction type filter.  This defaults to both payment and waived. */
-				transaction_type?: string;
-				/** @description Add fine owner filter.  This is a library or the institution code. */
-				owner?: string;
-				/** @description Add circulation library filter. May be used in conjunction with received_by_circ_desk to filter results. */
-				received_by_circ_library?: string;
-				/** @description Add circulation desk filter. Must be used in conjunction with received_by_circ_library to filter results. */
-				received_by_circ_desk?: string;
-			};
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_fees.xsd. See [here](/alma/apis/docs/xsd/rest_fees.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 *
-			 *     40166411 - 'An error has occurred in setting from and/or to dates.'
-			 *
-			 *     40166419 - 'An error has occurred in setting transaction type.'
-			 *
-			 *     40166410 - 'An error has occurred in setting circ library or circ desk.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"post/almaws/v1/conf/workflows/{workflow_id}": {
-		parameters: {
-			query?: {
-				/** @description If true, executes workflow in test mode. */
-				test?: boolean;
-			};
-			header?: never;
-			path: {
-				/** @description Unique ID of the workflow. */
-				workflow_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": Record<string, never>;
-					"application/xml": Record<string, never>;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 *
-			 *     450001 - 'Workflow not found.'
-			 *
-			 *     450002 - 'Workflow inactive.'
-			 *
-			 *     450003 - 'Workflow missing trigger node.'
-			 *
-			 *     450004 - 'Workflow missing trigger configuration.  In test mode, this could mean the node is not listening for events.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
+    "get/almaws/v1/conf/code-tables": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_code_tables.xsd. See [here](/alma/apis/docs/xsd/rest_code_tables.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             *
+             *     40166411 - 'Failed to find scope.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/code-tables/{codeTableName}": {
+        parameters: {
+            query?: {
+                /** @description Requested language. */
+                lang?: string;
+                /** @description Institution or Library code */
+                scope?: string;
+            };
+            header?: never;
+            path: {
+                /** @description Code table name. */
+                codeTableName: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_code_table.xsd. See [here](/alma/apis/docs/xsd/rest_code_table.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             *
+             *     40166411 - 'Param value is invalid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "put/almaws/v1/conf/code-tables/{codeTableName}": {
+        parameters: {
+            query?: {
+                /** @description Requested language. */
+                lang?: string;
+            };
+            header?: never;
+            path: {
+                /** @description Code table name. */
+                codeTableName: string;
+            };
+            cookie?: never;
+        };
+        /** @description This method takes a code-table object. See [here](/alma/apis/docs/xsd/rest_code_table.xsd?tags=PUT) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_code_table.xsd. See [here](/alma/apis/docs/xsd/rest_code_table.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             *
+             *     90100 - 'Code table name is empty.'
+             *
+             *     90101 - 'Table does not exist.'
+             *
+             *     90102 - 'Requested table is hidden.'
+             *
+             *     90121 - 'Requested table scope is not legal.'
+             *
+             *     90122 - 'Multiple default codes.'
+             *
+             *     90123 - 'Requested table is not customizable'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/departments": {
+        parameters: {
+            query?: {
+                /** @description Department type. The type DIGI (digitization) or ALL is supported. Default is ALL. */
+                type?: string;
+                /** @description Add optional parameter view=brief to get a list of departments without operators. */
+                view?: string;
+                /** @description Library code. Optional. Default: The institutional level. */
+                library?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_departments.xsd. See [here](/alma/apis/docs/xsd/rest_departments.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/deposit-profiles": {
+        parameters: {
+            query?: {
+                /** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
+                limit?: number;
+                /** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
+                offset?: number;
+                /** @description An option to filter by user group. Optional. Default value: Empty String which means that all the results will be returned. */
+                user_group?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_deposit_profiles.xsd. See [here](/alma/apis/docs/xsd/rest_deposit_profiles.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/deposit-profiles/{deposit_profile_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description The Deposit Profile ID. */
+                deposit_profile_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_deposit_profile.xsd. See [here](/alma/apis/docs/xsd/rest_deposit_profile.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/general": {
+        parameters: {
+            query?: {
+                /** @description Parameter for enhancing result with additional information. Currently supported: ingest_form */
+                expand?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_general.xsd. See [here](/alma/apis/docs/xsd/rest_general.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General Error - An error has occurred while processing the request.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/integration-profiles": {
+        parameters: {
+            query?: {
+                /** @description Type for filtering. Optional. Valid values are from the IntegrationTypes code table */
+                type?: string;
+                /** @description Search query. Optional. Searching for words in created_by or name (see [Brief Search](https://developers.exlibrisgroup.com/blog/How-we-re-building-APIs-at-Ex-Libris#BriefSearch)) */
+                q?: string;
+                /** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
+                limit?: number;
+                /** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
+                offset?: number;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_integration_profile.xsd. See [here](/alma/apis/docs/xsd/rest_integration_profile.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     40166410 - 'Parameter value invalid.'
+             *
+             *     40166404 - 'Invalid type.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "post/almaws/v1/conf/integration-profiles": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** @description This method takes a Integration-Profile object. See [here](/alma/apis/docs/xsd/rest_integration_profile.xsd?tags=POST) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_integration_profile.xsd. See [here](/alma/apis/docs/xsd/rest_integration_profile.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     60304 - 'Invalid profile ID.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/integration-profiles/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description The Integration Profile ID */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_integration_profile.xsd. See [here](/alma/apis/docs/xsd/rest_integration_profile.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     60304 - 'Invalid profile ID.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "put/almaws/v1/conf/integration-profiles/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description The Integration Profile ID */
+                id: string;
+            };
+            cookie?: never;
+        };
+        /** @description This method takes a Integration-Profile object. See [here](/alma/apis/docs/xsd/rest_integration_profile.xsd?tags=PUT) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_integration_profile.xsd. See [here](/alma/apis/docs/xsd/rest_integration_profile.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     60304 - 'Invalid profile ID.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "delete/almaws/v1/conf/integration-profiles/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description The Integration Profile ID */
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Deleted */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /**
+             * @description Bad Request
+             *
+             *     60304 - 'Invalid profile ID.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/jobs": {
+        parameters: {
+            query?: {
+                /** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
+                limit?: number;
+                /** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
+                offset?: number;
+                /** @description For filtering jobs by their category. Optional. For manual, possible values are from HPaTaskChain.type code table. For scheduled and other, possible values are from the systemJobsGroups code table. By default, all jobs will be retrieved. */
+                category?: string;
+                /** @description For filtering jobs by their type. Optional. Possible values are MANUAL/SCHEDULED/OTHER. If no type is given, all types of jobs will be retrieved. */
+                type?: string;
+                /** @description For filtering jobs by their profile ID. Optional. Relevant only for scheduled jobs. */
+                profile_id?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_jobs.xsd. See [here](/alma/apis/docs/xsd/rest_jobs.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     40166410 - 'Invalid category.'
+             *
+             *     40166410 - 'Invalid type.'
+             *
+             *     402219 - 'Failed to retrieve jobs list.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/jobs/{job_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Unique id of the job. Mandatory. */
+                job_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_job.xsd. See [here](/alma/apis/docs/xsd/rest_job.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402215 - 'Invalid job id format.'
+             *
+             *     402216 - 'Invalid job id.'
+             *
+             *     402249 - 'Invalid scheduled job category.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "post/almaws/v1/conf/jobs/{job_id}": {
+        parameters: {
+            query: {
+                /** @description The operation to perform on the job. Currently op=run is supported for manual and scheduled jobs. */
+                op: string;
+            };
+            header?: never;
+            path: {
+                /** @description Unique id of the job. Mandatory. */
+                job_id: string;
+            };
+            cookie?: never;
+        };
+        /** @description This method takes a Job object. See [here](/alma/apis/docs/xsd/rest_job.xsd?tags=POST) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_job.xsd. See [here](/alma/apis/docs/xsd/rest_job.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402215 - 'Invalid job id format.'
+             *
+             *     402216 - 'Invalid job id.'
+             *
+             *     402220 - 'Operation was not provided.'
+             *
+             *     402221 - 'Operation is not supported.'
+             *
+             *     402222/402223 - 'Execution threshold reached.'
+             *
+             *     402224/402225/402226 - 'An internal error occured.'
+             *
+             *     402228 - 'Mandatory parameter is missing from input.'
+             *
+             *     402229 - 'Mandatory parameter value is empty.'
+             *
+             *     402248 - 'Cannot submit scheduled job.'
+             *
+             *     402249 - 'Invalid scheduled job category.'
+             *
+             *     402231 - 'Job in consisted of more than one task - executing such job is currently not supported via the API.'
+             *
+             *     60347 - 'Job overlapps with running job - cannot execute.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/jobs/{job_id}/instances": {
+        parameters: {
+            query: {
+                /** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
+                limit?: number;
+                /** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
+                offset?: number;
+                /** @description Retrieve instances from this Date (YYYY-MM-DD). Optional. */
+                submit_date_from: string;
+                /** @description Retrieve instances until this Date, included (YYYY-MM-DD). Optional. */
+                submit_date_to: string;
+                /** @description Only instances with the specified status will be retrieved. Optional. */
+                status: string;
+            };
+            header?: never;
+            path: {
+                /** @description Unique id of the job. Mandatory. */
+                job_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_job_instances.xsd. See [here](/alma/apis/docs/xsd/rest_job_instances.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402215 - 'Invalid job id format.'
+             *
+             *     402216 - 'Invalid job id.'
+             *
+             *     402217 - 'Invalid date format.'
+             *
+             *     40166410 - 'Invalid status.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/jobs/{job_id}/instances/{instance_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Unique id of the job. May be ALL to retrieve instance id for a job. Mandatory. */
+                job_id: string;
+                /** @description Unique id of the specific job instance. Mandatory. */
+                instance_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_job_instance.xsd. See [here](/alma/apis/docs/xsd/rest_job_instance.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402215 - 'Invalid job id format.'
+             *
+             *     402216 - 'Invalid job id.'
+             *
+             *     402218 - 'Invalid job instance id.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/jobs/{job_id}/instances/{instance_id}/download": {
+        parameters: {
+            query?: {
+                /** @description MARC format XML/BINARY */
+                download_format?: string;
+                /** @description Line Type as appears in /jobs/{job_id}/instances/{instance_id} api result */
+                line_type?: string;
+            };
+            header?: never;
+            path: {
+                /** @description Unique id of the job. May be ALL to retrieve instance id for a job. Mandatory. */
+                job_id: string;
+                /** @description Unique id of the specific job instance. Mandatory. */
+                instance_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": Record<string, never>;
+                    "application/xml": Record<string, never>;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402215 - 'Invalid job id format.'
+             *
+             *     402216 - 'Invalid job id.'
+             *
+             *     402218 - 'Invalid job instance id.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/jobs/{job_id}/instances/{instance_id}/events": {
+        parameters: {
+            query?: {
+                /** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
+                limit?: number;
+                /** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
+                offset?: number;
+            };
+            header?: never;
+            path: {
+                /** @description Unique id of the job. Mandatory. */
+                job_id: string;
+                /** @description Unique id of the specific job instance. Mandatory. */
+                instance_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_events.xsd. See [here](/alma/apis/docs/xsd/rest_events.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402215 - 'Invalid job id format.'
+             *
+             *     402216 - 'Invalid job id.'
+             *
+             *     402218 - 'Invalid job instance id.'
+             *
+             *     60333 - 'Error retrieving events.'
+             *
+             *     60332 - 'This service will only work for the job category and type of USERS/SIS.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/jobs/{job_id}/instances/{instance_id}/matches": {
+        parameters: {
+            query?: {
+                /** @description The population of match results to return. Valid values are SINGLE_MATCHES and MULTI_MATCHES. Mandatory. */
+                population?: string;
+                /** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
+                limit?: number;
+                /** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
+                offset?: number;
+            };
+            header?: never;
+            path: {
+                /** @description Unique id of the job. Mandatory. */
+                job_id: string;
+                /** @description Unique id of the specific job instance. Mandatory. */
+                instance_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_matches.xsd. See [here](/alma/apis/docs/xsd/rest_matches.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402215 - 'Invalid job id format.'
+             *
+             *     402216 - 'Invalid job id.'
+             *
+             *     402218 - 'Invalid job instance id.'
+             *
+             *     402119 - 'General error.'
+             *
+             *     40166410 - 'Population value is invalid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/letters": {
+        parameters: {
+            query?: {
+                /** @description Type of letters (LETTER or COMPONENT) */
+                type?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_letters.xsd. See [here](/alma/apis/docs/xsd/rest_letters.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             *
+             *     60344 - 'Problem retrieving letter data.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/letters/{letterCode}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description The code of the letter. */
+                letterCode: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_letter.xsd. See [here](/alma/apis/docs/xsd/rest_letter.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             *
+             *     40166411 - 'Letter code is not valid.'
+             *
+             *     60344 - 'Problem retrieving letter data.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "put/almaws/v1/conf/letters/{letterCode}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description The code of the letter. */
+                letterCode: string;
+            };
+            cookie?: never;
+        };
+        /** @description This method takes a letter object. See [here](/alma/apis/docs/xsd/rest_letter.xsd?tags=PUT) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_letter.xsd. See [here](/alma/apis/docs/xsd/rest_letter.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     60105 - 'JSON is not supported for this API.'
+             *
+             *     402119 - 'General error.'
+             *
+             *     40166411 - 'Letter code or other parameter is not valid.'
+             *
+             *     60344 - 'Problem retrieving letter data.'
+             *
+             *     60343 - 'The update failed.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/libraries": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_libraries.xsd. See [here](/alma/apis/docs/xsd/rest_libraries.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/libraries/{libraryCode}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description The code of the library. */
+                libraryCode: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_library.xsd. See [here](/alma/apis/docs/xsd/rest_library.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/libraries/{libraryCode}/circ-desks/": {
+        parameters: {
+            query?: {
+                /** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
+                limit?: number;
+                /** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
+                offset?: number;
+            };
+            header?: never;
+            path: {
+                /** @description The code of the library for which the location belongs to. */
+                libraryCode: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_circ_desks.xsd. See [here](/alma/apis/docs/xsd/rest_circ_desks.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/libraries/{libraryCode}/circ-desks/{circDeskCode}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description The code of the library for which the location belongs to. */
+                libraryCode: string;
+                /** @description The code of the Circulation Desk to be retrieved. */
+                circDeskCode: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_circ_desk.xsd. See [here](/alma/apis/docs/xsd/rest_circ_desk.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             *
+             *     401664 - 'Parameter value missing or invalid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/libraries/{libraryCode}/locations": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description The code of the library for which the locations should be retrieved. */
+                libraryCode: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_locations.xsd. See [here](/alma/apis/docs/xsd/rest_locations.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "post/almaws/v1/conf/libraries/{libraryCode}/locations": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description The code of the library for which the locations should be retrieved. */
+                libraryCode: string;
+            };
+            cookie?: never;
+        };
+        /** @description See [here](/alma/apis/docs/xsd/rest_location.xsd?tags=POST) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_location.xsd. See [here](/alma/apis/docs/xsd/rest_location.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401664 - 'Parameter value invalid.'
+             *
+             *     60297 - 'Location type is not valid.'
+             *
+             *     60298 - 'Remote storage code is not valid.'
+             *
+             *     60299 - 'Fulfillment unit is not valid.'
+             *
+             *     60300 - 'Accession placement is not valid.'
+             *
+             *     60301 - 'Call number type is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/libraries/{libraryCode}/locations/{locationCode}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description The code of the library for which the location belongs to. */
+                libraryCode: string;
+                /** @description Location CODE. Required. */
+                locationCode: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_location.xsd. See [here](/alma/apis/docs/xsd/rest_location.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "put/almaws/v1/conf/libraries/{libraryCode}/locations/{locationCode}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description The code of the library for which the location belongs to. */
+                libraryCode: string;
+                /** @description Location CODE. Required. */
+                locationCode: string;
+            };
+            cookie?: never;
+        };
+        /** @description This method takes a location object. See [here](/alma/apis/docs/xsd/rest_location.xsd?tags=PUT) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_location.xsd. See [here](/alma/apis/docs/xsd/rest_location.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401664 - 'Parameter value invalid.'
+             *
+             *     60297 - 'Location type is not valid.'
+             *
+             *     60298 - 'Remote storage code is not valid.'
+             *
+             *     60299 - 'Fulfillment unit is not valid.'
+             *
+             *     60300 - 'Accession placement is not valid.'
+             *
+             *     60301 - 'Call number type is not valid.'
+             *
+             *     60302 - 'Update of location failed.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "delete/almaws/v1/conf/libraries/{libraryCode}/locations/{locationCode}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description The code of the library for which the location belongs to. */
+                libraryCode: string;
+                /** @description Location CODE. Required. */
+                locationCode: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Deleted */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/libraries/{libraryCode}/open-hours": {
+        parameters: {
+            query?: {
+                /** @description From this Date (YYYY-MM-DD). Defaults to today. */
+                from?: string;
+                /** @description To this Date (YYYY-MM-DD). Defaults to the From Date plus one week. */
+                to?: string;
+            };
+            header?: never;
+            path: {
+                /** @description The code for the institution from which the open hours should be retrieved. */
+                libraryCode: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_open_days.xsd. See [here](/alma/apis/docs/xsd/rest_open_days.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/license-terms": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_license_terms.xsd. See [here](/alma/apis/docs/xsd/rest_license_terms.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     403401 - 'Failed to retrieve license.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "post/almaws/v1/conf/license-terms": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** @description This method takes a License Term object. See [here](/alma/apis/docs/xsd/rest_license_term.xsd?tags=POST) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_license_term.xsd. See [here](/alma/apis/docs/xsd/rest_license_term.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     500021 - 'Mandatory field is missing.'
+             *
+             *     60198 - 'License code not unique.'
+             *
+             *     60195 - 'License term codes not valid.'
+             *
+             *     60190 - 'License licensor not valid.'
+             *
+             *     60196 - 'License not created.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/license-terms/{license_term_code}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description The code of the license term. */
+                license_term_code: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_license_term.xsd. See [here](/alma/apis/docs/xsd/rest_license_term.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     403400 - 'License with code not found.'
+             *
+             *     403401 - 'Failed to retrieve license.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "put/almaws/v1/conf/license-terms/{license_term_code}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description The code of the license term. */
+                license_term_code: string;
+            };
+            cookie?: never;
+        };
+        /** @description This method takes a License Term object. See [here](/alma/apis/docs/xsd/rest_license_term.xsd?tags=PUT) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_license_term.xsd. See [here](/alma/apis/docs/xsd/rest_license_term.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     403400 - 'License with code not found.'
+             *
+             *     500021 - 'Mandatory field is missing.'
+             *
+             *     60198 - 'License code not unique.'
+             *
+             *     60195 - 'License term codes not valid.'
+             *
+             *     60190 - 'License licensor not valid.'
+             *
+             *     60202 - 'License not updated.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "delete/almaws/v1/conf/license-terms/{license_term_code}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description The code of the license term. */
+                license_term_code: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Deleted */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /**
+             * @description Bad Request
+             *
+             *     403400 - 'License with code not found.'
+             *
+             *     60200 - 'License could not be deleted.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/mapping-tables": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_mapping_tables.xsd. See [here](/alma/apis/docs/xsd/rest_mapping_tables.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             *
+             *     40166411 - 'Failed to find scope.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/mapping-tables/{mappingTableName}": {
+        parameters: {
+            query?: {
+                /** @description Institution or Library code */
+                scope?: string;
+            };
+            header?: never;
+            path: {
+                /** @description Mapping table name. */
+                mappingTableName: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_mapping_table.xsd. See [here](/alma/apis/docs/xsd/rest_mapping_table.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             *
+             *     40166411 - 'Param value is invalid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "put/almaws/v1/conf/mapping-tables/{mappingTableName}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Mapping table name. */
+                mappingTableName: string;
+            };
+            cookie?: never;
+        };
+        /** @description This method takes a mapping-table object. See [here](/alma/apis/docs/xsd/rest_mapping_table.xsd?tags=PUT) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_mapping_table.xsd. See [here](/alma/apis/docs/xsd/rest_mapping_table.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             *
+             *     90126 - 'Mapping table name is empty.'
+             *
+             *     90101 - 'Table does not exist.'
+             *
+             *     90102 - 'Requested table is hidden.'
+             *
+             *     90127 - 'Requested table scope is not legal.'
+             *
+             *     90125 - 'Requested table is not customizable'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/md-import-profiles": {
+        parameters: {
+            query?: {
+                /** @description The Import Profile Type. Optional. Default is no Import Type. */
+                type?: string;
+                /** @description The type of IE Entity created by this import. Optional. Default is to include all entities. */
+                ie_type?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_import_profiles.xsd. See [here](/alma/apis/docs/xsd/rest_import_profiles.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General Error - An error has occurred while processing the request.'
+             *
+             *     402123 - 'Invalid parameter value.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/md-import-profiles/{profile_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description The profile identifier. */
+                profile_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_import_profile.xsd. See [here](/alma/apis/docs/xsd/rest_import_profile.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401871 - 'Failed to find the Profile ID.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "post/almaws/v1/conf/md-import-profiles/{profile_id}": {
+        parameters: {
+            query: {
+                /** @description The operation to perform on the import profile. The operation op=run is supported. */
+                op: string;
+            };
+            header?: never;
+            path: {
+                /** @description The profile identifier. */
+                profile_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_import_profile.xsd. See [here](/alma/apis/docs/xsd/rest_import_profile.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401871 - 'Failed to find the Profile ID.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/open-hours": {
+        parameters: {
+            query: {
+                /** @description This optional parameter specifies a library scope. Default will be institution, e.g. 01AAA_INST. */
+                scope: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_open_hours.xsd. See [here](/alma/apis/docs/xsd/rest_open_hours.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "put/almaws/v1/conf/open-hours": {
+        parameters: {
+            query: {
+                /** @description This optional parameter specifies a library scope. Default will be institution, e.g. 01AAA_INST. */
+                scope: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** @description This method takes an openHours object. See [here](/alma/apis/docs/xsd/rest_open_hours.xsd?tags=PUT) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_open_hours.xsd. See [here](/alma/apis/docs/xsd/rest_open_hours.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "delete/almaws/v1/conf/open-hours": {
+        parameters: {
+            query: {
+                /** @description This optional parameter specifies a library scope. Default will be institution, e.g. 01AAA_INST. */
+                scope: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Deleted */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/printers": {
+        parameters: {
+            query?: {
+                /** @description Printer library code. Optional. */
+                library?: string;
+                /** @description Printer printout queue indication. Optional. */
+                printout_queue?: string;
+                /** @description Printer Name. Optional. */
+                name?: string;
+                /** @description Printer Code. Optional. */
+                code?: string;
+                /** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
+                limit?: number;
+                /** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
+                offset?: number;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_printers.xsd. See [here](/alma/apis/docs/xsd/rest_printers.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402469 - 'The library code is not valid.'
+             *
+             *     40166410 - 'Invalid parameter.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/printers/{printer_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                printer_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_printer.xsd. See [here](/alma/apis/docs/xsd/rest_printer.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402899 - 'Invalid Printer ID.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/relations": {
+        parameters: {
+            query: {
+                /** @description The code of the library. Can be All. Mandatory. */
+                scope: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": Record<string, never>;
+                    "application/xml": Record<string, never>;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             *
+             *     40166413 - 'Parameter value is mandatory.'
+             *
+             *     40166411 - 'Parameter value invalid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "put/almaws/v1/conf/relations": {
+        parameters: {
+            query: {
+                /** @description The code of the source library. Can be All. Mandatory. */
+                scope: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** @description This method takes a Relations object. See [here](/alma/apis/docs/xsd/?tags=PUT) */
+        requestBody: {
+            content: {
+                "application/json": Record<string, never>;
+                "application/xml": Record<string, never>;
+            };
+        };
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": Record<string, never>;
+                    "application/xml": Record<string, never>;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             *
+             *     40166413 - 'Parameter value is mandatory.'
+             *
+             *     40166411 - 'Parameter value invalid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "delete/almaws/v1/conf/relations": {
+        parameters: {
+            query: {
+                /** @description The code of the source library. Can be All. Mandatory. */
+                scope: string;
+                /** @description The code of the target library. To delete more than one, use a comma separator. */
+                libraryCode: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Deleted */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             *
+             *     40166413 - 'Parameter value is mandatory.'
+             *
+             *     40166411 - 'Parameter value invalid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/reminders": {
+        parameters: {
+            query?: {
+                /** @description Type for filtering. Optional. Valid values are from the ReminderTypes code table */
+                type?: string;
+                /** @description Status for filtering. Optional. Valid values are from the ReminderStatuses code table */
+                status?: string;
+                /** @description From this Date (YYYY-MM-DD). Optional. Defaults to today. */
+                from?: string;
+                /** @description To this Date (YYYY-MM-DD). Optional. Defaults to the From Date. */
+                to?: string;
+                /** @description Order by parameter. Optional. Valid values are type, status, reminder_date. */
+                order_by?: string;
+                /** @description Direction parameter. Optional. Valid values are asc, desc. */
+                direction?: string;
+                /** @description Entity ID parameter. Optional. Valid value is an entity id. */
+                entity_id?: string;
+                /** @description Entity Type parameter. Optional. Valid value is BIB_MMS. */
+                entity_type?: string;
+                /** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
+                limit?: number;
+                /** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
+                offset?: number;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_reminders.xsd. See [here](/alma/apis/docs/xsd/rest_reminders.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     40166410 - 'Parameter value invalid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "post/almaws/v1/conf/reminders": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** @description This method takes a reminder object. See [here](/alma/apis/docs/xsd/rest_reminder.xsd?tags=POST) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_reminder.xsd. See [here](/alma/apis/docs/xsd/rest_reminder.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     40166410 - 'Parameter value invalid.'
+             *
+             *     60178 - 'Reminder Type is not valid.'
+             *
+             *     60179 - 'Reminder Status is not valid.'
+             *
+             *     60180 - 'Reminder not created.'
+             *
+             *     60182 - 'Reminder Entity ID is not valid.'
+             *
+             *     60183 - 'Reminder Entity Type is not valid.'
+             *
+             *     60184 - 'Reminder Entity Id is required.'
+             *
+             *     60185 - 'Reminder Date is required.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/reminders/{reminder_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Reminder ID. Required. */
+                reminder_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_reminder.xsd. See [here](/alma/apis/docs/xsd/rest_reminder.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     60177 - 'Reminder ID is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "put/almaws/v1/conf/reminders/{reminder_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Reminder ID. Required. */
+                reminder_id: string;
+            };
+            cookie?: never;
+        };
+        /** @description This method takes a reminder object. See [here](/alma/apis/docs/xsd/rest_reminder.xsd?tags=PUT) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_reminder.xsd. See [here](/alma/apis/docs/xsd/rest_reminder.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     40166410 - 'Parameter value invalid.'
+             *
+             *     60177 - 'Reminder ID is not valid.'
+             *
+             *     60178 - 'Reminder Type is not valid.'
+             *
+             *     60179 - 'Reminder Status is not valid.'
+             *
+             *     60181 - 'Reminder not updated.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "delete/almaws/v1/conf/reminders/{reminder_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Reminder ID. Required. */
+                reminder_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Deleted */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /**
+             * @description Bad Request
+             *
+             *     60177 - 'Reminder ID is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/sets": {
+        parameters: {
+            query?: {
+                /** @description Content type for filtering. Optional. Valid values are from the SetContentType code table */
+                content_type?: string;
+                /** @description Set type for filtering. Optional. Valid values are 'ITEMIZED' or 'LOGICAL'. */
+                set_type?: string;
+                /** @description Search query. Optional. Searching for words in created_by or name (see [Brief Search](https://developers.exlibrisgroup.com/blog/How-we-re-building-APIs-at-Ex-Libris#BriefSearch)) */
+                q?: string;
+                /** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
+                limit?: number;
+                /** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
+                offset?: number;
+                /** @description Set origin for filtering. Optional. Valid values are 'UI' or 'UI_CZ'. */
+                set_origin?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_sets.xsd. See [here](/alma/apis/docs/xsd/rest_sets.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     40166410 - 'Parameter value invalid.'
+             *
+             *     60106 - 'Invalid query format.'
+             *
+             *     60107 - 'Invalid set ID.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "post/almaws/v1/conf/sets": {
+        parameters: {
+            query?: {
+                /** @description The population on which a set should be created. Optional. */
+                population?: string;
+                /** @description The id of MD Import Job instance from which a set should be created. Supported for sets of Bib records. Optional. */
+                job_instance_id?: string;
+                /** @description An id of a logical set to create an Itemized Set based on it. Optional. */
+                from_logical_set?: string;
+                /** @description The logical operator. Choose between AND, OR, NOT. Default is AND. Optional */
+                combine?: string;
+                /** @description The primary combining set. Optional. */
+                set1?: string;
+                /** @description The secondary combining set. Optional. */
+                set2?: string;
+                /** @description An id of an Institution Zone set which will be used as a base to create a set in the Network Zone. The new set will include the Network Zone records to which the Institution Zone records are linked. Optional. */
+                nz_set_from_iz_set?: string;
+                /** @description An id of a set to create a new filtered set based on it, according to the indication_rule parameter. Optional. */
+                filter_set?: string;
+                /** @description The name of the Indication Rule to be used to filter the set defined in filter_set. Relevant if filter_set is used. */
+                indication_rule?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** @description This method takes a Set object. See [here](/alma/apis/docs/xsd/rest_set.xsd?tags=POST) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_set.xsd. See [here](/alma/apis/docs/xsd/rest_set.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General Error - An error has occurred while processing the request.'
+             *
+             *     500127 - ''job_instance_id' and 'population' must be provided together.'
+             *
+             *     402262 - 'Set type is invalid. Only 'ITEMIZED' and 'LOGICAL' sets are supported.'
+             *
+             *     402263 - 'The set name already exists. Please choose a different name.'
+             *
+             *     402264 - 'Set ID is invalid.'
+             *
+             *     402265 - 'Failed to create a set.'
+             *
+             *     402266 - 'Population value is invalid.'
+             *
+             *     402267 - 'Job instance type for the provided job_instance_id is not MD_IMPORT - the operation is not supported.'
+             *
+             *     60204 - 'Set combine operator not valid.'
+             *
+             *     60205 - 'Combining sets are not the same type.'
+             *
+             *     60206 - 'Sets combine operation failed.'
+             *
+             *     60209 - 'Set private value not valid.'
+             *
+             *     60210 - 'Set status not valid.'
+             *
+             *     60311 - 'Combining sets are not the same origin.'
+             *
+             *     402218 - 'Invalid job instance id.'
+             *
+             *     60334 - 'Failed to create a set in Network.'
+             *
+             *     60335 - 'The From Institution Zone is not allowed for institution not in Network.'
+             *
+             *     60107 - 'The set ID provided for the Institution Zone set is not valid.'
+             *
+             *     60336 - 'The set type is not allowed for creation as network set.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/sets/{set_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Unique id of the set. Mandatory. */
+                set_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_set.xsd. See [here](/alma/apis/docs/xsd/rest_set.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     60107 - 'Invalid set ID.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "put/almaws/v1/conf/sets/{set_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Unique id of the set. Mandatory. */
+                set_id: string;
+            };
+            cookie?: never;
+        };
+        /** @description This method takes a Set object. See [here](/alma/apis/docs/xsd/rest_set.xsd?tags=PUT) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_set.xsd. See [here](/alma/apis/docs/xsd/rest_set.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     60107 - 'Invalid set ID.'
+             *
+             *     402261 - 'Invalid Set object.'
+             *
+             *     402228 - 'Mandatory parameter is missing from input.'
+             *
+             *     402263 - 'The set name already exists. Please choose a different name.'
+             *
+             *     402269 - 'Invalid query content type in query string.'
+             *
+             *     402270 - 'Failed parsing quer.'
+             *
+             *     40166408 - 'Failed updating set.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "post/almaws/v1/conf/sets/{set_id}": {
+        parameters: {
+            query: {
+                /**
+                 * @description The type of the identifier that is used to identify members. Optional.
+                 *
+                 *     For physical items: BARCODE.
+                 *
+                 *     For Bib records: SYSTEM_NUMBER, OCLC_NUMBER, ISBN, ISSN. For regular MMS-IDs no need to defined this parameter.
+                 *
+                 *     For users: any type that is defined in UserIdentifierTypes Code Table
+                 */
+                id_type?: string;
+                /** @description The operation to perform on the set. Mandatory. The supported operations are add_members, delete_members or replace_members. */
+                op: string;
+                /** @description If false, the API will ignore invalid IDs. Relevant for sets of Bibs, Items and Users. */
+                fail_on_invalid_id?: boolean;
+            };
+            header?: never;
+            path: {
+                /** @description Unique id of the set. Mandatory. */
+                set_id: string;
+            };
+            cookie?: never;
+        };
+        /** @description This method takes a Set object including list of members to add/remove. Up to 1000 members can be supplied. See [here](/alma/apis/docs/xsd/rest_set.xsd?tags=POST) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_set.xsd. See [here](/alma/apis/docs/xsd/rest_set.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     60107 - 'Invalid set ID.'
+             *
+             *     60111 - 'Invalid operation.'
+             *
+             *     60112 - 'Invalid set type.'
+             *
+             *     60113 - 'Input set with no members.'
+             *
+             *     60114 - 'Input set with no member ID.'
+             *
+             *     60115 - 'A member ID is already in the set.'
+             *
+             *     60116 - 'A member ID is not valid for the content.'
+             *
+             *     60117 - 'Input set member ID is not in set.'
+             *
+             *     60118 - 'Input set member list exceeds limit.'
+             *
+             *     60119 - 'Input set with duplicate member.'
+             *
+             *     60120 - 'A member ID is not valid for the content and identifier.'
+             *
+             *     60176 - 'A member ID which is represented by an id_type identifier is already in the set.'
+             *
+             *     40166410 - 'Invalid parameter identifier type.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "delete/almaws/v1/conf/sets/{set_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Unique id of the set. Mandatory. */
+                set_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Deleted */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402264 - 'Invalid Set ID.'
+             *
+             *     402282 - 'Delete of Set Failed.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/sets/{set_id}/members": {
+        parameters: {
+            query?: {
+                /** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
+                limit?: number;
+                /** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
+                offset?: number;
+            };
+            header?: never;
+            path: {
+                /** @description The set ID */
+                set_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_members.xsd. See [here](/alma/apis/docs/xsd/rest_members.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     60107 - 'Invalid set ID.'
+             *
+             *     60108 - 'Invalid set member.'
+             *
+             *     60110 - 'Invalid set member details.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/test": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": Record<string, never>;
+                    "application/xml": Record<string, never>;
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "post/almaws/v1/conf/test": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": Record<string, never>;
+                    "application/xml": Record<string, never>;
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/conf/utilities/fee-transactions": {
+        parameters: {
+            query?: {
+                /** @description Limits the number of fees not transactions. Optional. Valid values are 0-100. Default value: 10. */
+                limit?: number;
+                /** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
+                offset?: number;
+                /** @description From this Date (YYYY-MM-DD). Defaults to today. */
+                transaction_from_date?: string;
+                /** @description To this Date (YYYY-MM-DD). Defaults to from date. Limit of 7 days period. */
+                transaction_to_date?: string;
+                /** @description Add fine fee transaction type filter.  This defaults to both payment and waived. */
+                transaction_type?: string;
+                /** @description Add fine owner filter.  This is a library or the institution code. */
+                owner?: string;
+                /** @description Add circulation library filter. May be used in conjunction with received_by_circ_desk to filter results. */
+                received_by_circ_library?: string;
+                /** @description Add circulation desk filter. Must be used in conjunction with received_by_circ_library to filter results. */
+                received_by_circ_desk?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_fees.xsd. See [here](/alma/apis/docs/xsd/rest_fees.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             *
+             *     40166411 - 'An error has occurred in setting from and/or to dates.'
+             *
+             *     40166419 - 'An error has occurred in setting transaction type.'
+             *
+             *     40166410 - 'An error has occurred in setting circ library or circ desk.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "post/almaws/v1/conf/workflows/{workflow_id}": {
+        parameters: {
+            query?: {
+                /** @description If true, executes workflow in test mode. */
+                test?: boolean;
+            };
+            header?: never;
+            path: {
+                /** @description Unique ID of the workflow. */
+                workflow_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": Record<string, never>;
+                    "application/xml": Record<string, never>;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             *
+             *     450001 - 'Workflow not found.'
+             *
+             *     450002 - 'Workflow inactive.'
+             *
+             *     450003 - 'Workflow missing trigger node.'
+             *
+             *     450004 - 'Workflow missing trigger configuration.  In test mode, this could mean the node is not listening for events.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
 }

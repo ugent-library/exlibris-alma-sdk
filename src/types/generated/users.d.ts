@@ -4,3079 +4,3079 @@
  */
 
 export interface paths {
-	"/almaws/v1/users": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve users
-		 * @description This API returns a list of Users, sorted by last name.
-		 */
-		get: operations["get/almaws/v1/users"];
-		put?: never;
-		/**
-		 * Create user
-		 * @description This Web service creates a new user.
-		 */
-		post: operations["post/almaws/v1/users"];
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/users/ME": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Get my details
-		 * @description Returns details for the logged-in user.
-		 */
-		get: operations["get/almaws/v1/users/ME"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/users/operation/test": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * GET User Test API
-		 * @description This API is used to test if the API key was configured correctly.
-		 */
-		get: operations["get/almaws/v1/users/operation/test"];
-		put?: never;
-		/**
-		 * POST User Test API
-		 * @description This API is used to test if the API key was configured correctly, including read/write permissions.
-		 */
-		post: operations["post/almaws/v1/users/operation/test"];
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/users/staff-login-report": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve Staff Login Report.
-		 * @description This Web service retrieves a list of login events.
-		 */
-		get: operations["get/almaws/v1/users/staff-login-report"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/users/{user_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Get user details
-		 * @description This Web service returns a specific user's details.
-		 *
-		 *
-		 *
-		 *     Note: When the users are managed in the Network Zone, getting a user from a local institution is equivalent to localizing the record based on the NZ.
-		 */
-		get: operations["get/almaws/v1/users/{user_id}"];
-		/**
-		 * Update User Details
-		 * @description This Web service updates a specific user's details.
-		 *
-		 *
-		 *
-		 *     The update is done in a 'Swap All' mode: existing fields' information will be replaced with the incoming information. Incoming lists will replace existing lists.
-		 *
-		 *     Exception for this are the following fields:
-		 *
-		 *     roles - if the incoming list does not contain roles, existing roles will be kept.
-		 *
-		 *     External users: Preferred first name, Preferred middle name, Preferred last name, User group, Job category, PIN number, User language, Resource sharing libraries, Campus code and User title: these fields will not be replaced if updated manually (or if empty in the incoming user record), unless 'override' parameter is sent with the field's name.
-		 */
-		put: operations["put/almaws/v1/users/{user_id}"];
-		/**
-		 * Authenticate or refresh user
-		 * @description This Web service runs a user authentication process or refreshes a linked user in Alma.
-		 *
-		 *     Refresh operation requires a user at the local institution that is linked to a user at another institution.
-		 *
-		 *     Authentication operation requires a password which may be entered as a parameter or with the header: Exl-User-Pw
-		 *
-		 *     Authentication is meant for internal users that have passwords in the Ex Libris Identity Service.
-		 *
-		 *     Successful authentication or refresh will result with an HTTP 204 (success - no content) response.
-		 *
-		 *     Note: Unlike other POST APIs, the authentication operation is allowed also for API-keys which are configured to allow read-only access, as this API does not alter the data.
-		 */
-		post: operations["post/almaws/v1/users/{user_id}"];
-		/**
-		 * Delete user
-		 * @description This Web service deletes a specific user.
-		 */
-		delete: operations["delete/almaws/v1/users/{user_id}"];
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/users/{user_id}/attachments": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		get?: never;
-		put?: never;
-		/**
-		 * Create User Attachment
-		 * @description This API creates a user's attachment.
-		 */
-		post: operations["post/almaws/v1/users/{user_id}/attachments"];
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/users/{user_id}/attachments/{attachment_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Get User Attachment
-		 * @description This API returns a users attachment.
-		 */
-		get: operations["get/almaws/v1/users/{user_id}/attachments/{attachment_id}"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/users/{user_id}/deposits": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Deposits by user id
-		 * @description This Web service retrieves the user deposits for a particular user id
-		 */
-		get: operations["get/almaws/v1/users/{user_id}/deposits"];
-		put?: never;
-		/**
-		 * Create deposit
-		 * @description This API performs creation of a deposit object. Currently supported: submitting deposit, submitting deposit as a draft.
-		 */
-		post: operations["post/almaws/v1/users/{user_id}/deposits"];
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/users/{user_id}/deposits/{deposit_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Deposit by user id and deposit id
-		 * @description This Web service retrieves the user deposit for a particular user id and deposit id.
-		 */
-		get: operations["get/almaws/v1/users/{user_id}/deposits/{deposit_id}"];
-		put?: never;
-		/**
-		 * Action on a deposit
-		 * @description This API performs an update of a deposit. Currently supported: withdraw and submit of a returned/draft deposit.
-		 */
-		post: operations["post/almaws/v1/users/{user_id}/deposits/{deposit_id}"];
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/users/{user_id}/fees": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Get user fines/fees
-		 * @description This API returns a user's fines and fees.
-		 */
-		get: operations["get/almaws/v1/users/{user_id}/fees"];
-		put?: never;
-		/**
-		 * Create user fine/fee
-		 * @description This API creates a fine or fee for a user.
-		 */
-		post: operations["post/almaws/v1/users/{user_id}/fees"];
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/users/{user_id}/fees/all": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		get?: never;
-		put?: never;
-		/**
-		 * Pay user fines/fees
-		 * @description This API posts a payment against a specific user's fines and fees as a whole.
-		 */
-		post: operations["post/almaws/v1/users/{user_id}/fees/all"];
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/users/{user_id}/fees/{fee_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Get user fine/fee
-		 * @description This API returns a specific fine or fee for a user.
-		 */
-		get: operations["get/almaws/v1/users/{user_id}/fees/{fee_id}"];
-		put?: never;
-		/**
-		 * Pay/waive/dispute/restore user fine/fee
-		 * @description This API applies the specified operation to a specific fine/fee.
-		 */
-		post: operations["post/almaws/v1/users/{user_id}/fees/{fee_id}"];
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/users/{user_id}/loans": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve user loans
-		 * @description This Web service retrieves a list of active loans for a user.
-		 */
-		get: operations["get/almaws/v1/users/{user_id}/loans"];
-		put?: never;
-		/**
-		 * Create user loan
-		 * @description This Web service loans an item to a user. The loan will be created according to the library's policy.
-		 */
-		post: operations["post/almaws/v1/users/{user_id}/loans"];
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/users/{user_id}/loans/{loan_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Loan by user id and loan id
-		 * @description This Web service retrieves the user loan for a particular user id and loan id.
-		 */
-		get: operations["get/almaws/v1/users/{user_id}/loans/{loan_id}"];
-		/**
-		 * Change loan due date
-		 * @description This Web service changes a loan due date.
-		 */
-		put: operations["put/almaws/v1/users/{user_id}/loans/{loan_id}"];
-		/**
-		 * Renew loan
-		 * @description This Web service renews a loan.
-		 */
-		post: operations["post/almaws/v1/users/{user_id}/loans/{loan_id}"];
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/users/{user_id}/personal-data": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Get user - data portability
-		 * @description This Web service returns a specific user's full details, including all loans, requets etc.This API is intended to be used to comply with GDPR data portability.
-		 */
-		get: operations["get/almaws/v1/users/{user_id}/personal-data"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/users/{user_id}/purchase-requests": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve user's purchase requests.
-		 * @description This Web service retrieves a user's purchase requests.
-		 */
-		get: operations["get/almaws/v1/users/{user_id}/purchase-requests"];
-		put?: never;
-		/**
-		 * Create Purchase Request
-		 * @description This API creates a new purchase request.
-		 */
-		post: operations["post/almaws/v1/users/{user_id}/purchase-requests"];
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/users/{user_id}/purchase-requests/{purchase_request_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve user's purchase request.
-		 * @description This Web service retrieves a user's purchase request.
-		 */
-		get: operations["get/almaws/v1/users/{user_id}/purchase-requests/{purchase_request_id}"];
-		put?: never;
-		/**
-		 * Operation on a user's purchase request.
-		 * @description This Web service performs an operation on a user's purchase request.
-		 */
-		post: operations["post/almaws/v1/users/{user_id}/purchase-requests/{purchase_request_id}"];
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/users/{user_id}/requests": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve user requests
-		 * @description This Web service returns list of requests for a specific user.
-		 */
-		get: operations["get/almaws/v1/users/{user_id}/requests"];
-		put?: never;
-		/**
-		 * Create user request
-		 * @description This Web service creates a user's request for a library resource. The request can be for a physical item (request types: hold, booking), or a request for digitizing a file (request type: digitization). The request can be placed on title level or on  item level.
-		 */
-		post: operations["post/almaws/v1/users/{user_id}/requests"];
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/users/{user_id}/requests/{request_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve user request
-		 * @description This Web service returns a request by a specific request id.
-		 */
-		get: operations["get/almaws/v1/users/{user_id}/requests/{request_id}"];
-		/**
-		 * Update request
-		 * @description This Web service updates a user's request for a library resource.
-		 */
-		put: operations["put/almaws/v1/users/{user_id}/requests/{request_id}"];
-		/**
-		 * Action on a request
-		 * @description This API performs an action on a request. Currently supported: moving digitization requests to their next step.
-		 */
-		post: operations["post/almaws/v1/users/{user_id}/requests/{request_id}"];
-		/**
-		 * Cancel user request
-		 * @description This Web service cancels a specific user request.
-		 */
-		delete: operations["delete/almaws/v1/users/{user_id}/requests/{request_id}"];
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/users/{user_id}/resource-sharing-requests": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		get?: never;
-		put?: never;
-		/**
-		 * Create user request for resource sharing
-		 * @description This Web service creates a user's request for resource sharing.
-		 */
-		post: operations["post/almaws/v1/users/{user_id}/resource-sharing-requests"];
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/users/{user_id}/resource-sharing-requests/{request_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve user's resource sharing request.
-		 * @description This Web service retrieves a user's resource sharing request.
-		 */
-		get: operations["get/almaws/v1/users/{user_id}/resource-sharing-requests/{request_id}"];
-		put?: never;
-		/**
-		 * Operation on request for resource sharing.
-		 * @description This web service performs an operation on a user's request for resource sharing.
-		 */
-		post: operations["post/almaws/v1/users/{user_id}/resource-sharing-requests/{request_id}"];
-		/**
-		 * Cancel user resource sharing request
-		 * @description This Web service cancels a specific user resource sharing request.
-		 */
-		delete: operations["delete/almaws/v1/users/{user_id}/resource-sharing-requests/{request_id}"];
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
-	"/almaws/v1/users/{user_name}/leganto-notifications": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/**
-		 * Retrieve user leganto notifications
-		 * @description This Web service returns list of leganto notifications for a specific user.
-		 */
-		get: operations["get/almaws/v1/users/{user_name}/leganto-notifications"];
-		put?: never;
-		post?: never;
-		delete?: never;
-		options?: never;
-		head?: never;
-		patch?: never;
-		trace?: never;
-	};
+    "/almaws/v1/users": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve users
+         * @description This API returns a list of Users, sorted by last name.
+         */
+        get: operations["get/almaws/v1/users"];
+        put?: never;
+        /**
+         * Create user
+         * @description This Web service creates a new user.
+         */
+        post: operations["post/almaws/v1/users"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/users/ME": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Get my details
+         * @description Returns details for the logged-in user.
+         */
+        get: operations["get/almaws/v1/users/ME"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/users/operation/test": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * GET User Test API
+         * @description This API is used to test if the API key was configured correctly.
+         */
+        get: operations["get/almaws/v1/users/operation/test"];
+        put?: never;
+        /**
+         * POST User Test API
+         * @description This API is used to test if the API key was configured correctly, including read/write permissions.
+         */
+        post: operations["post/almaws/v1/users/operation/test"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/users/staff-login-report": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve Staff Login Report.
+         * @description This Web service retrieves a list of login events.
+         */
+        get: operations["get/almaws/v1/users/staff-login-report"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/users/{user_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Get user details
+         * @description This Web service returns a specific user's details.
+         *
+         *
+         *
+         *     Note: When the users are managed in the Network Zone, getting a user from a local institution is equivalent to localizing the record based on the NZ.
+         */
+        get: operations["get/almaws/v1/users/{user_id}"];
+        /**
+         * Update User Details
+         * @description This Web service updates a specific user's details.
+         *
+         *
+         *
+         *     The update is done in a 'Swap All' mode: existing fields' information will be replaced with the incoming information. Incoming lists will replace existing lists.
+         *
+         *     Exception for this are the following fields:
+         *
+         *     roles - if the incoming list does not contain roles, existing roles will be kept.
+         *
+         *     External users: Preferred first name, Preferred middle name, Preferred last name, User group, Job category, PIN number, User language, Resource sharing libraries, Campus code and User title: these fields will not be replaced if updated manually (or if empty in the incoming user record), unless 'override' parameter is sent with the field's name.
+         */
+        put: operations["put/almaws/v1/users/{user_id}"];
+        /**
+         * Authenticate or refresh user
+         * @description This Web service runs a user authentication process or refreshes a linked user in Alma.
+         *
+         *     Refresh operation requires a user at the local institution that is linked to a user at another institution.
+         *
+         *     Authentication operation requires a password which may be entered as a parameter or with the header: Exl-User-Pw
+         *
+         *     Authentication is meant for internal users that have passwords in the Ex Libris Identity Service.
+         *
+         *     Successful authentication or refresh will result with an HTTP 204 (success - no content) response.
+         *
+         *     Note: Unlike other POST APIs, the authentication operation is allowed also for API-keys which are configured to allow read-only access, as this API does not alter the data.
+         */
+        post: operations["post/almaws/v1/users/{user_id}"];
+        /**
+         * Delete user
+         * @description This Web service deletes a specific user.
+         */
+        delete: operations["delete/almaws/v1/users/{user_id}"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/users/{user_id}/attachments": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Create User Attachment
+         * @description This API creates a user's attachment.
+         */
+        post: operations["post/almaws/v1/users/{user_id}/attachments"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/users/{user_id}/attachments/{attachment_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Get User Attachment
+         * @description This API returns a users attachment.
+         */
+        get: operations["get/almaws/v1/users/{user_id}/attachments/{attachment_id}"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/users/{user_id}/deposits": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Deposits by user id
+         * @description This Web service retrieves the user deposits for a particular user id
+         */
+        get: operations["get/almaws/v1/users/{user_id}/deposits"];
+        put?: never;
+        /**
+         * Create deposit
+         * @description This API performs creation of a deposit object. Currently supported: submitting deposit, submitting deposit as a draft.
+         */
+        post: operations["post/almaws/v1/users/{user_id}/deposits"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/users/{user_id}/deposits/{deposit_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Deposit by user id and deposit id
+         * @description This Web service retrieves the user deposit for a particular user id and deposit id.
+         */
+        get: operations["get/almaws/v1/users/{user_id}/deposits/{deposit_id}"];
+        put?: never;
+        /**
+         * Action on a deposit
+         * @description This API performs an update of a deposit. Currently supported: withdraw and submit of a returned/draft deposit.
+         */
+        post: operations["post/almaws/v1/users/{user_id}/deposits/{deposit_id}"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/users/{user_id}/fees": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Get user fines/fees
+         * @description This API returns a user's fines and fees.
+         */
+        get: operations["get/almaws/v1/users/{user_id}/fees"];
+        put?: never;
+        /**
+         * Create user fine/fee
+         * @description This API creates a fine or fee for a user.
+         */
+        post: operations["post/almaws/v1/users/{user_id}/fees"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/users/{user_id}/fees/all": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Pay user fines/fees
+         * @description This API posts a payment against a specific user's fines and fees as a whole.
+         */
+        post: operations["post/almaws/v1/users/{user_id}/fees/all"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/users/{user_id}/fees/{fee_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Get user fine/fee
+         * @description This API returns a specific fine or fee for a user.
+         */
+        get: operations["get/almaws/v1/users/{user_id}/fees/{fee_id}"];
+        put?: never;
+        /**
+         * Pay/waive/dispute/restore user fine/fee
+         * @description This API applies the specified operation to a specific fine/fee.
+         */
+        post: operations["post/almaws/v1/users/{user_id}/fees/{fee_id}"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/users/{user_id}/loans": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve user loans
+         * @description This Web service retrieves a list of active loans for a user.
+         */
+        get: operations["get/almaws/v1/users/{user_id}/loans"];
+        put?: never;
+        /**
+         * Create user loan
+         * @description This Web service loans an item to a user. The loan will be created according to the library's policy.
+         */
+        post: operations["post/almaws/v1/users/{user_id}/loans"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/users/{user_id}/loans/{loan_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Loan by user id and loan id
+         * @description This Web service retrieves the user loan for a particular user id and loan id.
+         */
+        get: operations["get/almaws/v1/users/{user_id}/loans/{loan_id}"];
+        /**
+         * Change loan due date
+         * @description This Web service changes a loan due date.
+         */
+        put: operations["put/almaws/v1/users/{user_id}/loans/{loan_id}"];
+        /**
+         * Renew loan
+         * @description This Web service renews a loan.
+         */
+        post: operations["post/almaws/v1/users/{user_id}/loans/{loan_id}"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/users/{user_id}/personal-data": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Get user - data portability
+         * @description This Web service returns a specific user's full details, including all loans, requets etc.This API is intended to be used to comply with GDPR data portability.
+         */
+        get: operations["get/almaws/v1/users/{user_id}/personal-data"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/users/{user_id}/purchase-requests": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve user's purchase requests.
+         * @description This Web service retrieves a user's purchase requests.
+         */
+        get: operations["get/almaws/v1/users/{user_id}/purchase-requests"];
+        put?: never;
+        /**
+         * Create Purchase Request
+         * @description This API creates a new purchase request.
+         */
+        post: operations["post/almaws/v1/users/{user_id}/purchase-requests"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/users/{user_id}/purchase-requests/{purchase_request_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve user's purchase request.
+         * @description This Web service retrieves a user's purchase request.
+         */
+        get: operations["get/almaws/v1/users/{user_id}/purchase-requests/{purchase_request_id}"];
+        put?: never;
+        /**
+         * Operation on a user's purchase request.
+         * @description This Web service performs an operation on a user's purchase request.
+         */
+        post: operations["post/almaws/v1/users/{user_id}/purchase-requests/{purchase_request_id}"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/users/{user_id}/requests": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve user requests
+         * @description This Web service returns list of requests for a specific user.
+         */
+        get: operations["get/almaws/v1/users/{user_id}/requests"];
+        put?: never;
+        /**
+         * Create user request
+         * @description This Web service creates a user's request for a library resource. The request can be for a physical item (request types: hold, booking), or a request for digitizing a file (request type: digitization). The request can be placed on title level or on  item level.
+         */
+        post: operations["post/almaws/v1/users/{user_id}/requests"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/users/{user_id}/requests/{request_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve user request
+         * @description This Web service returns a request by a specific request id.
+         */
+        get: operations["get/almaws/v1/users/{user_id}/requests/{request_id}"];
+        /**
+         * Update request
+         * @description This Web service updates a user's request for a library resource.
+         */
+        put: operations["put/almaws/v1/users/{user_id}/requests/{request_id}"];
+        /**
+         * Action on a request
+         * @description This API performs an action on a request. Currently supported: moving digitization requests to their next step.
+         */
+        post: operations["post/almaws/v1/users/{user_id}/requests/{request_id}"];
+        /**
+         * Cancel user request
+         * @description This Web service cancels a specific user request.
+         */
+        delete: operations["delete/almaws/v1/users/{user_id}/requests/{request_id}"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/users/{user_id}/resource-sharing-requests": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Create user request for resource sharing
+         * @description This Web service creates a user's request for resource sharing.
+         */
+        post: operations["post/almaws/v1/users/{user_id}/resource-sharing-requests"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/users/{user_id}/resource-sharing-requests/{request_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve user's resource sharing request.
+         * @description This Web service retrieves a user's resource sharing request.
+         */
+        get: operations["get/almaws/v1/users/{user_id}/resource-sharing-requests/{request_id}"];
+        put?: never;
+        /**
+         * Operation on request for resource sharing.
+         * @description This web service performs an operation on a user's request for resource sharing.
+         */
+        post: operations["post/almaws/v1/users/{user_id}/resource-sharing-requests/{request_id}"];
+        /**
+         * Cancel user resource sharing request
+         * @description This Web service cancels a specific user resource sharing request.
+         */
+        delete: operations["delete/almaws/v1/users/{user_id}/resource-sharing-requests/{request_id}"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/almaws/v1/users/{user_name}/leganto-notifications": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Retrieve user leganto notifications
+         * @description This Web service returns list of leganto notifications for a specific user.
+         */
+        get: operations["get/almaws/v1/users/{user_name}/leganto-notifications"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
-	schemas: never;
-	responses: never;
-	parameters: never;
-	requestBodies: never;
-	headers: {
-		/** @description The number of remaining calls according to the [Governance Threshold](https://developers.exlibrisgroup.com/alma/apis/#threshold) */
-		remaining: number;
-	};
-	pathItems: never;
+    schemas: never;
+    responses: never;
+    parameters: never;
+    requestBodies: never;
+    headers: {
+        /** @description The number of remaining calls according to the [Governance Threshold](https://developers.exlibrisgroup.com/alma/apis/#threshold) */
+        remaining: number;
+    };
+    pathItems: never;
 }
 export type $defs = Record<string, never>;
 export interface operations {
-	"get/almaws/v1/users": {
-		parameters: {
-			query?: {
-				/** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
-				limit?: number;
-				/** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
-				offset?: number;
-				/** @description Search query. Optional. Searching for words from: primary_id, first_name, last_name, middle_name, email, phone_number, job_category, identifiers, birth_date, user_group, campus_code, block_type, id_type, note_text, note_type, statistic_category, fines_fees_sum, general_info (keywords from all fields except emails, birth_date and identifiers) and ALL (words from all fields but without support for the AND operator). Example (note the tilde between the code and text): q=last_name~Smith (see [Brief Search](https://developers.exlibrisgroup.com/blog/How-we-re-building-APIs-at-Ex-Libris#BriefSearch)) */
-				q?: string;
-				/** @description A few sort options are available: last_name, first_name and primary_id. One sort option may be used at a time. A secondary sort key, primary_id, is added if last_name or first_name is the primary sort. Default sorting is by all three in the following order: last_name, first_name, primary_id. If the query option is used, the result will not sort by primary_id. */
-				order_by?: string;
-				/** @description The code of the source institution from which the user was linked. Optional */
-				source_institution_code?: string;
-				/** @description The ID of the user in the source institution. Optional. */
-				source_user_id?: string;
-				/** @description This parameter allows for expanding all user information.  To have all the user fields in the output use expand=full. */
-				expand?: string;
-				/** @description Filter users modified after the given date. Optional. This parameter is mutually exclusive with the 'q' parameter - only one of them may be used in a request. If both are provided, the request will be rejected. The expected date format is yyyy-MM-dd. */
-				modify_date_from?: string;
-			};
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_users.xsd. See [here](/alma/apis/docs/xsd/rest_users.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 *
-			 *     401651 - 'Source institution not valid or not part of fulfillment network.'
-			 *
-			 *     401861 - 'Source institution user with given identifier not found.'
-			 *
-			 *     4019990 - 'Local copied user information not found.'
-			 *
-			 *     60224 - 'Organization institution not found.'
-			 *
-			 *     60225 - 'Fulfillment network not found.'
-			 *
-			 *     60226 - 'Fulfillment network copied user not found.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"post/almaws/v1/users": {
-		parameters: {
-			query?: {
-				/** @description When customer parameter social_authentication='True': Send social authentication email to patron. Default value: False. */
-				social_authentication?: string;
-				/** @description The email notification for PIN setting change will be sent */
-				send_pin_number_letter?: string;
-				/** @description The code of the source institution to which the user should be linked. Optional */
-				source_institution_code?: string;
-				/** @description The ID of the user in the source institution. Optional. */
-				source_user_id?: string;
-				/** @description Apply registration rules in the context of the library. True or false. Optional. */
-				registration_rules?: string;
-				/** @description The code of the library. For use with registration rules. Optional. */
-				library?: string;
-			};
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		/** @description This method takes a User object. See [here](/alma/apis/docs/xsd/rest_user.xsd?tags=POST) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_user.xsd. See [here](/alma/apis/docs/xsd/rest_user.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401676 - 'No valid XML was given.'
-			 *
-			 *     401851 - 'User with identifier  of type Y already exists.'
-			 *
-			 *     401664 - 'Mandatory field is missing: X'
-			 *
-			 *     401852 - 'Given user group is not legal.'
-			 *
-			 *     401853 - 'External Id must be empty for internal user.'
-			 *
-			 *     401854 - 'External Id must be given for external user.'
-			 *
-			 *     401855 - 'The account type 'Internal with external authentication' is currently not supported.'
-			 *
-			 *     500038 - 'New password must be at least 8 characters long and must not include the user-name or any commonly used password.'
-			 *
-			 *     401857 - 'The given user account type is illegal (must be INTERNAL/EXTERNAL).'
-			 *
-			 *     401658 - 'General Error - Failed to create new user'
-			 *
-			 *     401863 - 'Given X type (Y) is not supported for given user record type (Z).'
-			 *
-			 *     401864 - 'Given X type (Y) is invalid.'
-			 *
-			 *     401651 - 'Source institution not valid or not part of fulfillment network.'
-			 *
-			 *     60224 - 'Organization institution not found.'
-			 *
-			 *     60225 - 'Fulfillment network not found.'
-			 *
-			 *     60226 - 'Fulfillment network copied user not found.'
-			 *
-			 *     60227 - 'Linked account for user already exists.'
-			 *
-			 *     60228 - 'Failed to create linked user account.'
-			 *
-			 *     60231 - 'Failed to link user due to identifier issues.'
-			 *
-			 *     60232 - 'Failed to link user due to user group empty.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/users/ME": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_user.xsd. See [here](/alma/apis/docs/xsd/rest_user.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     60101 - 'General Error: An error has occurred while processing the request.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/users/operation/test": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": Record<string, never>;
-					"application/xml": Record<string, never>;
-				};
-			};
-			/** @description Bad Request */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"post/almaws/v1/users/operation/test": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": Record<string, never>;
-					"application/xml": Record<string, never>;
-				};
-			};
-			/** @description Bad Request */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/users/staff-login-report": {
-		parameters: {
-			query: {
-				/** @description Retrieve events from this Date (YYYY-MM-DD). Optional. */
-				login_date_from: string;
-				/** @description Retrieve events until this Date, included (YYYY-MM-DD). Optional. */
-				login_date_to: string;
-				/** @description Filters successful attempts or failed login attempts.Optional values: all, true and failed-login-attempts. optional. By default this is true. */
-				successful?: string;
-				/** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
-				limit?: number;
-				/** @description Offset of the results returned. Optional.Default value: 0, which means that the first results will be returned. */
-				offset?: number;
-			};
-			header?: never;
-			path?: never;
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_login_events.xsd. See [here](/alma/apis/docs/xsd/rest_login_events.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/** @description Bad Request */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/users/{user_id}": {
-		parameters: {
-			query?: {
-				/** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. The value may also be linking_id.  To search for users which have linked accounts in other institutions according to the linking_id use user_id_type=linking_id. */
-				user_id_type?: string;
-				/** @description Special view of User object. Optional. Possible values: full - full User object will be returned. brief - only user's core information, emails, identifiers and statistics are returned. By default, the full User object will be returned. */
-				view?: string;
-				/** @description This parameter allows for expanding on some user information. Three options are available: loans-Include the total number of loans; requests-Include the total number of requests; fees-Include the balance of fees. To have more than one option, use a comma separator. */
-				expand?: string;
-				/** @description The source institution Code. Optional. When used the user_id is used to locate a copied user (linked account) based on source_link_id. */
-				source_institution_code?: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_user.xsd. See [here](/alma/apis/docs/xsd/rest_user.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401890 - 'User with identifier X of type Y was not found.'
-			 *
-			 *     401861 - 'User with identifier X was not found.'
-			 *
-			 *     4019990 - 'User with source identifier X of institution Y was not found.'
-			 *
-			 *     4019998 - 'User with linking ID not found.'
-			 *
-			 *     60101 - 'General Error: An error has occurred while processing the request.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"put/almaws/v1/users/{user_id}": {
-		parameters: {
-			query?: {
-				/** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
-				user_id_type?: string;
-				/**
-				 * @description The following fields of the user object are not replaced if they were updated manually:
-				 *
-				 *     user_group, job_category, pin_number, preferred_language, campus_code, rs_libraries, user_title, library_notices, pref_first_name, pref_middle_name, pref_last_name, cataloger_level.
-				 *
-				 *     To update these fields, specify the fields you want to replace in this parameter.
-				 *
-				 *     For example override=user_group,job_category. Default is empty.
-				 */
-				override?: string;
-				/** @description The email notification for PIN setting change will be sent */
-				send_pin_number_letter?: string;
-				/** @description Recalculate the roles based on role assignment rules. */
-				recalculate_roles?: string;
-				/** @description Apply registration rules in the context of the library. True or false. Optional. */
-				registration_rules?: string;
-				/** @description The code of the library. For use with registration rules. Optional. */
-				library?: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-			};
-			cookie?: never;
-		};
-		/** @description This method takes a User object. See [here](/alma/apis/docs/xsd/rest_user.xsd?tags=PUT) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_user.xsd. See [here](/alma/apis/docs/xsd/rest_user.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401890 - 'User with identifier X of type Y was not found.'
-			 *
-			 *     401859 - 'Action currently not supported.'
-			 *
-			 *     401676 - 'No valid XML was given.'
-			 *
-			 *     401858 - 'The external id in DB does not fit the given value in xml - external id cannot be updated.'
-			 *
-			 *     401855 - 'The account type 'Internal with external authentication' is currently not supported.'
-			 *
-			 *     500038 - 'New password must be at least 8 characters long and must not include the user-name or any commonly used password.'
-			 *
-			 *     401860 - 'Failed to update user.'
-			 *
-			 *     401652 - 'General Error: An error has occurred while processing the request.'
-			 *
-			 *     401863 - 'Given X type (Y) is not supported for given user record type (Z).'
-			 *
-			 *     401864 - 'Given X type (Y) is invalid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"post/almaws/v1/users/{user_id}": {
-		parameters: {
-			query: {
-				/** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
-				user_id_type?: string;
-				/** @description The operation to be performed on the user. Mandatory. Currently op=auth or op=refresh are supported.  The default is auth. */
-				op?: string;
-				/** @description The user's password. Relevant for op=auth. Alternatively the password can be sent, URL-encoded, in the header named Exl-User-Pw. */
-				password: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": Record<string, never>;
-					"application/xml": Record<string, never>;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401866 - 'User authentication failed'
-			 *
-			 *     401890 - 'User was not found.'
-			 *
-			 *     401861 - 'Refresh user with given identifier not found.'
-			 *
-			 *     60229 - 'Failed to find linked account for user.'
-			 *
-			 *     60226 - 'Fulfillment network copied user not found.'
-			 *
-			 *     60230 - 'Failed to refresh linked user.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"delete/almaws/v1/users/{user_id}": {
-		parameters: {
-			query?: {
-				/** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
-				user_id_type?: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description Deleted */
-			204: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401890 - 'User with identifier X of type Y was not found.'
-			 *
-			 *     401850 - 'Failed to delete user with identifier X of type Y.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"post/almaws/v1/users/{user_id}/attachments": {
-		parameters: {
-			query?: {
-				/** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
-				user_id_type?: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user. */
-				user_id: string;
-			};
-			cookie?: never;
-		};
-		/** @description The Attachment info to create.  See [here](/alma/apis/docs/xsd/rest_attachment.xsd?tags=POST) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_attachment.xsd. See [here](/alma/apis/docs/xsd/rest_attachment.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     60100 - 'The parameter X must be a number greater than zero.'
-			 *
-			 *     60322 - 'Attachment content could not be processed.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/users/{user_id}/attachments/{attachment_id}": {
-		parameters: {
-			query?: {
-				/** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
-				user_id_type?: string;
-				/** @description The expand parameter. Optional. Possible values: 'content' or 'content_no_encoding'. */
-				expand?: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user. */
-				user_id: string;
-				/** @description The Attachment id. */
-				attachment_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_attachment.xsd. See [here](/alma/apis/docs/xsd/rest_attachment.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     60100 - 'The parameter X must be a number greater than zero.'
-			 *
-			 *     60321 - 'Attachment X not found.'
-			 *
-			 *     60322 - 'Attachment content could not be processed.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/users/{user_id}/deposits": {
-		parameters: {
-			query?: {
-				/** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
-				user_id_type?: string;
-				/** @description filter deposits by status */
-				status?: string;
-				/** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
-				limit?: number;
-				/** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
-				offset?: number;
-				/** @description Few sort options are available: name, modification_date. One sort option may be used at a time. Default sorting is by name */
-				order_by?: string;
-				/** @description Sorting direction: ASC/DESC. Default: ASC. */
-				direction?: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_user_deposits.xsd. See [here](/alma/apis/docs/xsd/rest_user_deposits.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402238 - 'Failed to get deposits.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"post/almaws/v1/users/{user_id}/deposits": {
-		parameters: {
-			query?: {
-				/** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
-				user_id_type?: string;
-				/** @description Boolean flag for indicating whether submit as draft. */
-				draft?: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-			};
-			cookie?: never;
-		};
-		/** @description This method takes a Deposit object. See [here](/alma/apis/docs/xsd/rest_user_deposit.xsd?tags=POST) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_user_deposit.xsd. See [here](/alma/apis/docs/xsd/rest_user_deposit.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401652 - 'General Error - An error has occurred while creating the deposit.'
-			 *
-			 *     402205 - 'Input parameter X (Y) is not numeric.'
-			 *
-			 *     401666 - 'X parameter is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/users/{user_id}/deposits/{deposit_id}": {
-		parameters: {
-			query?: {
-				/** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
-				user_id_type?: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-				/** @description A unique identifier for the deposit */
-				deposit_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_user_deposit.xsd. See [here](/alma/apis/docs/xsd/rest_user_deposit.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402238 - 'Failed to get deposit.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"post/almaws/v1/users/{user_id}/deposits/{deposit_id}": {
-		parameters: {
-			query?: {
-				/** @description The operation to be performed on the deposit. Mandatory. Currently submit and withdraw are supported. */
-				op?: string;
-				/** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
-				user_id_type?: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-				/** @description A unique identifier for the deposit */
-				deposit_id: string;
-			};
-			cookie?: never;
-		};
-		/** @description This method takes a Request object. See [here](/alma/apis/docs/xsd/rest_user_deposit.xsd?tags=POST) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_user_deposit.xsd. See [here](/alma/apis/docs/xsd/rest_user_deposit.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401652 - 'General Error - An error has occurred while updating the deposit.'
-			 *
-			 *     401666 - 'X parameter is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/users/{user_id}/fees": {
-		parameters: {
-			query?: {
-				/** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
-				user_id_type?: string;
-				/** @description Return fees of this status only. Optional. If this is not provided, all active fees will be returned. The values that can be used are {ACTIVE|INDISPUTE|EXPORTED|CLOSED}. */
-				status?: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_fees.xsd. See [here](/alma/apis/docs/xsd/rest_fees.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 *
-			 *     401651 - 'Identifier not found.'
-			 *
-			 *     401666 - 'Parameter is not valid.'
-			 *
-			 *     60258 - 'The API Restricted profile is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"post/almaws/v1/users/{user_id}/fees": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-			};
-			cookie?: never;
-		};
-		/** @description This method takes a fee object See [here](/alma/apis/docs/xsd/rest_fee.xsd?tags=POST) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_fee.xsd. See [here](/alma/apis/docs/xsd/rest_fee.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401861 - 'User with identifier X was not found.'
-			 *
-			 *     4019991 - 'User fine/fee type is required.'
-			 *
-			 *     4019992 - 'User fine/fee type invalid entry.'
-			 *
-			 *     4019994 - 'User fine/fee original amount is required.'
-			 *
-			 *     4019993 - 'User item barcode invalid entry.'
-			 *
-			 *     4019996 - 'User fine/fee owner is required.'
-			 *
-			 *     4019999 - 'User fine/fee owner must be an institution.'
-			 *
-			 *     4019997 - 'User fine/fee owner must be a library and not institution.'
-			 *
-			 *     402119 - 'General error.'
-			 *
-			 *     60340 - 'The request is API Restricted by library.'
-			 *
-			 *     60258 - 'The API Restricted profile is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"post/almaws/v1/users/{user_id}/fees/all": {
-		parameters: {
-			query: {
-				/** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
-				user_id_type?: string;
-				/** @description The operation to be performed on the user's specified fee. Mandatory. Currently only op=pay is supported */
-				op: string;
-				/** @description The amount of the payment to be made on the user's specified fees. To pay the entire balance use amount=ALL */
-				amount?: string;
-				/** @description The Payment method. Relevant and mandatory if op=pay. Options are CREDIT_CARD, ONLINE, or CASH */
-				method?: string;
-				/** @description A note that can be attached to the payment action. Optional. */
-				comment?: string;
-				/** @description An external payment system transaction ID. Optional. */
-				external_transaction_id?: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_fees.xsd. See [here](/alma/apis/docs/xsd/rest_fees.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 *
-			 *     401651 - 'Identifier not found.'
-			 *
-			 *     401666 - 'Parameter is not valid.'
-			 *
-			 *     60340 - 'The request is API Restricted by library.'
-			 *
-			 *     60258 - 'The API Restricted profile is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/users/{user_id}/fees/{fee_id}": {
-		parameters: {
-			query?: {
-				/** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
-				user_id_type?: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-				/** @description The fine/fee identifier */
-				fee_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_fee.xsd. See [here](/alma/apis/docs/xsd/rest_fee.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 *
-			 *     401665 - 'Fine not found.'
-			 *
-			 *     401651 - 'Identifier not found.'
-			 *
-			 *     401666 - 'Parameter is not valid.'
-			 *
-			 *     60340 - 'The request is API Restricted by library.'
-			 *
-			 *     60258 - 'The API Restricted profile is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"post/almaws/v1/users/{user_id}/fees/{fee_id}": {
-		parameters: {
-			query: {
-				/** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in UserIdentifierTypes code table. */
-				user_id_type?: string;
-				/** @description The operation to be performed on the user's specified fee. Mandatory. Options are pay, waive, dispute or restore */
-				op: string;
-				/** @description The amount of the payment to be made on the user's specified fees. Relevant for op=pay,waive */
-				amount?: string;
-				/** @description The Payment method. Relevant and mandatory if op=pay. Options are CREDIT_CARD, ONLINE, or CASH */
-				method?: string;
-				/** @description The reason for waiving the fine/fee. Relevant and mandatory for op=waive. The value should be one of the codes from the FineFeeTransactionReason code table. */
-				reason?: string;
-				/** @description A note that can be attached to the action. Optional. */
-				comment?: string;
-				/** @description An external payment system transaction ID. Relevant for op=pay */
-				external_transaction_id?: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-				/** @description The fine/fee identifier */
-				fee_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_fee.xsd. See [here](/alma/apis/docs/xsd/rest_fee.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 *
-			 *     401665 - 'Fine not found.'
-			 *
-			 *     401651 - 'Identifier not found.'
-			 *
-			 *     401666 - 'Parameter is not valid.'
-			 *
-			 *     60340 - 'The fee is API Restricted by library.'
-			 *
-			 *     60258 - 'The API Restricted profile is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/users/{user_id}/loans": {
-		parameters: {
-			query?: {
-				/** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
-				user_id_type?: string;
-				/** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
-				limit?: number;
-				/** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
-				offset?: number;
-				/** @description A few sort options are available (only one can be sent): loan_date, due_date, barcode, title, author and return_date (relevant only for historical loans). A secondary sort key, id, is added to the single sort option chosen. Default sorting is by id. */
-				order_by?: string;
-				/** @description Sorting direction: ASC/DESC. Default: ASC. */
-				direction?: string;
-				/** @description Comma separated list of values for expansion of results. Possible values: 'renewable' */
-				expand?: string;
-				/** @description Active or Completeloan status. Default: Active. The Complete loan status is only relevant if historic loans haven't been anonymized. */
-				loan_status?: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_item_loans.xsd. See [here](/alma/apis/docs/xsd/rest_item_loans.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401861 - 'User with identifier X was not found.'
-			 *
-			 *     401890 - 'User with identifier X of type Y was not found.'
-			 *
-			 *     401652 - 'General Error: An error has occurred while processing the request.'
-			 *
-			 *     60258 - 'The API Restricted profile is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"post/almaws/v1/users/{user_id}/loans": {
-		parameters: {
-			query?: {
-				/** @description The Item ID. This parameter or the item_barcode parameter must be supplied. */
-				item_pid?: string;
-				/** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
-				user_id_type?: string;
-				/** @description The Item barcode. This parameter or the item_pid parameter must be supplied. */
-				item_barcode?: string;
-				/** @description Boolean flag to indicate whether to search the user in the network and create a linked user. This is only supported for networks that have fully unique patron identifiers. To enable this parameter, please contact Ex Libris customer support. */
-				generate_linked_user?: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-			};
-			cookie?: never;
-		};
-		/** @description This method takes a Loan object. See [here](/alma/apis/docs/xsd/rest_item_loan.xsd?tags=POST) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_item_loan.xsd. See [here](/alma/apis/docs/xsd/rest_item_loan.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401890 - 'User with identifier X of type Y was not found.'
-			 *
-			 *     401153 - 'Item cannot be loaned from this circulation desk.'
-			 *
-			 *     401651 - 'Item is not loanable.'
-			 *
-			 *     401672 - 'PID field is empty.'
-			 *
-			 *     401652 - 'General Error: An error has occurred while processing the request.'
-			 *
-			 *     60340 - 'The loan is API Restricted by library.'
-			 *
-			 *     60258 - 'The API Restricted profile is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/users/{user_id}/loans/{loan_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-				/** @description A unique identifier for the loan */
-				loan_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_item_loan.xsd. See [here](/alma/apis/docs/xsd/rest_item_loan.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401652 - 'General Error: An error has occurred while processing the request.'
-			 *
-			 *     60340 - 'The loan is API Restricted by library.'
-			 *
-			 *     60258 - 'The API Restricted profile is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"put/almaws/v1/users/{user_id}/loans/{loan_id}": {
-		parameters: {
-			query?: {
-				/** @description Boolean flag for notifying the borrower of changes in loan due date. Defaults to 'false'. */
-				notify_user?: boolean;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-				/** @description A unique identifier for the loan */
-				loan_id: string;
-			};
-			cookie?: never;
-		};
-		/** @description This method takes an item loan object See [here](/alma/apis/docs/xsd/rest_item_loan.xsd?tags=PUT) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_item_loan.xsd. See [here](/alma/apis/docs/xsd/rest_item_loan.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401823 - 'Loan ID XXX does not exist.'
-			 *
-			 *     401824 - 'Due date is not in loan object.'
-			 *
-			 *     401681 - 'Due date cannot be in the past.'
-			 *
-			 *     60340 - 'The loan is API Restricted by library.'
-			 *
-			 *     60258 - 'The API Restricted profile is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"post/almaws/v1/users/{user_id}/loans/{loan_id}": {
-		parameters: {
-			query: {
-				/** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
-				user_id_type?: string;
-				/** @description Operation. Currently only op=renew is supported */
-				op: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-				/** @description A unique identifier for the loan */
-				loan_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_item_loan.xsd. See [here](/alma/apis/docs/xsd/rest_item_loan.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401823 - 'Loan ID XXX does not exist.'
-			 *
-			 *     401822 - 'Cannot renew loan: Loan ID XXX.'
-			 *
-			 *     60340 - 'The loan is API Restricted by library.'
-			 *
-			 *     60258 - 'The API Restricted profile is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/users/{user_id}/personal-data": {
-		parameters: {
-			query?: {
-				/** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. The value may also be linking_id.  To search for users which have linked accounts in other institutions according to the linking_id use user_id_type=linking_id. */
-				user_id_type?: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_user_personal.xsd. See [here](/alma/apis/docs/xsd/rest_user_personal.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401890 - 'User with identifier X of type Y was not found.'
-			 *
-			 *     401861 - 'User with identifier X was not found.'
-			 *
-			 *     4019990 - 'User with source identifier X of institution Y was not found.'
-			 *
-			 *     4019998 - 'User with linking ID not found.'
-			 *
-			 *     60101 - 'General Error: An error has occurred while processing the request.'
-			 *
-			 *     401861 - 'The user ID is not valid.'
-			 *
-			 *     401890 - 'The user can not be found using this identifier.'
-			 *
-			 *     60349 - 'The user data could not be added.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/users/{user_id}/purchase-requests": {
-		parameters: {
-			query: {
-				/** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
-				user_id_type: string;
-				/** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
-				limit?: number;
-				/** @description Offset of the results returned. Optional.Default value: 0, which means that the first results will be returned. */
-				offset?: number;
-				/** @description For filtering based on the purchase request's status. Optional. Possible values:  INREVIEW, APPROVED, REJECTED, DEFERRED. Default is no status. */
-				status?: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_purchase_requests.xsd. See [here](/alma/apis/docs/xsd/rest_purchase_requests.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401890 - 'User with identifier X of type Y was not found.'
-			 *
-			 *     401652 - 'General Error: An error has occurred while processing the request.'
-			 *
-			 *     60275 - 'Purchase request status is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"post/almaws/v1/users/{user_id}/purchase-requests": {
-		parameters: {
-			query: {
-				/** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
-				user_id_type: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-			};
-			cookie?: never;
-		};
-		/** @description This method takes a Purchase Request object. See [here](/alma/apis/docs/xsd/rest_purchase_request.xsd?tags=POST) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_purchase_request.xsd. See [here](/alma/apis/docs/xsd/rest_purchase_request.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     402119 - 'General error.'
-			 *
-			 *     401890 - 'User with identifier X of type Y was not found.'
-			 *
-			 *     60221 - 'Mms ID is not valid.'
-			 *
-			 *     60270 - 'Requested format is not valid.'
-			 *
-			 *     402469 - 'Library is not valid.'
-			 *
-			 *     60271 - 'Currency is not valid.'
-			 *
-			 *     402880 - 'Vendor is not valid.'
-			 *
-			 *     60272 - 'Vendor account is not valid.'
-			 *
-			 *     60279 - 'Fund is not valid.'
-			 *
-			 *     60273 - 'Title is missing.'
-			 *
-			 *     60274 - 'Resource metadata is required.'
-			 *
-			 *     60278 - 'Purchase request creation failed.'
-			 *
-			 *     60280 - 'Purchase request citation not valid.'
-			 *
-			 *     60281 - 'Purchase request location's library not valid.'
-			 *
-			 *     60282 - 'Purchase request location's shelving location not valid.'
-			 *
-			 *     60283 - 'Purchase request location's quantity not valid.'
-			 *
-			 *     60329 - 'Purchase requested material type is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/users/{user_id}/purchase-requests/{purchase_request_id}": {
-		parameters: {
-			query: {
-				/** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
-				user_id_type: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-				/** @description The identifier of the purchase request. */
-				purchase_request_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_purchase_request.xsd. See [here](/alma/apis/docs/xsd/rest_purchase_request.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401890 - 'User with identifier X of type Y was not found.'
-			 *
-			 *     401652 - 'General Error: An error has occurred while processing the request.'
-			 *
-			 *     60276 - 'The purchase request identifier is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"post/almaws/v1/users/{user_id}/purchase-requests/{purchase_request_id}": {
-		parameters: {
-			query?: {
-				/** @description The operation to be performed on the purchase request. Mandatory. Currently cancel is supported. */
-				op?: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-				/** @description The identifier of the purchase request. */
-				purchase_request_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": Record<string, never>;
-					"application/xml": Record<string, never>;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401652 - 'General Error: An error has occurred while processing the request.'
-			 *
-			 *     60276 - 'The purchase request identifier is not valid.'
-			 *
-			 *     60277 - 'The purchase request deletion failed.'
-			 *
-			 *     401873 - 'The operation is not supported.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/users/{user_id}/requests": {
-		parameters: {
-			query?: {
-				/** @description Filter results by request type. Optional. Possible values: HOLD, DIGITIZATION, BOOKING. If not supplied, all request types will be returned. */
-				request_type?: string;
-				/** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
-				user_id_type?: string;
-				/** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
-				limit?: number;
-				/** @description Offset of the results returned. Optional.Default value: 0, which means that the first results will be returned. */
-				offset?: string;
-				/** @description Active or History request status. Default is active. The 'history' option is only available if the 'should_anonymize_requests' customer parameter is set to 'false' at the time the request was completed. */
-				status?: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_user_requests.xsd. See [here](/alma/apis/docs/xsd/rest_user_requests.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401890 - 'User with identifier X of type Y was not found.'
-			 *
-			 *     401652 - 'General Error - An error has occurred while processing the request.'
-			 *
-			 *     60258 - 'The API Restricted profile is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"post/almaws/v1/users/{user_id}/requests": {
-		parameters: {
-			query?: {
-				/** @description The type of identifier that is being searched.  Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
-				user_id_type?: string;
-				/** @description The requested title. This parameter is mandatory if the request is in title level. */
-				mms_id?: string;
-				/** @description The requested item ID. This parameter is mandatory if the request is in item level. */
-				item_pid?: string;
-				/** @description Allow placing requests for items of the same title by the same user. Optional. Default and recommended: false */
-				allow_same_request?: boolean;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-			};
-			cookie?: never;
-		};
-		/** @description This method takes a Request object. See [here](/alma/apis/docs/xsd/rest_user_request.xsd?tags=POST) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_user_request.xsd. See [here](/alma/apis/docs/xsd/rest_user_request.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401890 - 'User with identifier X of type Y was not found.'
-			 *
-			 *     401129 - 'No items can fulfill the submitted request.'
-			 *
-			 *     401895 - 'Pickup circulation desk with code X and library code Y was not found.'
-			 *
-			 *     401136 - 'Failed to save the request: Patron has active request for selected item.'
-			 *
-			 *     60308 - 'Delivery to personal address is not supported.'
-			 *
-			 *     60309 - 'User does not have address for personal delivery.'
-			 *
-			 *     60310 - 'Delivery is not supported for this type of personal address.'
-			 *
-			 *     60324 - 'Fulfillment network is not configured.'
-			 *
-			 *     60325 - 'Fulfillment network institution is not valid.'
-			 *
-			 *     60326 - 'Fulfillment network pickup library or pickup circulation desk is not valid.'
-			 *
-			 *     60327 - 'Fulfillment network pickup library or pickup circulation desk is required.'
-			 *
-			 *     401684 - 'Search for request physical item failed.'
-			 *
-			 *     60328 - 'Item for request was not found.'
-			 *
-			 *     60330 - 'Invalid partial digitization volume or issue.'
-			 *
-			 *     60331 - 'Failed to create request.'
-			 *
-			 *     401652 - 'General Error: An error has occurred while processing the request.'
-			 *
-			 *     60340 - 'The request is API Restricted by library.'
-			 *
-			 *     60258 - 'The API Restricted profile is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/users/{user_id}/requests/{request_id}": {
-		parameters: {
-			query?: {
-				/** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
-				user_id_type?: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-				/** @description A unique identifier of the request that should be canceled. */
-				request_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_user_request.xsd. See [here](/alma/apis/docs/xsd/rest_user_request.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401890 - 'User with identifier X of type Y was not found.'
-			 *
-			 *     401652 - 'General Error - An error has occurred while processing the request.'
-			 *
-			 *     60258 - 'The API Restricted profile is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"put/almaws/v1/users/{user_id}/requests/{request_id}": {
-		parameters: {
-			query?: never;
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-				/** @description A unique identifier of the request that should be canceled. */
-				request_id: string;
-			};
-			cookie?: never;
-		};
-		/** @description This method takes a User Request object. See [here](/alma/apis/docs/xsd/rest_user_request.xsd?tags=PUT) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_user_request.xsd. See [here](/alma/apis/docs/xsd/rest_user_request.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     60330 - 'Invalid partial digitization volume or issue.'
-			 *
-			 *     60340 - 'The request is API Restricted by library.'
-			 *
-			 *     60258 - 'The API Restricted profile is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"post/almaws/v1/users/{user_id}/requests/{request_id}": {
-		parameters: {
-			query?: {
-				/** @description The operation to be performed on the request. Mandatory. Currently only next_step is supported. */
-				op?: string;
-				/** @description Boolean flag for indicating whether to release the item from the request. */
-				release_item?: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-				/** @description A unique identifier of the request that should be canceled. */
-				request_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_user_request.xsd. See [here](/alma/apis/docs/xsd/rest_user_request.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401652 - 'General Error - An error has occurred while processing the request.'
-			 *
-			 *     401907 - 'Failed to find a request for the given request ID.'
-			 *
-			 *     402205 - 'Input parameter X (Y) is not numeric.'
-			 *
-			 *     401932 - 'Request X is not a Digitization request'
-			 *
-			 *     401933 - 'Cannot move forward in workflow. Request ID: X, Step: Y'
-			 *
-			 *     401934 - 'Move digitization request to next step in workflow has failed. Request ID: X'
-			 *
-			 *     401666 - 'X parameter is not valid.'
-			 *
-			 *     60340 - 'The request is API Restricted by library.'
-			 *
-			 *     60258 - 'The API Restricted profile is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"delete/almaws/v1/users/{user_id}/requests/{request_id}": {
-		parameters: {
-			query: {
-				/** @description Code of the cancel reason. Must be a value from the code table 'RequestCancellationReasons' */
-				reason: string;
-				/** @description Note with additional information regarding the cancellation. */
-				note?: string;
-				/** @description Boolean flag for notifying the requester of the cancellation (when relevant). Defaults to 'true'. */
-				notify_user?: boolean;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-				/** @description A unique identifier of the request that should be canceled. */
-				request_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description Deleted */
-			204: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401890 - 'User with identifier X of type Y was not found.'
-			 *
-			 *     401694 - 'Request Identifier not found.'
-			 *
-			 *     401652 - 'General Error: An error has occurred while processing the request.'
-			 *
-			 *     60340 - 'The request is API Restricted by library.'
-			 *
-			 *     60258 - 'The API Restricted profile is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"post/almaws/v1/users/{user_id}/resource-sharing-requests": {
-		parameters: {
-			query: {
-				/** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
-				user_id_type?: string;
-				/** @description Indication whether the request should be created even if blocks exist. optional. By default this is false. */
-				override_blocks: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-			};
-			cookie?: never;
-		};
-		/** @description This method takes a Resource Sharing Request object. See [here](/alma/apis/docs/xsd/rest_user_resource_sharing_request.xsd?tags=POST) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_user_resource_sharing_request.xsd. See [here](/alma/apis/docs/xsd/rest_user_resource_sharing_request.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401890 - 'User with identifier X of type Y was not found.'
-			 *
-			 *     401604 - 'Warning: The institutional inventory has services for the requested title.'
-			 *
-			 *     401652 - 'General Error: An error has occurred while processing the request.'
-			 *
-			 *     402039 - 'Could not create request, default item location is not defined for the resource sharing library'
-			 *
-			 *     401768 - 'Patron is not affiliated with a resource sharing library'
-			 *
-			 *     402362 - 'Failed to save the request: Patron has duplicate request'
-			 *
-			 *     401607 - 'Resource sharing library (owner) is missing'
-			 *
-			 *     401608 - 'The given resource sharing library (owner) is not defined in the patron record'
-			 *
-			 *     60340 - 'The request is API Restricted by library.'
-			 *
-			 *     60258 - 'The API Restricted profile is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/users/{user_id}/resource-sharing-requests/{request_id}": {
-		parameters: {
-			query?: {
-				/** @description Request ID type. Optional. Use request_id_type=external to search by external identifier. */
-				request_id_type?: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-				/** @description The identifier of the resource sharing request. */
-				request_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_user_resource_sharing_request.xsd. See [here](/alma/apis/docs/xsd/rest_user_resource_sharing_request.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401890 - 'User with identifier X of type Y was not found.'
-			 *
-			 *     401652 - 'General Error: An error has occurred while processing the request.'
-			 *
-			 *     40166450 - 'No result found for given parameters.'
-			 *
-			 *     40166422 - 'Value of parameter is invalid given other parameter.'
-			 *
-			 *     60340 - 'The request is API Restricted by library.'
-			 *
-			 *     60258 - 'The API Restricted profile is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"post/almaws/v1/users/{user_id}/resource-sharing-requests/{request_id}": {
-		parameters: {
-			query?: {
-				/** @description Request ID type. Optional. Use request_id_type=external to search by external identifier. */
-				request_id_type?: string;
-				/** @description The operation to be performed on the request. Mandatory. Currently only update_shipping is supported. */
-				op?: string;
-				/** @description The updated shipping cost. */
-				shipping_cost?: string;
-				/** @description The code of the updated fund. */
-				fund_code?: string;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-				/** @description The identifier of the resource sharing request. */
-				request_id: string;
-			};
-			cookie?: never;
-		};
-		/** @description This method takes a Resource Sharing Request object. See [here](/alma/apis/docs/xsd/rest_user_resource_sharing_request.xsd?tags=POST) */
-		requestBody: {
-			content: {
-				"application/json": unknown;
-				"application/xml": unknown;
-			};
-		};
-		responses: {
-			/** @description OK - This method returns an object based on rest_user_resource_sharing_request.xsd. See [here](/alma/apis/docs/xsd/rest_user_resource_sharing_request.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401608 - 'The given resource sharing library (owner) is not defined in the patron record'
-			 *
-			 *     40166411 - 'Parameter value is invalid.'
-			 *
-			 *     40166425 - 'Shipping cost cannot be lower than 0.'
-			 *
-			 *     40166426 - 'Parameter value is invalid (with error message).'
-			 *
-			 *     40166412 - 'Failed to perform operation.'
-			 *
-			 *     60340 - 'The request is API Restricted by library.'
-			 *
-			 *     60258 - 'The API Restricted profile is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"delete/almaws/v1/users/{user_id}/resource-sharing-requests/{request_id}": {
-		parameters: {
-			query?: {
-				/** @description Boolean flag permanently delete the resource sharing request. Defaults to 'false'. */
-				remove_request?: boolean;
-				/** @description Code of the cancel reason. Must be a value from the code table 'RequestCancellationReasons' */
-				reason?: string;
-				/** @description Note with additional information regarding the cancellation. */
-				note?: string;
-				/** @description Boolean flag for notifying the requester of the cancellation (when relevant). Defaults to 'true'. */
-				notify_user?: boolean;
-			};
-			header?: never;
-			path: {
-				/** @description A unique identifier for the user */
-				user_id: string;
-				/** @description The identifier of the resource sharing request. */
-				request_id: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description Deleted */
-			204: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/**
-			 * @description Bad Request
-			 *
-			 *     401890 - 'User with identifier X of type Y was not found.'
-			 *
-			 *     401694 - 'Request Identifier not found.'
-			 *
-			 *     401652 - 'General Error: An error has occurred while processing the request.'
-			 *
-			 *     60340 - 'The request is API Restricted by library.'
-			 *
-			 *     60258 - 'The API Restricted profile is not valid.'
-			 */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
-	"get/almaws/v1/users/{user_name}/leganto-notifications": {
-		parameters: {
-			query: {
-				/** @description Filter results by notification type. Optional. Possible values are listed in code_table_SystemEventTypes */
-				notificationType: string;
-				/** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10 */
-				limit?: string;
-				/** @description From this Date (YYYY-MM-DD). Optional. Defaults to today. */
-				from: string;
-				/** @description To this date (YYYY-MM-DD). Optional. Defaults to the From Date plus one week. */
-				to: string;
-				/** @description Boolean flag for indicating whether to bring the notifications by to date or leganto last notification viewd date . Optional . */
-				unread?: string;
-			};
-			header?: never;
-			path: {
-				/** @description The user_name of the user */
-				user_name: string;
-			};
-			cookie?: never;
-		};
-		requestBody?: never;
-		responses: {
-			/** @description OK - This method returns an object based on rest_leganto_notifications.xsd. See [here](/alma/apis/docs/xsd/rest_leganto_notifications.xsd) */
-			200: {
-				headers: {
-					"X-Exl-Api-Remaining": components["headers"]["remaining"];
-					[name: string]: unknown;
-				};
-				content: {
-					"application/json": unknown;
-					"application/xml": unknown;
-				};
-			};
-			/** @description Bad Request */
-			400: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-			/** @description Internal Server Error */
-			500: {
-				headers: {
-					[name: string]: unknown;
-				};
-				content?: never;
-			};
-		};
-	};
+    "get/almaws/v1/users": {
+        parameters: {
+            query?: {
+                /** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
+                limit?: number;
+                /** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
+                offset?: number;
+                /** @description Search query. Optional. Searching for words from: primary_id, first_name, last_name, middle_name, email, phone_number, job_category, identifiers, birth_date, user_group, campus_code, block_type, id_type, note_text, note_type, statistic_category, fines_fees_sum, general_info (keywords from all fields except emails, birth_date and identifiers) and ALL (words from all fields but without support for the AND operator). Example (note the tilde between the code and text): q=last_name~Smith (see [Brief Search](https://developers.exlibrisgroup.com/blog/How-we-re-building-APIs-at-Ex-Libris#BriefSearch)) */
+                q?: string;
+                /** @description A few sort options are available: last_name, first_name and primary_id. One sort option may be used at a time. A secondary sort key, primary_id, is added if last_name or first_name is the primary sort. Default sorting is by all three in the following order: last_name, first_name, primary_id. If the query option is used, the result will not sort by primary_id. */
+                order_by?: string;
+                /** @description The code of the source institution from which the user was linked. Optional */
+                source_institution_code?: string;
+                /** @description The ID of the user in the source institution. Optional. */
+                source_user_id?: string;
+                /** @description This parameter allows for expanding all user information.  To have all the user fields in the output use expand=full. */
+                expand?: string;
+                /** @description Filter users modified after the given date. Optional. This parameter is mutually exclusive with the 'q' parameter - only one of them may be used in a request. If both are provided, the request will be rejected. The expected date format is yyyy-MM-dd. */
+                modify_date_from?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_users.xsd. See [here](/alma/apis/docs/xsd/rest_users.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             *
+             *     401651 - 'Source institution not valid or not part of fulfillment network.'
+             *
+             *     401861 - 'Source institution user with given identifier not found.'
+             *
+             *     4019990 - 'Local copied user information not found.'
+             *
+             *     60224 - 'Organization institution not found.'
+             *
+             *     60225 - 'Fulfillment network not found.'
+             *
+             *     60226 - 'Fulfillment network copied user not found.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "post/almaws/v1/users": {
+        parameters: {
+            query?: {
+                /** @description When customer parameter social_authentication='True': Send social authentication email to patron. Default value: False. */
+                social_authentication?: string;
+                /** @description The email notification for PIN setting change will be sent */
+                send_pin_number_letter?: string;
+                /** @description The code of the source institution to which the user should be linked. Optional */
+                source_institution_code?: string;
+                /** @description The ID of the user in the source institution. Optional. */
+                source_user_id?: string;
+                /** @description Apply registration rules in the context of the library. True or false. Optional. */
+                registration_rules?: string;
+                /** @description The code of the library. For use with registration rules. Optional. */
+                library?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** @description This method takes a User object. See [here](/alma/apis/docs/xsd/rest_user.xsd?tags=POST) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_user.xsd. See [here](/alma/apis/docs/xsd/rest_user.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401676 - 'No valid XML was given.'
+             *
+             *     401851 - 'User with identifier  of type Y already exists.'
+             *
+             *     401664 - 'Mandatory field is missing: X'
+             *
+             *     401852 - 'Given user group is not legal.'
+             *
+             *     401853 - 'External Id must be empty for internal user.'
+             *
+             *     401854 - 'External Id must be given for external user.'
+             *
+             *     401855 - 'The account type 'Internal with external authentication' is currently not supported.'
+             *
+             *     500038 - 'New password must be at least 8 characters long and must not include the user-name or any commonly used password.'
+             *
+             *     401857 - 'The given user account type is illegal (must be INTERNAL/EXTERNAL).'
+             *
+             *     401658 - 'General Error - Failed to create new user'
+             *
+             *     401863 - 'Given X type (Y) is not supported for given user record type (Z).'
+             *
+             *     401864 - 'Given X type (Y) is invalid.'
+             *
+             *     401651 - 'Source institution not valid or not part of fulfillment network.'
+             *
+             *     60224 - 'Organization institution not found.'
+             *
+             *     60225 - 'Fulfillment network not found.'
+             *
+             *     60226 - 'Fulfillment network copied user not found.'
+             *
+             *     60227 - 'Linked account for user already exists.'
+             *
+             *     60228 - 'Failed to create linked user account.'
+             *
+             *     60231 - 'Failed to link user due to identifier issues.'
+             *
+             *     60232 - 'Failed to link user due to user group empty.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/users/ME": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_user.xsd. See [here](/alma/apis/docs/xsd/rest_user.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     60101 - 'General Error: An error has occurred while processing the request.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/users/operation/test": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": Record<string, never>;
+                    "application/xml": Record<string, never>;
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "post/almaws/v1/users/operation/test": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": Record<string, never>;
+                    "application/xml": Record<string, never>;
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/users/staff-login-report": {
+        parameters: {
+            query: {
+                /** @description Retrieve events from this Date (YYYY-MM-DD). Optional. */
+                login_date_from: string;
+                /** @description Retrieve events until this Date, included (YYYY-MM-DD). Optional. */
+                login_date_to: string;
+                /** @description Filters successful attempts or failed login attempts.Optional values: all, true and failed-login-attempts. optional. By default this is true. */
+                successful?: string;
+                /** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
+                limit?: number;
+                /** @description Offset of the results returned. Optional.Default value: 0, which means that the first results will be returned. */
+                offset?: number;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_login_events.xsd. See [here](/alma/apis/docs/xsd/rest_login_events.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/users/{user_id}": {
+        parameters: {
+            query?: {
+                /** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. The value may also be linking_id.  To search for users which have linked accounts in other institutions according to the linking_id use user_id_type=linking_id. */
+                user_id_type?: string;
+                /** @description Special view of User object. Optional. Possible values: full - full User object will be returned. brief - only user's core information, emails, identifiers and statistics are returned. By default, the full User object will be returned. */
+                view?: string;
+                /** @description This parameter allows for expanding on some user information. Three options are available: loans-Include the total number of loans; requests-Include the total number of requests; fees-Include the balance of fees. To have more than one option, use a comma separator. */
+                expand?: string;
+                /** @description The source institution Code. Optional. When used the user_id is used to locate a copied user (linked account) based on source_link_id. */
+                source_institution_code?: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_user.xsd. See [here](/alma/apis/docs/xsd/rest_user.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401890 - 'User with identifier X of type Y was not found.'
+             *
+             *     401861 - 'User with identifier X was not found.'
+             *
+             *     4019990 - 'User with source identifier X of institution Y was not found.'
+             *
+             *     4019998 - 'User with linking ID not found.'
+             *
+             *     60101 - 'General Error: An error has occurred while processing the request.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "put/almaws/v1/users/{user_id}": {
+        parameters: {
+            query?: {
+                /** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
+                user_id_type?: string;
+                /**
+                 * @description The following fields of the user object are not replaced if they were updated manually:
+                 *
+                 *     user_group, job_category, pin_number, preferred_language, campus_code, rs_libraries, user_title, library_notices, pref_first_name, pref_middle_name, pref_last_name, cataloger_level.
+                 *
+                 *     To update these fields, specify the fields you want to replace in this parameter.
+                 *
+                 *     For example override=user_group,job_category. Default is empty.
+                 */
+                override?: string;
+                /** @description The email notification for PIN setting change will be sent */
+                send_pin_number_letter?: string;
+                /** @description Recalculate the roles based on role assignment rules. */
+                recalculate_roles?: string;
+                /** @description Apply registration rules in the context of the library. True or false. Optional. */
+                registration_rules?: string;
+                /** @description The code of the library. For use with registration rules. Optional. */
+                library?: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+            };
+            cookie?: never;
+        };
+        /** @description This method takes a User object. See [here](/alma/apis/docs/xsd/rest_user.xsd?tags=PUT) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_user.xsd. See [here](/alma/apis/docs/xsd/rest_user.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401890 - 'User with identifier X of type Y was not found.'
+             *
+             *     401859 - 'Action currently not supported.'
+             *
+             *     401676 - 'No valid XML was given.'
+             *
+             *     401858 - 'The external id in DB does not fit the given value in xml - external id cannot be updated.'
+             *
+             *     401855 - 'The account type 'Internal with external authentication' is currently not supported.'
+             *
+             *     500038 - 'New password must be at least 8 characters long and must not include the user-name or any commonly used password.'
+             *
+             *     401860 - 'Failed to update user.'
+             *
+             *     401652 - 'General Error: An error has occurred while processing the request.'
+             *
+             *     401863 - 'Given X type (Y) is not supported for given user record type (Z).'
+             *
+             *     401864 - 'Given X type (Y) is invalid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "post/almaws/v1/users/{user_id}": {
+        parameters: {
+            query: {
+                /** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
+                user_id_type?: string;
+                /** @description The operation to be performed on the user. Mandatory. Currently op=auth or op=refresh are supported.  The default is auth. */
+                op?: string;
+                /** @description The user's password. Relevant for op=auth. Alternatively the password can be sent, URL-encoded, in the header named Exl-User-Pw. */
+                password: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": Record<string, never>;
+                    "application/xml": Record<string, never>;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401866 - 'User authentication failed'
+             *
+             *     401890 - 'User was not found.'
+             *
+             *     401861 - 'Refresh user with given identifier not found.'
+             *
+             *     60229 - 'Failed to find linked account for user.'
+             *
+             *     60226 - 'Fulfillment network copied user not found.'
+             *
+             *     60230 - 'Failed to refresh linked user.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "delete/almaws/v1/users/{user_id}": {
+        parameters: {
+            query?: {
+                /** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
+                user_id_type?: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Deleted */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401890 - 'User with identifier X of type Y was not found.'
+             *
+             *     401850 - 'Failed to delete user with identifier X of type Y.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "post/almaws/v1/users/{user_id}/attachments": {
+        parameters: {
+            query?: {
+                /** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
+                user_id_type?: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user. */
+                user_id: string;
+            };
+            cookie?: never;
+        };
+        /** @description The Attachment info to create.  See [here](/alma/apis/docs/xsd/rest_attachment.xsd?tags=POST) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_attachment.xsd. See [here](/alma/apis/docs/xsd/rest_attachment.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     60100 - 'The parameter X must be a number greater than zero.'
+             *
+             *     60322 - 'Attachment content could not be processed.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/users/{user_id}/attachments/{attachment_id}": {
+        parameters: {
+            query?: {
+                /** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
+                user_id_type?: string;
+                /** @description The expand parameter. Optional. Possible values: 'content' or 'content_no_encoding'. */
+                expand?: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user. */
+                user_id: string;
+                /** @description The Attachment id. */
+                attachment_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_attachment.xsd. See [here](/alma/apis/docs/xsd/rest_attachment.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     60100 - 'The parameter X must be a number greater than zero.'
+             *
+             *     60321 - 'Attachment X not found.'
+             *
+             *     60322 - 'Attachment content could not be processed.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/users/{user_id}/deposits": {
+        parameters: {
+            query?: {
+                /** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
+                user_id_type?: string;
+                /** @description filter deposits by status */
+                status?: string;
+                /** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
+                limit?: number;
+                /** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
+                offset?: number;
+                /** @description Few sort options are available: name, modification_date. One sort option may be used at a time. Default sorting is by name */
+                order_by?: string;
+                /** @description Sorting direction: ASC/DESC. Default: ASC. */
+                direction?: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_user_deposits.xsd. See [here](/alma/apis/docs/xsd/rest_user_deposits.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402238 - 'Failed to get deposits.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "post/almaws/v1/users/{user_id}/deposits": {
+        parameters: {
+            query?: {
+                /** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
+                user_id_type?: string;
+                /** @description Boolean flag for indicating whether submit as draft. */
+                draft?: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+            };
+            cookie?: never;
+        };
+        /** @description This method takes a Deposit object. See [here](/alma/apis/docs/xsd/rest_user_deposit.xsd?tags=POST) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_user_deposit.xsd. See [here](/alma/apis/docs/xsd/rest_user_deposit.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401652 - 'General Error - An error has occurred while creating the deposit.'
+             *
+             *     402205 - 'Input parameter X (Y) is not numeric.'
+             *
+             *     401666 - 'X parameter is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/users/{user_id}/deposits/{deposit_id}": {
+        parameters: {
+            query?: {
+                /** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
+                user_id_type?: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+                /** @description A unique identifier for the deposit */
+                deposit_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_user_deposit.xsd. See [here](/alma/apis/docs/xsd/rest_user_deposit.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402238 - 'Failed to get deposit.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "post/almaws/v1/users/{user_id}/deposits/{deposit_id}": {
+        parameters: {
+            query?: {
+                /** @description The operation to be performed on the deposit. Mandatory. Currently submit and withdraw are supported. */
+                op?: string;
+                /** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
+                user_id_type?: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+                /** @description A unique identifier for the deposit */
+                deposit_id: string;
+            };
+            cookie?: never;
+        };
+        /** @description This method takes a Request object. See [here](/alma/apis/docs/xsd/rest_user_deposit.xsd?tags=POST) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_user_deposit.xsd. See [here](/alma/apis/docs/xsd/rest_user_deposit.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401652 - 'General Error - An error has occurred while updating the deposit.'
+             *
+             *     401666 - 'X parameter is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/users/{user_id}/fees": {
+        parameters: {
+            query?: {
+                /** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
+                user_id_type?: string;
+                /** @description Return fees of this status only. Optional. If this is not provided, all active fees will be returned. The values that can be used are {ACTIVE|INDISPUTE|EXPORTED|CLOSED}. */
+                status?: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_fees.xsd. See [here](/alma/apis/docs/xsd/rest_fees.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             *
+             *     401651 - 'Identifier not found.'
+             *
+             *     401666 - 'Parameter is not valid.'
+             *
+             *     60258 - 'The API Restricted profile is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "post/almaws/v1/users/{user_id}/fees": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+            };
+            cookie?: never;
+        };
+        /** @description This method takes a fee object See [here](/alma/apis/docs/xsd/rest_fee.xsd?tags=POST) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_fee.xsd. See [here](/alma/apis/docs/xsd/rest_fee.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401861 - 'User with identifier X was not found.'
+             *
+             *     4019991 - 'User fine/fee type is required.'
+             *
+             *     4019992 - 'User fine/fee type invalid entry.'
+             *
+             *     4019994 - 'User fine/fee original amount is required.'
+             *
+             *     4019993 - 'User item barcode invalid entry.'
+             *
+             *     4019996 - 'User fine/fee owner is required.'
+             *
+             *     4019999 - 'User fine/fee owner must be an institution.'
+             *
+             *     4019997 - 'User fine/fee owner must be a library and not institution.'
+             *
+             *     402119 - 'General error.'
+             *
+             *     60340 - 'The request is API Restricted by library.'
+             *
+             *     60258 - 'The API Restricted profile is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "post/almaws/v1/users/{user_id}/fees/all": {
+        parameters: {
+            query: {
+                /** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
+                user_id_type?: string;
+                /** @description The operation to be performed on the user's specified fee. Mandatory. Currently only op=pay is supported */
+                op: string;
+                /** @description The amount of the payment to be made on the user's specified fees. To pay the entire balance use amount=ALL */
+                amount?: string;
+                /** @description The Payment method. Relevant and mandatory if op=pay. Options are CREDIT_CARD, ONLINE, or CASH */
+                method?: string;
+                /** @description A note that can be attached to the payment action. Optional. */
+                comment?: string;
+                /** @description An external payment system transaction ID. Optional. */
+                external_transaction_id?: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_fees.xsd. See [here](/alma/apis/docs/xsd/rest_fees.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             *
+             *     401651 - 'Identifier not found.'
+             *
+             *     401666 - 'Parameter is not valid.'
+             *
+             *     60340 - 'The request is API Restricted by library.'
+             *
+             *     60258 - 'The API Restricted profile is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/users/{user_id}/fees/{fee_id}": {
+        parameters: {
+            query?: {
+                /** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
+                user_id_type?: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+                /** @description The fine/fee identifier */
+                fee_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_fee.xsd. See [here](/alma/apis/docs/xsd/rest_fee.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             *
+             *     401665 - 'Fine not found.'
+             *
+             *     401651 - 'Identifier not found.'
+             *
+             *     401666 - 'Parameter is not valid.'
+             *
+             *     60340 - 'The request is API Restricted by library.'
+             *
+             *     60258 - 'The API Restricted profile is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "post/almaws/v1/users/{user_id}/fees/{fee_id}": {
+        parameters: {
+            query: {
+                /** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in UserIdentifierTypes code table. */
+                user_id_type?: string;
+                /** @description The operation to be performed on the user's specified fee. Mandatory. Options are pay, waive, dispute or restore */
+                op: string;
+                /** @description The amount of the payment to be made on the user's specified fees. Relevant for op=pay,waive */
+                amount?: string;
+                /** @description The Payment method. Relevant and mandatory if op=pay. Options are CREDIT_CARD, ONLINE, or CASH */
+                method?: string;
+                /** @description The reason for waiving the fine/fee. Relevant and mandatory for op=waive. The value should be one of the codes from the FineFeeTransactionReason code table. */
+                reason?: string;
+                /** @description A note that can be attached to the action. Optional. */
+                comment?: string;
+                /** @description An external payment system transaction ID. Relevant for op=pay */
+                external_transaction_id?: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+                /** @description The fine/fee identifier */
+                fee_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_fee.xsd. See [here](/alma/apis/docs/xsd/rest_fee.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             *
+             *     401665 - 'Fine not found.'
+             *
+             *     401651 - 'Identifier not found.'
+             *
+             *     401666 - 'Parameter is not valid.'
+             *
+             *     60340 - 'The fee is API Restricted by library.'
+             *
+             *     60258 - 'The API Restricted profile is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/users/{user_id}/loans": {
+        parameters: {
+            query?: {
+                /** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
+                user_id_type?: string;
+                /** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
+                limit?: number;
+                /** @description Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned. */
+                offset?: number;
+                /** @description A few sort options are available (only one can be sent): loan_date, due_date, barcode, title, author and return_date (relevant only for historical loans). A secondary sort key, id, is added to the single sort option chosen. Default sorting is by id. */
+                order_by?: string;
+                /** @description Sorting direction: ASC/DESC. Default: ASC. */
+                direction?: string;
+                /** @description Comma separated list of values for expansion of results. Possible values: 'renewable' */
+                expand?: string;
+                /** @description Active or Completeloan status. Default: Active. The Complete loan status is only relevant if historic loans haven't been anonymized. */
+                loan_status?: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_item_loans.xsd. See [here](/alma/apis/docs/xsd/rest_item_loans.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401861 - 'User with identifier X was not found.'
+             *
+             *     401890 - 'User with identifier X of type Y was not found.'
+             *
+             *     401652 - 'General Error: An error has occurred while processing the request.'
+             *
+             *     60258 - 'The API Restricted profile is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "post/almaws/v1/users/{user_id}/loans": {
+        parameters: {
+            query?: {
+                /** @description The Item ID. This parameter or the item_barcode parameter must be supplied. */
+                item_pid?: string;
+                /** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
+                user_id_type?: string;
+                /** @description The Item barcode. This parameter or the item_pid parameter must be supplied. */
+                item_barcode?: string;
+                /** @description Boolean flag to indicate whether to search the user in the network and create a linked user. This is only supported for networks that have fully unique patron identifiers. To enable this parameter, please contact Ex Libris customer support. */
+                generate_linked_user?: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+            };
+            cookie?: never;
+        };
+        /** @description This method takes a Loan object. See [here](/alma/apis/docs/xsd/rest_item_loan.xsd?tags=POST) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_item_loan.xsd. See [here](/alma/apis/docs/xsd/rest_item_loan.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401890 - 'User with identifier X of type Y was not found.'
+             *
+             *     401153 - 'Item cannot be loaned from this circulation desk.'
+             *
+             *     401651 - 'Item is not loanable.'
+             *
+             *     401672 - 'PID field is empty.'
+             *
+             *     401652 - 'General Error: An error has occurred while processing the request.'
+             *
+             *     60340 - 'The loan is API Restricted by library.'
+             *
+             *     60258 - 'The API Restricted profile is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/users/{user_id}/loans/{loan_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+                /** @description A unique identifier for the loan */
+                loan_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_item_loan.xsd. See [here](/alma/apis/docs/xsd/rest_item_loan.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401652 - 'General Error: An error has occurred while processing the request.'
+             *
+             *     60340 - 'The loan is API Restricted by library.'
+             *
+             *     60258 - 'The API Restricted profile is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "put/almaws/v1/users/{user_id}/loans/{loan_id}": {
+        parameters: {
+            query?: {
+                /** @description Boolean flag for notifying the borrower of changes in loan due date. Defaults to 'false'. */
+                notify_user?: boolean;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+                /** @description A unique identifier for the loan */
+                loan_id: string;
+            };
+            cookie?: never;
+        };
+        /** @description This method takes an item loan object See [here](/alma/apis/docs/xsd/rest_item_loan.xsd?tags=PUT) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_item_loan.xsd. See [here](/alma/apis/docs/xsd/rest_item_loan.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401823 - 'Loan ID XXX does not exist.'
+             *
+             *     401824 - 'Due date is not in loan object.'
+             *
+             *     401681 - 'Due date cannot be in the past.'
+             *
+             *     60340 - 'The loan is API Restricted by library.'
+             *
+             *     60258 - 'The API Restricted profile is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "post/almaws/v1/users/{user_id}/loans/{loan_id}": {
+        parameters: {
+            query: {
+                /** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
+                user_id_type?: string;
+                /** @description Operation. Currently only op=renew is supported */
+                op: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+                /** @description A unique identifier for the loan */
+                loan_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_item_loan.xsd. See [here](/alma/apis/docs/xsd/rest_item_loan.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401823 - 'Loan ID XXX does not exist.'
+             *
+             *     401822 - 'Cannot renew loan: Loan ID XXX.'
+             *
+             *     60340 - 'The loan is API Restricted by library.'
+             *
+             *     60258 - 'The API Restricted profile is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/users/{user_id}/personal-data": {
+        parameters: {
+            query?: {
+                /** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. The value may also be linking_id.  To search for users which have linked accounts in other institutions according to the linking_id use user_id_type=linking_id. */
+                user_id_type?: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_user_personal.xsd. See [here](/alma/apis/docs/xsd/rest_user_personal.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401890 - 'User with identifier X of type Y was not found.'
+             *
+             *     401861 - 'User with identifier X was not found.'
+             *
+             *     4019990 - 'User with source identifier X of institution Y was not found.'
+             *
+             *     4019998 - 'User with linking ID not found.'
+             *
+             *     60101 - 'General Error: An error has occurred while processing the request.'
+             *
+             *     401861 - 'The user ID is not valid.'
+             *
+             *     401890 - 'The user can not be found using this identifier.'
+             *
+             *     60349 - 'The user data could not be added.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/users/{user_id}/purchase-requests": {
+        parameters: {
+            query: {
+                /** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
+                user_id_type: string;
+                /** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
+                limit?: number;
+                /** @description Offset of the results returned. Optional.Default value: 0, which means that the first results will be returned. */
+                offset?: number;
+                /** @description For filtering based on the purchase request's status. Optional. Possible values:  INREVIEW, APPROVED, REJECTED, DEFERRED. Default is no status. */
+                status?: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_purchase_requests.xsd. See [here](/alma/apis/docs/xsd/rest_purchase_requests.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401890 - 'User with identifier X of type Y was not found.'
+             *
+             *     401652 - 'General Error: An error has occurred while processing the request.'
+             *
+             *     60275 - 'Purchase request status is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "post/almaws/v1/users/{user_id}/purchase-requests": {
+        parameters: {
+            query: {
+                /** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
+                user_id_type: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+            };
+            cookie?: never;
+        };
+        /** @description This method takes a Purchase Request object. See [here](/alma/apis/docs/xsd/rest_purchase_request.xsd?tags=POST) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_purchase_request.xsd. See [here](/alma/apis/docs/xsd/rest_purchase_request.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     402119 - 'General error.'
+             *
+             *     401890 - 'User with identifier X of type Y was not found.'
+             *
+             *     60221 - 'Mms ID is not valid.'
+             *
+             *     60270 - 'Requested format is not valid.'
+             *
+             *     402469 - 'Library is not valid.'
+             *
+             *     60271 - 'Currency is not valid.'
+             *
+             *     402880 - 'Vendor is not valid.'
+             *
+             *     60272 - 'Vendor account is not valid.'
+             *
+             *     60279 - 'Fund is not valid.'
+             *
+             *     60273 - 'Title is missing.'
+             *
+             *     60274 - 'Resource metadata is required.'
+             *
+             *     60278 - 'Purchase request creation failed.'
+             *
+             *     60280 - 'Purchase request citation not valid.'
+             *
+             *     60281 - 'Purchase request location's library not valid.'
+             *
+             *     60282 - 'Purchase request location's shelving location not valid.'
+             *
+             *     60283 - 'Purchase request location's quantity not valid.'
+             *
+             *     60329 - 'Purchase requested material type is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/users/{user_id}/purchase-requests/{purchase_request_id}": {
+        parameters: {
+            query: {
+                /** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
+                user_id_type: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+                /** @description The identifier of the purchase request. */
+                purchase_request_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_purchase_request.xsd. See [here](/alma/apis/docs/xsd/rest_purchase_request.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401890 - 'User with identifier X of type Y was not found.'
+             *
+             *     401652 - 'General Error: An error has occurred while processing the request.'
+             *
+             *     60276 - 'The purchase request identifier is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "post/almaws/v1/users/{user_id}/purchase-requests/{purchase_request_id}": {
+        parameters: {
+            query?: {
+                /** @description The operation to be performed on the purchase request. Mandatory. Currently cancel is supported. */
+                op?: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+                /** @description The identifier of the purchase request. */
+                purchase_request_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": Record<string, never>;
+                    "application/xml": Record<string, never>;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401652 - 'General Error: An error has occurred while processing the request.'
+             *
+             *     60276 - 'The purchase request identifier is not valid.'
+             *
+             *     60277 - 'The purchase request deletion failed.'
+             *
+             *     401873 - 'The operation is not supported.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/users/{user_id}/requests": {
+        parameters: {
+            query?: {
+                /** @description Filter results by request type. Optional. Possible values: HOLD, DIGITIZATION, BOOKING. If not supplied, all request types will be returned. */
+                request_type?: string;
+                /** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
+                user_id_type?: string;
+                /** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10. */
+                limit?: number;
+                /** @description Offset of the results returned. Optional.Default value: 0, which means that the first results will be returned. */
+                offset?: string;
+                /** @description Active or History request status. Default is active. The 'history' option is only available if the 'should_anonymize_requests' customer parameter is set to 'false' at the time the request was completed. */
+                status?: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_user_requests.xsd. See [here](/alma/apis/docs/xsd/rest_user_requests.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401890 - 'User with identifier X of type Y was not found.'
+             *
+             *     401652 - 'General Error - An error has occurred while processing the request.'
+             *
+             *     60258 - 'The API Restricted profile is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "post/almaws/v1/users/{user_id}/requests": {
+        parameters: {
+            query?: {
+                /** @description The type of identifier that is being searched.  Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
+                user_id_type?: string;
+                /** @description The requested title. This parameter is mandatory if the request is in title level. */
+                mms_id?: string;
+                /** @description The requested item ID. This parameter is mandatory if the request is in item level. */
+                item_pid?: string;
+                /** @description Allow placing requests for items of the same title by the same user. Optional. Default and recommended: false */
+                allow_same_request?: boolean;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+            };
+            cookie?: never;
+        };
+        /** @description This method takes a Request object. See [here](/alma/apis/docs/xsd/rest_user_request.xsd?tags=POST) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_user_request.xsd. See [here](/alma/apis/docs/xsd/rest_user_request.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401890 - 'User with identifier X of type Y was not found.'
+             *
+             *     401129 - 'No items can fulfill the submitted request.'
+             *
+             *     401895 - 'Pickup circulation desk with code X and library code Y was not found.'
+             *
+             *     401136 - 'Failed to save the request: Patron has active request for selected item.'
+             *
+             *     60308 - 'Delivery to personal address is not supported.'
+             *
+             *     60309 - 'User does not have address for personal delivery.'
+             *
+             *     60310 - 'Delivery is not supported for this type of personal address.'
+             *
+             *     60324 - 'Fulfillment network is not configured.'
+             *
+             *     60325 - 'Fulfillment network institution is not valid.'
+             *
+             *     60326 - 'Fulfillment network pickup library or pickup circulation desk is not valid.'
+             *
+             *     60327 - 'Fulfillment network pickup library or pickup circulation desk is required.'
+             *
+             *     401684 - 'Search for request physical item failed.'
+             *
+             *     60328 - 'Item for request was not found.'
+             *
+             *     60330 - 'Invalid partial digitization volume or issue.'
+             *
+             *     60331 - 'Failed to create request.'
+             *
+             *     401652 - 'General Error: An error has occurred while processing the request.'
+             *
+             *     60340 - 'The request is API Restricted by library.'
+             *
+             *     60258 - 'The API Restricted profile is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/users/{user_id}/requests/{request_id}": {
+        parameters: {
+            query?: {
+                /** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
+                user_id_type?: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+                /** @description A unique identifier of the request that should be canceled. */
+                request_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_user_request.xsd. See [here](/alma/apis/docs/xsd/rest_user_request.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401890 - 'User with identifier X of type Y was not found.'
+             *
+             *     401652 - 'General Error - An error has occurred while processing the request.'
+             *
+             *     60258 - 'The API Restricted profile is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "put/almaws/v1/users/{user_id}/requests/{request_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+                /** @description A unique identifier of the request that should be canceled. */
+                request_id: string;
+            };
+            cookie?: never;
+        };
+        /** @description This method takes a User Request object. See [here](/alma/apis/docs/xsd/rest_user_request.xsd?tags=PUT) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_user_request.xsd. See [here](/alma/apis/docs/xsd/rest_user_request.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     60330 - 'Invalid partial digitization volume or issue.'
+             *
+             *     60340 - 'The request is API Restricted by library.'
+             *
+             *     60258 - 'The API Restricted profile is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "post/almaws/v1/users/{user_id}/requests/{request_id}": {
+        parameters: {
+            query?: {
+                /** @description The operation to be performed on the request. Mandatory. Currently only next_step is supported. */
+                op?: string;
+                /** @description Boolean flag for indicating whether to release the item from the request. */
+                release_item?: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+                /** @description A unique identifier of the request that should be canceled. */
+                request_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_user_request.xsd. See [here](/alma/apis/docs/xsd/rest_user_request.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401652 - 'General Error - An error has occurred while processing the request.'
+             *
+             *     401907 - 'Failed to find a request for the given request ID.'
+             *
+             *     402205 - 'Input parameter X (Y) is not numeric.'
+             *
+             *     401932 - 'Request X is not a Digitization request'
+             *
+             *     401933 - 'Cannot move forward in workflow. Request ID: X, Step: Y'
+             *
+             *     401934 - 'Move digitization request to next step in workflow has failed. Request ID: X'
+             *
+             *     401666 - 'X parameter is not valid.'
+             *
+             *     60340 - 'The request is API Restricted by library.'
+             *
+             *     60258 - 'The API Restricted profile is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "delete/almaws/v1/users/{user_id}/requests/{request_id}": {
+        parameters: {
+            query: {
+                /** @description Code of the cancel reason. Must be a value from the code table 'RequestCancellationReasons' */
+                reason: string;
+                /** @description Note with additional information regarding the cancellation. */
+                note?: string;
+                /** @description Boolean flag for notifying the requester of the cancellation (when relevant). Defaults to 'true'. */
+                notify_user?: boolean;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+                /** @description A unique identifier of the request that should be canceled. */
+                request_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Deleted */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401890 - 'User with identifier X of type Y was not found.'
+             *
+             *     401694 - 'Request Identifier not found.'
+             *
+             *     401652 - 'General Error: An error has occurred while processing the request.'
+             *
+             *     60340 - 'The request is API Restricted by library.'
+             *
+             *     60258 - 'The API Restricted profile is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "post/almaws/v1/users/{user_id}/resource-sharing-requests": {
+        parameters: {
+            query: {
+                /** @description The type of identifier that is being searched. Optional. If this is not provided, all unique identifier types are used. The values that can be used are any of the values in the User Identifier Type code table. */
+                user_id_type?: string;
+                /** @description Indication whether the request should be created even if blocks exist. optional. By default this is false. */
+                override_blocks: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+            };
+            cookie?: never;
+        };
+        /** @description This method takes a Resource Sharing Request object. See [here](/alma/apis/docs/xsd/rest_user_resource_sharing_request.xsd?tags=POST) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_user_resource_sharing_request.xsd. See [here](/alma/apis/docs/xsd/rest_user_resource_sharing_request.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401890 - 'User with identifier X of type Y was not found.'
+             *
+             *     401604 - 'Warning: The institutional inventory has services for the requested title.'
+             *
+             *     401652 - 'General Error: An error has occurred while processing the request.'
+             *
+             *     402039 - 'Could not create request, default item location is not defined for the resource sharing library'
+             *
+             *     401768 - 'Patron is not affiliated with a resource sharing library'
+             *
+             *     402362 - 'Failed to save the request: Patron has duplicate request'
+             *
+             *     401607 - 'Resource sharing library (owner) is missing'
+             *
+             *     401608 - 'The given resource sharing library (owner) is not defined in the patron record'
+             *
+             *     60340 - 'The request is API Restricted by library.'
+             *
+             *     60258 - 'The API Restricted profile is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/users/{user_id}/resource-sharing-requests/{request_id}": {
+        parameters: {
+            query?: {
+                /** @description Request ID type. Optional. Use request_id_type=external to search by external identifier. */
+                request_id_type?: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+                /** @description The identifier of the resource sharing request. */
+                request_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_user_resource_sharing_request.xsd. See [here](/alma/apis/docs/xsd/rest_user_resource_sharing_request.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401890 - 'User with identifier X of type Y was not found.'
+             *
+             *     401652 - 'General Error: An error has occurred while processing the request.'
+             *
+             *     40166450 - 'No result found for given parameters.'
+             *
+             *     40166422 - 'Value of parameter is invalid given other parameter.'
+             *
+             *     60340 - 'The request is API Restricted by library.'
+             *
+             *     60258 - 'The API Restricted profile is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "post/almaws/v1/users/{user_id}/resource-sharing-requests/{request_id}": {
+        parameters: {
+            query?: {
+                /** @description Request ID type. Optional. Use request_id_type=external to search by external identifier. */
+                request_id_type?: string;
+                /** @description The operation to be performed on the request. Mandatory. Currently only update_shipping is supported. */
+                op?: string;
+                /** @description The updated shipping cost. */
+                shipping_cost?: string;
+                /** @description The code of the updated fund. */
+                fund_code?: string;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+                /** @description The identifier of the resource sharing request. */
+                request_id: string;
+            };
+            cookie?: never;
+        };
+        /** @description This method takes a Resource Sharing Request object. See [here](/alma/apis/docs/xsd/rest_user_resource_sharing_request.xsd?tags=POST) */
+        requestBody: {
+            content: {
+                "application/json": unknown;
+                "application/xml": unknown;
+            };
+        };
+        responses: {
+            /** @description OK - This method returns an object based on rest_user_resource_sharing_request.xsd. See [here](/alma/apis/docs/xsd/rest_user_resource_sharing_request.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401608 - 'The given resource sharing library (owner) is not defined in the patron record'
+             *
+             *     40166411 - 'Parameter value is invalid.'
+             *
+             *     40166425 - 'Shipping cost cannot be lower than 0.'
+             *
+             *     40166426 - 'Parameter value is invalid (with error message).'
+             *
+             *     40166412 - 'Failed to perform operation.'
+             *
+             *     60340 - 'The request is API Restricted by library.'
+             *
+             *     60258 - 'The API Restricted profile is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "delete/almaws/v1/users/{user_id}/resource-sharing-requests/{request_id}": {
+        parameters: {
+            query?: {
+                /** @description Boolean flag permanently delete the resource sharing request. Defaults to 'false'. */
+                remove_request?: boolean;
+                /** @description Code of the cancel reason. Must be a value from the code table 'RequestCancellationReasons' */
+                reason?: string;
+                /** @description Note with additional information regarding the cancellation. */
+                note?: string;
+                /** @description Boolean flag for notifying the requester of the cancellation (when relevant). Defaults to 'true'. */
+                notify_user?: boolean;
+            };
+            header?: never;
+            path: {
+                /** @description A unique identifier for the user */
+                user_id: string;
+                /** @description The identifier of the resource sharing request. */
+                request_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Deleted */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /**
+             * @description Bad Request
+             *
+             *     401890 - 'User with identifier X of type Y was not found.'
+             *
+             *     401694 - 'Request Identifier not found.'
+             *
+             *     401652 - 'General Error: An error has occurred while processing the request.'
+             *
+             *     60340 - 'The request is API Restricted by library.'
+             *
+             *     60258 - 'The API Restricted profile is not valid.'
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    "get/almaws/v1/users/{user_name}/leganto-notifications": {
+        parameters: {
+            query: {
+                /** @description Filter results by notification type. Optional. Possible values are listed in code_table_SystemEventTypes */
+                notificationType: string;
+                /** @description Limits the number of results. Optional. Valid values are 0-100. Default value: 10 */
+                limit?: string;
+                /** @description From this Date (YYYY-MM-DD). Optional. Defaults to today. */
+                from: string;
+                /** @description To this date (YYYY-MM-DD). Optional. Defaults to the From Date plus one week. */
+                to: string;
+                /** @description Boolean flag for indicating whether to bring the notifications by to date or leganto last notification viewd date . Optional . */
+                unread?: string;
+            };
+            header?: never;
+            path: {
+                /** @description The user_name of the user */
+                user_name: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - This method returns an object based on rest_leganto_notifications.xsd. See [here](/alma/apis/docs/xsd/rest_leganto_notifications.xsd) */
+            200: {
+                headers: {
+                    "X-Exl-Api-Remaining": components["headers"]["remaining"];
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                    "application/xml": unknown;
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
 }

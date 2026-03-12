@@ -1,5 +1,8 @@
 {
 	"$schema": "https://biomejs.dev/schemas/2.3.15/schema.json",
+	"files": {
+		"includes": ["**", "!specs/**/*.json", "!src/types/generated/**/*.d.ts"]
+	},
 	"assist": {
 		"enabled": true,
 		"actions": {
