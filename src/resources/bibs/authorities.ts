@@ -20,7 +20,7 @@ export class BibsAuthoritiesResource {
 	 * @param params.view - View type.
 	 * @returns A list of authority records.
 	 */
-	async retrieveAuthoritiesList(params?: {
+	async retrieveAuthorities(params?: {
 		originating_system?: string;
 		originating_system_id?: string;
 		other_system_id?: string;

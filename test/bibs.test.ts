@@ -49,10 +49,10 @@ describe("bibs - collections", () => {
 });
 
 describe("bibs - authorities", () => {
-	it("retrieveAuthoritiesList returns a result", async () => {
+	it("retrieveAuthorities returns a result", async () => {
 		if (skip || !client) return;
 		try {
-			const result = await client.bibs.retrieveAuthoritiesList({
+			const result = await client.bibs.retrieveAuthorities({
 				q: "title,contains,test",
 				limit: 5,
 			});

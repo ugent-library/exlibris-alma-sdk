@@ -380,9 +380,10 @@ export class BibsResource {
 
 	// ── Authorities ───────────────────────────────────────────────────────────
 
-	/** @see {@link BibsAuthoritiesResource.retrieveAuthoritiesList} */
-	retrieveAuthoritiesList: BibsAuthoritiesResource["retrieveAuthoritiesList"] =
-		(...args) => this.authorities.retrieveAuthoritiesList(...args);
+	/** @see {@link BibsAuthoritiesResource.retrieveAuthorities} */
+	retrieveAuthorities: BibsAuthoritiesResource["retrieveAuthorities"] = (
+		...args
+	) => this.authorities.retrieveAuthorities(...args);
 
 	/** @see {@link BibsAuthoritiesResource.retrieveAuthority} */
 	retrieveAuthority: BibsAuthoritiesResource["retrieveAuthority"] = (...args) =>
