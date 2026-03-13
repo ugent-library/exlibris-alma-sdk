@@ -3,6 +3,7 @@ import type { AlmaHttpClient } from "@/client";
 import type {
 	Bib,
 	Bibs,
+	BookingAvailability,
 	Holding,
 	Holdings,
 	Item,
@@ -552,8 +553,8 @@ export class BibsCatalogResource {
 			user_id?: string;
 			user_id_type?: string;
 		},
-	): Promise<Record<string, unknown>> {
-		return this.client.get<Record<string, unknown>>(
+	): Promise<BookingAvailability> {
+		return this.client.get<BookingAvailability>(
 			`/bibs/${encodeURIComponent(mmsId)}/booking-availability`,
 			params,
 		);
@@ -565,6 +566,6 @@ export class BibsCatalogResource {
 	 * @returns A test response confirming the API is reachable.
 	 */
 	async test(): Promise<Record<string, unknown>> {
-		return this.client.get<Record<string, unknown>>("/bibs/test");
+		return this.client.get("/bibs/test");
 	}
 }
