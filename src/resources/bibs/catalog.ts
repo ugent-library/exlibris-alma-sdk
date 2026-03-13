@@ -35,7 +35,7 @@ export class BibsCatalogResource {
 	 * @param params.lod_uri - Linked Open Data URI.
 	 * @returns A list of bibliographic records.
 	 */
-	async retrieveBibs(params: {
+	async retrieveBibs(params?: {
 		mms_id?: string;
 		ie_id?: string;
 		holdings_id?: string;

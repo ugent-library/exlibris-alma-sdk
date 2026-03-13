@@ -1,6 +1,6 @@
 import { describe, expect, it, mock } from "bun:test";
 
-import { AlmaClient, AlmaError, type AlmaRegion } from "alma-sdk";
+import { AlmaClient, AlmaError, type AlmaRegion } from "@";
 
 const apiKey = Bun.env.ALMA_API_KEY;
 const region = (Bun.env.ALMA_REGION ?? "eu") as AlmaRegion;

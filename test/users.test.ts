@@ -1,6 +1,6 @@
 import { describe, expect, it } from "bun:test";
 
-import { AlmaClient, type AlmaRegion } from "alma-sdk";
+import { AlmaClient, type AlmaRegion } from "@";
 
 const apiKey = Bun.env.ALMA_API_KEY;
 const region = (Bun.env.ALMA_REGION ?? "eu") as AlmaRegion;
@@ -89,7 +89,11 @@ describe("users - fees", () => {
 describe("users - staff login report", () => {
 	it("retrieveStaffLoginReport returns a result", async () => {
 		if (skip || !client) return;
-		const result = await client.users.retrieveStaffLoginReport({ limit: 5 });
+		const result = await client.users.retrieveStaffLoginReport({
+			login_date_from: "2024-01-01",
+			login_date_to: "2024-12-31",
+			limit: 5,
+		});
 		expect(result).toBeDefined();
 	});
 });

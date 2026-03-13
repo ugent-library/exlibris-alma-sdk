@@ -24,11 +24,11 @@
 		"forceConsistentCasingInFileNames": true,
 
 		"paths": {
-			"alma-sdk": ["./src/index"],
+			"@": ["./src"],
 			"@/*": ["./src/*"]
 		}
 	},
 
-	"include": ["src/**/*"],
+	"include": ["**/*"],
 	"exclude": ["node_modules", "dist", "bunup.config.ts"]
 }
