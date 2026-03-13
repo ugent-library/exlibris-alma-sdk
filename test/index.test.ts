@@ -1,6 +1,6 @@
 import { describe, expect, it, mock } from "bun:test";
 
-import { AlmaClient, AlmaError, type AlmaRegion } from "@";
+import { AlmaClient, type AlmaRegion, AlmaUnauthorizedError } from "@";
 
 const apiKey = Bun.env.ALMA_API_KEY;
 const region = (Bun.env.ALMA_REGION ?? "eu") as AlmaRegion;
@@ -23,11 +23,11 @@ describe("AlmaClient", () => {
 		expect(client).toBeDefined();
 	});
 
-	it("throws AlmaError on invalid API key", async () => {
+	it("throws AlmaUnauthorizedError on invalid API key", async () => {
 		if (skip) return;
 		const bad = new AlmaClient({ apiKey: "INVALID_KEY", region });
 		await expect(bad.conf.retrieveLibraries()).rejects.toBeInstanceOf(
-			AlmaError,
+			AlmaUnauthorizedError,
 		);
 	});
 

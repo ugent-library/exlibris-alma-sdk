@@ -70,7 +70,17 @@ export class AlmaUnauthorizedError extends AlmaError {
  * </web_service_result>
  * ```
  */
-export function extractXmlErrorMessage(xml: string): string {
-	const match = xml.match(/<errorMessage>([^<]+)<\/errorMessage>/);
-	return match?.[1]?.trim() ?? "Unauthorized";
+export function extractXmlErrorMessage(xml: string): {
+	errorCode: string | undefined;
+	errorMessage: string | undefined;
+} {
+	const errorCode = xml
+		.match(/<errorCode>(?<errorCode>[^<]+)<\/errorCode>/)
+		?.groups?.errorCode?.trim();
+
+	const errorMessage = xml
+		.match(/<errorMessage>(?<errorMessage>[^<]+)<\/errorMessage>/)
+		?.groups?.errorMessage?.trim();
+
+	return { errorCode, errorMessage };
 }

@@ -163,13 +163,19 @@ export class AlmaHttpClient {
 		// Parse error body - Alma returns XML for auth errors regardless of Accept header
 		const contentType = response.headers.get("content-type") ?? "";
 		let errorBody: unknown;
+		let isUnAuthorized = false;
 		let errorMessage: string;
 
 		if (contentType.includes("xml")) {
 			const xml = await response.text();
-			errorMessage = extractXmlErrorMessage(xml);
+			const result = extractXmlErrorMessage(xml);
+
+			isUnAuthorized = result.errorCode === "UNAUTHORIZED";
+			errorMessage = result.errorMessage ?? response.statusText;
 			errorBody = xml;
 		} else {
+			isUnAuthorized = response.status === 401 || response.status === 403;
+
 			try {
 				errorBody = await response.json();
 				errorMessage =
@@ -184,7 +190,7 @@ export class AlmaHttpClient {
 			}
 		}
 
-		if (response.status === 401 || response.status === 403) {
+		if (isUnAuthorized) {
 			throw new AlmaUnauthorizedError(response.status, errorMessage, errorBody);
 		}
 
