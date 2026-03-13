@@ -1,10 +1,10 @@
 {
-	"name": "alma-sdk",
+	"name": "exlibris-alma-sdk",
 	"version": "0.1.0",
 	"description": "ExLibris Alma SDK for JavaScript",
-	"homepage": "https://github.com/ugent-library/alma-sdk#readme",
+	"homepage": "https://github.com/ugent-library/exlibris-alma-sdk#readme",
 	"bugs": {
-		"url": "https://github.com/ugent-library/alma-sdk/issues"
+		"url": "https://github.com/ugent-library/exlibris-alma-sdk/issues"
 	},
 	"license": "MIT",
 	"files": [
@@ -12,7 +12,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/ugent-library/alma-sdk.git"
+		"url": "git+https://github.com/ugent-library/exlibris-alma-sdk.git"
 	},
 	"type": "module",
 	"exports": {

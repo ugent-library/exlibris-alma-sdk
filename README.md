@@ -1,17 +1,17 @@
-# alma-sdk
+# exlibris-alma-sdk
 
 ExLibris Alma SDK for JavaScript
 
 ## Installation
 
 ```bash
-bun add alma-sdk
+bun add exlibris-alma-sdk
 ```
 
 ## Usage
 
 ```typescript
-import { greet } from "alma-sdk";
+import { greet } from "exlibris-alma-sdk";
 
 console.log(greet("World")); // Hello, World!
 ```

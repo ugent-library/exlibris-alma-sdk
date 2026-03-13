@@ -140,7 +140,7 @@ import { UsersResource } from "@/resources/users/index";
  *
  * @example
  * ```typescript
- * import { AlmaClient } from 'alma-sdk';
+ * import { AlmaClient } from 'exlibris-alma-sdk';
  *
  * const client = new AlmaClient({ apiKey: 'your-api-key', region: 'eu' });
  *
