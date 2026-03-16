@@ -142,11 +142,10 @@ export class AcqResource {
 	// ── Invoices ──────────────────────────────────────────────────────────────
 
 	/**
-	 * @see {@link AcqInvoicesResource.retrieveInvoicesList}
+	 * @see {@link AcqInvoicesResource.getInvoices}
 	 */
-	retrieveInvoicesList: AcqInvoicesResource["retrieveInvoicesList"] = (
-		...args
-	) => this.invoices.retrieveInvoicesList(...args);
+	getInvoices: AcqInvoicesResource["getInvoices"] = (...args) =>
+		this.invoices.getInvoices(...args);
 
 	/**
 	 * @see {@link AcqInvoicesResource.retrieveInvoice}

@@ -24,7 +24,7 @@ export class AcqInvoicesResource {
 	 * @returns A list of invoices.
 	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL2ludm9pY2VzLw==/
 	 */
-	async retrieveInvoicesList(params?: {
+	async getInvoices(params?: {
 		q?: string;
 		limit?: number;
 		offset?: number;

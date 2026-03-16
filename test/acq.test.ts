@@ -49,9 +49,9 @@ describe("acq - po-lines", () => {
 });
 
 describe("acq - invoices", () => {
-	it("retrieveInvoicesList returns a result", async () => {
+	it("getInvoices returns a result", async () => {
 		if (skip || !client) return;
-		const result = await client.acq.retrieveInvoicesList({ limit: 10 });
+		const result = await client.acq.getInvoices({ limit: 10 });
 		expect(result).toBeDefined();
 	});
 });
