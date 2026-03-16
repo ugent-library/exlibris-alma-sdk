@@ -414,7 +414,7 @@ export interface JobInstance {
 	name?: string;
 	/** Instance status (e.g. `"COMPLETED_SUCCESS"`, `"RUNNING"`, `"FAILED"`). */
 	status?: AlmaCodeValue;
-	/** Progress percentage (0–100). */
+	/** Progress percentage (0-100). */
 	progress?: number;
 	/** ISO 8601 date/time the job was submitted. */
 	submit_time?: string;

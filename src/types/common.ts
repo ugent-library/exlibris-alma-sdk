@@ -22,7 +22,7 @@ export interface AlmaCodeValue {
 
 /** Common pagination parameters for list endpoints. */
 export interface PaginationParams {
-	/** Maximum number of results (0–100). Default: 10. */
+	/** Maximum number of results (0-100). Default: 10. */
 	limit?: number;
 	/** Zero-based offset of results. Default: 0. */
 	offset?: number;

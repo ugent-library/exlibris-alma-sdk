@@ -21,7 +21,7 @@ export class ConfRemindersResource {
 	 * @param params.direction - Sort direction: `"ASC"` or `"DESC"`.
 	 * @param params.entity_id - Entity ID filter.
 	 * @param params.entity_type - Entity type filter.
-	 * @param params.limit - Maximum results (0–100).
+	 * @param params.limit - Maximum results (0-100).
 	 * @param params.offset - Results offset.
 	 * @returns A list of reminders.
 	 */

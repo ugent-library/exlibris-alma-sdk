@@ -21,7 +21,7 @@ export class ConfJobsResource {
 	 * Retrieves a list of scheduled jobs.
 	 *
 	 * @param params - Optional filters.
-	 * @param params.limit - Maximum results (0–100).
+	 * @param params.limit - Maximum results (0-100).
 	 * @param params.offset - Results offset.
 	 * @param params.category - Job category filter.
 	 * @returns A list of jobs.

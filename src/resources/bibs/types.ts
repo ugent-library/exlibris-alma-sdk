@@ -14,7 +14,7 @@ import type { AlmaCodeValue } from "@/types/common";
 // MARC record building-blocks
 // ---------------------------------------------------------------------------
 
-/** A MARC fixed-length control field (tags 001–009). */
+/** A MARC fixed-length control field (tags 001-009). */
 export interface MarcControlField {
 	/** MARC tag (e.g. `"001"`, `"008"`). */
 	tag?: string;
@@ -30,7 +30,7 @@ export interface MarcSubfield {
 	"#text"?: string;
 }
 
-/** A MARC variable data field (tags 010–999). */
+/** A MARC variable data field (tags 010-999). */
 export interface MarcDataField {
 	/** MARC tag (e.g. `"245"`, `"100"`). */
 	tag?: string;

@@ -18,7 +18,7 @@ export class ConfSetsResource {
 	 * @param params.content_type - Content type filter (from SetContentType code table).
 	 * @param params.set_type - Set type: `"ITEMIZED"` or `"LOGICAL"`.
 	 * @param params.q - Search query (searches name or created_by).
-	 * @param params.limit - Maximum results (0–100).
+	 * @param params.limit - Maximum results (0-100).
 	 * @param params.offset - Results offset.
 	 * @param params.set_origin - Origin filter: `"UI"` or `"UI_CZ"`.
 	 * @returns A list of sets.

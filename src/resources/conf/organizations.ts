@@ -72,7 +72,7 @@ export class ConfOrganizationsResource {
 	 *
 	 * @param libraryCode - The library code.
 	 * @param params - Optional pagination.
-	 * @param params.limit - Maximum results (0–100).
+	 * @param params.limit - Maximum results (0-100).
 	 * @param params.offset - Results offset.
 	 * @returns A list of circulation desks.
 	 */
