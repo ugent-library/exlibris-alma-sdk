@@ -25,6 +25,7 @@ export class ConfJobsResource {
 	 * @param params.offset - Results offset.
 	 * @param params.category - Job category filter.
 	 * @returns A list of jobs.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9qb2Jz/
 	 */
 	async retrieveJobs(params?: {
 		limit?: number;
@@ -41,6 +42,7 @@ export class ConfJobsResource {
 	 *
 	 * @param jobId - The job ID.
 	 * @returns The job object.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9qb2JzL3tqb2JfaWR9/
 	 */
 	async retrieveJob(jobId: string): Promise<Job> {
 		return this.client.get<Job>(path`/conf/jobs/${jobId}`);
@@ -54,6 +56,7 @@ export class ConfJobsResource {
 	 * @param params - Optional query parameters.
 	 * @param params.op - The operation to perform (e.g. `"run"`).
 	 * @returns The resulting job instance.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/UE9TVCAvYWxtYXdzL3YxL2NvbmYvam9icy97am9iX2lkfQ==/
 	 */
 	async submitJob(
 		jobId: string,
@@ -78,6 +81,7 @@ export class ConfJobsResource {
 	 * @param params.limit - Maximum results.
 	 * @param params.offset - Results offset.
 	 * @returns A list of job instances.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9qb2JzL3tqb2JfaWR9L2luc3RhbmNlcw==/
 	 */
 	async retrieveJobInstances(
 		jobId: string,
@@ -101,6 +105,7 @@ export class ConfJobsResource {
 	 * @param jobId - The job ID.
 	 * @param instanceId - The instance ID.
 	 * @returns The job instance.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9qb2JzL3tqb2JfaWR9L2luc3RhbmNlcy97aW5zdGFuY2VfaWR9/
 	 */
 	async retrieveJobInstance(
 		jobId: string,

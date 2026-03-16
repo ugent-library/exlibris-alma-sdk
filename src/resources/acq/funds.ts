@@ -29,6 +29,7 @@ export class AcqFundsResource {
 	 * @param params.parent_id - Filter by parent fund ID.
 	 * @param params.owner - Filter by owner.
 	 * @returns A list of funds.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL2Z1bmRz/
 	 */
 	async retrieveFundsList(params?: {
 		q?: string;
@@ -53,6 +54,7 @@ export class AcqFundsResource {
 	 * @param params - Optional parameters.
 	 * @param params.view - View type.
 	 * @returns The fund.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL2Z1bmRzL3tmdW5kX2lkfQ==/
 	 */
 	async retrieveFund(
 		fundId: string,
@@ -68,6 +70,7 @@ export class AcqFundsResource {
 	 * @param params - Optional parameters.
 	 * @param params.rules_level - The rules level to apply.
 	 * @returns The created fund.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/UE9TVCAvYWxtYXdzL3YxL2FjcS9mdW5kcw==/
 	 */
 	async createFund(
 		body: Fund,
@@ -84,6 +87,7 @@ export class AcqFundsResource {
 	 * @param params - Optional parameters.
 	 * @param params.rules_level - The rules level to apply.
 	 * @returns The updated fund.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/UFVUIC9hbG1hd3MvdjEvYWNxL2Z1bmRzL3tmdW5kX2lkfQ==/
 	 */
 	async updateFund(
 		fundId: string,
@@ -101,6 +105,7 @@ export class AcqFundsResource {
 	 * @param params - Optional parameters.
 	 * @param params.op - The operation to perform.
 	 * @returns The resulting fund.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/UE9TVCAvYWxtYXdzL3YxL2FjcS9mdW5kcy97ZnVuZF9pZH0=/
 	 */
 	async operateFund(
 		fundId: string,
@@ -114,6 +119,7 @@ export class AcqFundsResource {
 	 * Deletes a fund.
 	 *
 	 * @param fundId - The fund ID.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/REVMRVRFIC9hbG1hd3MvdjEvYWNxL2Z1bmRzL3tmdW5kX2lkfQ==/
 	 */
 	async deleteFund(fundId: string): Promise<void> {
 		return this.client.delete<void>(path`/acq/funds/${fundId}`);
@@ -129,6 +135,7 @@ export class AcqFundsResource {
 	 * @param params.q - Search query.
 	 * @param params.filter - Additional filter.
 	 * @returns A list of fund transactions.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL2Z1bmRzL3tmdW5kX2lkfS90cmFuc2FjdGlvbnM=/
 	 */
 	async retrieveFundTransactionsList(
 		fundId: string,
@@ -146,6 +153,7 @@ export class AcqFundsResource {
 	 * @param fundId - The fund ID.
 	 * @param body - The transaction data.
 	 * @returns The created transaction.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/UE9TVCAvYWxtYXdzL3YxL2FjcS9mdW5kcy97ZnVuZF9pZH0vdHJhbnNhY3Rpb25z/
 	 */
 	async createFundTransaction(
 		fundId: string,

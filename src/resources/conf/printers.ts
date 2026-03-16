@@ -18,6 +18,7 @@ export class ConfPrintersResource {
 	 * @param params.limit - Maximum results.
 	 * @param params.offset - Results offset.
 	 * @returns A list of printers.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9wcmludGVycw==/
 	 */
 	async retrievePrinters(params?: {
 		library?: string;
@@ -35,6 +36,7 @@ export class ConfPrintersResource {
 	 *
 	 * @param printerId - The printer ID.
 	 * @returns The printer object.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9wcmludGVycy97cHJpbnRlcl9pZH0=/
 	 */
 	async retrievePrinter(printerId: string): Promise<Printer> {
 		return this.client.get<Printer>(path`/conf/printers/${printerId}`);

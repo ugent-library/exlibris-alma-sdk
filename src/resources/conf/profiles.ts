@@ -21,6 +21,7 @@ export class ConfProfilesResource {
 	 * Retrieves a list of MD import profiles.
 	 *
 	 * @returns A list of MD import profiles.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9tZC1pbXBvcnQtcHJvZmlsZXM=/
 	 */
 	async retrieveImportProfiles(params?: {
 		type?: string;
@@ -34,6 +35,7 @@ export class ConfProfilesResource {
 	 *
 	 * @param profileId - The import profile ID.
 	 * @returns The import profile.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9tZC1pbXBvcnQtcHJvZmlsZXMve3Byb2ZpbGVfaWR9/
 	 */
 	async retrieveImportProfile(profileId: string): Promise<ImportProfile> {
 		return this.client.get<ImportProfile>(
@@ -71,6 +73,7 @@ export class ConfProfilesResource {
 	 * @param params.limit - Maximum results.
 	 * @param params.offset - Results offset.
 	 * @returns A list of integration profiles.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9pbnRlZ3JhdGlvbi1wcm9maWxlcw==/
 	 */
 	async retrieveIntegrationProfiles(params?: {
 		type?: string;
@@ -89,6 +92,7 @@ export class ConfProfilesResource {
 	 *
 	 * @param id - The integration profile ID.
 	 * @returns The integration profile.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9pbnRlZ3JhdGlvbi1wcm9maWxlcy97aWR9/
 	 */
 	async retrieveIntegrationProfile(id: string): Promise<IntegrationProfile> {
 		return this.client.get<IntegrationProfile>(
@@ -101,6 +105,7 @@ export class ConfProfilesResource {
 	 *
 	 * @param body - The integration profile data.
 	 * @returns The created integration profile.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/UE9TVCAvYWxtYXdzL3YxL2NvbmYvaW50ZWdyYXRpb24tcHJvZmlsZXM=/
 	 */
 	async createIntegrationProfile(
 		body: IntegrationProfile,
@@ -117,6 +122,7 @@ export class ConfProfilesResource {
 	 * @param id - The integration profile ID.
 	 * @param body - The updated integration profile.
 	 * @returns The updated integration profile.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/UFVUIC9hbG1hd3MvdjEvY29uZi9pbnRlZ3JhdGlvbi1wcm9maWxlcy97aWR9/
 	 */
 	async updateIntegrationProfile(
 		id: string,
@@ -132,6 +138,7 @@ export class ConfProfilesResource {
 	 * Deletes an integration profile.
 	 *
 	 * @param id - The integration profile ID.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/REVMRVRFIC9hbG1hd3MvdjEvY29uZi9pbnRlZ3JhdGlvbi1wcm9maWxlcy97aWR9/
 	 */
 	async deleteIntegrationProfile(id: string): Promise<void> {
 		return this.client.delete<void>(path`/conf/integration-profiles/${id}`);
@@ -144,6 +151,7 @@ export class ConfProfilesResource {
 	 * @param params.limit - Maximum results.
 	 * @param params.offset - Results offset.
 	 * @returns A list of deposit profiles.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9kZXBvc2l0LXByb2ZpbGVz/
 	 */
 	async retrieveDepositProfiles(params?: {
 		limit?: number;
@@ -157,6 +165,7 @@ export class ConfProfilesResource {
 	 *
 	 * @param depositProfileId - The deposit profile ID.
 	 * @returns The deposit profile.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9kZXBvc2l0LXByb2ZpbGVzL3tkZXBvc2l0X3Byb2ZpbGVfaWR9/
 	 */
 	async retrieveDepositProfile(
 		depositProfileId: string,

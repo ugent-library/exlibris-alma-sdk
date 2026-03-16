@@ -15,6 +15,7 @@ export class UsersStaffLoginReportResource {
 	 * @param params.limit - Maximum results.
 	 * @param params.offset - Results offset.
 	 * @returns The staff login report.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/R0VUIC9hbG1hd3MvdjEvdXNlcnMvc3RhZmYtbG9naW4tcmVwb3J0/
 	 */
 	async retrieveStaffLoginReport(params: {
 		login_date_from: string;

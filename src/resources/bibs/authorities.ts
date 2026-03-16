@@ -20,6 +20,7 @@ export class BibsAuthoritiesResource {
 	 * @param params.offset - Results offset.
 	 * @param params.view - View type.
 	 * @returns A list of authority records.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy9hdXRob3JpdGllcw==/
 	 */
 	async retrieveAuthorities(params?: {
 		originating_system?: string;
@@ -39,6 +40,7 @@ export class BibsAuthoritiesResource {
 	 * @param params - Optional parameters.
 	 * @param params.view - View type.
 	 * @returns The authority record.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy9hdXRob3JpdGllcy97YXV0aG9yaXR5X3JlY29yZF9pZH0=/
 	 */
 	async retrieveAuthority(
 		authorityRecordId: string,
@@ -61,6 +63,7 @@ export class BibsAuthoritiesResource {
 	 * @param params.check_match - Whether to check for duplicate matches.
 	 * @param params.import_profile - Import profile to use.
 	 * @returns The created authority record.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/UE9TVCAvYWxtYXdzL3YxL2JpYnMvYXV0aG9yaXRpZXM=/
 	 */
 	async createAuthority(
 		body: Authority,
@@ -89,6 +92,7 @@ export class BibsAuthoritiesResource {
 	 * @param params.cataloger_level - Minimum cataloger level required.
 	 * @param params.check_match - Whether to check for duplicate matches.
 	 * @returns The updated authority record.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/UFVUIC9hbG1hd3MvdjEvYmlicy9hdXRob3JpdGllcy97YXV0aG9yaXR5X3JlY29yZF9pZH0=/
 	 */
 	async updateAuthority(
 		authorityRecordId: string,
@@ -117,6 +121,7 @@ export class BibsAuthoritiesResource {
 	 * @param params - Optional parameters.
 	 * @param params.override - Override deletion warnings.
 	 * @param params.cataloger_level - Minimum cataloger level required.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/REVMRVRFIC9hbG1hd3MvdjEvYmlicy9hdXRob3JpdGllcy97YXV0aG9yaXR5X3JlY29yZF9pZH0=/
 	 */
 	async deleteAuthority(
 		authorityRecordId: string,

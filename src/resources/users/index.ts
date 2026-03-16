@@ -84,169 +84,245 @@ export class UsersResource {
 
 	// ── Users ─────────────────────────────────────────────────────────────────
 
-	/** @see {@link UsersUsersResource.retrieveUsersList} */
+	/**
+	 * @see {@link UsersUsersResource.retrieveUsersList}
+	 */
 	retrieveUsersList: UsersUsersResource["retrieveUsersList"] = (...args) =>
 		this.users.retrieveUsersList(...args);
 
-	/** @see {@link UsersUsersResource.retrieveUser} */
+	/**
+	 * @see {@link UsersUsersResource.retrieveUser}
+	 */
 	retrieveUser: UsersUsersResource["retrieveUser"] = (...args) =>
 		this.users.retrieveUser(...args);
 
-	/** @see {@link UsersUsersResource.retrieveMe} */
+	/**
+	 * @see {@link UsersUsersResource.retrieveMe}
+	 */
 	retrieveMe: UsersUsersResource["retrieveMe"] = (...args) =>
 		this.users.retrieveMe(...args);
 
-	/** @see {@link UsersUsersResource.retrieveUserPersonalData} */
+	/**
+	 * @see {@link UsersUsersResource.retrieveUserPersonalData}
+	 */
 	retrieveUserPersonalData: UsersUsersResource["retrieveUserPersonalData"] = (
 		...args
 	) => this.users.retrieveUserPersonalData(...args);
 
-	/** @see {@link UsersUsersResource.createUser} */
+	/**
+	 * @see {@link UsersUsersResource.createUser}
+	 */
 	createUser: UsersUsersResource["createUser"] = (...args) =>
 		this.users.createUser(...args);
 
-	/** @see {@link UsersUsersResource.updateUser} */
+	/**
+	 * @see {@link UsersUsersResource.updateUser}
+	 */
 	updateUser: UsersUsersResource["updateUser"] = (...args) =>
 		this.users.updateUser(...args);
 
-	/** @see {@link UsersUsersResource.operateUser} */
+	/**
+	 * @see {@link UsersUsersResource.operateUser}
+	 */
 	operateUser: UsersUsersResource["operateUser"] = (...args) =>
 		this.users.operateUser(...args);
 
-	/** @see {@link UsersUsersResource.deleteUser} */
+	/**
+	 * @see {@link UsersUsersResource.deleteUser}
+	 */
 	deleteUser: UsersUsersResource["deleteUser"] = (...args) =>
 		this.users.deleteUser(...args);
 
-	/** @see {@link UsersUsersResource.retrieveUserAttachment} */
+	/**
+	 * @see {@link UsersUsersResource.retrieveUserAttachment}
+	 */
 	retrieveUserAttachment: UsersUsersResource["retrieveUserAttachment"] = (
 		...args
 	) => this.users.retrieveUserAttachment(...args);
 
-	/** @see {@link UsersUsersResource.createUserAttachment} */
+	/**
+	 * @see {@link UsersUsersResource.createUserAttachment}
+	 */
 	createUserAttachment: UsersUsersResource["createUserAttachment"] = (
 		...args
 	) => this.users.createUserAttachment(...args);
 
-	/** @see {@link UsersUsersResource.test} */
+	/**
+	 * @see {@link UsersUsersResource.test}
+	 */
 	test: UsersUsersResource["test"] = (...args) => this.users.test(...args);
 
 	// ── Loans ─────────────────────────────────────────────────────────────────
 
-	/** @see {@link UsersLoansResource.retrieveUserLoansList} */
+	/**
+	 * @see {@link UsersLoansResource.retrieveUserLoansList}
+	 */
 	retrieveUserLoansList: UsersLoansResource["retrieveUserLoansList"] = (
 		...args
 	) => this.loans.retrieveUserLoansList(...args);
 
-	/** @see {@link UsersLoansResource.retrieveUserLoan} */
+	/**
+	 * @see {@link UsersLoansResource.retrieveUserLoan}
+	 */
 	retrieveUserLoan: UsersLoansResource["retrieveUserLoan"] = (...args) =>
 		this.loans.retrieveUserLoan(...args);
 
-	/** @see {@link UsersLoansResource.createUserLoan} */
+	/**
+	 * @see {@link UsersLoansResource.createUserLoan}
+	 */
 	createUserLoan: UsersLoansResource["createUserLoan"] = (...args) =>
 		this.loans.createUserLoan(...args);
 
-	/** @see {@link UsersLoansResource.updateUserLoan} */
+	/**
+	 * @see {@link UsersLoansResource.updateUserLoan}
+	 */
 	updateUserLoan: UsersLoansResource["updateUserLoan"] = (...args) =>
 		this.loans.updateUserLoan(...args);
 
-	/** @see {@link UsersLoansResource.operateUserLoan} */
+	/**
+	 * @see {@link UsersLoansResource.operateUserLoan}
+	 */
 	operateUserLoan: UsersLoansResource["operateUserLoan"] = (...args) =>
 		this.loans.operateUserLoan(...args);
 
 	// ── Requests ──────────────────────────────────────────────────────────────
 
-	/** @see {@link UsersRequestsResource.retrieveUserRequestsList} */
+	/**
+	 * @see {@link UsersRequestsResource.retrieveUserRequestsList}
+	 */
 	retrieveUserRequestsList: UsersRequestsResource["retrieveUserRequestsList"] =
 		(...args) => this.requests.retrieveUserRequestsList(...args);
 
-	/** @see {@link UsersRequestsResource.retrieveUserRequest} */
+	/**
+	 * @see {@link UsersRequestsResource.retrieveUserRequest}
+	 */
 	retrieveUserRequest: UsersRequestsResource["retrieveUserRequest"] = (
 		...args
 	) => this.requests.retrieveUserRequest(...args);
 
-	/** @see {@link UsersRequestsResource.createUserRequest} */
+	/**
+	 * @see {@link UsersRequestsResource.createUserRequest}
+	 */
 	createUserRequest: UsersRequestsResource["createUserRequest"] = (...args) =>
 		this.requests.createUserRequest(...args);
 
-	/** @see {@link UsersRequestsResource.updateUserRequest} */
+	/**
+	 * @see {@link UsersRequestsResource.updateUserRequest}
+	 */
 	updateUserRequest: UsersRequestsResource["updateUserRequest"] = (...args) =>
 		this.requests.updateUserRequest(...args);
 
-	/** @see {@link UsersRequestsResource.operateUserRequest} */
+	/**
+	 * @see {@link UsersRequestsResource.operateUserRequest}
+	 */
 	operateUserRequest: UsersRequestsResource["operateUserRequest"] = (...args) =>
 		this.requests.operateUserRequest(...args);
 
-	/** @see {@link UsersRequestsResource.deleteUserRequest} */
+	/**
+	 * @see {@link UsersRequestsResource.deleteUserRequest}
+	 */
 	deleteUserRequest: UsersRequestsResource["deleteUserRequest"] = (...args) =>
 		this.requests.deleteUserRequest(...args);
 
-	/** @see {@link UsersRequestsResource.retrieveResourceSharingRequest} */
+	/**
+	 * @see {@link UsersRequestsResource.retrieveResourceSharingRequest}
+	 */
 	retrieveResourceSharingRequest: UsersRequestsResource["retrieveResourceSharingRequest"] =
 		(...args) => this.requests.retrieveResourceSharingRequest(...args);
 
-	/** @see {@link UsersRequestsResource.createResourceSharingRequest} */
+	/**
+	 * @see {@link UsersRequestsResource.createResourceSharingRequest}
+	 */
 	createResourceSharingRequest: UsersRequestsResource["createResourceSharingRequest"] =
 		(...args) => this.requests.createResourceSharingRequest(...args);
 
-	/** @see {@link UsersRequestsResource.operateResourceSharingRequest} */
+	/**
+	 * @see {@link UsersRequestsResource.operateResourceSharingRequest}
+	 */
 	operateResourceSharingRequest: UsersRequestsResource["operateResourceSharingRequest"] =
 		(...args) => this.requests.operateResourceSharingRequest(...args);
 
-	/** @see {@link UsersRequestsResource.deleteResourceSharingRequest} */
+	/**
+	 * @see {@link UsersRequestsResource.deleteResourceSharingRequest}
+	 */
 	deleteResourceSharingRequest: UsersRequestsResource["deleteResourceSharingRequest"] =
 		(...args) => this.requests.deleteResourceSharingRequest(...args);
 
 	// ── Fees ──────────────────────────────────────────────────────────────────
 
-	/** @see {@link UsersFeesResource.retrieveUserFeesList} */
+	/**
+	 * @see {@link UsersFeesResource.retrieveUserFeesList}
+	 */
 	retrieveUserFeesList: UsersFeesResource["retrieveUserFeesList"] = (...args) =>
 		this.fees.retrieveUserFeesList(...args);
 
-	/** @see {@link UsersFeesResource.retrieveUserFee} */
+	/**
+	 * @see {@link UsersFeesResource.retrieveUserFee}
+	 */
 	retrieveUserFee: UsersFeesResource["retrieveUserFee"] = (...args) =>
 		this.fees.retrieveUserFee(...args);
 
-	/** @see {@link UsersFeesResource.operateUserFee} */
+	/**
+	 * @see {@link UsersFeesResource.operateUserFee}
+	 */
 	operateUserFee: UsersFeesResource["operateUserFee"] = (...args) =>
 		this.fees.operateUserFee(...args);
 
-	/** @see {@link UsersFeesResource.operateAllUserFees} */
+	/**
+	 * @see {@link UsersFeesResource.operateAllUserFees}
+	 */
 	operateAllUserFees: UsersFeesResource["operateAllUserFees"] = (...args) =>
 		this.fees.operateAllUserFees(...args);
 
-	/** @see {@link UsersFeesResource.retrieveUserDepositsList} */
+	/**
+	 * @see {@link UsersFeesResource.retrieveUserDepositsList}
+	 */
 	retrieveUserDepositsList: UsersFeesResource["retrieveUserDepositsList"] = (
 		...args
 	) => this.fees.retrieveUserDepositsList(...args);
 
-	/** @see {@link UsersFeesResource.retrieveUserDeposit} */
+	/**
+	 * @see {@link UsersFeesResource.retrieveUserDeposit}
+	 */
 	retrieveUserDeposit: UsersFeesResource["retrieveUserDeposit"] = (...args) =>
 		this.fees.retrieveUserDeposit(...args);
 
-	/** @see {@link UsersFeesResource.createUserDeposit} */
+	/**
+	 * @see {@link UsersFeesResource.createUserDeposit}
+	 */
 	createUserDeposit: UsersFeesResource["createUserDeposit"] = (...args) =>
 		this.fees.createUserDeposit(...args);
 
-	/** @see {@link UsersFeesResource.operateUserDeposit} */
+	/**
+	 * @see {@link UsersFeesResource.operateUserDeposit}
+	 */
 	operateUserDeposit: UsersFeesResource["operateUserDeposit"] = (...args) =>
 		this.fees.operateUserDeposit(...args);
 
 	// ── Purchase Requests ─────────────────────────────────────────────────────
 
-	/** @see {@link UsersPurchaseRequestsResource.retrieveUserPurchaseRequestsList} */
+	/**
+	 * @see {@link UsersPurchaseRequestsResource.retrieveUserPurchaseRequestsList}
+	 */
 	retrieveUserPurchaseRequestsList: UsersPurchaseRequestsResource["retrieveUserPurchaseRequestsList"] =
 		(...args) =>
 			this.purchaseRequests.retrieveUserPurchaseRequestsList(...args);
 
-	/** @see {@link UsersPurchaseRequestsResource.retrieveUserPurchaseRequest} */
+	/**
+	 * @see {@link UsersPurchaseRequestsResource.retrieveUserPurchaseRequest}
+	 */
 	retrieveUserPurchaseRequest: UsersPurchaseRequestsResource["retrieveUserPurchaseRequest"] =
 		(...args) => this.purchaseRequests.retrieveUserPurchaseRequest(...args);
 
-	/** @see {@link UsersPurchaseRequestsResource.createUserPurchaseRequest} */
+	/**
+	 * @see {@link UsersPurchaseRequestsResource.createUserPurchaseRequest}
+	 */
 	createUserPurchaseRequest: UsersPurchaseRequestsResource["createUserPurchaseRequest"] =
 		(...args) => this.purchaseRequests.createUserPurchaseRequest(...args);
 
-	/** @see {@link UsersPurchaseRequestsResource.operateUserPurchaseRequest} */
+	/**
+	 * @see {@link UsersPurchaseRequestsResource.operateUserPurchaseRequest}
+	 */
 	operateUserPurchaseRequest: UsersPurchaseRequestsResource["operateUserPurchaseRequest"] =
 		(...args) => this.purchaseRequests.operateUserPurchaseRequest(...args);
 
@@ -256,13 +332,17 @@ export class UsersResource {
 
 	// ── Leganto ───────────────────────────────────────────────────────────────
 
-	/** @see {@link UsersLegantoResource.retrieveLegantoNotifications} */
+	/**
+	 * @see {@link UsersLegantoResource.retrieveLegantoNotifications}
+	 */
 	retrieveLegantoNotifications: UsersLegantoResource["retrieveLegantoNotifications"] =
 		(...args) => this.leganto.retrieveLegantoNotifications(...args);
 
 	// ── Staff Login Report ────────────────────────────────────────────────────
 
-	/** @see {@link UsersStaffLoginReportResource.retrieveStaffLoginReport} */
+	/**
+	 * @see {@link UsersStaffLoginReportResource.retrieveStaffLoginReport}
+	 */
 	retrieveStaffLoginReport: UsersStaffLoginReportResource["retrieveStaffLoginReport"] =
 		(...args) => this.staffLoginReport.retrieveStaffLoginReport(...args);
 }

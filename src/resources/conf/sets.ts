@@ -22,6 +22,7 @@ export class ConfSetsResource {
 	 * @param params.offset - Results offset.
 	 * @param params.set_origin - Origin filter: `"UI"` or `"UI_CZ"`.
 	 * @returns A list of sets.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9zZXRz/
 	 */
 	async retrieveSets(params?: {
 		content_type?: string;
@@ -39,6 +40,7 @@ export class ConfSetsResource {
 	 *
 	 * @param setId - The set ID.
 	 * @returns The set object.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9zZXRzL3tzZXRfaWR9/
 	 */
 	async retrieveSet(setId: string): Promise<AlmaSet> {
 		return this.client.get<AlmaSet>(path`/conf/sets/${setId}`);
@@ -56,6 +58,7 @@ export class ConfSetsResource {
 	 * @param params.set1 - Primary combining set ID.
 	 * @param params.set2 - Secondary combining set ID.
 	 * @returns The created set.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/UE9TVCAvYWxtYXdzL3YxL2NvbmYvc2V0cw==/
 	 */
 	async createSet(
 		body: AlmaSet,
@@ -80,6 +83,7 @@ export class ConfSetsResource {
 	 * @param setId - The set ID.
 	 * @param body - The updated set data.
 	 * @returns The updated set.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/UFVUIC9hbG1hd3MvdjEvY29uZi9zZXRzL3tzZXRfaWR9/
 	 */
 	async updateSet(setId: string, body: AlmaSet): Promise<AlmaSet> {
 		return this.client.put<AlmaSet>(path`/conf/sets/${setId}`, body);
@@ -106,6 +110,7 @@ export class ConfSetsResource {
 	 * Deletes a set.
 	 *
 	 * @param setId - The set ID.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/REVMRVRFIC9hbG1hd3MvdjEvY29uZi9zZXRzL3tzZXRfaWR9/
 	 */
 	async deleteSet(setId: string): Promise<void> {
 		return this.client.delete<void>(path`/conf/sets/${setId}`);
@@ -119,6 +124,7 @@ export class ConfSetsResource {
 	 * @param params.limit - Maximum results.
 	 * @param params.offset - Results offset.
 	 * @returns Set members.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9zZXRzL3tzZXRfaWR9L21lbWJlcnM=/
 	 */
 	async retrieveSetMembers(
 		setId: string,

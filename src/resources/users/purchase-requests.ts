@@ -15,6 +15,7 @@ export class UsersPurchaseRequestsResource {
 	 * @param userId - The user ID.
 	 * @param params - Optional filters and pagination.
 	 * @returns A list of purchase requests.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/R0VUIC9hbG1hd3MvdjEvdXNlcnMve3VzZXJfaWR9L3B1cmNoYXNlLXJlcXVlc3Rz/
 	 */
 	async retrieveUserPurchaseRequestsList(
 		userId: string,
@@ -37,6 +38,7 @@ export class UsersPurchaseRequestsResource {
 	 * @param userId - The user ID.
 	 * @param purchaseRequestId - The purchase request ID.
 	 * @returns The purchase request.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/R0VUIC9hbG1hd3MvdjEvdXNlcnMve3VzZXJfaWR9L3B1cmNoYXNlLXJlcXVlc3RzL3twdXJjaGFzZV9yZXF1ZXN0X2lkfQ==/
 	 */
 	async retrieveUserPurchaseRequest(
 		userId: string,
@@ -55,6 +57,7 @@ export class UsersPurchaseRequestsResource {
 	 * @param userId - The user ID.
 	 * @param body - The purchase request data.
 	 * @returns The created purchase request.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/UE9TVCAvYWxtYXdzL3YxL3VzZXJzL3t1c2VyX2lkfS9wdXJjaGFzZS1yZXF1ZXN0cw==/
 	 */
 	async createUserPurchaseRequest(
 		userId: string,
@@ -77,6 +80,7 @@ export class UsersPurchaseRequestsResource {
 	 * @param params - Optional parameters.
 	 * @param params.op - The operation to perform.
 	 * @returns The resulting purchase request.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/UE9TVCAvYWxtYXdzL3YxL3VzZXJzL3t1c2VyX2lkfS9wdXJjaGFzZS1yZXF1ZXN0cy97cHVyY2hhc2VfcmVxdWVzdF9pZH0=/
 	 */
 	async operateUserPurchaseRequest(
 		userId: string,

@@ -18,6 +18,7 @@ export class BibsRemindersResource {
 	 * @param params.limit - Maximum results.
 	 * @param params.offset - Results offset.
 	 * @returns A list of reminders.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9yZW1pbmRlcnM=/
 	 */
 	async retrieveBibRemindersList(
 		mmsId: string,
@@ -35,6 +36,7 @@ export class BibsRemindersResource {
 	 * @param mmsId - The MMS ID.
 	 * @param reminderId - The reminder ID.
 	 * @returns The reminder.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9yZW1pbmRlcnMve3JlbWluZGVyX2lkfQ==/
 	 */
 	async retrieveBibReminder(
 		mmsId: string,
@@ -51,6 +53,7 @@ export class BibsRemindersResource {
 	 * @param mmsId - The MMS ID.
 	 * @param body - The reminder data.
 	 * @returns The created reminder.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/UE9TVCAvYWxtYXdzL3YxL2JpYnMve21tc19pZH0vcmVtaW5kZXJz/
 	 */
 	async createBibReminder(
 		mmsId: string,
@@ -66,6 +69,7 @@ export class BibsRemindersResource {
 	 * @param reminderId - The reminder ID.
 	 * @param body - The updated reminder data.
 	 * @returns The updated reminder.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/UFVUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9yZW1pbmRlcnMve3JlbWluZGVyX2lkfQ==/
 	 */
 	async updateBibReminder(
 		mmsId: string,
@@ -83,6 +87,7 @@ export class BibsRemindersResource {
 	 *
 	 * @param mmsId - The MMS ID.
 	 * @param reminderId - The reminder ID.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/REVMRVRFIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9yZW1pbmRlcnMve3JlbWluZGVyX2lkfQ==/
 	 */
 	async deleteBibReminder(mmsId: string, reminderId: string): Promise<void> {
 		return this.client.delete<void>(

@@ -105,12 +105,16 @@ export class ConfResource {
 
 	// ── Organizations ────────────────────────────────────────────────────────
 
-	/** @see {@link ConfOrganizationsResource.retrieveLibraries} */
+	/**
+	 * @see {@link ConfOrganizationsResource.retrieveLibraries}
+	 */
 	retrieveLibraries: ConfOrganizationsResource["retrieveLibraries"] = (
 		...args
 	) => this.organizations.retrieveLibraries(...args);
 
-	/** @see {@link ConfOrganizationsResource.retrieveLibrary} */
+	/**
+	 * @see {@link ConfOrganizationsResource.retrieveLibrary}
+	 */
 	retrieveLibrary: ConfOrganizationsResource["retrieveLibrary"] = (...args) =>
 		this.organizations.retrieveLibrary(...args);
 
@@ -118,108 +122,154 @@ export class ConfResource {
 	updateLibrary: ConfOrganizationsResource["updateLibrary"] = (...args) =>
 		this.organizations.updateLibrary(...args);
 
-	/** @see {@link ConfOrganizationsResource.retrieveDepartments} */
+	/**
+	 * @see {@link ConfOrganizationsResource.retrieveDepartments}
+	 */
 	retrieveDepartments: ConfOrganizationsResource["retrieveDepartments"] = (
 		...args
 	) => this.organizations.retrieveDepartments(...args);
 
-	/** @see {@link ConfOrganizationsResource.retrieveCircDesks} */
+	/**
+	 * @see {@link ConfOrganizationsResource.retrieveCircDesks}
+	 */
 	retrieveCircDesks: ConfOrganizationsResource["retrieveCircDesks"] = (
 		...args
 	) => this.organizations.retrieveCircDesks(...args);
 
-	/** @see {@link ConfOrganizationsResource.retrieveCircDesk} */
+	/**
+	 * @see {@link ConfOrganizationsResource.retrieveCircDesk}
+	 */
 	retrieveCircDesk: ConfOrganizationsResource["retrieveCircDesk"] = (...args) =>
 		this.organizations.retrieveCircDesk(...args);
 
-	/** @see {@link ConfOrganizationsResource.retrieveLocations} */
+	/**
+	 * @see {@link ConfOrganizationsResource.retrieveLocations}
+	 */
 	retrieveLocations: ConfOrganizationsResource["retrieveLocations"] = (
 		...args
 	) => this.organizations.retrieveLocations(...args);
 
-	/** @see {@link ConfOrganizationsResource.retrieveLocation} */
+	/**
+	 * @see {@link ConfOrganizationsResource.retrieveLocation}
+	 */
 	retrieveLocation: ConfOrganizationsResource["retrieveLocation"] = (...args) =>
 		this.organizations.retrieveLocation(...args);
 
-	/** @see {@link ConfOrganizationsResource.createLocation} */
+	/**
+	 * @see {@link ConfOrganizationsResource.createLocation}
+	 */
 	createLocation: ConfOrganizationsResource["createLocation"] = (...args) =>
 		this.organizations.createLocation(...args);
 
-	/** @see {@link ConfOrganizationsResource.updateLocation} */
+	/**
+	 * @see {@link ConfOrganizationsResource.updateLocation}
+	 */
 	updateLocation: ConfOrganizationsResource["updateLocation"] = (...args) =>
 		this.organizations.updateLocation(...args);
 
-	/** @see {@link ConfOrganizationsResource.deleteLocation} */
+	/**
+	 * @see {@link ConfOrganizationsResource.deleteLocation}
+	 */
 	deleteLocation: ConfOrganizationsResource["deleteLocation"] = (...args) =>
 		this.organizations.deleteLocation(...args);
 
-	/** @see {@link ConfOrganizationsResource.retrieveLibraryOpenHours} */
+	/**
+	 * @see {@link ConfOrganizationsResource.retrieveLibraryOpenHours}
+	 */
 	retrieveLibraryOpenHours: ConfOrganizationsResource["retrieveLibraryOpenHours"] =
 		(...args) => this.organizations.retrieveLibraryOpenHours(...args);
 
 	// ── Configuration ────────────────────────────────────────────────────────
 
-	/** @see {@link ConfConfigurationResource.retrieveGeneralConfig} */
+	/**
+	 * @see {@link ConfConfigurationResource.retrieveGeneralConfig}
+	 */
 	retrieveGeneralConfig: ConfConfigurationResource["retrieveGeneralConfig"] = (
 		...args
 	) => this.configuration.retrieveGeneralConfig(...args);
 
-	/** @see {@link ConfConfigurationResource.retrieveCodeTables} */
+	/**
+	 * @see {@link ConfConfigurationResource.retrieveCodeTables}
+	 */
 	retrieveCodeTables: ConfConfigurationResource["retrieveCodeTables"] = (
 		...args
 	) => this.configuration.retrieveCodeTables(...args);
 
-	/** @see {@link ConfConfigurationResource.retrieveCodeTable} */
+	/**
+	 * @see {@link ConfConfigurationResource.retrieveCodeTable}
+	 */
 	retrieveCodeTable: ConfConfigurationResource["retrieveCodeTable"] = (
 		...args
 	) => this.configuration.retrieveCodeTable(...args);
 
-	/** @see {@link ConfConfigurationResource.updateCodeTable} */
+	/**
+	 * @see {@link ConfConfigurationResource.updateCodeTable}
+	 */
 	updateCodeTable: ConfConfigurationResource["updateCodeTable"] = (...args) =>
 		this.configuration.updateCodeTable(...args);
 
-	/** @see {@link ConfConfigurationResource.retrieveMappingTables} */
+	/**
+	 * @see {@link ConfConfigurationResource.retrieveMappingTables}
+	 */
 	retrieveMappingTables: ConfConfigurationResource["retrieveMappingTables"] = (
 		...args
 	) => this.configuration.retrieveMappingTables(...args);
 
-	/** @see {@link ConfConfigurationResource.retrieveMappingTable} */
+	/**
+	 * @see {@link ConfConfigurationResource.retrieveMappingTable}
+	 */
 	retrieveMappingTable: ConfConfigurationResource["retrieveMappingTable"] = (
 		...args
 	) => this.configuration.retrieveMappingTable(...args);
 
-	/** @see {@link ConfConfigurationResource.updateMappingTable} */
+	/**
+	 * @see {@link ConfConfigurationResource.updateMappingTable}
+	 */
 	updateMappingTable: ConfConfigurationResource["updateMappingTable"] = (
 		...args
 	) => this.configuration.updateMappingTable(...args);
 
-	/** @see {@link ConfConfigurationResource.retrieveOpenHours} */
+	/**
+	 * @see {@link ConfConfigurationResource.retrieveOpenHours}
+	 */
 	retrieveOpenHours: ConfConfigurationResource["retrieveOpenHours"] = (
 		...args
 	) => this.configuration.retrieveOpenHours(...args);
 
-	/** @see {@link ConfConfigurationResource.updateOpenHours} */
+	/**
+	 * @see {@link ConfConfigurationResource.updateOpenHours}
+	 */
 	updateOpenHours: ConfConfigurationResource["updateOpenHours"] = (...args) =>
 		this.configuration.updateOpenHours(...args);
 
-	/** @see {@link ConfConfigurationResource.retrieveLetters} */
+	/**
+	 * @see {@link ConfConfigurationResource.retrieveLetters}
+	 */
 	retrieveLetters: ConfConfigurationResource["retrieveLetters"] = (...args) =>
 		this.configuration.retrieveLetters(...args);
 
-	/** @see {@link ConfConfigurationResource.retrieveLetter} */
+	/**
+	 * @see {@link ConfConfigurationResource.retrieveLetter}
+	 */
 	retrieveLetter: ConfConfigurationResource["retrieveLetter"] = (...args) =>
 		this.configuration.retrieveLetter(...args);
 
-	/** @see {@link ConfConfigurationResource.updateLetter} */
+	/**
+	 * @see {@link ConfConfigurationResource.updateLetter}
+	 */
 	updateLetter: ConfConfigurationResource["updateLetter"] = (...args) =>
 		this.configuration.updateLetter(...args);
 
-	/** @see {@link ConfConfigurationResource.retrieveRelations} */
+	/**
+	 * @see {@link ConfConfigurationResource.retrieveRelations}
+	 */
 	retrieveRelations: ConfConfigurationResource["retrieveRelations"] = (
 		...args
 	) => this.configuration.retrieveRelations(...args);
 
-	/** @see {@link ConfConfigurationResource.retrieveFeeTransactions} */
+	/**
+	 * @see {@link ConfConfigurationResource.retrieveFeeTransactions}
+	 */
 	retrieveFeeTransactions: ConfConfigurationResource["retrieveFeeTransactions"] =
 		(...args) => this.configuration.retrieveFeeTransactions(...args);
 
@@ -229,23 +279,33 @@ export class ConfResource {
 
 	// ── Jobs ─────────────────────────────────────────────────────────────────
 
-	/** @see {@link ConfJobsResource.retrieveJobs} */
+	/**
+	 * @see {@link ConfJobsResource.retrieveJobs}
+	 */
 	retrieveJobs: ConfJobsResource["retrieveJobs"] = (...args) =>
 		this.jobs.retrieveJobs(...args);
 
-	/** @see {@link ConfJobsResource.retrieveJob} */
+	/**
+	 * @see {@link ConfJobsResource.retrieveJob}
+	 */
 	retrieveJob: ConfJobsResource["retrieveJob"] = (...args) =>
 		this.jobs.retrieveJob(...args);
 
-	/** @see {@link ConfJobsResource.submitJob} */
+	/**
+	 * @see {@link ConfJobsResource.submitJob}
+	 */
 	submitJob: ConfJobsResource["submitJob"] = (...args) =>
 		this.jobs.submitJob(...args);
 
-	/** @see {@link ConfJobsResource.retrieveJobInstances} */
+	/**
+	 * @see {@link ConfJobsResource.retrieveJobInstances}
+	 */
 	retrieveJobInstances: ConfJobsResource["retrieveJobInstances"] = (...args) =>
 		this.jobs.retrieveJobInstances(...args);
 
-	/** @see {@link ConfJobsResource.retrieveJobInstance} */
+	/**
+	 * @see {@link ConfJobsResource.retrieveJobInstance}
+	 */
 	retrieveJobInstance: ConfJobsResource["retrieveJobInstance"] = (...args) =>
 		this.jobs.retrieveJobInstance(...args);
 
@@ -255,126 +315,180 @@ export class ConfResource {
 
 	// ── Sets ─────────────────────────────────────────────────────────────────
 
-	/** @see {@link ConfSetsResource.retrieveSets} */
+	/**
+	 * @see {@link ConfSetsResource.retrieveSets}
+	 */
 	retrieveSets: ConfSetsResource["retrieveSets"] = (...args) =>
 		this.sets.retrieveSets(...args);
 
-	/** @see {@link ConfSetsResource.retrieveSet} */
+	/**
+	 * @see {@link ConfSetsResource.retrieveSet}
+	 */
 	retrieveSet: ConfSetsResource["retrieveSet"] = (...args) =>
 		this.sets.retrieveSet(...args);
 
-	/** @see {@link ConfSetsResource.createSet} */
+	/**
+	 * @see {@link ConfSetsResource.createSet}
+	 */
 	createSet: ConfSetsResource["createSet"] = (...args) =>
 		this.sets.createSet(...args);
 
-	/** @see {@link ConfSetsResource.updateSet} */
+	/**
+	 * @see {@link ConfSetsResource.updateSet}
+	 */
 	updateSet: ConfSetsResource["updateSet"] = (...args) =>
 		this.sets.updateSet(...args);
 
-	/** @see {@link ConfSetsResource.deleteSet} */
+	/**
+	 * @see {@link ConfSetsResource.deleteSet}
+	 */
 	deleteSet: ConfSetsResource["deleteSet"] = (...args) =>
 		this.sets.deleteSet(...args);
 
-	/** @see {@link ConfSetsResource.retrieveSetMembers} */
+	/**
+	 * @see {@link ConfSetsResource.retrieveSetMembers}
+	 */
 	retrieveSetMembers: ConfSetsResource["retrieveSetMembers"] = (...args) =>
 		this.sets.retrieveSetMembers(...args);
 
 	// ── Profiles ─────────────────────────────────────────────────────────────
 
-	/** @see {@link ConfProfilesResource.retrieveImportProfiles} */
+	/**
+	 * @see {@link ConfProfilesResource.retrieveImportProfiles}
+	 */
 	retrieveImportProfiles: ConfProfilesResource["retrieveImportProfiles"] = (
 		...args
 	) => this.profiles.retrieveImportProfiles(...args);
 
-	/** @see {@link ConfProfilesResource.retrieveImportProfile} */
+	/**
+	 * @see {@link ConfProfilesResource.retrieveImportProfile}
+	 */
 	retrieveImportProfile: ConfProfilesResource["retrieveImportProfile"] = (
 		...args
 	) => this.profiles.retrieveImportProfile(...args);
 
-	/** @see {@link ConfProfilesResource.retrieveIntegrationProfiles} */
+	/**
+	 * @see {@link ConfProfilesResource.retrieveIntegrationProfiles}
+	 */
 	retrieveIntegrationProfiles: ConfProfilesResource["retrieveIntegrationProfiles"] =
 		(...args) => this.profiles.retrieveIntegrationProfiles(...args);
 
-	/** @see {@link ConfProfilesResource.retrieveIntegrationProfile} */
+	/**
+	 * @see {@link ConfProfilesResource.retrieveIntegrationProfile}
+	 */
 	retrieveIntegrationProfile: ConfProfilesResource["retrieveIntegrationProfile"] =
 		(...args) => this.profiles.retrieveIntegrationProfile(...args);
 
-	/** @see {@link ConfProfilesResource.createIntegrationProfile} */
+	/**
+	 * @see {@link ConfProfilesResource.createIntegrationProfile}
+	 */
 	createIntegrationProfile: ConfProfilesResource["createIntegrationProfile"] = (
 		...args
 	) => this.profiles.createIntegrationProfile(...args);
 
-	/** @see {@link ConfProfilesResource.updateIntegrationProfile} */
+	/**
+	 * @see {@link ConfProfilesResource.updateIntegrationProfile}
+	 */
 	updateIntegrationProfile: ConfProfilesResource["updateIntegrationProfile"] = (
 		...args
 	) => this.profiles.updateIntegrationProfile(...args);
 
-	/** @see {@link ConfProfilesResource.deleteIntegrationProfile} */
+	/**
+	 * @see {@link ConfProfilesResource.deleteIntegrationProfile}
+	 */
 	deleteIntegrationProfile: ConfProfilesResource["deleteIntegrationProfile"] = (
 		...args
 	) => this.profiles.deleteIntegrationProfile(...args);
 
-	/** @see {@link ConfProfilesResource.retrieveDepositProfiles} */
+	/**
+	 * @see {@link ConfProfilesResource.retrieveDepositProfiles}
+	 */
 	retrieveDepositProfiles: ConfProfilesResource["retrieveDepositProfiles"] = (
 		...args
 	) => this.profiles.retrieveDepositProfiles(...args);
 
-	/** @see {@link ConfProfilesResource.retrieveDepositProfile} */
+	/**
+	 * @see {@link ConfProfilesResource.retrieveDepositProfile}
+	 */
 	retrieveDepositProfile: ConfProfilesResource["retrieveDepositProfile"] = (
 		...args
 	) => this.profiles.retrieveDepositProfile(...args);
 
 	// ── Printers ─────────────────────────────────────────────────────────────
 
-	/** @see {@link ConfPrintersResource.retrievePrinters} */
+	/**
+	 * @see {@link ConfPrintersResource.retrievePrinters}
+	 */
 	retrievePrinters: ConfPrintersResource["retrievePrinters"] = (...args) =>
 		this.printers.retrievePrinters(...args);
 
-	/** @see {@link ConfPrintersResource.retrievePrinter} */
+	/**
+	 * @see {@link ConfPrintersResource.retrievePrinter}
+	 */
 	retrievePrinter: ConfPrintersResource["retrievePrinter"] = (...args) =>
 		this.printers.retrievePrinter(...args);
 
 	// ── Reminders & License Terms ─────────────────────────────────────────────
 
-	/** @see {@link ConfRemindersResource.retrieveReminders} */
+	/**
+	 * @see {@link ConfRemindersResource.retrieveReminders}
+	 */
 	retrieveReminders: ConfRemindersResource["retrieveReminders"] = (...args) =>
 		this.reminders.retrieveReminders(...args);
 
-	/** @see {@link ConfRemindersResource.retrieveReminder} */
+	/**
+	 * @see {@link ConfRemindersResource.retrieveReminder}
+	 */
 	retrieveReminder: ConfRemindersResource["retrieveReminder"] = (...args) =>
 		this.reminders.retrieveReminder(...args);
 
-	/** @see {@link ConfRemindersResource.createReminder} */
+	/**
+	 * @see {@link ConfRemindersResource.createReminder}
+	 */
 	createReminder: ConfRemindersResource["createReminder"] = (...args) =>
 		this.reminders.createReminder(...args);
 
-	/** @see {@link ConfRemindersResource.updateReminder} */
+	/**
+	 * @see {@link ConfRemindersResource.updateReminder}
+	 */
 	updateReminder: ConfRemindersResource["updateReminder"] = (...args) =>
 		this.reminders.updateReminder(...args);
 
-	/** @see {@link ConfRemindersResource.deleteReminder} */
+	/**
+	 * @see {@link ConfRemindersResource.deleteReminder}
+	 */
 	deleteReminder: ConfRemindersResource["deleteReminder"] = (...args) =>
 		this.reminders.deleteReminder(...args);
 
-	/** @see {@link ConfRemindersResource.retrieveLicenseTerms} */
+	/**
+	 * @see {@link ConfRemindersResource.retrieveLicenseTerms}
+	 */
 	retrieveLicenseTerms: ConfRemindersResource["retrieveLicenseTerms"] = (
 		...args
 	) => this.reminders.retrieveLicenseTerms(...args);
 
-	/** @see {@link ConfRemindersResource.retrieveLicenseTerm} */
+	/**
+	 * @see {@link ConfRemindersResource.retrieveLicenseTerm}
+	 */
 	retrieveLicenseTerm: ConfRemindersResource["retrieveLicenseTerm"] = (
 		...args
 	) => this.reminders.retrieveLicenseTerm(...args);
 
-	/** @see {@link ConfRemindersResource.createLicenseTerm} */
+	/**
+	 * @see {@link ConfRemindersResource.createLicenseTerm}
+	 */
 	createLicenseTerm: ConfRemindersResource["createLicenseTerm"] = (...args) =>
 		this.reminders.createLicenseTerm(...args);
 
-	/** @see {@link ConfRemindersResource.updateLicenseTerm} */
+	/**
+	 * @see {@link ConfRemindersResource.updateLicenseTerm}
+	 */
 	updateLicenseTerm: ConfRemindersResource["updateLicenseTerm"] = (...args) =>
 		this.reminders.updateLicenseTerm(...args);
 
-	/** @see {@link ConfRemindersResource.deleteLicenseTerm} */
+	/**
+	 * @see {@link ConfRemindersResource.deleteLicenseTerm}
+	 */
 	deleteLicenseTerm: ConfRemindersResource["deleteLicenseTerm"] = (...args) =>
 		this.reminders.deleteLicenseTerm(...args);
 }

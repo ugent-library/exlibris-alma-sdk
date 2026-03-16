@@ -16,6 +16,7 @@ export class BibsLoansResource {
 	 * @param mmsId - The MMS ID.
 	 * @param params - Optional pagination.
 	 * @returns A list of loans.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9sb2Fucw==/
 	 */
 	async retrieveBibLoansList(
 		mmsId: string,
@@ -30,6 +31,7 @@ export class BibsLoansResource {
 	 * @param mmsId - The MMS ID.
 	 * @param loanId - The loan ID.
 	 * @returns The loan.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9sb2Fucy97bG9hbl9pZH0=/
 	 */
 	async retrieveBibLoan(mmsId: string, loanId: string): Promise<Loan> {
 		return this.client.get<Loan>(path`/bibs/${mmsId}/loans/${loanId}`);
@@ -43,6 +45,7 @@ export class BibsLoansResource {
 	 * @param itemId - The item ID.
 	 * @param params - Optional pagination.
 	 * @returns A list of item loans.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9ob2xkaW5ncy97aG9sZGluZ19pZH0vaXRlbXMve2l0ZW1faWR9L2xvYW5z/
 	 */
 	async retrieveItemLoansList(
 		mmsId: string,
@@ -70,6 +73,7 @@ export class BibsLoansResource {
 	 * @param itemPid - The item PID.
 	 * @param loanId - The loan ID.
 	 * @returns The item loan.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9ob2xkaW5ncy97aG9sZGluZ19pZH0vaXRlbXMve2l0ZW1fcGlkfS9sb2Fucy97bG9hbl9pZH0=/
 	 */
 	async retrieveItemLoan(
 		mmsId: string,
@@ -90,6 +94,7 @@ export class BibsLoansResource {
 	 * @param itemPid - The item PID.
 	 * @param body - Loan data including user ID.
 	 * @returns The created loan.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/UE9TVCAvYWxtYXdzL3YxL2JpYnMve21tc19pZH0vaG9sZGluZ3Mve2hvbGRpbmdfaWR9L2l0ZW1zL3tpdGVtX3BpZH0vbG9hbnM=/
 	 */
 	async createItemLoan(
 		mmsId: string,
@@ -114,6 +119,7 @@ export class BibsLoansResource {
 	 * @param loanId - The loan ID.
 	 * @param body - Updated loan data.
 	 * @returns The updated loan.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/UFVUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9ob2xkaW5ncy97aG9sZGluZ19pZH0vaXRlbXMve2l0ZW1fcGlkfS9sb2Fucy97bG9hbl9pZH0=/
 	 */
 	async updateItemLoan(
 		mmsId: string,
@@ -139,6 +145,7 @@ export class BibsLoansResource {
 	 * @param params - Action parameters.
 	 * @param params.op - The operation (e.g. `"return"`).
 	 * @returns The updated loan.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/UE9TVCAvYWxtYXdzL3YxL2JpYnMve21tc19pZH0vaG9sZGluZ3Mve2hvbGRpbmdfaWR9L2l0ZW1zL3tpdGVtX3BpZH0vbG9hbnMve2xvYW5faWR9/
 	 */
 	async operateItemLoan(
 		mmsId: string,

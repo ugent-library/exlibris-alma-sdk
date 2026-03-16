@@ -15,6 +15,7 @@ export class UsersFeesResource {
 	 * @param userId - The user ID.
 	 * @param params - Optional filters and pagination.
 	 * @returns A list of user fees.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/R0VUIC9hbG1hd3MvdjEvdXNlcnMve3VzZXJfaWR9L2ZlZXM=/
 	 */
 	async retrieveUserFeesList(
 		userId: string,
@@ -29,6 +30,7 @@ export class UsersFeesResource {
 	 * @param userId - The user ID.
 	 * @param feeId - The fee ID.
 	 * @returns The fee.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/R0VUIC9hbG1hd3MvdjEvdXNlcnMve3VzZXJfaWR9L2ZlZXMve2ZlZV9pZH0=/
 	 */
 	async retrieveUserFee(userId: string, feeId: string): Promise<UserFee> {
 		return this.client.get<UserFee>(path`/users/${userId}/fees/${feeId}`);
@@ -43,6 +45,7 @@ export class UsersFeesResource {
 	 * @param params - Optional parameters.
 	 * @param params.op - The operation to perform.
 	 * @returns The resulting fee.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/UE9TVCAvYWxtYXdzL3YxL3VzZXJzL3t1c2VyX2lkfS9mZWVzL3tmZWVfaWR9/
 	 */
 	async operateUserFee(
 		userId: string,
@@ -73,6 +76,7 @@ export class UsersFeesResource {
 	 * @param params - Optional parameters.
 	 * @param params.op - The operation to perform.
 	 * @returns The resulting fees.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/UE9TVCAvYWxtYXdzL3YxL3VzZXJzL3t1c2VyX2lkfS9mZWVzL2FsbA==/
 	 */
 	async operateAllUserFees(
 		userId: string,
@@ -99,6 +103,7 @@ export class UsersFeesResource {
 	 * @param userId - The user ID.
 	 * @param params - Optional pagination.
 	 * @returns A list of user deposits.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/R0VUIC9hbG1hd3MvdjEvdXNlcnMve3VzZXJfaWR9L2RlcG9zaXRz/
 	 */
 	async retrieveUserDepositsList(
 		userId: string,
@@ -123,6 +128,7 @@ export class UsersFeesResource {
 	 * @param userId - The user ID.
 	 * @param depositId - The deposit ID.
 	 * @returns The deposit.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/R0VUIC9hbG1hd3MvdjEvdXNlcnMve3VzZXJfaWR9L2RlcG9zaXRzL3tkZXBvc2l0X2lkfQ==/
 	 */
 	async retrieveUserDeposit(
 		userId: string,
@@ -141,6 +147,7 @@ export class UsersFeesResource {
 	 * @param userId - The user ID.
 	 * @param body - The deposit data.
 	 * @returns The created deposit.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/UE9TVCAvYWxtYXdzL3YxL3VzZXJzL3t1c2VyX2lkfS9kZXBvc2l0cw==/
 	 */
 	async createUserDeposit(
 		userId: string,
@@ -163,6 +170,7 @@ export class UsersFeesResource {
 	 * @param params - Optional parameters.
 	 * @param params.op - The operation to perform.
 	 * @returns The resulting deposit.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/UE9TVCAvYWxtYXdzL3YxL3VzZXJzL3t1c2VyX2lkfS9kZXBvc2l0cy97ZGVwb3NpdF9pZH0=/
 	 */
 	async operateUserDeposit(
 		userId: string,

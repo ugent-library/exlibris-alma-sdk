@@ -24,6 +24,7 @@ export class BibsRequestsResource {
 	 * @param params.limit - Maximum results.
 	 * @param params.offset - Results offset.
 	 * @returns A list of requests.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9yZXF1ZXN0cw==/
 	 */
 	async retrieveBibRequestsList(
 		mmsId: string,
@@ -38,6 +39,7 @@ export class BibsRequestsResource {
 	 * @param mmsId - The MMS ID.
 	 * @param requestId - The request ID.
 	 * @returns The request.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9yZXF1ZXN0cy97cmVxdWVzdF9pZH0=/
 	 */
 	async retrieveBibRequest(
 		mmsId: string,
@@ -56,6 +58,7 @@ export class BibsRequestsResource {
 	 * @param params - Optional parameters.
 	 * @param params.user_id - The requesting user ID.
 	 * @returns The created request.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/UE9TVCAvYWxtYXdzL3YxL2JpYnMve21tc19pZH0vcmVxdWVzdHM=/
 	 */
 	async createBibRequest(
 		mmsId: string,
@@ -76,6 +79,7 @@ export class BibsRequestsResource {
 	 * @param requestId - The request ID.
 	 * @param body - The updated request data.
 	 * @returns The updated request.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/UFVUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9yZXF1ZXN0cy97cmVxdWVzdF9pZH0=/
 	 */
 	async updateBibRequest(
 		mmsId: string,
@@ -97,6 +101,7 @@ export class BibsRequestsResource {
 	 * @param params - Action parameters.
 	 * @param params.op - The operation.
 	 * @returns The updated request.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/UE9TVCAvYWxtYXdzL3YxL2JpYnMve21tc19pZH0vcmVxdWVzdHMve3JlcXVlc3RfaWR9/
 	 */
 	async operateBibRequest(
 		mmsId: string,
@@ -119,6 +124,7 @@ export class BibsRequestsResource {
 	 * @param params - Optional parameters.
 	 * @param params.reason - Cancellation reason code.
 	 * @param params.notify_user - Whether to notify the user.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/REVMRVRFIC9hbG1hd3MvdjEvYmlicy97bW1zSWR9L3JlcXVlc3RzL3tyZXF1ZXN0SWR9/
 	 */
 	async deleteBibRequest(
 		mmsId: string,
@@ -138,6 +144,7 @@ export class BibsRequestsResource {
 	 * @param params - Optional parameters.
 	 * @param params.user_id - User ID for personalized options.
 	 * @returns Request options.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9yZXF1ZXN0LW9wdGlvbnM=/
 	 */
 	async retrieveBibRequestOptions(
 		mmsId: string,
@@ -157,6 +164,7 @@ export class BibsRequestsResource {
 	 * @param itemId - The item ID.
 	 * @param params - Optional filters.
 	 * @returns A list of item requests.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9ob2xkaW5ncy97aG9sZGluZ19pZH0vaXRlbXMve2l0ZW1faWR9L3JlcXVlc3Rz/
 	 */
 	async retrieveItemRequestsList(
 		mmsId: string,
@@ -178,6 +186,7 @@ export class BibsRequestsResource {
 	 * @param itemId - The item ID.
 	 * @param requestId - The request ID.
 	 * @returns The item request.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9ob2xkaW5ncy97aG9sZGluZ19pZH0vaXRlbXMve2l0ZW1faWR9L3JlcXVlc3RzL3tyZXF1ZXN0X2lkfQ==/
 	 */
 	async retrieveItemRequest(
 		mmsId: string,
@@ -199,6 +208,7 @@ export class BibsRequestsResource {
 	 * @param body - The request data.
 	 * @param params - Optional parameters.
 	 * @returns The created request.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/UE9TVCAvYWxtYXdzL3YxL2JpYnMve21tc19pZH0vaG9sZGluZ3Mve2hvbGRpbmdfaWR9L2l0ZW1zL3tpdGVtX3BpZH0vcmVxdWVzdHM=/
 	 */
 	async createItemRequest(
 		mmsId: string,
@@ -223,6 +233,7 @@ export class BibsRequestsResource {
 	 * @param requestId - The request ID.
 	 * @param body - The updated request.
 	 * @returns The updated request.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/UFVUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9ob2xkaW5ncy97aG9sZGluZ19pZH0vaXRlbXMve2l0ZW1fcGlkfS9yZXF1ZXN0cy97cmVxdWVzdF9pZH0=/
 	 */
 	async updateItemRequest(
 		mmsId: string,
@@ -247,6 +258,7 @@ export class BibsRequestsResource {
 	 * @param body - Action body.
 	 * @param params - Action parameters.
 	 * @returns The updated request.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/UE9TVCAvYWxtYXdzL3YxL2JpYnMve21tc19pZH0vaG9sZGluZ3Mve2hvbGRpbmdfaWR9L2l0ZW1zL3tpdGVtX3BpZH0vcmVxdWVzdHMve3JlcXVlc3RfaWR9/
 	 */
 	async operateItemRequest(
 		mmsId: string,
@@ -271,6 +283,7 @@ export class BibsRequestsResource {
 	 * @param itemPid - The item PID.
 	 * @param requestId - The request ID.
 	 * @param params - Optional parameters.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/REVMRVRFIC9hbG1hd3MvdjEvYmlicy97bW1zSWR9L2hvbGRpbmdzL3tob2xkaW5nSWR9L2l0ZW1zL3tpdGVtUGlkfS9yZXF1ZXN0cy97cmVxdWVzdElkfQ==/
 	 */
 	async deleteItemRequest(
 		mmsId: string,
@@ -294,6 +307,7 @@ export class BibsRequestsResource {
 	 * @param params - Optional parameters.
 	 * @param params.user_id - User ID for personalized options.
 	 * @returns Request options.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9ob2xkaW5ncy97aG9sZGluZ19pZH0vaXRlbXMve2l0ZW1fcGlkfS9yZXF1ZXN0LW9wdGlvbnM=/
 	 */
 	async retrieveItemRequestOptions(
 		mmsId: string,
@@ -315,6 +329,7 @@ export class BibsRequestsResource {
 	 * @param itemPid - The item PID.
 	 * @param params - Optional parameters.
 	 * @returns Booking availability.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9ob2xkaW5ncy97aG9sZGluZ19pZH0vaXRlbXMve2l0ZW1fcGlkfS9ib29raW5nLWF2YWlsYWJpbGl0eQ==/
 	 */
 	async retrieveItemBookingAvailability(
 		mmsId: string,

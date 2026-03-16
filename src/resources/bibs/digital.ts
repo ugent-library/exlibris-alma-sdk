@@ -26,6 +26,7 @@ export class BibsDigitalResource {
 	 * @param params.limit - Maximum results.
 	 * @param params.offset - Results offset.
 	 * @returns A list of representations.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9yZXByZXNlbnRhdGlvbnM=/
 	 */
 	async retrieveRepresentationsList(
 		mmsId: string,
@@ -49,6 +50,7 @@ export class BibsDigitalResource {
 	 * @param params - Optional parameters.
 	 * @param params.use_updated_terminology - Whether to use updated terminology.
 	 * @returns The representation.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9yZXByZXNlbnRhdGlvbnMve3JlcF9pZH0=/
 	 */
 	async retrieveRepresentation(
 		mmsId: string,
@@ -67,6 +69,7 @@ export class BibsDigitalResource {
 	 * @param mmsId - The MMS ID.
 	 * @param body - The representation data.
 	 * @returns The created representation.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/UE9TVCAvYWxtYXdzL3YxL2JpYnMve21tc19pZH0vcmVwcmVzZW50YXRpb25z/
 	 */
 	async createRepresentation(
 		mmsId: string,
@@ -85,6 +88,7 @@ export class BibsDigitalResource {
 	 * @param repId - The representation ID.
 	 * @param body - The updated representation.
 	 * @returns The updated representation.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/UFVUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9yZXByZXNlbnRhdGlvbnMve3JlcF9pZH0=/
 	 */
 	async updateRepresentation(
 		mmsId: string,
@@ -103,6 +107,7 @@ export class BibsDigitalResource {
 	 * @param mmsId - The MMS ID.
 	 * @param repId - The representation ID.
 	 * @param params - Optional parameters.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/REVMRVRFIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9yZXByZXNlbnRhdGlvbnMve3JlcF9pZH0=/
 	 */
 	async deleteRepresentation(
 		mmsId: string,
@@ -122,6 +127,7 @@ export class BibsDigitalResource {
 	 * @param repId - The representation ID.
 	 * @param params - Optional pagination.
 	 * @returns A list of representation files.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9yZXByZXNlbnRhdGlvbnMve3JlcF9pZH0vZmlsZXM=/
 	 */
 	async retrieveRepresentationFilesList(
 		mmsId: string,
@@ -143,6 +149,7 @@ export class BibsDigitalResource {
 	 * @param params - Optional parameters.
 	 * @param params.expand - Expand the response.
 	 * @returns The representation file.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9yZXByZXNlbnRhdGlvbnMve3JlcF9pZH0vZmlsZXMve2ZpbGVfaWR9/
 	 */
 	async retrieveRepresentationFile(
 		mmsId: string,
@@ -163,6 +170,7 @@ export class BibsDigitalResource {
 	 * @param repId - The representation ID.
 	 * @param body - The file data.
 	 * @returns The created file.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/UE9TVCAvYWxtYXdzL3YxL2JpYnMve21tc19pZH0vcmVwcmVzZW50YXRpb25zL3tyZXBfaWR9L2ZpbGVz/
 	 */
 	async createRepresentationFile(
 		mmsId: string,
@@ -183,6 +191,7 @@ export class BibsDigitalResource {
 	 * @param fileId - The file ID.
 	 * @param body - The updated file data.
 	 * @returns The updated file.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/UFVUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9yZXByZXNlbnRhdGlvbnMve3JlcF9pZH0vZmlsZXMve2ZpbGVfaWR9/
 	 */
 	async updateRepresentationFile(
 		mmsId: string,
@@ -202,6 +211,7 @@ export class BibsDigitalResource {
 	 * @param mmsId - The MMS ID.
 	 * @param repId - The representation ID.
 	 * @param fileId - The file ID.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/REVMRVRFIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9yZXByZXNlbnRhdGlvbnMve3JlcF9pZH0vZmlsZXMve2ZpbGVfaWR9/
 	 */
 	async deleteRepresentationFile(
 		mmsId: string,
@@ -219,6 +229,7 @@ export class BibsDigitalResource {
 	 * @param mmsId - The MMS ID.
 	 * @param params - Optional pagination.
 	 * @returns A list of electronic collections.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9lLWNvbGxlY3Rpb25z/
 	 */
 	async retrieveECollectionsList(
 		mmsId: string,
@@ -236,6 +247,7 @@ export class BibsDigitalResource {
 	 * @param mmsId - The MMS ID.
 	 * @param collectionId - The e-collection ID.
 	 * @returns The electronic collection.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9lLWNvbGxlY3Rpb25zL3tjb2xsZWN0aW9uX2lkfQ==/
 	 */
 	async retrieveECollection(
 		mmsId: string,

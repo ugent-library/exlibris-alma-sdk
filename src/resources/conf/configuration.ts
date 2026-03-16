@@ -27,6 +27,7 @@ export class ConfConfigurationResource {
 	 * @param params - Optional expand parameter.
 	 * @param params.expand - Additional information to include.
 	 * @returns The general configuration object.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9nZW5lcmFs/
 	 */
 	async retrieveGeneralConfig(params?: {
 		expand?: string;
@@ -42,6 +43,7 @@ export class ConfConfigurationResource {
 	 * @param params.limit - Maximum results.
 	 * @param params.offset - Results offset.
 	 * @returns A list of code tables.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9jb2RlLXRhYmxlcw==/
 	 */
 	async retrieveCodeTables(params?: {
 		scope?: string;
@@ -59,6 +61,7 @@ export class ConfConfigurationResource {
 	 * @param params.scope - Institution or library code.
 	 * @param params.lang - Requested language.
 	 * @returns The code table with all its rows.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9jb2RlLXRhYmxlcy97Y29kZVRhYmxlTmFtZX0=/
 	 */
 	async retrieveCodeTable(
 		codeTableName: string,
@@ -76,6 +79,7 @@ export class ConfConfigurationResource {
 	 * @param codeTableName - The code table name.
 	 * @param body - The updated code table.
 	 * @returns The updated code table.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/UFVUIC9hbG1hd3MvdjEvY29uZi9jb2RlLXRhYmxlcy97Y29kZVRhYmxlTmFtZX0=/
 	 */
 	async updateCodeTable(
 		codeTableName: string,
@@ -91,6 +95,7 @@ export class ConfConfigurationResource {
 	 * Retrieves a list of all mapping tables.
 	 *
 	 * @returns A list of mapping tables.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9tYXBwaW5nLXRhYmxlcw==/
 	 */
 	async retrieveMappingTables(): Promise<MappingTables> {
 		return this.client.get<MappingTables>("/conf/mapping-tables");
@@ -103,6 +108,7 @@ export class ConfConfigurationResource {
 	 * @param params - Optional parameters.
 	 * @param params.scope - Institution or library code.
 	 * @returns The mapping table.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9tYXBwaW5nLXRhYmxlcy97bWFwcGluZ1RhYmxlTmFtZX0=/
 	 */
 	async retrieveMappingTable(
 		mappingTableName: string,
@@ -120,6 +126,7 @@ export class ConfConfigurationResource {
 	 * @param mappingTableName - The mapping table name.
 	 * @param body - The updated mapping table.
 	 * @returns The updated mapping table.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/UFVUIC9hbG1hd3MvdjEvY29uZi9tYXBwaW5nLXRhYmxlcy97bWFwcGluZ1RhYmxlTmFtZX0=/
 	 */
 	async updateMappingTable(
 		mappingTableName: string,
@@ -137,6 +144,7 @@ export class ConfConfigurationResource {
 	 * @param params - Required scope parameter.
 	 * @param params.scope - Institution or library scope (required).
 	 * @returns The open hours definition.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9vcGVuLWhvdXJz/
 	 */
 	async retrieveOpenHours(params: { scope: string }): Promise<OpenHours> {
 		return this.client.get<OpenHours>("/conf/open-hours", params);
@@ -148,6 +156,7 @@ export class ConfConfigurationResource {
 	 * @param body - The updated open hours.
 	 * @param params - Optional parameters.
 	 * @returns The updated open hours.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/UFVUIC9hbG1hd3MvdjEvY29uZi9vcGVuLWhvdXJz/
 	 */
 	async updateOpenHours(
 		body: OpenHours,
@@ -171,6 +180,7 @@ export class ConfConfigurationResource {
 	 * @param params - Optional parameters.
 	 * @param params.type - Letter type filter.
 	 * @returns A list of letters.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9sZXR0ZXJz/
 	 */
 	async retrieveLetters(params?: { type?: string }): Promise<Letters> {
 		return this.client.get<Letters>("/conf/letters", params);
@@ -181,6 +191,7 @@ export class ConfConfigurationResource {
 	 *
 	 * @param letterCode - The letter code.
 	 * @returns The letter template.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9sZXR0ZXJzL3tsZXR0ZXJDb2RlfQ==/
 	 */
 	async retrieveLetter(letterCode: string): Promise<Letter> {
 		return this.client.get<Letter>(path`/conf/letters/${letterCode}`);
@@ -192,6 +203,7 @@ export class ConfConfigurationResource {
 	 * @param letterCode - The letter code.
 	 * @param body - The updated letter template.
 	 * @returns The updated letter.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/UFVUIC9hbG1hd3MvdjEvY29uZi9sZXR0ZXJzL3tsZXR0ZXJDb2RlfQ==/
 	 */
 	async updateLetter(letterCode: string, body: Letter): Promise<Letter> {
 		return this.client.put<Letter>(path`/conf/letters/${letterCode}`, body);
@@ -203,6 +215,7 @@ export class ConfConfigurationResource {
 	 * @param params - Required scope parameter.
 	 * @param params.scope - Institution or library scope (required).
 	 * @returns The relations object.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9yZWxhdGlvbnM=/
 	 */
 	async retrieveRelations(params: { scope: string }): Promise<Relations> {
 		return this.client.get<Relations>("/conf/relations", params);
@@ -236,6 +249,7 @@ export class ConfConfigurationResource {
 	 *
 	 * @param params - Optional filters.
 	 * @returns Fee transactions.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi91dGlsaXRpZXMvZmVlLXRyYW5zYWN0aW9ucw==/
 	 */
 	async retrieveFeeTransactions(
 		params?: Record<string, string | number | boolean | undefined | null>,

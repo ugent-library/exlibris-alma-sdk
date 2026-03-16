@@ -14,6 +14,7 @@ export class AcqPoLinesResource {
 	 *
 	 * @param params - Optional filters and pagination.
 	 * @returns A list of PO lines.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL3BvLWxpbmVz/
 	 */
 	async retrievePoLinesList(params?: {
 		q?: string;
@@ -36,6 +37,7 @@ export class AcqPoLinesResource {
 	 *
 	 * @param poLineId - The PO line ID.
 	 * @returns The PO line.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL3BvLWxpbmVzL3twb19saW5lX2lkfQ==/
 	 */
 	async retrievePoLine(poLineId: string): Promise<PoLine> {
 		return this.client.get<PoLine>(path`/acq/po-lines/${poLineId}`);
@@ -46,6 +48,7 @@ export class AcqPoLinesResource {
 	 *
 	 * @param body - The PO line data.
 	 * @returns The created PO line.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/UE9TVCAvYWxtYXdzL3YxL2FjcS9wby1saW5lcw==/
 	 */
 	async createPoLine(
 		body: PoLine,
@@ -60,6 +63,7 @@ export class AcqPoLinesResource {
 	 * @param poLineId - The PO line ID.
 	 * @param body - The updated PO line data.
 	 * @returns The updated PO line.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/UFVUIC9hbG1hd3MvdjEvYWNxL3BvLWxpbmVzL3twb19saW5lX2lkfQ==/
 	 */
 	async updatePoLine(
 		poLineId: string,
@@ -77,6 +81,7 @@ export class AcqPoLinesResource {
 	 * Deletes a PO line.
 	 *
 	 * @param poLineId - The PO line ID.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/REVMRVRFIC9hbG1hd3MvdjEvYWNxL3BvLWxpbmVzL3twb19saW5lX2lkfQ==/
 	 */
 	async deletePoLine(
 		poLineId: string,
@@ -97,6 +102,7 @@ export class AcqPoLinesResource {
 	 * @param poLineId - The PO line ID.
 	 * @param params - Optional pagination.
 	 * @returns A list of PO line items.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL3BvLWxpbmVzL3twb19saW5lX2lkfS9pdGVtcw==/
 	 */
 	async retrievePoLineItemsList(
 		poLineId: string,
@@ -114,6 +120,7 @@ export class AcqPoLinesResource {
 	 * @param poLineId - The PO line ID.
 	 * @param body - The item data.
 	 * @returns The created item.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/UE9TVCAvYWxtYXdzL3YxL2FjcS9wby1saW5lcy97cG9fbGluZV9pZH0vaXRlbXM=/
 	 */
 	async createPoLineItem(
 		poLineId: string,
@@ -134,6 +141,7 @@ export class AcqPoLinesResource {
 	 * @param params - Optional parameters.
 	 * @param params.op - The operation to perform.
 	 * @returns The resulting item.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/UE9TVCAvYWxtYXdzL3YxL2FjcS9wby1saW5lcy97cG9fbGluZV9pZH0vaXRlbXMve2l0ZW1faWR9/
 	 */
 	async operatePoLineItem(
 		poLineId: string,

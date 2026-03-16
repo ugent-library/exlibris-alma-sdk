@@ -35,6 +35,7 @@ export class BibsCatalogResource {
 	 * @param params.other_system_id - Other system ID filter.
 	 * @param params.lod_uri - Linked Open Data URI.
 	 * @returns A list of bibliographic records.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicw==/
 	 */
 	async retrieveBibs(params?: {
 		mms_id?: string;
@@ -60,6 +61,7 @@ export class BibsCatalogResource {
 	 * @param params.expand - Fields to expand.
 	 * @param params.other_system_id - Other system identifier.
 	 * @returns The bibliographic record.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfQ==/
 	 */
 	async retrieveBib(
 		mmsId: string,
@@ -81,6 +83,7 @@ export class BibsCatalogResource {
 	 * @param params.check_match - Whether to check for duplicate matches.
 	 * @param params.import_profile - Import profile to use.
 	 * @returns The created bibliographic record.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/UE9TVCAvYWxtYXdzL3YxL2JpYnM=/
 	 */
 	async createBib(
 		body: Bib,
@@ -111,6 +114,7 @@ export class BibsCatalogResource {
 	 * @param params.cataloger_level - Minimum cataloger level required.
 	 * @param params.check_match - Whether to check for duplicate matches.
 	 * @returns The updated bibliographic record.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/UFVUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfQ==/
 	 */
 	async updateBib(
 		mmsId: string,
@@ -136,6 +140,7 @@ export class BibsCatalogResource {
 	 * @param params - Action parameters.
 	 * @param params.op - The operation.
 	 * @returns The resulting bib record.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/UE9TVCAvYWxtYXdzL3YxL2JpYnMve21tc19pZH0=/
 	 */
 	async operateBib(
 		mmsId: string,
@@ -152,6 +157,7 @@ export class BibsCatalogResource {
 	 * @param params - Optional parameters.
 	 * @param params.override - Override deletion warnings.
 	 * @param params.cataloger_level - Minimum cataloger level required.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/REVMRVRFIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfQ==/
 	 */
 	async deleteBib(
 		mmsId: string,
@@ -165,6 +171,7 @@ export class BibsCatalogResource {
 	 *
 	 * @param mmsId - The MMS ID.
 	 * @returns A list of holdings records.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9ob2xkaW5ncw==/
 	 */
 	async retrieveHoldingsList(mmsId: string): Promise<Holdings> {
 		return this.client.get<Holdings>(path`/bibs/${mmsId}/holdings`);
@@ -176,6 +183,7 @@ export class BibsCatalogResource {
 	 * @param mmsId - The MMS ID.
 	 * @param holdingId - The holdings record ID.
 	 * @returns The holdings record.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9ob2xkaW5ncy97aG9sZGluZ19pZH0=/
 	 */
 	async retrieveHolding(mmsId: string, holdingId: string): Promise<Holding> {
 		return this.client.get<Holding>(path`/bibs/${mmsId}/holdings/${holdingId}`);
@@ -187,6 +195,7 @@ export class BibsCatalogResource {
 	 * @param mmsId - The MMS ID.
 	 * @param body - The holdings data.
 	 * @returns The created holdings record.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/UE9TVCAvYWxtYXdzL3YxL2JpYnMve21tc19pZH0vaG9sZGluZ3M=/
 	 */
 	async createHolding(mmsId: string, body: Holding): Promise<Holding> {
 		return this.client.post<Holding>(path`/bibs/${mmsId}/holdings`, body);
@@ -199,6 +208,7 @@ export class BibsCatalogResource {
 	 * @param holdingId - The holdings record ID.
 	 * @param body - The updated holdings data.
 	 * @returns The updated holdings record.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/UFVUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9ob2xkaW5ncy97aG9sZGluZ19pZH0=/
 	 */
 	async updateHolding(
 		mmsId: string,
@@ -217,6 +227,7 @@ export class BibsCatalogResource {
 	 * @param mmsId - The MMS ID.
 	 * @param holdingId - The holdings record ID.
 	 * @param params - Optional parameters.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/REVMRVRFIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9ob2xkaW5ncy97aG9sZGluZ19pZH0=/
 	 */
 	async deleteHolding(
 		mmsId: string,
@@ -254,6 +265,7 @@ export class BibsCatalogResource {
 	 * @param params.expected_receive_date_to - Filter by expected receive date to.
 	 * @param params.view - View type.
 	 * @returns A list of items.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9ob2xkaW5ncy97aG9sZGluZ19pZH0vaXRlbXM=/
 	 */
 	async retrieveItemsList(
 		mmsId: string,
@@ -296,6 +308,7 @@ export class BibsCatalogResource {
 	 * @param params.expand - Fields to expand.
 	 * @param params.user_id - User ID for loan-related info.
 	 * @returns The item.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9ob2xkaW5ncy97aG9sZGluZ19pZH0vaXRlbXMve2l0ZW1fcGlkfQ==/
 	 */
 	async retrieveItem(
 		mmsId: string,
@@ -319,6 +332,7 @@ export class BibsCatalogResource {
 	 * @param params.generate_description - Whether to generate a description.
 	 * @param params.generate_inventory_num_name - Inventory number generation profile.
 	 * @returns The created item.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/UE9TVCAvYWxtYXdzL3YxL2JpYnMve21tc19pZH0vaG9sZGluZ3Mve2hvbGRpbmdfaWR9L2l0ZW1z/
 	 */
 	async createItem(
 		mmsId: string,
@@ -347,6 +361,7 @@ export class BibsCatalogResource {
 	 * @param params.generate_description - Whether to regenerate the description.
 	 * @param params.generate_inventory_num_name - Inventory number generation profile.
 	 * @returns The updated item.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/UFVUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9ob2xkaW5ncy97aG9sZGluZ19pZH0vaXRlbXMve2l0ZW1fcGlkfQ==/
 	 */
 	async updateItem(
 		mmsId: string,
@@ -387,6 +402,7 @@ export class BibsCatalogResource {
 	 * @param params.confirm - Whether to confirm the operation.
 	 * @param params.register_in_house_use - Whether to register in-house use.
 	 * @returns The resulting item.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/UE9TVCAvYWxtYXdzL3YxL2JpYnMve21tc19pZH0vaG9sZGluZ3Mve2hvbGRpbmdfaWR9L2l0ZW1zL3tpdGVtX3BpZH0=/
 	 */
 	async operateItem(
 		mmsId: string,
@@ -426,6 +442,7 @@ export class BibsCatalogResource {
 	 * @param params.override - Override deletion warnings.
 	 * @param params.holdings - Whether to also delete the holdings record if empty.
 	 * @param params.bib - Whether to also delete the bib record if empty.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/REVMRVRFIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9ob2xkaW5ncy97aG9sZGluZ19pZH0vaXRlbXMve2l0ZW1fcGlkfQ==/
 	 */
 	async deleteItem(
 		mmsId: string,
@@ -445,6 +462,7 @@ export class BibsCatalogResource {
 	 * @param mmsId - The MMS ID.
 	 * @param params - Optional pagination.
 	 * @returns A list of portfolios.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9wb3J0Zm9saW9z/
 	 */
 	async retrievePortfoliosList(
 		mmsId: string,
@@ -459,6 +477,7 @@ export class BibsCatalogResource {
 	 * @param mmsId - The MMS ID.
 	 * @param portfolioId - The portfolio ID.
 	 * @returns The portfolio.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9wb3J0Zm9saW9zL3twb3J0Zm9saW9faWR9/
 	 */
 	async retrievePortfolio(
 		mmsId: string,
@@ -475,6 +494,7 @@ export class BibsCatalogResource {
 	 * @param mmsId - The MMS ID.
 	 * @param body - The portfolio data.
 	 * @returns The created portfolio.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/UE9TVCAvYWxtYXdzL3YxL2JpYnMve21tc19pZH0vcG9ydGZvbGlvcy8=/
 	 */
 	async createPortfolio(mmsId: string, body: Portfolio): Promise<Portfolio> {
 		return this.client.post<Portfolio>(path`/bibs/${mmsId}/portfolios/`, body);
@@ -487,6 +507,7 @@ export class BibsCatalogResource {
 	 * @param portfolioId - The portfolio ID.
 	 * @param body - The updated portfolio.
 	 * @returns The updated portfolio.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/UFVUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9wb3J0Zm9saW9zL3twb3J0Zm9saW9faWR9/
 	 */
 	async updatePortfolio(
 		mmsId: string,
@@ -504,6 +525,7 @@ export class BibsCatalogResource {
 	 *
 	 * @param mmsId - The MMS ID.
 	 * @param portfolioId - The portfolio ID.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/REVMRVRFIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9wb3J0Zm9saW9zL3twb3J0Zm9saW9faWR9/
 	 */
 	async deletePortfolio(mmsId: string, portfolioId: string): Promise<void> {
 		return this.client.delete<void>(
@@ -521,6 +543,7 @@ export class BibsCatalogResource {
 	 * @param params.user_id - The user ID to check availability for.
 	 * @param params.user_id_type - The user ID type.
 	 * @returns Booking availability.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/bibs/R0VUIC9hbG1hd3MvdjEvYmlicy97bW1zX2lkfS9ib29raW5nLWF2YWlsYWJpbGl0eQ==/
 	 */
 	async retrieveBookingAvailability(
 		mmsId: string,

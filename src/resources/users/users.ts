@@ -14,6 +14,7 @@ export class UsersUsersResource {
 	 *
 	 * @param params - Optional filters and pagination.
 	 * @returns A list of users.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/R0VUIC9hbG1hd3MvdjEvdXNlcnM=/
 	 */
 	async retrieveUsersList(params?: {
 		q?: string;
@@ -36,6 +37,7 @@ export class UsersUsersResource {
 	 * @param params.view - View type.
 	 * @param params.expand - Expand additional fields.
 	 * @returns The user.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/R0VUIC9hbG1hd3MvdjEvdXNlcnMve3VzZXJfaWR9/
 	 */
 	async retrieveUser(
 		userId: string,
@@ -55,6 +57,7 @@ export class UsersUsersResource {
 	 * @param params - Optional parameters.
 	 * @param params.expand - Expand additional fields.
 	 * @returns The authenticated user.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/R0VUIC9hbG1hd3MvdjEvdXNlcnMvTUU=/
 	 */
 	async retrieveMe(params?: { expand?: string }): Promise<User> {
 		return this.client.get<User>("/users/ME", params);
@@ -65,6 +68,7 @@ export class UsersUsersResource {
 	 *
 	 * @param userId - The user ID.
 	 * @returns The user's personal data.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/R0VUIC9hbG1hd3MvdjEvdXNlcnMve3VzZXJfaWR9L3BlcnNvbmFsLWRhdGE=/
 	 */
 	async retrieveUserPersonalData(userId: string): Promise<UserPersonalData> {
 		return this.client.get<UserPersonalData>(
@@ -78,6 +82,7 @@ export class UsersUsersResource {
 	 * @param body - The user data.
 	 * @param params - Optional parameters.
 	 * @returns The created user.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/UE9TVCAvYWxtYXdzL3YxL3VzZXJz/
 	 */
 	async createUser(
 		body: User,
@@ -100,6 +105,7 @@ export class UsersUsersResource {
 	 * @param body - The updated user data.
 	 * @param params - Optional parameters.
 	 * @returns The updated user.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/UFVUIC9hbG1hd3MvdjEvdXNlcnMve3VzZXJfaWR9/
 	 */
 	async updateUser(
 		userId: string,
@@ -124,6 +130,7 @@ export class UsersUsersResource {
 	 * @param params - Optional parameters.
 	 * @param params.op - The operation to perform.
 	 * @returns The resulting user.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/UE9TVCAvYWxtYXdzL3YxL3VzZXJzL3t1c2VyX2lkfQ==/
 	 */
 	async operateUser(
 		userId: string,
@@ -137,6 +144,7 @@ export class UsersUsersResource {
 	 * Deletes a user.
 	 *
 	 * @param userId - The user ID.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/REVMRVRFIC9hbG1hd3MvdjEvdXNlcnMve3VzZXJfaWR9/
 	 */
 	async deleteUser(
 		userId: string,
@@ -151,6 +159,7 @@ export class UsersUsersResource {
 	 * @param userId - The user ID.
 	 * @param attachmentId - The attachment ID.
 	 * @returns The attachment.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/R0VUIC9hbG1hd3MvdjEvdXNlcnMve3VzZXJfaWR9L2F0dGFjaG1lbnRzL3thdHRhY2htZW50X2lkfQ==/
 	 */
 	async retrieveUserAttachment(
 		userId: string,
@@ -169,6 +178,7 @@ export class UsersUsersResource {
 	 * @param userId - The user ID.
 	 * @param body - The attachment data.
 	 * @returns The created attachment.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/UE9TVCAvYWxtYXdzL3YxL3VzZXJzL3t1c2VyX2lkfS9hdHRhY2htZW50cw==/
 	 */
 	async createUserAttachment(
 		userId: string,
@@ -186,6 +196,7 @@ export class UsersUsersResource {
 	 * Tests the Alma Users API connection.
 	 *
 	 * @returns API response confirming access.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/R0VUIC9hbG1hd3MvdjEvdXNlcnMvb3BlcmF0aW9uL3Rlc3Q=/
 	 */
 	async test(): Promise<unknown> {
 		return this.client.get<unknown>("/users/operation/test");

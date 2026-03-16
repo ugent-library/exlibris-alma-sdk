@@ -14,6 +14,7 @@ export class AcqVendorsResource {
 	 *
 	 * @param params - Optional filters and pagination.
 	 * @returns A list of vendors.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL3ZlbmRvcnM=/
 	 */
 	async retrieveVendorsList(params?: {
 		q?: string;
@@ -32,6 +33,7 @@ export class AcqVendorsResource {
 	 *
 	 * @param vendorCode - The vendor code.
 	 * @returns The vendor.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL3ZlbmRvcnMve3ZlbmRvckNvZGV9/
 	 */
 	async retrieveVendor(vendorCode: string): Promise<Vendor> {
 		return this.client.get<Vendor>(path`/acq/vendors/${vendorCode}`);
@@ -42,6 +44,7 @@ export class AcqVendorsResource {
 	 *
 	 * @param body - The vendor data.
 	 * @returns The created vendor.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/UE9TVCAvYWxtYXdzL3YxL2FjcS92ZW5kb3Jz/
 	 */
 	async createVendor(body: Vendor): Promise<Vendor> {
 		return this.client.post<Vendor>("/acq/vendors", body);
@@ -53,6 +56,7 @@ export class AcqVendorsResource {
 	 * @param vendorCode - The vendor code.
 	 * @param body - The updated vendor data.
 	 * @returns The updated vendor.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/UFVUIC9hbG1hd3MvdjEvYWNxL3ZlbmRvcnMve3ZlbmRvckNvZGV9/
 	 */
 	async updateVendor(vendorCode: string, body: Vendor): Promise<Vendor> {
 		return this.client.put<Vendor>(path`/acq/vendors/${vendorCode}`, body);
@@ -62,6 +66,7 @@ export class AcqVendorsResource {
 	 * Deletes a vendor.
 	 *
 	 * @param vendorCode - The vendor code.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/REVMRVRFIC9hbG1hd3MvdjEvYWNxL3ZlbmRvcnMve3ZlbmRvckNvZGV9/
 	 */
 	async deleteVendor(vendorCode: string): Promise<void> {
 		return this.client.delete<void>(path`/acq/vendors/${vendorCode}`);
@@ -73,6 +78,7 @@ export class AcqVendorsResource {
 	 * @param vendorCode - The vendor code.
 	 * @param params - Optional pagination.
 	 * @returns A list of invoices for the vendor.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL3ZlbmRvcnMve3ZlbmRvckNvZGV9L2ludm9pY2Vz/
 	 */
 	async retrieveVendorInvoicesList(
 		vendorCode: string,
@@ -90,6 +96,7 @@ export class AcqVendorsResource {
 	 * @param vendorCode - The vendor code.
 	 * @param params - Optional pagination.
 	 * @returns A list of PO lines for the vendor.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL3ZlbmRvcnMve3ZlbmRvckNvZGV9L3BvLWxpbmVz/
 	 */
 	async retrieveVendorPoLinesList(
 		vendorCode: string,

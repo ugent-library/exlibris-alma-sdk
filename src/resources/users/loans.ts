@@ -15,6 +15,7 @@ export class UsersLoansResource {
 	 * @param userId - The user ID.
 	 * @param params - Optional filters and pagination.
 	 * @returns A list of user loans.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/R0VUIC9hbG1hd3MvdjEvdXNlcnMve3VzZXJfaWR9L2xvYW5z/
 	 */
 	async retrieveUserLoansList(
 		userId: string,
@@ -37,6 +38,7 @@ export class UsersLoansResource {
 	 * @param userId - The user ID.
 	 * @param loanId - The loan ID.
 	 * @returns The loan.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/R0VUIC9hbG1hd3MvdjEvdXNlcnMve3VzZXJfaWR9L2xvYW5zL3tsb2FuX2lkfQ==/
 	 */
 	async retrieveUserLoan(userId: string, loanId: string): Promise<UserLoan> {
 		return this.client.get<UserLoan>(path`/users/${userId}/loans/${loanId}`);
@@ -48,6 +50,7 @@ export class UsersLoansResource {
 	 * @param userId - The user ID.
 	 * @param body - The loan data.
 	 * @returns The created loan.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/UE9TVCAvYWxtYXdzL3YxL3VzZXJzL3t1c2VyX2lkfS9sb2Fucw==/
 	 */
 	async createUserLoan(
 		userId: string,
@@ -73,6 +76,7 @@ export class UsersLoansResource {
 	 * @param loanId - The loan ID.
 	 * @param body - The updated loan data.
 	 * @returns The updated loan.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/UFVUIC9hbG1hd3MvdjEvdXNlcnMve3VzZXJfaWR9L2xvYW5zL3tsb2FuX2lkfQ==/
 	 */
 	async updateUserLoan(
 		userId: string,
@@ -96,6 +100,7 @@ export class UsersLoansResource {
 	 * @param params - Optional parameters.
 	 * @param params.op - The operation to perform.
 	 * @returns The resulting loan.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/UE9TVCAvYWxtYXdzL3YxL3VzZXJzL3t1c2VyX2lkfS9sb2Fucy97bG9hbl9pZH0=/
 	 */
 	async operateUserLoan(
 		userId: string,

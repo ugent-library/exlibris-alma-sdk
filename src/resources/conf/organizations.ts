@@ -34,6 +34,7 @@ export class ConfOrganizationsResource {
 	 *
 	 * @param libraryCode - The library code (e.g. `"MAIN"`).
 	 * @returns The library object.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9saWJyYXJpZXMve2xpYnJhcnlDb2RlfQ==/
 	 */
 	async retrieveLibrary(libraryCode: string): Promise<Library> {
 		return this.client.get<Library>(path`/conf/libraries/${libraryCode}`);
@@ -58,6 +59,7 @@ export class ConfOrganizationsResource {
 	 * @param params.view - View type.
 	 * @param params.library - Library code filter.
 	 * @returns A list of departments.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9kZXBhcnRtZW50cw==/
 	 */
 	async retrieveDepartments(params?: {
 		type?: string;
@@ -75,6 +77,7 @@ export class ConfOrganizationsResource {
 	 * @param params.limit - Maximum results (0-100).
 	 * @param params.offset - Results offset.
 	 * @returns A list of circulation desks.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9saWJyYXJpZXMve2xpYnJhcnlDb2RlfS9jaXJjLWRlc2tzLw==/
 	 */
 	async retrieveCircDesks(
 		libraryCode: string,
@@ -92,6 +95,7 @@ export class ConfOrganizationsResource {
 	 * @param libraryCode - The library code.
 	 * @param circDeskCode - The circulation desk code.
 	 * @returns The circulation desk object.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9saWJyYXJpZXMve2xpYnJhcnlDb2RlfS9jaXJjLWRlc2tzL3tjaXJjRGVza0NvZGV9/
 	 */
 	async retrieveCircDesk(
 		libraryCode: string,
@@ -107,6 +111,7 @@ export class ConfOrganizationsResource {
 	 *
 	 * @param libraryCode - The library code.
 	 * @returns A list of locations.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9saWJyYXJpZXMve2xpYnJhcnlDb2RlfS9sb2NhdGlvbnM=/
 	 */
 	async retrieveLocations(libraryCode: string): Promise<Locations> {
 		return this.client.get<Locations>(
@@ -120,6 +125,7 @@ export class ConfOrganizationsResource {
 	 * @param libraryCode - The library code.
 	 * @param locationCode - The location code.
 	 * @returns The location object.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9saWJyYXJpZXMve2xpYnJhcnlDb2RlfS9sb2NhdGlvbnMve2xvY2F0aW9uQ29kZX0=/
 	 */
 	async retrieveLocation(
 		libraryCode: string,
@@ -136,6 +142,7 @@ export class ConfOrganizationsResource {
 	 * @param libraryCode - The library code.
 	 * @param body - The location data.
 	 * @returns The created location.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/UE9TVCAvYWxtYXdzL3YxL2NvbmYvbGlicmFyaWVzL3tsaWJyYXJ5Q29kZX0vbG9jYXRpb25z/
 	 */
 	async createLocation(libraryCode: string, body: Location): Promise<Location> {
 		return this.client.post<Location>(
@@ -151,6 +158,7 @@ export class ConfOrganizationsResource {
 	 * @param locationCode - The location code.
 	 * @param body - The updated location data.
 	 * @returns The updated location.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/UFVUIC9hbG1hd3MvdjEvY29uZi9saWJyYXJpZXMve2xpYnJhcnlDb2RlfS9sb2NhdGlvbnMve2xvY2F0aW9uQ29kZX0=/
 	 */
 	async updateLocation(
 		libraryCode: string,
@@ -168,6 +176,7 @@ export class ConfOrganizationsResource {
 	 *
 	 * @param libraryCode - The library code.
 	 * @param locationCode - The location code.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/REVMRVRFIC9hbG1hd3MvdjEvY29uZi9saWJyYXJpZXMve2xpYnJhcnlDb2RlfS9sb2NhdGlvbnMve2xvY2F0aW9uQ29kZX0=/
 	 */
 	async deleteLocation(
 		libraryCode: string,
@@ -186,6 +195,7 @@ export class ConfOrganizationsResource {
 	 * @param params.from - Start date (YYYY-MM-DD).
 	 * @param params.to - End date (YYYY-MM-DD).
 	 * @returns Open hours data.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9saWJyYXJpZXMve2xpYnJhcnlDb2RlfS9vcGVuLWhvdXJz/
 	 */
 	async retrieveLibraryOpenHours(
 		libraryCode: string,

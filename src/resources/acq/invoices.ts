@@ -22,6 +22,7 @@ export class AcqInvoicesResource {
 	 *
 	 * @param params - Optional filters and pagination.
 	 * @returns A list of invoices.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL2ludm9pY2VzLw==/
 	 */
 	async retrieveInvoicesList(params?: {
 		q?: string;
@@ -42,6 +43,7 @@ export class AcqInvoicesResource {
 	 *
 	 * @param invoiceId - The invoice ID.
 	 * @returns The invoice.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL2ludm9pY2VzL3tpbnZvaWNlX2lkfQ==/
 	 */
 	async retrieveInvoice(
 		invoiceId: string,
@@ -55,6 +57,7 @@ export class AcqInvoicesResource {
 	 *
 	 * @param body - The invoice data.
 	 * @returns The created invoice.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/UE9TVCAvYWxtYXdzL3YxL2FjcS9pbnZvaWNlcw==/
 	 */
 	async createInvoice(body: Invoice): Promise<Invoice> {
 		return this.client.post<Invoice>("/acq/invoices", body);
@@ -66,6 +69,7 @@ export class AcqInvoicesResource {
 	 * @param invoiceId - The invoice ID.
 	 * @param body - The updated invoice data.
 	 * @returns The updated invoice.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/UFVUIC9hbG1hd3MvdjEvYWNxL2ludm9pY2VzL3tpbnZvaWNlX2lkfQ==/
 	 */
 	async updateInvoice(invoiceId: string, body: Invoice): Promise<Invoice> {
 		return this.client.put<Invoice>(path`/acq/invoices/${invoiceId}`, body);
@@ -79,6 +83,7 @@ export class AcqInvoicesResource {
 	 * @param params - Optional parameters.
 	 * @param params.op - The operation to perform.
 	 * @returns The resulting invoice.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/UE9TVCAvYWxtYXdzL3YxL2FjcS9pbnZvaWNlcy97aW52b2ljZV9pZH0=/
 	 */
 	async operateInvoice(
 		invoiceId: string,
@@ -97,6 +102,7 @@ export class AcqInvoicesResource {
 	 *
 	 * @param invoiceId - The invoice ID.
 	 * @returns A list of invoice attachments.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL2ludm9pY2VzL3tpbnZvaWNlX2lkfS9hdHRhY2htZW50cw==/
 	 */
 	async retrieveInvoiceAttachmentsList(
 		invoiceId: string,
@@ -114,6 +120,7 @@ export class AcqInvoicesResource {
 	 * @param invoiceId - The invoice ID.
 	 * @param attachmentId - The attachment ID.
 	 * @returns The attachment.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL2ludm9pY2VzL3tpbnZvaWNlX2lkfS9hdHRhY2htZW50cy97YXR0YWNobWVudF9pZH0=/
 	 */
 	async retrieveInvoiceAttachment(
 		invoiceId: string,
@@ -132,6 +139,7 @@ export class AcqInvoicesResource {
 	 * @param invoiceId - The invoice ID.
 	 * @param body - The attachment data.
 	 * @returns The created attachment.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/UE9TVCAvYWxtYXdzL3YxL2FjcS9pbnZvaWNlcy97aW52b2ljZV9pZH0vYXR0YWNobWVudHM=/
 	 */
 	async createInvoiceAttachment(
 		invoiceId: string,
@@ -149,6 +157,7 @@ export class AcqInvoicesResource {
 	 * @param invoiceId - The invoice ID.
 	 * @param params - Optional pagination.
 	 * @returns A list of invoice lines.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL2ludm9pY2VzL3tpbnZvaWNlX2lkfS9saW5lcw==/
 	 */
 	async retrieveInvoiceLinesList(
 		invoiceId: string,
@@ -166,6 +175,7 @@ export class AcqInvoicesResource {
 	 * @param invoiceId - The invoice ID.
 	 * @param invoiceLineId - The invoice line ID.
 	 * @returns The invoice line.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL2ludm9pY2VzL3tpbnZvaWNlX2lkfS9saW5lcy97aW52b2ljZV9saW5lX2lkfQ==/
 	 */
 	async retrieveInvoiceLine(
 		invoiceId: string,
@@ -182,6 +192,7 @@ export class AcqInvoicesResource {
 	 * @param invoiceId - The invoice ID.
 	 * @param body - The invoice line data.
 	 * @returns The created invoice line.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/UE9TVCAvYWxtYXdzL3YxL2FjcS9pbnZvaWNlcy97aW52b2ljZV9pZH0vbGluZXM=/
 	 */
 	async createInvoiceLine(
 		invoiceId: string,
@@ -200,6 +211,7 @@ export class AcqInvoicesResource {
 	 * @param invoiceLineId - The invoice line ID.
 	 * @param body - The updated invoice line data.
 	 * @returns The updated invoice line.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/UFVUIC9hbG1hd3MvdjEvYWNxL2ludm9pY2VzL3tpbnZvaWNlX2lkfS9saW5lcy97aW52b2ljZV9saW5lX2lkfQ==/
 	 */
 	async updateInvoiceLine(
 		invoiceId: string,

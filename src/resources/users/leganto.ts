@@ -15,6 +15,7 @@ export class UsersLegantoResource {
 	 * @param userName - The user name.
 	 * @param params - Optional pagination.
 	 * @returns A list of Leganto notifications.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/R0VUIC9hbG1hd3MvdjEvdXNlcnMve3VzZXJfbmFtZX0vbGVnYW50by1ub3RpZmljYXRpb25z/
 	 */
 	async retrieveLegantoNotifications(
 		userName: string,

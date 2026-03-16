@@ -20,6 +20,7 @@ export class UsersRequestsResource {
 	 * @param userId - The user ID.
 	 * @param params - Optional filters and pagination.
 	 * @returns A list of user requests.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/R0VUIC9hbG1hd3MvdjEvdXNlcnMve3VzZXJfaWR9L3JlcXVlc3Rz/
 	 */
 	async retrieveUserRequestsList(
 		userId: string,
@@ -43,6 +44,7 @@ export class UsersRequestsResource {
 	 * @param userId - The user ID.
 	 * @param requestId - The request ID.
 	 * @returns The request.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/R0VUIC9hbG1hd3MvdjEvdXNlcnMve3VzZXJfaWR9L3JlcXVlc3RzL3tyZXF1ZXN0X2lkfQ==/
 	 */
 	async retrieveUserRequest(
 		userId: string,
@@ -62,6 +64,7 @@ export class UsersRequestsResource {
 	 * @param body - The request data.
 	 * @param params - Optional parameters.
 	 * @returns The created request.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/UE9TVCAvYWxtYXdzL3YxL3VzZXJzL3t1c2VyX2lkfS9yZXF1ZXN0cw==/
 	 */
 	async createUserRequest(
 		userId: string,
@@ -87,6 +90,7 @@ export class UsersRequestsResource {
 	 * @param requestId - The request ID.
 	 * @param body - The updated request data.
 	 * @returns The updated request.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/UFVUIC9hbG1hd3MvdjEvdXNlcnMve3VzZXJfaWR9L3JlcXVlc3RzL3tyZXF1ZXN0X2lkfQ==/
 	 */
 	async updateUserRequest(
 		userId: string,
@@ -108,6 +112,7 @@ export class UsersRequestsResource {
 	 * @param params - Optional parameters.
 	 * @param params.op - The operation to perform.
 	 * @returns The resulting request.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/UE9TVCAvYWxtYXdzL3YxL3VzZXJzL3t1c2VyX2lkfS9yZXF1ZXN0cy97cmVxdWVzdF9pZH0=/
 	 */
 	async operateUserRequest(
 		userId: string,
@@ -131,6 +136,7 @@ export class UsersRequestsResource {
 	 * @param params.reason - Cancellation reason code.
 	 * @param params.note - Note to include.
 	 * @param params.notify_user - Whether to notify the user.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/REVMRVRFIC9hbG1hd3MvdjEvdXNlcnMve3VzZXJfaWR9L3JlcXVlc3RzL3tyZXF1ZXN0X2lkfQ==/
 	 */
 	async deleteUserRequest(
 		userId: string,
@@ -149,6 +155,7 @@ export class UsersRequestsResource {
 	 * @param userId - The user ID.
 	 * @param requestId - The resource sharing request ID.
 	 * @returns The resource sharing request.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/R0VUIC9hbG1hd3MvdjEvdXNlcnMve3VzZXJfaWR9L3Jlc291cmNlLXNoYXJpbmctcmVxdWVzdHMve3JlcXVlc3RfaWR9/
 	 */
 	async retrieveResourceSharingRequest(
 		userId: string,
@@ -165,6 +172,7 @@ export class UsersRequestsResource {
 	 * @param userId - The user ID.
 	 * @param body - The request data.
 	 * @returns The created resource sharing request.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/UE9TVCAvYWxtYXdzL3YxL3VzZXJzL3t1c2VyX2lkfS9yZXNvdXJjZS1zaGFyaW5nLXJlcXVlc3Rz/
 	 */
 	async createResourceSharingRequest(
 		userId: string,
@@ -187,6 +195,7 @@ export class UsersRequestsResource {
 	 * @param params - Optional parameters.
 	 * @param params.op - The operation to perform.
 	 * @returns The resulting resource sharing request.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/UE9TVCAvYWxtYXdzL3YxL3VzZXJzL3t1c2VyX2lkfS9yZXNvdXJjZS1zaGFyaW5nLXJlcXVlc3RzL3tyZXF1ZXN0X2lkfQ==/
 	 */
 	async operateResourceSharingRequest(
 		userId: string,
@@ -211,6 +220,7 @@ export class UsersRequestsResource {
 	 *
 	 * @param userId - The user ID.
 	 * @param requestId - The resource sharing request ID.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/REVMRVRFIC9hbG1hd3MvdjEvdXNlcnMve3VzZXJfaWR9L3Jlc291cmNlLXNoYXJpbmctcmVxdWVzdHMve3JlcXVlc3RfaWR9/
 	 */
 	async deleteResourceSharingRequest(
 		userId: string,

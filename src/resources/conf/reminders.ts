@@ -24,6 +24,7 @@ export class ConfRemindersResource {
 	 * @param params.limit - Maximum results (0-100).
 	 * @param params.offset - Results offset.
 	 * @returns A list of reminders.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9yZW1pbmRlcnM=/
 	 */
 	async retrieveReminders(params?: {
 		type?: string;
@@ -45,6 +46,7 @@ export class ConfRemindersResource {
 	 *
 	 * @param reminderId - The reminder ID.
 	 * @returns The reminder object.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9yZW1pbmRlcnMve3JlbWluZGVyX2lkfQ==/
 	 */
 	async retrieveReminder(reminderId: string): Promise<Reminder> {
 		return this.client.get<Reminder>(path`/conf/reminders/${reminderId}`);
@@ -55,6 +57,7 @@ export class ConfRemindersResource {
 	 *
 	 * @param body - The reminder data.
 	 * @returns The created reminder.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/UE9TVCAvYWxtYXdzL3YxL2NvbmYvcmVtaW5kZXJz/
 	 */
 	async createReminder(body: Reminder): Promise<Reminder> {
 		return this.client.post<Reminder>("/conf/reminders", body);
@@ -66,6 +69,7 @@ export class ConfRemindersResource {
 	 * @param reminderId - The reminder ID.
 	 * @param body - The updated reminder data.
 	 * @returns The updated reminder.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/UFVUIC9hbG1hd3MvdjEvY29uZi9yZW1pbmRlcnMve3JlbWluZGVyX2lkfQ==/
 	 */
 	async updateReminder(reminderId: string, body: Reminder): Promise<Reminder> {
 		return this.client.put<Reminder>(path`/conf/reminders/${reminderId}`, body);
@@ -75,6 +79,7 @@ export class ConfRemindersResource {
 	 * Deletes a reminder.
 	 *
 	 * @param reminderId - The reminder ID.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/REVMRVRFIC9hbG1hd3MvdjEvY29uZi9yZW1pbmRlcnMve3JlbWluZGVyX2lkfQ==/
 	 */
 	async deleteReminder(reminderId: string): Promise<void> {
 		return this.client.delete<void>(path`/conf/reminders/${reminderId}`);
@@ -84,6 +89,7 @@ export class ConfRemindersResource {
 	 * Retrieves a list of license terms.
 	 *
 	 * @returns A list of license terms.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9saWNlbnNlLXRlcm1z/
 	 */
 	async retrieveLicenseTerms(): Promise<LicenseTerms> {
 		return this.client.get<LicenseTerms>("/conf/license-terms");
@@ -94,6 +100,7 @@ export class ConfRemindersResource {
 	 *
 	 * @param licenseTermCode - The license term code.
 	 * @returns The license term.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/R0VUIC9hbG1hd3MvdjEvY29uZi9saWNlbnNlLXRlcm1zL3tsaWNlbnNlX3Rlcm1fY29kZX0=/
 	 */
 	async retrieveLicenseTerm(licenseTermCode: string): Promise<LicenseTerm> {
 		return this.client.get<LicenseTerm>(
@@ -106,6 +113,7 @@ export class ConfRemindersResource {
 	 *
 	 * @param body - The license term data.
 	 * @returns The created license term.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/UE9TVCAvYWxtYXdzL3YxL2NvbmYvbGljZW5zZS10ZXJtcw==/
 	 */
 	async createLicenseTerm(body: LicenseTerm): Promise<LicenseTerm> {
 		return this.client.post<LicenseTerm>("/conf/license-terms", body);
@@ -117,6 +125,7 @@ export class ConfRemindersResource {
 	 * @param licenseTermCode - The license term code.
 	 * @param body - The updated license term data.
 	 * @returns The updated license term.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/UFVUIC9hbG1hd3MvdjEvY29uZi9saWNlbnNlLXRlcm1zL3tsaWNlbnNlX3Rlcm1fY29kZX0=/
 	 */
 	async updateLicenseTerm(
 		licenseTermCode: string,
@@ -132,6 +141,7 @@ export class ConfRemindersResource {
 	 * Deletes a license term.
 	 *
 	 * @param licenseTermCode - The license term code.
+	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/conf/REVMRVRFIC9hbG1hd3MvdjEvY29uZi9saWNlbnNlLXRlcm1zL3tsaWNlbnNlX3Rlcm1fY29kZX0=/
 	 */
 	async deleteLicenseTerm(licenseTermCode: string): Promise<void> {
 		return this.client.delete<void>(
