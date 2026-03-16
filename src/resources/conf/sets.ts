@@ -1,4 +1,5 @@
 import type { AlmaHttpClient } from "@/client";
+import { path } from "@/util/uri";
 
 import type { AlmaSet, SetMembers, Sets } from "./types";
 
@@ -40,7 +41,7 @@ export class ConfSetsResource {
 	 * @returns The set object.
 	 */
 	async retrieveSet(setId: string): Promise<AlmaSet> {
-		return this.client.get<AlmaSet>(`/conf/sets/${encodeURIComponent(setId)}`);
+		return this.client.get<AlmaSet>(path`/conf/sets/${setId}`);
 	}
 
 	/**
@@ -81,10 +82,7 @@ export class ConfSetsResource {
 	 * @returns The updated set.
 	 */
 	async updateSet(setId: string, body: AlmaSet): Promise<AlmaSet> {
-		return this.client.put<AlmaSet>(
-			`/conf/sets/${encodeURIComponent(setId)}`,
-			body,
-		);
+		return this.client.put<AlmaSet>(path`/conf/sets/${setId}`, body);
 	}
 
 	/**
@@ -101,11 +99,7 @@ export class ConfSetsResource {
 		body: Record<string, unknown>,
 		params?: { op?: string; async?: boolean; job_name?: string },
 	): Promise<AlmaSet> {
-		return this.client.post<AlmaSet>(
-			`/conf/sets/${encodeURIComponent(setId)}`,
-			body,
-			params,
-		);
+		return this.client.post<AlmaSet>(path`/conf/sets/${setId}`, body, params);
 	}
 
 	/**
@@ -114,7 +108,7 @@ export class ConfSetsResource {
 	 * @param setId - The set ID.
 	 */
 	async deleteSet(setId: string): Promise<void> {
-		return this.client.delete<void>(`/conf/sets/${encodeURIComponent(setId)}`);
+		return this.client.delete<void>(path`/conf/sets/${setId}`);
 	}
 
 	/**
@@ -131,7 +125,7 @@ export class ConfSetsResource {
 		params?: { limit?: number; offset?: number },
 	): Promise<SetMembers> {
 		return this.client.get<SetMembers>(
-			`/conf/sets/${encodeURIComponent(setId)}/members`,
+			path`/conf/sets/${setId}/members`,
 			params,
 		);
 	}

@@ -1,4 +1,5 @@
 import type { AlmaHttpClient } from "@/client";
+import { path } from "@/util/uri";
 
 import type {
 	DepositProfile,
@@ -36,7 +37,7 @@ export class ConfProfilesResource {
 	 */
 	async retrieveImportProfile(profileId: string): Promise<ImportProfile> {
 		return this.client.get<ImportProfile>(
-			`/conf/md-import-profiles/${encodeURIComponent(profileId)}`,
+			path`/conf/md-import-profiles/${profileId}`,
 		);
 	}
 
@@ -55,7 +56,7 @@ export class ConfProfilesResource {
 		params?: { op?: string },
 	): Promise<Record<string, unknown>> {
 		return this.client.post<Record<string, unknown>>(
-			`/conf/md-import-profiles/${encodeURIComponent(profileId)}`,
+			path`/conf/md-import-profiles/${profileId}`,
 			body,
 			params,
 		);
@@ -91,7 +92,7 @@ export class ConfProfilesResource {
 	 */
 	async retrieveIntegrationProfile(id: string): Promise<IntegrationProfile> {
 		return this.client.get<IntegrationProfile>(
-			`/conf/integration-profiles/${encodeURIComponent(id)}`,
+			path`/conf/integration-profiles/${id}`,
 		);
 	}
 
@@ -122,7 +123,7 @@ export class ConfProfilesResource {
 		body: IntegrationProfile,
 	): Promise<IntegrationProfile> {
 		return this.client.put<IntegrationProfile>(
-			`/conf/integration-profiles/${encodeURIComponent(id)}`,
+			path`/conf/integration-profiles/${id}`,
 			body,
 		);
 	}
@@ -133,9 +134,7 @@ export class ConfProfilesResource {
 	 * @param id - The integration profile ID.
 	 */
 	async deleteIntegrationProfile(id: string): Promise<void> {
-		return this.client.delete<void>(
-			`/conf/integration-profiles/${encodeURIComponent(id)}`,
-		);
+		return this.client.delete<void>(path`/conf/integration-profiles/${id}`);
 	}
 
 	/**
@@ -163,7 +162,7 @@ export class ConfProfilesResource {
 		depositProfileId: string,
 	): Promise<DepositProfile> {
 		return this.client.get<DepositProfile>(
-			`/conf/deposit-profiles/${encodeURIComponent(depositProfileId)}`,
+			path`/conf/deposit-profiles/${depositProfileId}`,
 		);
 	}
 
@@ -181,7 +180,7 @@ export class ConfProfilesResource {
 		params?: Record<string, string | number | boolean | undefined | null>,
 	): Promise<Record<string, unknown>> {
 		return this.client.post<Record<string, unknown>>(
-			`/conf/workflows/${encodeURIComponent(workflowId)}`,
+			path`/conf/workflows/${workflowId}`,
 			body,
 			params,
 		);

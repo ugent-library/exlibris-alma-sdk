@@ -1,4 +1,5 @@
 import type { AlmaHttpClient } from "@/client";
+import { path } from "@/util/uri";
 
 import type {
 	Bib,
@@ -64,7 +65,7 @@ export class BibsCatalogResource {
 		mmsId: string,
 		params?: { view?: string; expand?: string },
 	): Promise<Bib> {
-		return this.client.get<Bib>(`/bibs/${encodeURIComponent(mmsId)}`, params);
+		return this.client.get<Bib>(path`/bibs/${mmsId}`, params);
 	}
 
 	/**
@@ -124,11 +125,7 @@ export class BibsCatalogResource {
 			check_match?: boolean;
 		},
 	): Promise<Bib> {
-		return this.client.put<Bib>(
-			`/bibs/${encodeURIComponent(mmsId)}`,
-			body,
-			params,
-		);
+		return this.client.put<Bib>(path`/bibs/${mmsId}`, body, params);
 	}
 
 	/**
@@ -145,11 +142,7 @@ export class BibsCatalogResource {
 		body: Record<string, unknown>,
 		params?: { op?: string },
 	): Promise<Bib> {
-		return this.client.post<Bib>(
-			`/bibs/${encodeURIComponent(mmsId)}`,
-			body,
-			params,
-		);
+		return this.client.post<Bib>(path`/bibs/${mmsId}`, body, params);
 	}
 
 	/**
@@ -164,10 +157,7 @@ export class BibsCatalogResource {
 		mmsId: string,
 		params?: { override?: string; cataloger_level?: string },
 	): Promise<void> {
-		return this.client.delete<void>(
-			`/bibs/${encodeURIComponent(mmsId)}`,
-			params,
-		);
+		return this.client.delete<void>(path`/bibs/${mmsId}`, params);
 	}
 
 	/**
@@ -177,9 +167,7 @@ export class BibsCatalogResource {
 	 * @returns A list of holdings records.
 	 */
 	async retrieveHoldingsList(mmsId: string): Promise<Holdings> {
-		return this.client.get<Holdings>(
-			`/bibs/${encodeURIComponent(mmsId)}/holdings`,
-		);
+		return this.client.get<Holdings>(path`/bibs/${mmsId}/holdings`);
 	}
 
 	/**
@@ -190,9 +178,7 @@ export class BibsCatalogResource {
 	 * @returns The holdings record.
 	 */
 	async retrieveHolding(mmsId: string, holdingId: string): Promise<Holding> {
-		return this.client.get<Holding>(
-			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}`,
-		);
+		return this.client.get<Holding>(path`/bibs/${mmsId}/holdings/${holdingId}`);
 	}
 
 	/**
@@ -203,10 +189,7 @@ export class BibsCatalogResource {
 	 * @returns The created holdings record.
 	 */
 	async createHolding(mmsId: string, body: Holding): Promise<Holding> {
-		return this.client.post<Holding>(
-			`/bibs/${encodeURIComponent(mmsId)}/holdings`,
-			body,
-		);
+		return this.client.post<Holding>(path`/bibs/${mmsId}/holdings`, body);
 	}
 
 	/**
@@ -223,7 +206,7 @@ export class BibsCatalogResource {
 		body: Holding,
 	): Promise<Holding> {
 		return this.client.put<Holding>(
-			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}`,
+			path`/bibs/${mmsId}/holdings/${holdingId}`,
 			body,
 		);
 	}
@@ -241,7 +224,7 @@ export class BibsCatalogResource {
 		params?: { bib?: string },
 	): Promise<void> {
 		return this.client.delete<void>(
-			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}`,
+			path`/bibs/${mmsId}/holdings/${holdingId}`,
 			params,
 		);
 	}
@@ -297,7 +280,7 @@ export class BibsCatalogResource {
 		},
 	): Promise<Items> {
 		return this.client.get<Items>(
-			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items`,
+			path`/bibs/${mmsId}/holdings/${holdingId}/items`,
 			params,
 		);
 	}
@@ -321,7 +304,7 @@ export class BibsCatalogResource {
 		params?: { view?: string; expand?: string; user_id?: string },
 	): Promise<Item> {
 		return this.client.get<Item>(
-			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}`,
+			path`/bibs/${mmsId}/holdings/${holdingId}/items/${itemPid}`,
 			params,
 		);
 	}
@@ -347,7 +330,7 @@ export class BibsCatalogResource {
 		},
 	): Promise<Item> {
 		return this.client.post<Item>(
-			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items`,
+			path`/bibs/${mmsId}/holdings/${holdingId}/items`,
 			body,
 			params,
 		);
@@ -376,7 +359,7 @@ export class BibsCatalogResource {
 		},
 	): Promise<Item> {
 		return this.client.put<Item>(
-			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}`,
+			path`/bibs/${mmsId}/holdings/${holdingId}/items/${itemPid}`,
 			body,
 			params,
 		);
@@ -427,7 +410,7 @@ export class BibsCatalogResource {
 		},
 	): Promise<Item> {
 		return this.client.post<Item>(
-			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}`,
+			path`/bibs/${mmsId}/holdings/${holdingId}/items/${itemPid}`,
 			body,
 			params,
 		);
@@ -451,7 +434,7 @@ export class BibsCatalogResource {
 		params?: { override?: string; holdings?: string; bib?: string },
 	): Promise<void> {
 		return this.client.delete<void>(
-			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}`,
+			path`/bibs/${mmsId}/holdings/${holdingId}/items/${itemPid}`,
 			params,
 		);
 	}
@@ -467,10 +450,7 @@ export class BibsCatalogResource {
 		mmsId: string,
 		params?: { limit?: number; offset?: number },
 	): Promise<Portfolios> {
-		return this.client.get<Portfolios>(
-			`/bibs/${encodeURIComponent(mmsId)}/portfolios`,
-			params,
-		);
+		return this.client.get<Portfolios>(path`/bibs/${mmsId}/portfolios`, params);
 	}
 
 	/**
@@ -485,7 +465,7 @@ export class BibsCatalogResource {
 		portfolioId: string,
 	): Promise<Portfolio> {
 		return this.client.get<Portfolio>(
-			`/bibs/${encodeURIComponent(mmsId)}/portfolios/${encodeURIComponent(portfolioId)}`,
+			path`/bibs/${mmsId}/portfolios/${portfolioId}`,
 		);
 	}
 
@@ -497,10 +477,7 @@ export class BibsCatalogResource {
 	 * @returns The created portfolio.
 	 */
 	async createPortfolio(mmsId: string, body: Portfolio): Promise<Portfolio> {
-		return this.client.post<Portfolio>(
-			`/bibs/${encodeURIComponent(mmsId)}/portfolios/`,
-			body,
-		);
+		return this.client.post<Portfolio>(path`/bibs/${mmsId}/portfolios/`, body);
 	}
 
 	/**
@@ -517,7 +494,7 @@ export class BibsCatalogResource {
 		body: Portfolio,
 	): Promise<Portfolio> {
 		return this.client.put<Portfolio>(
-			`/bibs/${encodeURIComponent(mmsId)}/portfolios/${encodeURIComponent(portfolioId)}`,
+			path`/bibs/${mmsId}/portfolios/${portfolioId}`,
 			body,
 		);
 	}
@@ -530,7 +507,7 @@ export class BibsCatalogResource {
 	 */
 	async deletePortfolio(mmsId: string, portfolioId: string): Promise<void> {
 		return this.client.delete<void>(
-			`/bibs/${encodeURIComponent(mmsId)}/portfolios/${encodeURIComponent(portfolioId)}`,
+			path`/bibs/${mmsId}/portfolios/${portfolioId}`,
 		);
 	}
 
@@ -555,7 +532,7 @@ export class BibsCatalogResource {
 		},
 	): Promise<BookingAvailability> {
 		return this.client.get<BookingAvailability>(
-			`/bibs/${encodeURIComponent(mmsId)}/booking-availability`,
+			path`/bibs/${mmsId}/booking-availability`,
 			params,
 		);
 	}

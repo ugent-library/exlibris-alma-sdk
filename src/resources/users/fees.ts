@@ -1,4 +1,5 @@
 import type { AlmaHttpClient } from "@/client";
+import { path } from "@/util/uri";
 
 import type { UserDeposit, UserDeposits, UserFee, UserFees } from "./types";
 
@@ -19,10 +20,7 @@ export class UsersFeesResource {
 		userId: string,
 		params?: { user_id_type?: string; status?: string },
 	): Promise<UserFees> {
-		return this.client.get<UserFees>(
-			`/users/${encodeURIComponent(userId)}/fees`,
-			params,
-		);
+		return this.client.get<UserFees>(path`/users/${userId}/fees`, params);
 	}
 
 	/**
@@ -33,9 +31,7 @@ export class UsersFeesResource {
 	 * @returns The fee.
 	 */
 	async retrieveUserFee(userId: string, feeId: string): Promise<UserFee> {
-		return this.client.get<UserFee>(
-			`/users/${encodeURIComponent(userId)}/fees/${encodeURIComponent(feeId)}`,
-		);
+		return this.client.get<UserFee>(path`/users/${userId}/fees/${feeId}`);
 	}
 
 	/**
@@ -63,7 +59,7 @@ export class UsersFeesResource {
 		},
 	): Promise<UserFee> {
 		return this.client.post<UserFee>(
-			`/users/${encodeURIComponent(userId)}/fees/${encodeURIComponent(feeId)}`,
+			path`/users/${userId}/fees/${feeId}`,
 			body,
 			params,
 		);
@@ -91,7 +87,7 @@ export class UsersFeesResource {
 		},
 	): Promise<UserFees> {
 		return this.client.post<UserFees>(
-			`/users/${encodeURIComponent(userId)}/fees/all`,
+			path`/users/${userId}/fees/all`,
 			body,
 			params,
 		);
@@ -116,7 +112,7 @@ export class UsersFeesResource {
 		},
 	): Promise<UserDeposits> {
 		return this.client.get<UserDeposits>(
-			`/users/${encodeURIComponent(userId)}/deposits`,
+			path`/users/${userId}/deposits`,
 			params,
 		);
 	}
@@ -134,7 +130,7 @@ export class UsersFeesResource {
 		params?: { user_id_type?: string },
 	): Promise<UserDeposit> {
 		return this.client.get<UserDeposit>(
-			`/users/${encodeURIComponent(userId)}/deposits/${encodeURIComponent(depositId)}`,
+			path`/users/${userId}/deposits/${depositId}`,
 			params,
 		);
 	}
@@ -152,7 +148,7 @@ export class UsersFeesResource {
 		params?: { user_id_type?: string; draft?: string },
 	): Promise<UserDeposit> {
 		return this.client.post<UserDeposit>(
-			`/users/${encodeURIComponent(userId)}/deposits`,
+			path`/users/${userId}/deposits`,
 			body,
 			params,
 		);
@@ -175,7 +171,7 @@ export class UsersFeesResource {
 		params?: { user_id_type?: string; op?: string },
 	): Promise<UserDeposit> {
 		return this.client.post<UserDeposit>(
-			`/users/${encodeURIComponent(userId)}/deposits/${encodeURIComponent(depositId)}`,
+			path`/users/${userId}/deposits/${depositId}`,
 			body,
 			params,
 		);

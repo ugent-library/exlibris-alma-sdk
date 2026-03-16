@@ -1,4 +1,5 @@
 import type { AlmaHttpClient } from "@/client";
+import { path } from "@/util/uri";
 
 import type {
 	Currencies,
@@ -74,9 +75,7 @@ export class AcqMiscResource {
 	 * @returns The purchase request.
 	 */
 	async retrievePurchaseRequest(id: string): Promise<PurchaseRequest> {
-		return this.client.get<PurchaseRequest>(
-			`/acq/purchase-requests/${encodeURIComponent(id)}`,
-		);
+		return this.client.get<PurchaseRequest>(path`/acq/purchase-requests/${id}`);
 	}
 
 	/**
@@ -94,7 +93,7 @@ export class AcqMiscResource {
 		params?: { op?: string },
 	): Promise<PurchaseRequest> {
 		return this.client.post<PurchaseRequest>(
-			`/acq/purchase-requests/${encodeURIComponent(id)}`,
+			path`/acq/purchase-requests/${id}`,
 			body,
 			params,
 		);
@@ -112,7 +111,7 @@ export class AcqMiscResource {
 		body: PurchaseRequest,
 	): Promise<PurchaseRequest> {
 		return this.client.put<PurchaseRequest>(
-			`/acq/purchase-requests/${encodeURIComponent(id)}`,
+			path`/acq/purchase-requests/${id}`,
 			body,
 		);
 	}
@@ -123,9 +122,7 @@ export class AcqMiscResource {
 	 * @param id - The purchase request ID.
 	 */
 	async deletePurchaseRequest(id: string): Promise<void> {
-		return this.client.delete<void>(
-			`/acq/purchase-requests/${encodeURIComponent(id)}`,
-		);
+		return this.client.delete<void>(path`/acq/purchase-requests/${id}`);
 	}
 
 	/**

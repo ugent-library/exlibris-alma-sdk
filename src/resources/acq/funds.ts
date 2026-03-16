@@ -5,6 +5,7 @@ import type {
 	FundTransaction,
 	FundTransactions,
 } from "@/resources/acq/types";
+import { path } from "@/util/uri";
 
 /**
  * Methods for managing funds and fund transactions in the Alma Acquisitions API.
@@ -57,10 +58,7 @@ export class AcqFundsResource {
 		fundId: string,
 		params?: { view?: string },
 	): Promise<Fund> {
-		return this.client.get<Fund>(
-			`/acq/funds/${encodeURIComponent(fundId)}`,
-			params,
-		);
+		return this.client.get<Fund>(path`/acq/funds/${fundId}`, params);
 	}
 
 	/**
@@ -92,11 +90,7 @@ export class AcqFundsResource {
 		body: Fund,
 		params?: { rules_level?: string },
 	): Promise<Fund> {
-		return this.client.put<Fund>(
-			`/acq/funds/${encodeURIComponent(fundId)}`,
-			body,
-			params,
-		);
+		return this.client.put<Fund>(path`/acq/funds/${fundId}`, body, params);
 	}
 
 	/**
@@ -113,11 +107,7 @@ export class AcqFundsResource {
 		body: Fund,
 		params?: { op?: string },
 	): Promise<Fund> {
-		return this.client.post<Fund>(
-			`/acq/funds/${encodeURIComponent(fundId)}`,
-			body,
-			params,
-		);
+		return this.client.post<Fund>(path`/acq/funds/${fundId}`, body, params);
 	}
 
 	/**
@@ -126,7 +116,7 @@ export class AcqFundsResource {
 	 * @param fundId - The fund ID.
 	 */
 	async deleteFund(fundId: string): Promise<void> {
-		return this.client.delete<void>(`/acq/funds/${encodeURIComponent(fundId)}`);
+		return this.client.delete<void>(path`/acq/funds/${fundId}`);
 	}
 
 	/**
@@ -145,7 +135,7 @@ export class AcqFundsResource {
 		params?: { limit?: number; offset?: number; q?: string; filter?: string },
 	): Promise<FundTransactions> {
 		return this.client.get<FundTransactions>(
-			`/acq/funds/${encodeURIComponent(fundId)}/transactions`,
+			path`/acq/funds/${fundId}/transactions`,
 			params,
 		);
 	}
@@ -162,7 +152,7 @@ export class AcqFundsResource {
 		body: FundTransaction,
 	): Promise<FundTransaction> {
 		return this.client.post<FundTransaction>(
-			`/acq/funds/${encodeURIComponent(fundId)}/transactions`,
+			path`/acq/funds/${fundId}/transactions`,
 			body,
 		);
 	}

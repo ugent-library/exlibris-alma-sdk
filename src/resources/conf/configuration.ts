@@ -1,4 +1,5 @@
 import type { AlmaHttpClient } from "@/client";
+import { path } from "@/util/uri";
 
 import type {
 	CodeTable,
@@ -64,7 +65,7 @@ export class ConfConfigurationResource {
 		params?: { scope?: string; lang?: string },
 	): Promise<CodeTable> {
 		return this.client.get<CodeTable>(
-			`/conf/code-tables/${encodeURIComponent(codeTableName)}`,
+			path`/conf/code-tables/${codeTableName}`,
 			params,
 		);
 	}
@@ -81,7 +82,7 @@ export class ConfConfigurationResource {
 		body: CodeTable,
 	): Promise<CodeTable> {
 		return this.client.put<CodeTable>(
-			`/conf/code-tables/${encodeURIComponent(codeTableName)}`,
+			path`/conf/code-tables/${codeTableName}`,
 			body,
 		);
 	}
@@ -108,7 +109,7 @@ export class ConfConfigurationResource {
 		params?: { scope?: string },
 	): Promise<MappingTable> {
 		return this.client.get<MappingTable>(
-			`/conf/mapping-tables/${encodeURIComponent(mappingTableName)}`,
+			path`/conf/mapping-tables/${mappingTableName}`,
 			params,
 		);
 	}
@@ -125,7 +126,7 @@ export class ConfConfigurationResource {
 		body: MappingTable,
 	): Promise<MappingTable> {
 		return this.client.put<MappingTable>(
-			`/conf/mapping-tables/${encodeURIComponent(mappingTableName)}`,
+			path`/conf/mapping-tables/${mappingTableName}`,
 			body,
 		);
 	}
@@ -182,9 +183,7 @@ export class ConfConfigurationResource {
 	 * @returns The letter template.
 	 */
 	async retrieveLetter(letterCode: string): Promise<Letter> {
-		return this.client.get<Letter>(
-			`/conf/letters/${encodeURIComponent(letterCode)}`,
-		);
+		return this.client.get<Letter>(path`/conf/letters/${letterCode}`);
 	}
 
 	/**
@@ -195,10 +194,7 @@ export class ConfConfigurationResource {
 	 * @returns The updated letter.
 	 */
 	async updateLetter(letterCode: string, body: Letter): Promise<Letter> {
-		return this.client.put<Letter>(
-			`/conf/letters/${encodeURIComponent(letterCode)}`,
-			body,
-		);
+		return this.client.put<Letter>(path`/conf/letters/${letterCode}`, body);
 	}
 
 	/**

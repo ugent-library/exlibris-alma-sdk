@@ -1,4 +1,5 @@
 import type { AlmaHttpClient } from "@/client";
+import { path } from "@/util/uri";
 
 import type {
 	ElectronicCollection,
@@ -35,7 +36,7 @@ export class BibsDigitalResource {
 		},
 	): Promise<Representations> {
 		return this.client.get<Representations>(
-			`/bibs/${encodeURIComponent(mmsId)}/representations`,
+			path`/bibs/${mmsId}/representations`,
 			params,
 		);
 	}
@@ -55,7 +56,7 @@ export class BibsDigitalResource {
 		params?: { use_updated_terminology?: boolean },
 	): Promise<Representation> {
 		return this.client.get<Representation>(
-			`/bibs/${encodeURIComponent(mmsId)}/representations/${encodeURIComponent(repId)}`,
+			path`/bibs/${mmsId}/representations/${repId}`,
 			params,
 		);
 	}
@@ -72,7 +73,7 @@ export class BibsDigitalResource {
 		body: Representation,
 	): Promise<Representation> {
 		return this.client.post<Representation>(
-			`/bibs/${encodeURIComponent(mmsId)}/representations`,
+			path`/bibs/${mmsId}/representations`,
 			body,
 		);
 	}
@@ -91,7 +92,7 @@ export class BibsDigitalResource {
 		body: Representation,
 	): Promise<Representation> {
 		return this.client.put<Representation>(
-			`/bibs/${encodeURIComponent(mmsId)}/representations/${encodeURIComponent(repId)}`,
+			path`/bibs/${mmsId}/representations/${repId}`,
 			body,
 		);
 	}
@@ -109,7 +110,7 @@ export class BibsDigitalResource {
 		params?: { override?: string },
 	): Promise<void> {
 		return this.client.delete<void>(
-			`/bibs/${encodeURIComponent(mmsId)}/representations/${encodeURIComponent(repId)}`,
+			path`/bibs/${mmsId}/representations/${repId}`,
 			params,
 		);
 	}
@@ -128,7 +129,7 @@ export class BibsDigitalResource {
 		params?: { limit?: number; offset?: number },
 	): Promise<RepresentationFiles> {
 		return this.client.get<RepresentationFiles>(
-			`/bibs/${encodeURIComponent(mmsId)}/representations/${encodeURIComponent(repId)}/files`,
+			path`/bibs/${mmsId}/representations/${repId}/files`,
 			params,
 		);
 	}
@@ -150,7 +151,7 @@ export class BibsDigitalResource {
 		params?: { expand?: string },
 	): Promise<RepresentationFile> {
 		return this.client.get<RepresentationFile>(
-			`/bibs/${encodeURIComponent(mmsId)}/representations/${encodeURIComponent(repId)}/files/${encodeURIComponent(fileId)}`,
+			path`/bibs/${mmsId}/representations/${repId}/files/${fileId}`,
 			params,
 		);
 	}
@@ -169,7 +170,7 @@ export class BibsDigitalResource {
 		body: RepresentationFile,
 	): Promise<RepresentationFile> {
 		return this.client.post<RepresentationFile>(
-			`/bibs/${encodeURIComponent(mmsId)}/representations/${encodeURIComponent(repId)}/files`,
+			path`/bibs/${mmsId}/representations/${repId}/files`,
 			body,
 		);
 	}
@@ -190,7 +191,7 @@ export class BibsDigitalResource {
 		body: RepresentationFile,
 	): Promise<RepresentationFile> {
 		return this.client.put<RepresentationFile>(
-			`/bibs/${encodeURIComponent(mmsId)}/representations/${encodeURIComponent(repId)}/files/${encodeURIComponent(fileId)}`,
+			path`/bibs/${mmsId}/representations/${repId}/files/${fileId}`,
 			body,
 		);
 	}
@@ -208,7 +209,7 @@ export class BibsDigitalResource {
 		fileId: string,
 	): Promise<void> {
 		return this.client.delete<void>(
-			`/bibs/${encodeURIComponent(mmsId)}/representations/${encodeURIComponent(repId)}/files/${encodeURIComponent(fileId)}`,
+			path`/bibs/${mmsId}/representations/${repId}/files/${fileId}`,
 		);
 	}
 
@@ -224,7 +225,7 @@ export class BibsDigitalResource {
 		params?: { limit?: number; offset?: number },
 	): Promise<ElectronicCollections> {
 		return this.client.get<ElectronicCollections>(
-			`/bibs/${encodeURIComponent(mmsId)}/e-collections`,
+			path`/bibs/${mmsId}/e-collections`,
 			params,
 		);
 	}
@@ -241,7 +242,7 @@ export class BibsDigitalResource {
 		collectionId: string,
 	): Promise<ElectronicCollection> {
 		return this.client.get<ElectronicCollection>(
-			`/bibs/${encodeURIComponent(mmsId)}/e-collections/${encodeURIComponent(collectionId)}`,
+			path`/bibs/${mmsId}/e-collections/${collectionId}`,
 		);
 	}
 }

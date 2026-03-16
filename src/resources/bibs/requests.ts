@@ -1,4 +1,5 @@
 import type { AlmaHttpClient } from "@/client";
+import { path } from "@/util/uri";
 
 import type {
 	BibRequest,
@@ -28,10 +29,7 @@ export class BibsRequestsResource {
 		mmsId: string,
 		params?: { request_type?: string; limit?: number; offset?: number },
 	): Promise<BibRequests> {
-		return this.client.get<BibRequests>(
-			`/bibs/${encodeURIComponent(mmsId)}/requests`,
-			params,
-		);
+		return this.client.get<BibRequests>(path`/bibs/${mmsId}/requests`, params);
 	}
 
 	/**
@@ -46,7 +44,7 @@ export class BibsRequestsResource {
 		requestId: string,
 	): Promise<BibRequest> {
 		return this.client.get<BibRequest>(
-			`/bibs/${encodeURIComponent(mmsId)}/requests/${encodeURIComponent(requestId)}`,
+			path`/bibs/${mmsId}/requests/${requestId}`,
 		);
 	}
 
@@ -65,7 +63,7 @@ export class BibsRequestsResource {
 		params?: { user_id?: string; user_id_type?: string },
 	): Promise<BibRequest> {
 		return this.client.post<BibRequest>(
-			`/bibs/${encodeURIComponent(mmsId)}/requests`,
+			path`/bibs/${mmsId}/requests`,
 			body,
 			params,
 		);
@@ -85,7 +83,7 @@ export class BibsRequestsResource {
 		body: BibRequest,
 	): Promise<BibRequest> {
 		return this.client.put<BibRequest>(
-			`/bibs/${encodeURIComponent(mmsId)}/requests/${encodeURIComponent(requestId)}`,
+			path`/bibs/${mmsId}/requests/${requestId}`,
 			body,
 		);
 	}
@@ -107,7 +105,7 @@ export class BibsRequestsResource {
 		params?: { op?: string },
 	): Promise<BibRequest> {
 		return this.client.post<BibRequest>(
-			`/bibs/${encodeURIComponent(mmsId)}/requests/${encodeURIComponent(requestId)}`,
+			path`/bibs/${mmsId}/requests/${requestId}`,
 			body,
 			params,
 		);
@@ -128,7 +126,7 @@ export class BibsRequestsResource {
 		params: { reason: string; note?: string; notify_user?: boolean },
 	): Promise<void> {
 		return this.client.delete<void>(
-			`/bibs/${encodeURIComponent(mmsId)}/requests/${encodeURIComponent(requestId)}`,
+			path`/bibs/${mmsId}/requests/${requestId}`,
 			params,
 		);
 	}
@@ -146,7 +144,7 @@ export class BibsRequestsResource {
 		params?: { user_id?: string },
 	): Promise<RequestOptions> {
 		return this.client.get<RequestOptions>(
-			`/bibs/${encodeURIComponent(mmsId)}/request-options`,
+			path`/bibs/${mmsId}/request-options`,
 			params,
 		);
 	}
@@ -167,7 +165,7 @@ export class BibsRequestsResource {
 		params?: { request_type?: string; status?: string },
 	): Promise<BibRequests> {
 		return this.client.get<BibRequests>(
-			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemId)}/requests`,
+			path`/bibs/${mmsId}/holdings/${holdingId}/items/${itemId}/requests`,
 			params,
 		);
 	}
@@ -188,7 +186,7 @@ export class BibsRequestsResource {
 		requestId: string,
 	): Promise<BibRequest> {
 		return this.client.get<BibRequest>(
-			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemId)}/requests/${encodeURIComponent(requestId)}`,
+			path`/bibs/${mmsId}/holdings/${holdingId}/items/${itemId}/requests/${requestId}`,
 		);
 	}
 
@@ -210,7 +208,7 @@ export class BibsRequestsResource {
 		params?: { user_id?: string; user_id_type?: string },
 	): Promise<BibRequest> {
 		return this.client.post<BibRequest>(
-			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}/requests`,
+			path`/bibs/${mmsId}/holdings/${holdingId}/items/${itemPid}/requests`,
 			body,
 			params,
 		);
@@ -234,7 +232,7 @@ export class BibsRequestsResource {
 		body: BibRequest,
 	): Promise<BibRequest> {
 		return this.client.put<BibRequest>(
-			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}/requests/${encodeURIComponent(requestId)}`,
+			path`/bibs/${mmsId}/holdings/${holdingId}/items/${itemPid}/requests/${requestId}`,
 			body,
 		);
 	}
@@ -259,7 +257,7 @@ export class BibsRequestsResource {
 		params?: { op?: string },
 	): Promise<BibRequest> {
 		return this.client.post<BibRequest>(
-			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}/requests/${encodeURIComponent(requestId)}`,
+			path`/bibs/${mmsId}/holdings/${holdingId}/items/${itemPid}/requests/${requestId}`,
 			body,
 			params,
 		);
@@ -282,7 +280,7 @@ export class BibsRequestsResource {
 		params: { reason: string; note?: string; notify_user?: boolean },
 	): Promise<void> {
 		return this.client.delete<void>(
-			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}/requests/${encodeURIComponent(requestId)}`,
+			path`/bibs/${mmsId}/holdings/${holdingId}/items/${itemPid}/requests/${requestId}`,
 			params,
 		);
 	}
@@ -304,7 +302,7 @@ export class BibsRequestsResource {
 		params?: { user_id?: string },
 	): Promise<RequestOptions> {
 		return this.client.get<RequestOptions>(
-			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}/request-options`,
+			path`/bibs/${mmsId}/holdings/${holdingId}/items/${itemPid}/request-options`,
 			params,
 		);
 	}
@@ -330,7 +328,7 @@ export class BibsRequestsResource {
 		},
 	): Promise<BookingAvailability> {
 		return this.client.get<BookingAvailability>(
-			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}/booking-availability`,
+			path`/bibs/${mmsId}/holdings/${holdingId}/items/${itemPid}/booking-availability`,
 			params,
 		);
 	}

@@ -1,4 +1,5 @@
 import type { AlmaHttpClient } from "@/client";
+import { path } from "@/util/uri";
 
 import type { Bibs, Collection, Collections } from "./types";
 
@@ -36,10 +37,7 @@ export class BibsCollectionsResource {
 		pid: string,
 		params?: { level?: string },
 	): Promise<Collection> {
-		return this.client.get<Collection>(
-			`/bibs/collections/${encodeURIComponent(pid)}`,
-			params,
-		);
+		return this.client.get<Collection>(path`/bibs/collections/${pid}`, params);
 	}
 
 	/**
@@ -65,10 +63,7 @@ export class BibsCollectionsResource {
 	 * @returns The updated collection.
 	 */
 	async updateCollection(pid: string, body: Collection): Promise<Collection> {
-		return this.client.put<Collection>(
-			`/bibs/collections/${encodeURIComponent(pid)}`,
-			body,
-		);
+		return this.client.put<Collection>(path`/bibs/collections/${pid}`, body);
 	}
 
 	/**
@@ -77,9 +72,7 @@ export class BibsCollectionsResource {
 	 * @param pid - The collection PID.
 	 */
 	async deleteCollection(pid: string): Promise<void> {
-		return this.client.delete<void>(
-			`/bibs/collections/${encodeURIComponent(pid)}`,
-		);
+		return this.client.delete<void>(path`/bibs/collections/${pid}`);
 	}
 
 	/**
@@ -93,10 +86,7 @@ export class BibsCollectionsResource {
 		pid: string,
 		params?: { limit?: number; offset?: number },
 	): Promise<Bibs> {
-		return this.client.get<Bibs>(
-			`/bibs/collections/${encodeURIComponent(pid)}/bibs`,
-			params,
-		);
+		return this.client.get<Bibs>(path`/bibs/collections/${pid}/bibs`, params);
 	}
 
 	/**
@@ -111,7 +101,7 @@ export class BibsCollectionsResource {
 		body: Record<string, unknown>,
 	): Promise<Record<string, unknown>> {
 		return this.client.post<Record<string, unknown>>(
-			`/bibs/collections/${encodeURIComponent(pid)}/bibs`,
+			path`/bibs/collections/${pid}/bibs`,
 			body,
 		);
 	}
@@ -124,7 +114,7 @@ export class BibsCollectionsResource {
 	 */
 	async removeBibFromCollection(pid: string, mmsId: string): Promise<void> {
 		return this.client.delete<void>(
-			`/bibs/collections/${encodeURIComponent(pid)}/bibs/${encodeURIComponent(mmsId)}`,
+			path`/bibs/collections/${pid}/bibs/${mmsId}`,
 		);
 	}
 }

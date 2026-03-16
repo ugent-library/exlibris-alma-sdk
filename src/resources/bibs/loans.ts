@@ -1,4 +1,5 @@
 import type { AlmaHttpClient } from "@/client";
+import { path } from "@/util/uri";
 
 import type { Loan, Loans } from "./types";
 
@@ -20,10 +21,7 @@ export class BibsLoansResource {
 		mmsId: string,
 		params?: { limit?: number; offset?: number },
 	): Promise<Loans> {
-		return this.client.get<Loans>(
-			`/bibs/${encodeURIComponent(mmsId)}/loans`,
-			params,
-		);
+		return this.client.get<Loans>(path`/bibs/${mmsId}/loans`, params);
 	}
 
 	/**
@@ -34,9 +32,7 @@ export class BibsLoansResource {
 	 * @returns The loan.
 	 */
 	async retrieveBibLoan(mmsId: string, loanId: string): Promise<Loan> {
-		return this.client.get<Loan>(
-			`/bibs/${encodeURIComponent(mmsId)}/loans/${encodeURIComponent(loanId)}`,
-		);
+		return this.client.get<Loan>(path`/bibs/${mmsId}/loans/${loanId}`);
 	}
 
 	/**
@@ -61,7 +57,7 @@ export class BibsLoansResource {
 		},
 	): Promise<Loans> {
 		return this.client.get<Loans>(
-			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemId)}/loans`,
+			path`/bibs/${mmsId}/holdings/${holdingId}/items/${itemId}/loans`,
 			params,
 		);
 	}
@@ -82,7 +78,7 @@ export class BibsLoansResource {
 		loanId: string,
 	): Promise<Loan> {
 		return this.client.get<Loan>(
-			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}/loans/${encodeURIComponent(loanId)}`,
+			path`/bibs/${mmsId}/holdings/${holdingId}/items/${itemPid}/loans/${loanId}`,
 		);
 	}
 
@@ -103,7 +99,7 @@ export class BibsLoansResource {
 		params?: { user_id?: string; user_id_type?: string },
 	): Promise<Loan> {
 		return this.client.post<Loan>(
-			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}/loans`,
+			path`/bibs/${mmsId}/holdings/${holdingId}/items/${itemPid}/loans`,
 			body,
 			params,
 		);
@@ -127,7 +123,7 @@ export class BibsLoansResource {
 		body: Loan,
 	): Promise<Loan> {
 		return this.client.put<Loan>(
-			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}/loans/${encodeURIComponent(loanId)}`,
+			path`/bibs/${mmsId}/holdings/${holdingId}/items/${itemPid}/loans/${loanId}`,
 			body,
 		);
 	}
@@ -153,7 +149,7 @@ export class BibsLoansResource {
 		params?: { op?: string },
 	): Promise<Loan> {
 		return this.client.post<Loan>(
-			`/bibs/${encodeURIComponent(mmsId)}/holdings/${encodeURIComponent(holdingId)}/items/${encodeURIComponent(itemPid)}/loans/${encodeURIComponent(loanId)}`,
+			path`/bibs/${mmsId}/holdings/${holdingId}/items/${itemPid}/loans/${loanId}`,
 			body,
 			params,
 		);

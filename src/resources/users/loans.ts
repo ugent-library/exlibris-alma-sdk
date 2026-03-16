@@ -1,4 +1,5 @@
 import type { AlmaHttpClient } from "@/client";
+import { path } from "@/util/uri";
 
 import type { UserLoan, UserLoans } from "./types";
 
@@ -27,10 +28,7 @@ export class UsersLoansResource {
 			loan_status?: string;
 		},
 	): Promise<UserLoans> {
-		return this.client.get<UserLoans>(
-			`/users/${encodeURIComponent(userId)}/loans`,
-			params,
-		);
+		return this.client.get<UserLoans>(path`/users/${userId}/loans`, params);
 	}
 
 	/**
@@ -41,9 +39,7 @@ export class UsersLoansResource {
 	 * @returns The loan.
 	 */
 	async retrieveUserLoan(userId: string, loanId: string): Promise<UserLoan> {
-		return this.client.get<UserLoan>(
-			`/users/${encodeURIComponent(userId)}/loans/${encodeURIComponent(loanId)}`,
-		);
+		return this.client.get<UserLoan>(path`/users/${userId}/loans/${loanId}`);
 	}
 
 	/**
@@ -64,7 +60,7 @@ export class UsersLoansResource {
 		},
 	): Promise<UserLoan> {
 		return this.client.post<UserLoan>(
-			`/users/${encodeURIComponent(userId)}/loans`,
+			path`/users/${userId}/loans`,
 			body,
 			params,
 		);
@@ -85,7 +81,7 @@ export class UsersLoansResource {
 		params?: { notify_user?: boolean },
 	): Promise<UserLoan> {
 		return this.client.put<UserLoan>(
-			`/users/${encodeURIComponent(userId)}/loans/${encodeURIComponent(loanId)}`,
+			path`/users/${userId}/loans/${loanId}`,
 			body,
 			params,
 		);
@@ -108,7 +104,7 @@ export class UsersLoansResource {
 		params?: { user_id_type?: string; op?: string },
 	): Promise<UserLoan> {
 		return this.client.post<UserLoan>(
-			`/users/${encodeURIComponent(userId)}/loans/${encodeURIComponent(loanId)}`,
+			path`/users/${userId}/loans/${loanId}`,
 			body,
 			params,
 		);

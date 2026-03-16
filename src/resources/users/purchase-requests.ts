@@ -1,4 +1,5 @@
 import type { AlmaHttpClient } from "@/client";
+import { path } from "@/util/uri";
 
 import type { UserPurchaseRequest, UserPurchaseRequests } from "./types";
 
@@ -25,7 +26,7 @@ export class UsersPurchaseRequestsResource {
 		},
 	): Promise<UserPurchaseRequests> {
 		return this.client.get<UserPurchaseRequests>(
-			`/users/${encodeURIComponent(userId)}/purchase-requests`,
+			path`/users/${userId}/purchase-requests`,
 			params,
 		);
 	}
@@ -43,7 +44,7 @@ export class UsersPurchaseRequestsResource {
 		params: { user_id_type: string },
 	): Promise<UserPurchaseRequest> {
 		return this.client.get<UserPurchaseRequest>(
-			`/users/${encodeURIComponent(userId)}/purchase-requests/${encodeURIComponent(purchaseRequestId)}`,
+			path`/users/${userId}/purchase-requests/${purchaseRequestId}`,
 			params,
 		);
 	}
@@ -61,7 +62,7 @@ export class UsersPurchaseRequestsResource {
 		params: { user_id_type: string },
 	): Promise<UserPurchaseRequest> {
 		return this.client.post<UserPurchaseRequest>(
-			`/users/${encodeURIComponent(userId)}/purchase-requests`,
+			path`/users/${userId}/purchase-requests`,
 			body,
 			params,
 		);
@@ -84,7 +85,7 @@ export class UsersPurchaseRequestsResource {
 		params?: { op?: string },
 	): Promise<UserPurchaseRequest> {
 		return this.client.post<UserPurchaseRequest>(
-			`/users/${encodeURIComponent(userId)}/purchase-requests/${encodeURIComponent(purchaseRequestId)}`,
+			path`/users/${userId}/purchase-requests/${purchaseRequestId}`,
 			body,
 			params,
 		);
@@ -104,7 +105,7 @@ export class UsersPurchaseRequestsResource {
 		body: UserPurchaseRequest,
 	): Promise<UserPurchaseRequest> {
 		return this.client.put<UserPurchaseRequest>(
-			`/users/${encodeURIComponent(userId)}/purchase-requests/${encodeURIComponent(purchaseRequestId)}`,
+			path`/users/${userId}/purchase-requests/${purchaseRequestId}`,
 			body,
 		);
 	}

@@ -1,4 +1,5 @@
 import type { AlmaHttpClient } from "@/client";
+import { path } from "@/util/uri";
 
 import type { LicenseTerm, LicenseTerms, Reminder, Reminders } from "./types";
 
@@ -46,9 +47,7 @@ export class ConfRemindersResource {
 	 * @returns The reminder object.
 	 */
 	async retrieveReminder(reminderId: string): Promise<Reminder> {
-		return this.client.get<Reminder>(
-			`/conf/reminders/${encodeURIComponent(reminderId)}`,
-		);
+		return this.client.get<Reminder>(path`/conf/reminders/${reminderId}`);
 	}
 
 	/**
@@ -69,10 +68,7 @@ export class ConfRemindersResource {
 	 * @returns The updated reminder.
 	 */
 	async updateReminder(reminderId: string, body: Reminder): Promise<Reminder> {
-		return this.client.put<Reminder>(
-			`/conf/reminders/${encodeURIComponent(reminderId)}`,
-			body,
-		);
+		return this.client.put<Reminder>(path`/conf/reminders/${reminderId}`, body);
 	}
 
 	/**
@@ -81,9 +77,7 @@ export class ConfRemindersResource {
 	 * @param reminderId - The reminder ID.
 	 */
 	async deleteReminder(reminderId: string): Promise<void> {
-		return this.client.delete<void>(
-			`/conf/reminders/${encodeURIComponent(reminderId)}`,
-		);
+		return this.client.delete<void>(path`/conf/reminders/${reminderId}`);
 	}
 
 	/**
@@ -103,7 +97,7 @@ export class ConfRemindersResource {
 	 */
 	async retrieveLicenseTerm(licenseTermCode: string): Promise<LicenseTerm> {
 		return this.client.get<LicenseTerm>(
-			`/conf/license-terms/${encodeURIComponent(licenseTermCode)}`,
+			path`/conf/license-terms/${licenseTermCode}`,
 		);
 	}
 
@@ -129,7 +123,7 @@ export class ConfRemindersResource {
 		body: LicenseTerm,
 	): Promise<LicenseTerm> {
 		return this.client.put<LicenseTerm>(
-			`/conf/license-terms/${encodeURIComponent(licenseTermCode)}`,
+			path`/conf/license-terms/${licenseTermCode}`,
 			body,
 		);
 	}
@@ -141,7 +135,7 @@ export class ConfRemindersResource {
 	 */
 	async deleteLicenseTerm(licenseTermCode: string): Promise<void> {
 		return this.client.delete<void>(
-			`/conf/license-terms/${encodeURIComponent(licenseTermCode)}`,
+			path`/conf/license-terms/${licenseTermCode}`,
 		);
 	}
 }

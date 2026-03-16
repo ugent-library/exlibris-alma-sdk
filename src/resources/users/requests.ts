@@ -1,4 +1,5 @@
 import type { AlmaHttpClient } from "@/client";
+import { path } from "@/util/uri";
 
 import type {
 	ResourceSharingRequest,
@@ -31,7 +32,7 @@ export class UsersRequestsResource {
 		},
 	): Promise<UserRequests> {
 		return this.client.get<UserRequests>(
-			`/users/${encodeURIComponent(userId)}/requests`,
+			path`/users/${userId}/requests`,
 			params,
 		);
 	}
@@ -49,7 +50,7 @@ export class UsersRequestsResource {
 		params?: { user_id_type?: string },
 	): Promise<UserRequest> {
 		return this.client.get<UserRequest>(
-			`/users/${encodeURIComponent(userId)}/requests/${encodeURIComponent(requestId)}`,
+			path`/users/${userId}/requests/${requestId}`,
 			params,
 		);
 	}
@@ -73,7 +74,7 @@ export class UsersRequestsResource {
 		},
 	): Promise<UserRequest> {
 		return this.client.post<UserRequest>(
-			`/users/${encodeURIComponent(userId)}/requests`,
+			path`/users/${userId}/requests`,
 			body,
 			params,
 		);
@@ -93,7 +94,7 @@ export class UsersRequestsResource {
 		body: UserRequest,
 	): Promise<UserRequest> {
 		return this.client.put<UserRequest>(
-			`/users/${encodeURIComponent(userId)}/requests/${encodeURIComponent(requestId)}`,
+			path`/users/${userId}/requests/${requestId}`,
 			body,
 		);
 	}
@@ -115,7 +116,7 @@ export class UsersRequestsResource {
 		params?: { op?: string },
 	): Promise<UserRequest> {
 		return this.client.post<UserRequest>(
-			`/users/${encodeURIComponent(userId)}/requests/${encodeURIComponent(requestId)}`,
+			path`/users/${userId}/requests/${requestId}`,
 			body,
 			params,
 		);
@@ -137,7 +138,7 @@ export class UsersRequestsResource {
 		params: { reason: string; note?: string; notify_user?: boolean },
 	): Promise<void> {
 		return this.client.delete<void>(
-			`/users/${encodeURIComponent(userId)}/requests/${encodeURIComponent(requestId)}`,
+			path`/users/${userId}/requests/${requestId}`,
 			params,
 		);
 	}
@@ -154,7 +155,7 @@ export class UsersRequestsResource {
 		requestId: string,
 	): Promise<ResourceSharingRequest> {
 		return this.client.get<ResourceSharingRequest>(
-			`/users/${encodeURIComponent(userId)}/resource-sharing-requests/${encodeURIComponent(requestId)}`,
+			path`/users/${userId}/resource-sharing-requests/${requestId}`,
 		);
 	}
 
@@ -171,7 +172,7 @@ export class UsersRequestsResource {
 		params?: { user_id_type?: string; override_blocks?: string },
 	): Promise<ResourceSharingRequest> {
 		return this.client.post<ResourceSharingRequest>(
-			`/users/${encodeURIComponent(userId)}/resource-sharing-requests`,
+			path`/users/${userId}/resource-sharing-requests`,
 			body,
 			params,
 		);
@@ -199,7 +200,7 @@ export class UsersRequestsResource {
 		},
 	): Promise<ResourceSharingRequest> {
 		return this.client.post<ResourceSharingRequest>(
-			`/users/${encodeURIComponent(userId)}/resource-sharing-requests/${encodeURIComponent(requestId)}`,
+			path`/users/${userId}/resource-sharing-requests/${requestId}`,
 			body,
 			params,
 		);
@@ -222,7 +223,7 @@ export class UsersRequestsResource {
 		},
 	): Promise<void> {
 		return this.client.delete<void>(
-			`/users/${encodeURIComponent(userId)}/resource-sharing-requests/${encodeURIComponent(requestId)}`,
+			path`/users/${userId}/resource-sharing-requests/${requestId}`,
 			params,
 		);
 	}

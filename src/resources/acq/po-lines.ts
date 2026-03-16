@@ -1,4 +1,5 @@
 import type { AlmaHttpClient } from "@/client";
+import { path } from "@/util/uri";
 
 import type { PoLine, PoLineItem, PoLineItems, PoLines } from "./types";
 
@@ -37,9 +38,7 @@ export class AcqPoLinesResource {
 	 * @returns The PO line.
 	 */
 	async retrievePoLine(poLineId: string): Promise<PoLine> {
-		return this.client.get<PoLine>(
-			`/acq/po-lines/${encodeURIComponent(poLineId)}`,
-		);
+		return this.client.get<PoLine>(path`/acq/po-lines/${poLineId}`);
 	}
 
 	/**
@@ -68,7 +67,7 @@ export class AcqPoLinesResource {
 		params?: { update_inventory?: string; redistribute_funds?: string },
 	): Promise<PoLine> {
 		return this.client.put<PoLine>(
-			`/acq/po-lines/${encodeURIComponent(poLineId)}`,
+			path`/acq/po-lines/${poLineId}`,
 			body,
 			params,
 		);
@@ -89,10 +88,7 @@ export class AcqPoLinesResource {
 			bib?: string;
 		},
 	): Promise<void> {
-		return this.client.delete<void>(
-			`/acq/po-lines/${encodeURIComponent(poLineId)}`,
-			params,
-		);
+		return this.client.delete<void>(path`/acq/po-lines/${poLineId}`, params);
 	}
 
 	/**
@@ -107,7 +103,7 @@ export class AcqPoLinesResource {
 		params?: { limit?: number; offset?: number },
 	): Promise<PoLineItems> {
 		return this.client.get<PoLineItems>(
-			`/acq/po-lines/${encodeURIComponent(poLineId)}/items`,
+			path`/acq/po-lines/${poLineId}/items`,
 			params,
 		);
 	}
@@ -124,7 +120,7 @@ export class AcqPoLinesResource {
 		body: PoLineItem,
 	): Promise<PoLineItem> {
 		return this.client.post<PoLineItem>(
-			`/acq/po-lines/${encodeURIComponent(poLineId)}/items`,
+			path`/acq/po-lines/${poLineId}/items`,
 			body,
 		);
 	}
@@ -151,7 +147,7 @@ export class AcqPoLinesResource {
 		},
 	): Promise<PoLineItem> {
 		return this.client.post<PoLineItem>(
-			`/acq/po-lines/${encodeURIComponent(poLineId)}/items/${encodeURIComponent(itemId)}`,
+			path`/acq/po-lines/${poLineId}/items/${itemId}`,
 			body,
 			params,
 		);

@@ -1,4 +1,5 @@
 import type { AlmaHttpClient } from "@/client";
+import { path } from "@/util/uri";
 
 import type { LegantoNotifications } from "./types";
 
@@ -26,7 +27,7 @@ export class UsersLegantoResource {
 		},
 	): Promise<LegantoNotifications> {
 		return this.client.get<LegantoNotifications>(
-			`/users/${encodeURIComponent(userName)}/leganto-notifications`,
+			path`/users/${userName}/leganto-notifications`,
 			params,
 		);
 	}

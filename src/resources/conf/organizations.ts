@@ -1,4 +1,5 @@
 import type { AlmaHttpClient } from "@/client";
+import { path } from "@/util/uri";
 
 import type {
 	CircDesk,
@@ -35,9 +36,7 @@ export class ConfOrganizationsResource {
 	 * @returns The library object.
 	 */
 	async retrieveLibrary(libraryCode: string): Promise<Library> {
-		return this.client.get<Library>(
-			`/conf/libraries/${encodeURIComponent(libraryCode)}`,
-		);
+		return this.client.get<Library>(path`/conf/libraries/${libraryCode}`);
 	}
 
 	/**
@@ -48,10 +47,7 @@ export class ConfOrganizationsResource {
 	 * @returns The updated library.
 	 */
 	async updateLibrary(libraryCode: string, body: Library): Promise<Library> {
-		return this.client.put<Library>(
-			`/conf/libraries/${encodeURIComponent(libraryCode)}`,
-			body,
-		);
+		return this.client.put<Library>(path`/conf/libraries/${libraryCode}`, body);
 	}
 
 	/**
@@ -85,7 +81,7 @@ export class ConfOrganizationsResource {
 		params?: { limit?: number; offset?: number },
 	): Promise<CircDesks> {
 		return this.client.get<CircDesks>(
-			`/conf/libraries/${encodeURIComponent(libraryCode)}/circ-desks/`,
+			path`/conf/libraries/${libraryCode}/circ-desks/`,
 			params,
 		);
 	}
@@ -102,7 +98,7 @@ export class ConfOrganizationsResource {
 		circDeskCode: string,
 	): Promise<CircDesk> {
 		return this.client.get<CircDesk>(
-			`/conf/libraries/${encodeURIComponent(libraryCode)}/circ-desks/${encodeURIComponent(circDeskCode)}`,
+			path`/conf/libraries/${libraryCode}/circ-desks/${circDeskCode}`,
 		);
 	}
 
@@ -114,7 +110,7 @@ export class ConfOrganizationsResource {
 	 */
 	async retrieveLocations(libraryCode: string): Promise<Locations> {
 		return this.client.get<Locations>(
-			`/conf/libraries/${encodeURIComponent(libraryCode)}/locations`,
+			path`/conf/libraries/${libraryCode}/locations`,
 		);
 	}
 
@@ -130,7 +126,7 @@ export class ConfOrganizationsResource {
 		locationCode: string,
 	): Promise<Location> {
 		return this.client.get<Location>(
-			`/conf/libraries/${encodeURIComponent(libraryCode)}/locations/${encodeURIComponent(locationCode)}`,
+			path`/conf/libraries/${libraryCode}/locations/${locationCode}`,
 		);
 	}
 
@@ -143,7 +139,7 @@ export class ConfOrganizationsResource {
 	 */
 	async createLocation(libraryCode: string, body: Location): Promise<Location> {
 		return this.client.post<Location>(
-			`/conf/libraries/${encodeURIComponent(libraryCode)}/locations`,
+			path`/conf/libraries/${libraryCode}/locations`,
 			body,
 		);
 	}
@@ -162,7 +158,7 @@ export class ConfOrganizationsResource {
 		body: Location,
 	): Promise<Location> {
 		return this.client.put<Location>(
-			`/conf/libraries/${encodeURIComponent(libraryCode)}/locations/${encodeURIComponent(locationCode)}`,
+			path`/conf/libraries/${libraryCode}/locations/${locationCode}`,
 			body,
 		);
 	}
@@ -178,7 +174,7 @@ export class ConfOrganizationsResource {
 		locationCode: string,
 	): Promise<void> {
 		return this.client.delete<void>(
-			`/conf/libraries/${encodeURIComponent(libraryCode)}/locations/${encodeURIComponent(locationCode)}`,
+			path`/conf/libraries/${libraryCode}/locations/${locationCode}`,
 		);
 	}
 
@@ -196,7 +192,7 @@ export class ConfOrganizationsResource {
 		params?: { from?: string; to?: string },
 	): Promise<OpenHours> {
 		return this.client.get<OpenHours>(
-			`/conf/libraries/${encodeURIComponent(libraryCode)}/open-hours`,
+			path`/conf/libraries/${libraryCode}/open-hours`,
 			params,
 		);
 	}

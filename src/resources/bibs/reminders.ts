@@ -1,4 +1,5 @@
 import type { AlmaHttpClient } from "@/client";
+import { path } from "@/util/uri";
 
 import type { BibReminder, BibReminders } from "./types";
 
@@ -23,7 +24,7 @@ export class BibsRemindersResource {
 		params?: { type?: string; limit?: number; offset?: number },
 	): Promise<BibReminders> {
 		return this.client.get<BibReminders>(
-			`/bibs/${encodeURIComponent(mmsId)}/reminders`,
+			path`/bibs/${mmsId}/reminders`,
 			params,
 		);
 	}
@@ -40,7 +41,7 @@ export class BibsRemindersResource {
 		reminderId: string,
 	): Promise<BibReminder> {
 		return this.client.get<BibReminder>(
-			`/bibs/${encodeURIComponent(mmsId)}/reminders/${encodeURIComponent(reminderId)}`,
+			path`/bibs/${mmsId}/reminders/${reminderId}`,
 		);
 	}
 
@@ -55,10 +56,7 @@ export class BibsRemindersResource {
 		mmsId: string,
 		body: BibReminder,
 	): Promise<BibReminder> {
-		return this.client.post<BibReminder>(
-			`/bibs/${encodeURIComponent(mmsId)}/reminders`,
-			body,
-		);
+		return this.client.post<BibReminder>(path`/bibs/${mmsId}/reminders`, body);
 	}
 
 	/**
@@ -75,7 +73,7 @@ export class BibsRemindersResource {
 		body: BibReminder,
 	): Promise<BibReminder> {
 		return this.client.put<BibReminder>(
-			`/bibs/${encodeURIComponent(mmsId)}/reminders/${encodeURIComponent(reminderId)}`,
+			path`/bibs/${mmsId}/reminders/${reminderId}`,
 			body,
 		);
 	}
@@ -88,7 +86,7 @@ export class BibsRemindersResource {
 	 */
 	async deleteBibReminder(mmsId: string, reminderId: string): Promise<void> {
 		return this.client.delete<void>(
-			`/bibs/${encodeURIComponent(mmsId)}/reminders/${encodeURIComponent(reminderId)}`,
+			path`/bibs/${mmsId}/reminders/${reminderId}`,
 		);
 	}
 }

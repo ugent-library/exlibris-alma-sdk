@@ -1,4 +1,5 @@
 import type { AlmaHttpClient } from "@/client";
+import { path } from "@/util/uri";
 
 import type {
 	License,
@@ -48,10 +49,7 @@ export class AcqLicensesResource {
 		licenseCode: string,
 		params?: { expand?: string; include_blank_terms?: string },
 	): Promise<License> {
-		return this.client.get<License>(
-			`/acq/licenses/${encodeURIComponent(licenseCode)}`,
-			params,
-		);
+		return this.client.get<License>(path`/acq/licenses/${licenseCode}`, params);
 	}
 
 	/**
@@ -72,10 +70,7 @@ export class AcqLicensesResource {
 	 * @returns The updated license.
 	 */
 	async updateLicense(licenseCode: string, body: License): Promise<License> {
-		return this.client.put<License>(
-			`/acq/licenses/${encodeURIComponent(licenseCode)}`,
-			body,
-		);
+		return this.client.put<License>(path`/acq/licenses/${licenseCode}`, body);
 	}
 
 	/**
@@ -87,10 +82,7 @@ export class AcqLicensesResource {
 		licenseCode: string,
 		params?: { permanent_delete?: boolean },
 	): Promise<void> {
-		return this.client.delete<void>(
-			`/acq/licenses/${encodeURIComponent(licenseCode)}`,
-			params,
-		);
+		return this.client.delete<void>(path`/acq/licenses/${licenseCode}`, params);
 	}
 
 	/**
@@ -103,7 +95,7 @@ export class AcqLicensesResource {
 		licenseCode: string,
 	): Promise<LicenseAmendments> {
 		return this.client.get<LicenseAmendments>(
-			`/acq/licenses/${encodeURIComponent(licenseCode)}/amendments`,
+			path`/acq/licenses/${licenseCode}/amendments`,
 		);
 	}
 
@@ -119,7 +111,7 @@ export class AcqLicensesResource {
 		amendmentCode: string,
 	): Promise<LicenseAmendment> {
 		return this.client.get<LicenseAmendment>(
-			`/acq/licenses/${encodeURIComponent(licenseCode)}/amendments/${encodeURIComponent(amendmentCode)}`,
+			path`/acq/licenses/${licenseCode}/amendments/${amendmentCode}`,
 		);
 	}
 
@@ -135,7 +127,7 @@ export class AcqLicensesResource {
 		body: LicenseAmendment,
 	): Promise<LicenseAmendment> {
 		return this.client.post<LicenseAmendment>(
-			`/acq/licenses/${encodeURIComponent(licenseCode)}/amendments`,
+			path`/acq/licenses/${licenseCode}/amendments`,
 			body,
 		);
 	}
@@ -154,7 +146,7 @@ export class AcqLicensesResource {
 		body: LicenseAmendment,
 	): Promise<LicenseAmendment> {
 		return this.client.put<LicenseAmendment>(
-			`/acq/licenses/${encodeURIComponent(licenseCode)}/amendments/${encodeURIComponent(amendmentCode)}`,
+			path`/acq/licenses/${licenseCode}/amendments/${amendmentCode}`,
 			body,
 		);
 	}
@@ -170,7 +162,7 @@ export class AcqLicensesResource {
 		amendmentCode: string,
 	): Promise<void> {
 		return this.client.delete<void>(
-			`/acq/licenses/${encodeURIComponent(licenseCode)}/amendments/${encodeURIComponent(amendmentCode)}`,
+			path`/acq/licenses/${licenseCode}/amendments/${amendmentCode}`,
 		);
 	}
 
@@ -185,7 +177,7 @@ export class AcqLicensesResource {
 		params?: { limit?: number; offset?: number },
 	): Promise<LicenseAttachments> {
 		return this.client.get<LicenseAttachments>(
-			`/acq/licenses/${encodeURIComponent(licenseCode)}/attachments`,
+			path`/acq/licenses/${licenseCode}/attachments`,
 			params,
 		);
 	}
@@ -203,7 +195,7 @@ export class AcqLicensesResource {
 		params?: { expand?: string },
 	): Promise<LicenseAttachment> {
 		return this.client.get<LicenseAttachment>(
-			`/acq/licenses/${encodeURIComponent(licenseCode)}/attachments/${encodeURIComponent(attachmentId)}`,
+			path`/acq/licenses/${licenseCode}/attachments/${attachmentId}`,
 			params,
 		);
 	}
@@ -220,7 +212,7 @@ export class AcqLicensesResource {
 		body: LicenseAttachment,
 	): Promise<LicenseAttachment> {
 		return this.client.post<LicenseAttachment>(
-			`/acq/licenses/${encodeURIComponent(licenseCode)}/attachments`,
+			path`/acq/licenses/${licenseCode}/attachments`,
 			body,
 		);
 	}
@@ -239,7 +231,7 @@ export class AcqLicensesResource {
 		body: LicenseAttachment,
 	): Promise<LicenseAttachment> {
 		return this.client.put<LicenseAttachment>(
-			`/acq/licenses/${encodeURIComponent(licenseCode)}/attachments/${encodeURIComponent(attachmentId)}`,
+			path`/acq/licenses/${licenseCode}/attachments/${attachmentId}`,
 			body,
 		);
 	}
@@ -255,7 +247,7 @@ export class AcqLicensesResource {
 		attachmentId: string,
 	): Promise<void> {
 		return this.client.delete<void>(
-			`/acq/licenses/${encodeURIComponent(licenseCode)}/attachments/${encodeURIComponent(attachmentId)}`,
+			path`/acq/licenses/${licenseCode}/attachments/${attachmentId}`,
 		);
 	}
 }

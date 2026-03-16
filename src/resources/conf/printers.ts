@@ -1,4 +1,5 @@
 import type { AlmaHttpClient } from "@/client";
+import { path } from "@/util/uri";
 
 import type { Printer, Printers } from "./types";
 
@@ -36,8 +37,6 @@ export class ConfPrintersResource {
 	 * @returns The printer object.
 	 */
 	async retrievePrinter(printerId: string): Promise<Printer> {
-		return this.client.get<Printer>(
-			`/conf/printers/${encodeURIComponent(printerId)}`,
-		);
+		return this.client.get<Printer>(path`/conf/printers/${printerId}`);
 	}
 }

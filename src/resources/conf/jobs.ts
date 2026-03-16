@@ -1,4 +1,5 @@
 import type { AlmaHttpClient } from "@/client";
+import { path } from "@/util/uri";
 
 import type {
 	Job,
@@ -42,7 +43,7 @@ export class ConfJobsResource {
 	 * @returns The job object.
 	 */
 	async retrieveJob(jobId: string): Promise<Job> {
-		return this.client.get<Job>(`/conf/jobs/${encodeURIComponent(jobId)}`);
+		return this.client.get<Job>(path`/conf/jobs/${jobId}`);
 	}
 
 	/**
@@ -60,7 +61,7 @@ export class ConfJobsResource {
 		params?: { op?: string },
 	): Promise<JobInstance> {
 		return this.client.post<JobInstance>(
-			`/conf/jobs/${encodeURIComponent(jobId)}`,
+			path`/conf/jobs/${jobId}`,
 			body,
 			params,
 		);
@@ -89,7 +90,7 @@ export class ConfJobsResource {
 		},
 	): Promise<JobInstances> {
 		return this.client.get<JobInstances>(
-			`/conf/jobs/${encodeURIComponent(jobId)}/instances`,
+			path`/conf/jobs/${jobId}/instances`,
 			params,
 		);
 	}
@@ -106,7 +107,7 @@ export class ConfJobsResource {
 		instanceId: string,
 	): Promise<JobInstance> {
 		return this.client.get<JobInstance>(
-			`/conf/jobs/${encodeURIComponent(jobId)}/instances/${encodeURIComponent(instanceId)}`,
+			path`/conf/jobs/${jobId}/instances/${instanceId}`,
 		);
 	}
 
@@ -125,7 +126,7 @@ export class ConfJobsResource {
 		params?: { op?: string },
 	): Promise<JobInstance> {
 		return this.client.post<JobInstance>(
-			`/conf/jobs/${encodeURIComponent(jobId)}/instances/${encodeURIComponent(instanceId)}`,
+			path`/conf/jobs/${jobId}/instances/${instanceId}`,
 			{},
 			params,
 		);
@@ -144,7 +145,7 @@ export class ConfJobsResource {
 		params?: { limit?: number; offset?: number },
 	): Promise<JobInstanceEvents> {
 		return this.client.get<JobInstanceEvents>(
-			`/conf/jobs/${encodeURIComponent(jobId)}/instances/${encodeURIComponent(instanceId)}/events`,
+			path`/conf/jobs/${jobId}/instances/${instanceId}/events`,
 			params,
 		);
 	}
@@ -162,7 +163,7 @@ export class ConfJobsResource {
 		params?: { population?: string; limit?: number; offset?: number },
 	): Promise<JobInstanceMatches> {
 		return this.client.get<JobInstanceMatches>(
-			`/conf/jobs/${encodeURIComponent(jobId)}/instances/${encodeURIComponent(instanceId)}/matches`,
+			path`/conf/jobs/${jobId}/instances/${instanceId}/matches`,
 			params,
 		);
 	}

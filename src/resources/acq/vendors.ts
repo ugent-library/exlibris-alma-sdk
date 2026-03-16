@@ -1,4 +1,5 @@
 import type { AlmaHttpClient } from "@/client";
+import { path } from "@/util/uri";
 
 import type { Invoices, PoLines, Vendor, Vendors } from "./types";
 
@@ -33,9 +34,7 @@ export class AcqVendorsResource {
 	 * @returns The vendor.
 	 */
 	async retrieveVendor(vendorCode: string): Promise<Vendor> {
-		return this.client.get<Vendor>(
-			`/acq/vendors/${encodeURIComponent(vendorCode)}`,
-		);
+		return this.client.get<Vendor>(path`/acq/vendors/${vendorCode}`);
 	}
 
 	/**
@@ -56,10 +55,7 @@ export class AcqVendorsResource {
 	 * @returns The updated vendor.
 	 */
 	async updateVendor(vendorCode: string, body: Vendor): Promise<Vendor> {
-		return this.client.put<Vendor>(
-			`/acq/vendors/${encodeURIComponent(vendorCode)}`,
-			body,
-		);
+		return this.client.put<Vendor>(path`/acq/vendors/${vendorCode}`, body);
 	}
 
 	/**
@@ -68,9 +64,7 @@ export class AcqVendorsResource {
 	 * @param vendorCode - The vendor code.
 	 */
 	async deleteVendor(vendorCode: string): Promise<void> {
-		return this.client.delete<void>(
-			`/acq/vendors/${encodeURIComponent(vendorCode)}`,
-		);
+		return this.client.delete<void>(path`/acq/vendors/${vendorCode}`);
 	}
 
 	/**
@@ -85,7 +79,7 @@ export class AcqVendorsResource {
 		params?: { limit?: number; offset?: number },
 	): Promise<Invoices> {
 		return this.client.get<Invoices>(
-			`/acq/vendors/${encodeURIComponent(vendorCode)}/invoices`,
+			path`/acq/vendors/${vendorCode}/invoices`,
 			params,
 		);
 	}
@@ -102,7 +96,7 @@ export class AcqVendorsResource {
 		params?: { limit?: number; offset?: number },
 	): Promise<PoLines> {
 		return this.client.get<PoLines>(
-			`/acq/vendors/${encodeURIComponent(vendorCode)}/po-lines`,
+			path`/acq/vendors/${vendorCode}/po-lines`,
 			params,
 		);
 	}

@@ -1,4 +1,5 @@
 import type { AlmaHttpClient } from "@/client";
+import { path } from "@/util/uri";
 
 import type { Authorities, Authority } from "./types";
 
@@ -44,7 +45,7 @@ export class BibsAuthoritiesResource {
 		params?: { view?: string },
 	): Promise<Authority> {
 		return this.client.get<Authority>(
-			`/bibs/authorities/${encodeURIComponent(authorityRecordId)}`,
+			path`/bibs/authorities/${authorityRecordId}`,
 			params,
 		);
 	}
@@ -103,7 +104,7 @@ export class BibsAuthoritiesResource {
 		},
 	): Promise<Authority> {
 		return this.client.put<Authority>(
-			`/bibs/authorities/${encodeURIComponent(authorityRecordId)}`,
+			path`/bibs/authorities/${authorityRecordId}`,
 			body,
 			params,
 		);
@@ -122,7 +123,7 @@ export class BibsAuthoritiesResource {
 		params?: { override?: string; cataloger_level?: string },
 	): Promise<void> {
 		return this.client.delete<void>(
-			`/bibs/authorities/${encodeURIComponent(authorityRecordId)}`,
+			path`/bibs/authorities/${authorityRecordId}`,
 			params,
 		);
 	}

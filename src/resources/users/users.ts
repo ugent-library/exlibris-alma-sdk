@@ -1,4 +1,5 @@
 import type { AlmaHttpClient } from "@/client";
+import { path } from "@/util/uri";
 
 import type { User, UserAttachment, UserPersonalData, Users } from "./types";
 
@@ -45,10 +46,7 @@ export class UsersUsersResource {
 			source_institution_code?: string;
 		},
 	): Promise<User> {
-		return this.client.get<User>(
-			`/users/${encodeURIComponent(userId)}`,
-			params,
-		);
+		return this.client.get<User>(path`/users/${userId}`, params);
 	}
 
 	/**
@@ -70,7 +68,7 @@ export class UsersUsersResource {
 	 */
 	async retrieveUserPersonalData(userId: string): Promise<UserPersonalData> {
 		return this.client.get<UserPersonalData>(
-			`/users/${encodeURIComponent(userId)}/personal-data`,
+			path`/users/${userId}/personal-data`,
 		);
 	}
 
@@ -115,11 +113,7 @@ export class UsersUsersResource {
 			library?: string;
 		},
 	): Promise<User> {
-		return this.client.put<User>(
-			`/users/${encodeURIComponent(userId)}`,
-			body,
-			params,
-		);
+		return this.client.put<User>(path`/users/${userId}`, body, params);
 	}
 
 	/**
@@ -136,11 +130,7 @@ export class UsersUsersResource {
 		body: User,
 		params?: { user_id_type?: string; op?: string; password?: string },
 	): Promise<User> {
-		return this.client.post<User>(
-			`/users/${encodeURIComponent(userId)}`,
-			body,
-			params,
-		);
+		return this.client.post<User>(path`/users/${userId}`, body, params);
 	}
 
 	/**
@@ -152,10 +142,7 @@ export class UsersUsersResource {
 		userId: string,
 		params?: { user_id_type?: string },
 	): Promise<void> {
-		return this.client.delete<void>(
-			`/users/${encodeURIComponent(userId)}`,
-			params,
-		);
+		return this.client.delete<void>(path`/users/${userId}`, params);
 	}
 
 	/**
@@ -171,7 +158,7 @@ export class UsersUsersResource {
 		params?: { user_id_type?: string; expand?: string },
 	): Promise<UserAttachment> {
 		return this.client.get<UserAttachment>(
-			`/users/${encodeURIComponent(userId)}/attachments/${encodeURIComponent(attachmentId)}`,
+			path`/users/${userId}/attachments/${attachmentId}`,
 			params,
 		);
 	}
@@ -189,7 +176,7 @@ export class UsersUsersResource {
 		params?: { user_id_type?: string },
 	): Promise<UserAttachment> {
 		return this.client.post<UserAttachment>(
-			`/users/${encodeURIComponent(userId)}/attachments`,
+			path`/users/${userId}/attachments`,
 			body,
 			params,
 		);

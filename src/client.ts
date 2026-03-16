@@ -3,6 +3,7 @@ import {
 	AlmaUnauthorizedError,
 	extractXmlErrorMessage,
 } from "@/errors";
+import type { Path } from "@/util/uri";
 
 /**
  * The Alma API region, used to construct the base URL.
@@ -55,8 +56,6 @@ interface RequestOptions {
 	/** Additional request headers. */
 	headers?: Record<string, string>;
 }
-
-type Path = `/${string}`;
 
 /**
  * Low-level HTTP client for the Alma REST API.
