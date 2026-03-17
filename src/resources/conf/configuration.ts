@@ -259,13 +259,4 @@ export class ConfConfigurationResource {
 			params,
 		);
 	}
-
-	/**
-	 * Tests the Configuration API connection.
-	 *
-	 * @returns A test response confirming the API is reachable.
-	 */
-	async test(): Promise<Record<string, unknown>> {
-		return this.client.get<Record<string, unknown>>("/conf/test");
-	}
 }

@@ -56,11 +56,3 @@ describe("conf - sets", () => {
 		expect(result).toBeDefined();
 	});
 });
-
-describe("conf - test endpoint", () => {
-	it("test returns a result", async () => {
-		if (skip || !client) return;
-		const result = await client.conf.test();
-		expect(result).toBeDefined();
-	});
-});

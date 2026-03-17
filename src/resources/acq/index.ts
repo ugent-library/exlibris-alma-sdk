@@ -456,9 +456,4 @@ export class AcqResource {
 	 */
 	deletePurchaseRequest: AcqMiscResource["deletePurchaseRequest"] = (...args) =>
 		this.misc.deletePurchaseRequest(...args);
-
-	/**
-	 * @see {@link AcqMiscResource.test}
-	 */
-	test: AcqMiscResource["test"] = (...args) => this.misc.test(...args);
 }

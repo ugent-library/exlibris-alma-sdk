@@ -559,13 +559,4 @@ export class BibsCatalogResource {
 			params,
 		);
 	}
-
-	/**
-	 * Tests the Bibliographic API connection.
-	 *
-	 * @returns A test response confirming the API is reachable.
-	 */
-	async test(): Promise<Record<string, unknown>> {
-		return this.client.get("/bibs/test");
-	}
 }

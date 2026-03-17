@@ -273,10 +273,6 @@ export class ConfResource {
 	retrieveFeeTransactions: ConfConfigurationResource["retrieveFeeTransactions"] =
 		(...args) => this.configuration.retrieveFeeTransactions(...args);
 
-	/** @see {@link ConfConfigurationResource.test} */
-	test: ConfConfigurationResource["test"] = (...args) =>
-		this.configuration.test(...args);
-
 	// ── Jobs ─────────────────────────────────────────────────────────────────
 
 	/**

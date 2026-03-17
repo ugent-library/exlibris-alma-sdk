@@ -147,11 +147,6 @@ export class UsersResource {
 		...args
 	) => this.users.createUserAttachment(...args);
 
-	/**
-	 * @see {@link UsersUsersResource.test}
-	 */
-	test: UsersUsersResource["test"] = (...args) => this.users.test(...args);
-
 	// ── Loans ─────────────────────────────────────────────────────────────────
 
 	/**

@@ -131,14 +131,4 @@ export class AcqMiscResource {
 	async deletePurchaseRequest(id: string): Promise<void> {
 		return this.client.delete<void>(path`/acq/purchase-requests/${id}`);
 	}
-
-	/**
-	 * Tests the Alma Acquisitions API connection.
-	 *
-	 * @returns API response confirming access.
-	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL3Rlc3Q=/
-	 */
-	async test(): Promise<unknown> {
-		return this.client.get<unknown>("/acq/test");
-	}
 }

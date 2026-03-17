@@ -191,14 +191,4 @@ export class UsersUsersResource {
 			params,
 		);
 	}
-
-	/**
-	 * Tests the Alma Users API connection.
-	 *
-	 * @returns API response confirming access.
-	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/users/R0VUIC9hbG1hd3MvdjEvdXNlcnMvb3BlcmF0aW9uL3Rlc3Q=/
-	 */
-	async test(): Promise<unknown> {
-		return this.client.get<unknown>("/users/operation/test");
-	}
 }

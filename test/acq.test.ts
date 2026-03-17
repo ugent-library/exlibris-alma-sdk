@@ -8,14 +8,6 @@ const skip = !apiKey;
 
 const client = skip ? null : new AlmaClient({ apiKey, region });
 
-describe("acq - test endpoint", () => {
-	it("test returns a result", async () => {
-		if (skip || !client) return;
-		const result = await client.acq.test();
-		expect(result).toBeDefined();
-	});
-});
-
 describe("acq - vendors", () => {
 	it("retrieveVendorsList returns a result", async () => {
 		if (skip || !client) return;
