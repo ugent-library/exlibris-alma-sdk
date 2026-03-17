@@ -1,6 +1,6 @@
 import type { AlmaHttpClient } from "@/client";
 
-import { GeneralResource } from "./configuration";
+import { GeneralResource } from "./general";
 import { JobsResource } from "./jobs";
 import { OrganizationUnitsResource } from "./organization-units";
 import { PrintersResource } from "./printers";
