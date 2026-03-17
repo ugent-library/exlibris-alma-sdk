@@ -29,8 +29,8 @@ export class InvoicesResource {
 		limit?: number;
 		offset?: number;
 		view?: string;
-		expand?: string;
-		base_status?: string;
+		expand?: "none" | "attachments";
+		base_status?: "ALL" | "ACTIVE" | "CLOSED";
 		invoice_workflow_status?: string;
 		owner?: string;
 		creation_form?: string;
@@ -45,9 +45,12 @@ export class InvoicesResource {
 	 * @returns The invoice.
 	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL2ludm9pY2VzL3tpbnZvaWNlX2lkfQ==/
 	 */
-	async retrieveInvoice(
+	async getInvoice(
 		invoiceId: string,
-		params?: { view?: string; expand?: string },
+		params?: {
+			view?: string;
+			expand?: "none" | "attachments";
+		},
 	): Promise<Invoice> {
 		return this.client.get<Invoice>(path`/acq/invoices/${invoiceId}`, params);
 	}
@@ -82,13 +85,17 @@ export class InvoicesResource {
 	 * @param body - The operation body.
 	 * @param params - Optional parameters.
 	 * @param params.op - The operation to perform.
+	 * @param params.create_rt_invoice - Indication whether to create _RT invoice for VAT management.
 	 * @returns The resulting invoice.
 	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/UE9TVCAvYWxtYXdzL3YxL2FjcS9pbnZvaWNlcy97aW52b2ljZV9pZH0=/
 	 */
-	async operateInvoice(
+	async invoiceService(
 		invoiceId: string,
 		body: Invoice,
-		params?: { op?: string; create_rt_invoice?: boolean },
+		params: {
+			op: "mark_in_erp" | "paid" | "process_invoice" | "rejected";
+			create_rt_invoice?: boolean;
+		},
 	): Promise<Invoice> {
 		return this.client.post<Invoice>(
 			path`/acq/invoices/${invoiceId}`,
@@ -104,7 +111,7 @@ export class InvoicesResource {
 	 * @returns A list of invoice attachments.
 	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL2ludm9pY2VzL3tpbnZvaWNlX2lkfS9hdHRhY2htZW50cw==/
 	 */
-	async retrieveInvoiceAttachmentsList(
+	async getInvoiceAttachments(
 		invoiceId: string,
 		params?: { limit?: number; offset?: number },
 	): Promise<InvoiceAttachments> {
@@ -122,7 +129,7 @@ export class InvoicesResource {
 	 * @returns The attachment.
 	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL2ludm9pY2VzL3tpbnZvaWNlX2lkfS9hdHRhY2htZW50cy97YXR0YWNobWVudF9pZH0=/
 	 */
-	async retrieveInvoiceAttachment(
+	async getInvoiceAttachment(
 		invoiceId: string,
 		attachmentId: string,
 		params?: { expand?: string },
@@ -159,7 +166,7 @@ export class InvoicesResource {
 	 * @returns A list of invoice lines.
 	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL2ludm9pY2VzL3tpbnZvaWNlX2lkfS9saW5lcw==/
 	 */
-	async retrieveInvoiceLinesList(
+	async getInvoiceLines(
 		invoiceId: string,
 		params?: { q?: string; limit?: number; offset?: number },
 	): Promise<InvoiceLines> {
@@ -177,7 +184,7 @@ export class InvoicesResource {
 	 * @returns The invoice line.
 	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL2ludm9pY2VzL3tpbnZvaWNlX2lkfS9saW5lcy97aW52b2ljZV9saW5lX2lkfQ==/
 	 */
-	async retrieveInvoiceLine(
+	async getInvoiceLine(
 		invoiceId: string,
 		invoiceLineId: string,
 	): Promise<InvoiceLine> {

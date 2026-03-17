@@ -19,7 +19,7 @@ describe("acq - vendors", () => {
 describe("acq - funds", () => {
 	it("retrieveFundsList returns a result", async () => {
 		if (skip || !client) return;
-		const result = await client.acq.funds.retrieveFundsList({ limit: 10 });
+		const result = await client.acq.funds.retrieveFunds({ limit: 10 });
 		expect(result).toBeDefined();
 	});
 });
@@ -35,7 +35,11 @@ describe("acq - currencies", () => {
 describe("acq - po-lines", () => {
 	it("retrievePoLinesList returns a result", async () => {
 		if (skip || !client) return;
-		const result = await client.acq.poLines.retrievePoLinesList({ limit: 10 });
+		const result = await client.acq.poLines.retrievePoLines({
+			q: "all",
+			limit: 10,
+			expand: "vendor",
+		});
 		expect(result).toBeDefined();
 	});
 });
@@ -51,7 +55,7 @@ describe("acq - invoices", () => {
 describe("acq - licenses", () => {
 	it("retrieveLicensesList returns a result", async () => {
 		if (skip || !client) return;
-		const result = await client.acq.licenses.retrieveLicensesList({
+		const result = await client.acq.licenses.getLicenses({
 			limit: 10,
 		});
 		expect(result).toBeDefined();

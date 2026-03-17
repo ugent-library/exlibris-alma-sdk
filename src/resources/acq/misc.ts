@@ -25,7 +25,7 @@ export class MiscResource {
 	async retrieveCurrencies(params?: {
 		limit?: number;
 		offset?: number;
-		mode?: string;
+		mode?: "ALL" | "Subset" | "Ratio";
 		source_currency?: string;
 		target_currency?: string;
 		exchange_date?: string;
@@ -42,7 +42,7 @@ export class MiscResource {
 	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL2Zpc2NhbC1wZXJpb2Rz/
 	 */
 	async retrieveFiscalPeriods(params?: {
-		mode?: string;
+		mode?: "ALL" | "Current";
 	}): Promise<FiscalPeriods> {
 		return this.client.get<FiscalPeriods>("/acq/fiscal-periods", params);
 	}

@@ -31,15 +31,15 @@ export class FundsResource {
 	 * @returns A list of funds.
 	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL2Z1bmRz/
 	 */
-	async retrieveFundsList(params?: {
+	async retrieveFunds(params?: {
 		q?: string;
 		limit?: number;
 		offset?: number;
 		library?: string;
-		view?: string;
-		mode?: string;
-		status?: string;
-		entity_type?: string;
+		view?: "full" | "brief";
+		mode?: "POL" | "ALL";
+		status?: "ALL" | "ACTIVE" | "INACTIVE";
+		entity_type?: "ALL" | "LEDGER" | "SUMMARY" | "ALLOCATED";
 		fiscal_period?: string;
 		parent_id?: string;
 		owner?: string;
@@ -58,7 +58,7 @@ export class FundsResource {
 	 */
 	async retrieveFund(
 		fundId: string,
-		params?: { view?: string },
+		params?: { view?: "full" | "brief" },
 	): Promise<Fund> {
 		return this.client.get<Fund>(path`/acq/funds/${fundId}`, params);
 	}
@@ -101,18 +101,15 @@ export class FundsResource {
 	 * Performs an action on a fund (e.g. clone).
 	 *
 	 * @param fundId - The fund ID.
-	 * @param body - The operation body.
-	 * @param params - Optional parameters.
-	 * @param params.op - The operation to perform.
+	 * @param op - The operation to perform.
 	 * @returns The resulting fund.
 	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/UE9TVCAvYWxtYXdzL3YxL2FjcS9mdW5kcy97ZnVuZF9pZH0=/
 	 */
-	async operateFund(
+	async fundService(
 		fundId: string,
-		body: Fund,
-		params?: { op?: string },
+		op: "activate" | "deactivate",
 	): Promise<Fund> {
-		return this.client.post<Fund>(path`/acq/funds/${fundId}`, body, params);
+		return this.client.post<Fund>(path`/acq/funds/${fundId}`, null, { op });
 	}
 
 	/**
@@ -137,9 +134,20 @@ export class FundsResource {
 	 * @returns A list of fund transactions.
 	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL2Z1bmRzL3tmdW5kX2lkfS90cmFuc2FjdGlvbnM=/
 	 */
-	async retrieveFundTransactionsList(
+	async retrieveFundTransactions(
 		fundId: string,
-		params?: { limit?: number; offset?: number; q?: string; filter?: string },
+		params?: {
+			limit?: number;
+			offset?: number;
+			q?: string;
+			filter?:
+				| "ALL"
+				| "ALLOCATION"
+				| "EXPENDITURE"
+				| "ENCUMBRANCE"
+				| "DISENCUMBRANCE"
+				| "TRANSFER";
+		},
 	): Promise<FundTransactions> {
 		return this.client.get<FundTransactions>(
 			path`/acq/funds/${fundId}/transactions`,
@@ -155,7 +163,7 @@ export class FundsResource {
 	 * @returns The created transaction.
 	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/UE9TVCAvYWxtYXdzL3YxL2FjcS9mdW5kcy97ZnVuZF9pZH0vdHJhbnNhY3Rpb25z/
 	 */
-	async createFundTransaction(
+	async createFundTransactions(
 		fundId: string,
 		body: FundTransaction,
 	): Promise<FundTransaction> {

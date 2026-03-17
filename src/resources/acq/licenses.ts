@@ -24,14 +24,14 @@ export class LicensesResource {
 	 * @returns A list of licenses.
 	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL2xpY2Vuc2VzLw==/
 	 */
-	async retrieveLicensesList(params?: {
+	async getLicenses(params?: {
 		q?: string;
-		status?: string;
-		type?: string;
+		status?: "ALL" | "ACTIVE" | "DELETED" | "DRAFT" | "EXPIRED" | "RETIRED";
+		type?: "LICENSE" | "NEGOTIATION" | "ADDENDUM" | "ALL";
 		review_status?: string;
 		limit?: number;
 		offset?: number;
-		expand?: string;
+		expand?: "none" | "attachments";
 		create_date_from?: string;
 		create_date_to?: string;
 		modify_date_from?: string;
@@ -47,9 +47,12 @@ export class LicensesResource {
 	 * @returns The license.
 	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL2xpY2Vuc2VzL3tsaWNlbnNlX2NvZGV9/
 	 */
-	async retrieveLicense(
+	async getLicense(
 		licenseCode: string,
-		params?: { expand?: string; include_blank_terms?: string },
+		params?: {
+			expand?: "none" | "attachments";
+			include_blank_terms?: string;
+		},
 	): Promise<License> {
 		return this.client.get<License>(path`/acq/licenses/${licenseCode}`, params);
 	}
@@ -81,6 +84,8 @@ export class LicensesResource {
 	 * Deletes a license.
 	 *
 	 * @param licenseCode - The license code.
+	 * @param params - Optional parameters.
+	 * @param params.permanent_delete - Indication whether to permanently delete the license from Alma. When set to false, the license will get the status Inactive.
 	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/REVMRVRFIC9hbG1hd3MvdjEvYWNxL2xpY2Vuc2VzL3tsaWNlbnNlX2NvZGV9/
 	 */
 	async deleteLicense(
@@ -97,9 +102,7 @@ export class LicensesResource {
 	 * @returns A list of amendments.
 	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL2xpY2Vuc2VzL3tsaWNlbnNlX2NvZGV9L2FtZW5kbWVudHM=/
 	 */
-	async retrieveLicenseAmendmentsList(
-		licenseCode: string,
-	): Promise<LicenseAmendments> {
+	async getLicenseAmendments(licenseCode: string): Promise<LicenseAmendments> {
 		return this.client.get<LicenseAmendments>(
 			path`/acq/licenses/${licenseCode}/amendments`,
 		);
@@ -113,7 +116,7 @@ export class LicensesResource {
 	 * @returns The amendment.
 	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL2xpY2Vuc2VzL3tsaWNlbnNlX2NvZGV9L2FtZW5kbWVudHMve2FtZW5kbWVudF9jb2RlfQ==/
 	 */
-	async retrieveLicenseAmendment(
+	async getLicenseForCodeAndAmendment(
 		licenseCode: string,
 		amendmentCode: string,
 	): Promise<LicenseAmendment> {
@@ -183,7 +186,7 @@ export class LicensesResource {
 	 * @returns A list of license attachments.
 	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL2xpY2Vuc2VzL3tsaWNlbnNlX2NvZGV9L2F0dGFjaG1lbnRz/
 	 */
-	async retrieveLicenseAttachmentsList(
+	async getLicenseAttachments(
 		licenseCode: string,
 		params?: { limit?: number; offset?: number },
 	): Promise<LicenseAttachments> {
@@ -201,7 +204,7 @@ export class LicensesResource {
 	 * @returns The attachment.
 	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/R0VUIC9hbG1hd3MvdjEvYWNxL2xpY2Vuc2VzL3tsaWNlbnNlX2NvZGV9L2F0dGFjaG1lbnRzL3thdHRhY2htZW50X2lkfQ==/
 	 */
-	async retrieveLicenseAttachment(
+	async getLicensesAttachment(
 		licenseCode: string,
 		attachmentId: string,
 		params?: { expand?: string },
@@ -220,7 +223,7 @@ export class LicensesResource {
 	 * @returns The created attachment.
 	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/UE9TVCAvYWxtYXdzL3YxL2FjcS9saWNlbnNlcy97bGljZW5zZV9jb2RlfS9hdHRhY2htZW50cw==/
 	 */
-	async createLicenseAttachment(
+	async createLicensesAttachment(
 		licenseCode: string,
 		body: LicenseAttachment,
 	): Promise<LicenseAttachment> {
@@ -239,7 +242,7 @@ export class LicensesResource {
 	 * @returns The updated attachment.
 	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/UFVUIC9hbG1hd3MvdjEvYWNxL2xpY2Vuc2VzL3tsaWNlbnNlX2NvZGV9L2F0dGFjaG1lbnRzL3thdHRhY2htZW50X2lkfQ==/
 	 */
-	async updateLicenseAttachment(
+	async updateLicensesAttachment(
 		licenseCode: string,
 		attachmentId: string,
 		body: LicenseAttachment,
@@ -257,7 +260,7 @@ export class LicensesResource {
 	 * @param attachmentId - The attachment ID.
 	 * @see https://developers.exlibrisgroup.com/alma/apis/docs/acq/REVMRVRFIC9hbG1hd3MvdjEvYWNxL2xpY2Vuc2VzL3tsaWNlbnNlX2NvZGV9L2F0dGFjaG1lbnRzL3thdHRhY2htZW50X2lkfQ==/
 	 */
-	async deleteLicenseAttachment(
+	async deleteLicensesAttachment(
 		licenseCode: string,
 		attachmentId: string,
 	): Promise<void> {
