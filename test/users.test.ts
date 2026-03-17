@@ -11,7 +11,7 @@ const client = skip ? null : new AlmaClient({ apiKey, region });
 describe("users - ME endpoint", () => {
 	it("retrieveMe returns the current user", async () => {
 		if (skip || !client) return;
-		const result = await client.users.retrieveMe();
+		const result = await client.users.general.retrieveMe();
 		expect(result).toBeDefined();
 	});
 });
@@ -19,18 +19,18 @@ describe("users - ME endpoint", () => {
 describe("users - list", () => {
 	it("retrieveUsersList returns a result", async () => {
 		if (skip || !client) return;
-		const result = await client.users.retrieveUsersList({ limit: 5 });
+		const result = await client.users.general.retrieveUsersList({ limit: 5 });
 		expect(result).toBeDefined();
 	});
 
 	it("retrieveUser returns a single user", async () => {
 		if (skip || !client) return;
-		const list = await client.users.retrieveUsersList({ limit: 1 });
+		const list = await client.users.general.retrieveUsersList({ limit: 1 });
 		const users = (list as { user?: unknown[] }).user;
 		if (!users?.length) return;
 		const userId = (users[0] as { primary_id?: string }).primary_id;
 		if (!userId) return;
-		const user = await client.users.retrieveUser(userId);
+		const user = await client.users.general.retrieveUser(userId);
 		expect(user).toBeDefined();
 	});
 });
@@ -38,12 +38,12 @@ describe("users - list", () => {
 describe("users - loans", () => {
 	it("retrieveUserLoansList returns a result", async () => {
 		if (skip || !client) return;
-		const list = await client.users.retrieveUsersList({ limit: 1 });
+		const list = await client.users.general.retrieveUsersList({ limit: 1 });
 		const users = (list as { user?: unknown[] }).user;
 		if (!users?.length) return;
 		const userId = (users[0] as { primary_id?: string }).primary_id;
 		if (!userId) return;
-		const result = await client.users.retrieveUserLoansList(userId, {
+		const result = await client.users.loans.retrieveUserLoansList(userId, {
 			limit: 10,
 		});
 		expect(result).toBeDefined();
@@ -53,14 +53,17 @@ describe("users - loans", () => {
 describe("users - requests", () => {
 	it("retrieveUserRequestsList returns a result", async () => {
 		if (skip || !client) return;
-		const list = await client.users.retrieveUsersList({ limit: 1 });
+		const list = await client.users.general.retrieveUsersList({ limit: 1 });
 		const users = (list as { user?: unknown[] }).user;
 		if (!users?.length) return;
 		const userId = (users[0] as { primary_id?: string }).primary_id;
 		if (!userId) return;
-		const result = await client.users.retrieveUserRequestsList(userId, {
-			limit: 10,
-		});
+		const result = await client.users.requests.retrieveUserRequestsList(
+			userId,
+			{
+				limit: 10,
+			},
+		);
 		expect(result).toBeDefined();
 	});
 });
@@ -68,12 +71,12 @@ describe("users - requests", () => {
 describe("users - fees", () => {
 	it("retrieveUserFeesList returns a result", async () => {
 		if (skip || !client) return;
-		const list = await client.users.retrieveUsersList({ limit: 1 });
+		const list = await client.users.general.retrieveUsersList({ limit: 1 });
 		const users = (list as { user?: unknown[] }).user;
 		if (!users?.length) return;
 		const userId = (users[0] as { primary_id?: string }).primary_id;
 		if (!userId) return;
-		const result = await client.users.retrieveUserFeesList(userId);
+		const result = await client.users.fees.retrieveUserFeesList(userId);
 		expect(result).toBeDefined();
 	});
 });
@@ -81,11 +84,13 @@ describe("users - fees", () => {
 describe("users - staff login report", () => {
 	it("retrieveStaffLoginReport returns a result", async () => {
 		if (skip || !client) return;
-		const result = await client.users.retrieveStaffLoginReport({
-			login_date_from: "2024-01-01",
-			login_date_to: "2024-12-31",
-			limit: 5,
-		});
+		const result = await client.users.staffLoginReport.retrieveStaffLoginReport(
+			{
+				login_date_from: "2024-01-01",
+				login_date_to: "2024-12-31",
+				limit: 5,
+			},
+		);
 		expect(result).toBeDefined();
 	});
 });

@@ -26,9 +26,9 @@ describe("AlmaClient", () => {
 	it("throws AlmaUnauthorizedError on invalid API key", async () => {
 		if (skip) return;
 		const bad = new AlmaClient({ apiKey: "INVALID_KEY", region });
-		await expect(bad.conf.retrieveLibraries()).rejects.toBeInstanceOf(
-			AlmaUnauthorizedError,
-		);
+		await expect(
+			bad.conf.organizationUnits.retrieveLibraries(),
+		).rejects.toBeInstanceOf(AlmaUnauthorizedError);
 	});
 
 	it("should be possible to change the API version", async () => {
@@ -49,7 +49,7 @@ describe("AlmaClient", () => {
 		globalThis.fetch = fetchMock;
 
 		try {
-			await client.conf.retrieveLibraries();
+			await client.conf.organizationUnits.retrieveLibraries();
 
 			expect(fetchMock).toHaveBeenCalledTimes(1);
 			expect(fetchMock).toHaveBeenCalledWith(

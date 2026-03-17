@@ -11,7 +11,7 @@ const client = skip ? null : new AlmaClient({ apiKey, region });
 describe("bibs - catalog", () => {
 	it("retrieveBibs returns a result for a simple query", async () => {
 		if (skip || !client) return;
-		const result = await client.bibs.retrieveBibs({
+		const result = await client.bibs.catalog.retrieveBibs({
 			mms_id: Bun.env.ALMA_TEST_BIB_MMS_IDS,
 		});
 		expect(result).toBeDefined();
@@ -23,7 +23,7 @@ describe("bibs - catalog", () => {
 	it("retrieveBib returns a single bib", async () => {
 		if (skip || !client) return;
 		const mmsId = Bun.env.ALMA_TEST_BIB_MMS_IDS!.split(",")[0]!;
-		const bib = await client.bibs.retrieveBib(mmsId);
+		const bib = await client.bibs.catalog.retrieveBib(mmsId);
 		expect(bib).toBeDefined();
 		expect(bib.mms_id).toEqual(mmsId);
 	});
@@ -32,7 +32,7 @@ describe("bibs - catalog", () => {
 describe("bibs - collections", () => {
 	it("retrieveCollections returns a result", async () => {
 		if (skip || !client) return;
-		const result = await client.bibs.retrieveCollections();
+		const result = await client.bibs.collections.retrieveCollections();
 		expect(result).toBeDefined();
 	});
 });
@@ -40,7 +40,7 @@ describe("bibs - collections", () => {
 describe("bibs - authorities", () => {
 	it("retrieveAuthorities returns a result", async () => {
 		if (skip || !client) return;
-		const result = await client.bibs.retrieveAuthorities({
+		const result = await client.bibs.authorities.retrieveAuthorities({
 			other_system_id: "ABC-123",
 			limit: 5,
 		});

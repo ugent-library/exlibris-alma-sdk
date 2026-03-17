@@ -32,10 +32,10 @@ const client = new AlmaClient({
 	region: "eu" // eu | na | ap | aps | cn | ca
 });
 
-const libraries = await client.conf.retrieveLibraries();
-const bib = await client.bibs.retrieveBib("990000000000541");
-const funds = await client.acq.retrieveFundsList();
-const user = await client.users.retrieveUser("12345");
+const libraries = await client.conf.organizationUnits.retrieveLibraries();
+const bib = await client.bibs.catalog.retrieveBib("990000000000541");
+const funds = await client.acq.funds.retrieveFundsList();
+const user = await client.users.general.retrieveUser("12345");
 ```
 
 ## Client Configuration
@@ -68,7 +68,7 @@ Top-level resources:
 - `client.acq` - funds, invoices, licenses, po-lines, vendors, misc
 - `client.users` - users, loans, requests, fees, purchase requests, leganto, staff login report
 
-Each top-level resource also exposes sub-resources (for example `client.bibs.catalog` or `client.acq.funds`) and convenience methods directly on the parent resource.
+Each top-level resource also exposes sub-resources (for example `client.bibs.catalog` or `client.acq.funds`).
 
 ## Error Handling
 
@@ -87,7 +87,7 @@ import {
 const client = new AlmaClient({ apiKey: "...", region: "eu" });
 
 try {
-	await client.users.retrieveUser("12345");
+	await client.users.general.retrieveUser("12345");
 } catch (error) {
 	if (error instanceof AlmaUnauthorizedError) {
 		console.error("Unauthorized", error.message);
