@@ -10,7 +10,7 @@ import { path } from "@/util/uri";
 /**
  * Methods for managing funds and fund transactions in the Alma Acquisitions API.
  */
-export class AcqFundsResource {
+export class FundsResource {
 	constructor(private readonly client: AlmaHttpClient) {}
 
 	/**

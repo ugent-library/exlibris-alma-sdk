@@ -16,7 +16,7 @@ import type {
  * Methods for managing libraries, circulation desks, locations, and departments
  * in the Alma Configuration API.
  */
-export class ConfOrganizationsResource {
+export class OrganizationUnitsResource {
 	constructor(private readonly client: AlmaHttpClient) {}
 
 	/**

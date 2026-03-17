@@ -14,7 +14,7 @@ import type {
  * Methods for managing scheduled jobs and job instances in the Alma
  * Configuration API.
  */
-export class ConfJobsResource {
+export class JobsResource {
 	constructor(private readonly client: AlmaHttpClient) {}
 
 	/**

@@ -6,7 +6,7 @@ import type { PoLine, PoLineItem, PoLineItems, PoLines } from "./types";
 /**
  * Methods for managing PO lines and PO line items in the Alma Acquisitions API.
  */
-export class AcqPoLinesResource {
+export class PoLinesResource {
 	constructor(private readonly client: AlmaHttpClient) {}
 
 	/**

@@ -6,7 +6,7 @@ import type { LicenseTerm, LicenseTerms, Reminder, Reminders } from "./types";
 /**
  * Methods for managing reminders in the Alma Configuration API.
  */
-export class ConfRemindersResource {
+export class RemindersResource {
 	constructor(private readonly client: AlmaHttpClient) {}
 
 	/**

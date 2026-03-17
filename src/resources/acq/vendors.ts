@@ -6,7 +6,7 @@ import type { Invoices, PoLines, Vendor, Vendors } from "./types";
 /**
  * Methods for managing vendors in the Alma Acquisitions API.
  */
-export class AcqVendorsResource {
+export class VendorsResource {
 	constructor(private readonly client: AlmaHttpClient) {}
 
 	/**

@@ -5,7 +5,7 @@ import type { StaffLoginReport } from "./types";
 /**
  * Methods for retrieving the staff login report from the Alma Users API.
  */
-export class UsersStaffLoginReportResource {
+export class StaffLoginReportResource {
 	constructor(private readonly client: AlmaHttpClient) {}
 
 	/**

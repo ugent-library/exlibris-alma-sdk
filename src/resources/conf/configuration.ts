@@ -18,7 +18,7 @@ import type {
  * Methods for managing general configuration, code tables, mapping tables,
  * letters, open hours, and relations in the Alma Configuration API.
  */
-export class ConfConfigurationResource {
+export class GeneralResource {
 	constructor(private readonly client: AlmaHttpClient) {}
 
 	/**

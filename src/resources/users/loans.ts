@@ -6,7 +6,7 @@ import type { UserLoan, UserLoans } from "./types";
 /**
  * Methods for managing user loans in the Alma Users API.
  */
-export class UsersLoansResource {
+export class LoansResource {
 	constructor(private readonly client: AlmaHttpClient) {}
 
 	/**

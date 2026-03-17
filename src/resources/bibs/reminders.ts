@@ -6,7 +6,7 @@ import type { BibReminder, BibReminders } from "./types";
 /**
  * Methods for managing reminders on bibliographic records.
  */
-export class BibsRemindersResource {
+export class RemindersResource {
 	constructor(private readonly client: AlmaHttpClient) {}
 
 	/**

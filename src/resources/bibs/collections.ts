@@ -7,7 +7,7 @@ import type { Bibs, Collection, Collections } from "./types";
  * Methods for managing physical collections and their bibliographic records
  * in the Alma Bibliographic API.
  */
-export class BibsCollectionsResource {
+export class CollectionsResource {
 	constructor(private readonly client: AlmaHttpClient) {}
 
 	/**

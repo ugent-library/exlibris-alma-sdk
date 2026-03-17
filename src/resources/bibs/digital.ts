@@ -14,7 +14,7 @@ import type {
  * Methods for managing digital representations, files, and electronic
  * collections in the Alma Bibliographic API.
  */
-export class BibsDigitalResource {
+export class DigitalResource {
 	constructor(private readonly client: AlmaHttpClient) {}
 
 	/**

@@ -6,7 +6,7 @@ import type { Authorities, Authority } from "./types";
 /**
  * Methods for managing authority records in the Alma Bibliographic API.
  */
-export class BibsAuthoritiesResource {
+export class AuthoritiesResource {
 	constructor(private readonly client: AlmaHttpClient) {}
 
 	/**

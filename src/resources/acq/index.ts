@@ -1,11 +1,12 @@
 import type { AlmaHttpClient } from "@/client";
 
-import { AcqFundsResource } from "./funds";
-import { AcqInvoicesResource } from "./invoices";
-import { AcqLicensesResource } from "./licenses";
-import { AcqMiscResource } from "./misc";
-import { AcqPoLinesResource } from "./po-lines";
-import { AcqVendorsResource } from "./vendors";
+import { FundsResource } from "./funds";
+import { InvoicesResource } from "./invoices";
+import { LicensesResource } from "./licenses";
+import { MiscResource } from "./misc";
+import { PoLinesResource } from "./po-lines";
+import { PurchaseRequestsResource } from "./purchase-requests";
+import { VendorsResource } from "./vendors";
 
 export type {
 	Currencies,
@@ -67,393 +68,400 @@ export type {
  */
 export class AcqResource {
 	/** Funds sub-resource: funds and fund transactions. */
-	readonly funds: AcqFundsResource;
+	readonly funds: FundsResource;
 	/** Invoices sub-resource: invoices, lines, attachments. */
-	readonly invoices: AcqInvoicesResource;
+	readonly invoices: InvoicesResource;
 	/** Licenses sub-resource: licenses, amendments, attachments. */
-	readonly licenses: AcqLicensesResource;
+	readonly licenses: LicensesResource;
 	/** PO Lines sub-resource: PO lines and PO line items. */
-	readonly poLines: AcqPoLinesResource;
+	readonly poLines: PoLinesResource;
 	/** Vendors sub-resource: vendors, vendor invoices, vendor PO lines. */
-	readonly vendors: AcqVendorsResource;
-	/** Misc sub-resource: currencies, fiscal periods, purchase requests. */
-	readonly misc: AcqMiscResource;
+	readonly vendors: VendorsResource;
+	/** Purchase requests sub-resource: purchase requests. */
+	readonly purchaseRequests: PurchaseRequestsResource;
+	/** Misc sub-resource: currencies, fiscal periods. */
+	readonly misc: MiscResource;
 
 	constructor(client: AlmaHttpClient) {
-		this.funds = new AcqFundsResource(client);
-		this.invoices = new AcqInvoicesResource(client);
-		this.licenses = new AcqLicensesResource(client);
-		this.poLines = new AcqPoLinesResource(client);
-		this.vendors = new AcqVendorsResource(client);
-		this.misc = new AcqMiscResource(client);
+		this.funds = new FundsResource(client);
+		this.invoices = new InvoicesResource(client);
+		this.licenses = new LicensesResource(client);
+		this.poLines = new PoLinesResource(client);
+		this.vendors = new VendorsResource(client);
+		this.purchaseRequests = new PurchaseRequestsResource(client);
+		this.misc = new MiscResource(client);
 	}
 
 	// ── Funds ─────────────────────────────────────────────────────────────────
 
 	/**
-	 * @see {@link AcqFundsResource.retrieveFundsList}
+	 * @see {@link FundsResource.retrieveFundsList}
 	 */
-	retrieveFundsList: AcqFundsResource["retrieveFundsList"] = (...args) =>
+	retrieveFundsList: FundsResource["retrieveFundsList"] = (...args) =>
 		this.funds.retrieveFundsList(...args);
 
 	/**
-	 * @see {@link AcqFundsResource.retrieveFund}
+	 * @see {@link FundsResource.retrieveFund}
 	 */
-	retrieveFund: AcqFundsResource["retrieveFund"] = (...args) =>
+	retrieveFund: FundsResource["retrieveFund"] = (...args) =>
 		this.funds.retrieveFund(...args);
 
 	/**
-	 * @see {@link AcqFundsResource.createFund}
+	 * @see {@link FundsResource.createFund}
 	 */
-	createFund: AcqFundsResource["createFund"] = (...args) =>
+	createFund: FundsResource["createFund"] = (...args) =>
 		this.funds.createFund(...args);
 
 	/**
-	 * @see {@link AcqFundsResource.updateFund}
+	 * @see {@link FundsResource.updateFund}
 	 */
-	updateFund: AcqFundsResource["updateFund"] = (...args) =>
+	updateFund: FundsResource["updateFund"] = (...args) =>
 		this.funds.updateFund(...args);
 
 	/**
-	 * @see {@link AcqFundsResource.operateFund}
+	 * @see {@link FundsResource.operateFund}
 	 */
-	operateFund: AcqFundsResource["operateFund"] = (...args) =>
+	operateFund: FundsResource["operateFund"] = (...args) =>
 		this.funds.operateFund(...args);
 
 	/**
-	 * @see {@link AcqFundsResource.deleteFund}
+	 * @see {@link FundsResource.deleteFund}
 	 */
-	deleteFund: AcqFundsResource["deleteFund"] = (...args) =>
+	deleteFund: FundsResource["deleteFund"] = (...args) =>
 		this.funds.deleteFund(...args);
 
 	/**
-	 * @see {@link AcqFundsResource.retrieveFundTransactionsList}
+	 * @see {@link FundsResource.retrieveFundTransactionsList}
 	 */
-	retrieveFundTransactionsList: AcqFundsResource["retrieveFundTransactionsList"] =
+	retrieveFundTransactionsList: FundsResource["retrieveFundTransactionsList"] =
 		(...args) => this.funds.retrieveFundTransactionsList(...args);
 
 	/**
-	 * @see {@link AcqFundsResource.createFundTransaction}
+	 * @see {@link FundsResource.createFundTransaction}
 	 */
-	createFundTransaction: AcqFundsResource["createFundTransaction"] = (
-		...args
-	) => this.funds.createFundTransaction(...args);
+	createFundTransaction: FundsResource["createFundTransaction"] = (...args) =>
+		this.funds.createFundTransaction(...args);
 
 	// ── Invoices ──────────────────────────────────────────────────────────────
 
 	/**
-	 * @see {@link AcqInvoicesResource.getInvoices}
+	 * @see {@link InvoicesResource.getInvoices}
 	 */
-	getInvoices: AcqInvoicesResource["getInvoices"] = (...args) =>
+	getInvoices: InvoicesResource["getInvoices"] = (...args) =>
 		this.invoices.getInvoices(...args);
 
 	/**
-	 * @see {@link AcqInvoicesResource.retrieveInvoice}
+	 * @see {@link InvoicesResource.retrieveInvoice}
 	 */
-	retrieveInvoice: AcqInvoicesResource["retrieveInvoice"] = (...args) =>
+	retrieveInvoice: InvoicesResource["retrieveInvoice"] = (...args) =>
 		this.invoices.retrieveInvoice(...args);
 
 	/**
-	 * @see {@link AcqInvoicesResource.createInvoice}
+	 * @see {@link InvoicesResource.createInvoice}
 	 */
-	createInvoice: AcqInvoicesResource["createInvoice"] = (...args) =>
+	createInvoice: InvoicesResource["createInvoice"] = (...args) =>
 		this.invoices.createInvoice(...args);
 
 	/**
-	 * @see {@link AcqInvoicesResource.updateInvoice}
+	 * @see {@link InvoicesResource.updateInvoice}
 	 */
-	updateInvoice: AcqInvoicesResource["updateInvoice"] = (...args) =>
+	updateInvoice: InvoicesResource["updateInvoice"] = (...args) =>
 		this.invoices.updateInvoice(...args);
 
 	/**
-	 * @see {@link AcqInvoicesResource.operateInvoice}
+	 * @see {@link InvoicesResource.operateInvoice}
 	 */
-	operateInvoice: AcqInvoicesResource["operateInvoice"] = (...args) =>
+	operateInvoice: InvoicesResource["operateInvoice"] = (...args) =>
 		this.invoices.operateInvoice(...args);
 
 	/**
-	 * @see {@link AcqInvoicesResource.retrieveInvoiceAttachmentsList}
+	 * @see {@link InvoicesResource.retrieveInvoiceAttachmentsList}
 	 */
-	retrieveInvoiceAttachmentsList: AcqInvoicesResource["retrieveInvoiceAttachmentsList"] =
+	retrieveInvoiceAttachmentsList: InvoicesResource["retrieveInvoiceAttachmentsList"] =
 		(...args) => this.invoices.retrieveInvoiceAttachmentsList(...args);
 
 	/**
-	 * @see {@link AcqInvoicesResource.retrieveInvoiceAttachment}
+	 * @see {@link InvoicesResource.retrieveInvoiceAttachment}
 	 */
-	retrieveInvoiceAttachment: AcqInvoicesResource["retrieveInvoiceAttachment"] =
-		(...args) => this.invoices.retrieveInvoiceAttachment(...args);
+	retrieveInvoiceAttachment: InvoicesResource["retrieveInvoiceAttachment"] = (
+		...args
+	) => this.invoices.retrieveInvoiceAttachment(...args);
 
 	/**
-	 * @see {@link AcqInvoicesResource.createInvoiceAttachment}
+	 * @see {@link InvoicesResource.createInvoiceAttachment}
 	 */
-	createInvoiceAttachment: AcqInvoicesResource["createInvoiceAttachment"] = (
+	createInvoiceAttachment: InvoicesResource["createInvoiceAttachment"] = (
 		...args
 	) => this.invoices.createInvoiceAttachment(...args);
 
 	/**
-	 * @see {@link AcqInvoicesResource.retrieveInvoiceLinesList}
+	 * @see {@link InvoicesResource.retrieveInvoiceLinesList}
 	 */
-	retrieveInvoiceLinesList: AcqInvoicesResource["retrieveInvoiceLinesList"] = (
+	retrieveInvoiceLinesList: InvoicesResource["retrieveInvoiceLinesList"] = (
 		...args
 	) => this.invoices.retrieveInvoiceLinesList(...args);
 
 	/**
-	 * @see {@link AcqInvoicesResource.retrieveInvoiceLine}
+	 * @see {@link InvoicesResource.retrieveInvoiceLine}
 	 */
-	retrieveInvoiceLine: AcqInvoicesResource["retrieveInvoiceLine"] = (...args) =>
+	retrieveInvoiceLine: InvoicesResource["retrieveInvoiceLine"] = (...args) =>
 		this.invoices.retrieveInvoiceLine(...args);
 
 	/**
-	 * @see {@link AcqInvoicesResource.createInvoiceLine}
+	 * @see {@link InvoicesResource.createInvoiceLine}
 	 */
-	createInvoiceLine: AcqInvoicesResource["createInvoiceLine"] = (...args) =>
+	createInvoiceLine: InvoicesResource["createInvoiceLine"] = (...args) =>
 		this.invoices.createInvoiceLine(...args);
 
 	/**
-	 * @see {@link AcqInvoicesResource.updateInvoiceLine}
+	 * @see {@link InvoicesResource.updateInvoiceLine}
 	 */
-	updateInvoiceLine: AcqInvoicesResource["updateInvoiceLine"] = (...args) =>
+	updateInvoiceLine: InvoicesResource["updateInvoiceLine"] = (...args) =>
 		this.invoices.updateInvoiceLine(...args);
 
 	// ── Licenses ──────────────────────────────────────────────────────────────
 
 	/**
-	 * @see {@link AcqLicensesResource.retrieveLicensesList}
+	 * @see {@link LicensesResource.retrieveLicensesList}
 	 */
-	retrieveLicensesList: AcqLicensesResource["retrieveLicensesList"] = (
-		...args
-	) => this.licenses.retrieveLicensesList(...args);
+	retrieveLicensesList: LicensesResource["retrieveLicensesList"] = (...args) =>
+		this.licenses.retrieveLicensesList(...args);
 
 	/**
-	 * @see {@link AcqLicensesResource.retrieveLicense}
+	 * @see {@link LicensesResource.retrieveLicense}
 	 */
-	retrieveLicense: AcqLicensesResource["retrieveLicense"] = (...args) =>
+	retrieveLicense: LicensesResource["retrieveLicense"] = (...args) =>
 		this.licenses.retrieveLicense(...args);
 
 	/**
-	 * @see {@link AcqLicensesResource.createLicense}
+	 * @see {@link LicensesResource.createLicense}
 	 */
-	createLicense: AcqLicensesResource["createLicense"] = (...args) =>
+	createLicense: LicensesResource["createLicense"] = (...args) =>
 		this.licenses.createLicense(...args);
 
 	/**
-	 * @see {@link AcqLicensesResource.updateLicense}
+	 * @see {@link LicensesResource.updateLicense}
 	 */
-	updateLicense: AcqLicensesResource["updateLicense"] = (...args) =>
+	updateLicense: LicensesResource["updateLicense"] = (...args) =>
 		this.licenses.updateLicense(...args);
 
 	/**
-	 * @see {@link AcqLicensesResource.deleteLicense}
+	 * @see {@link LicensesResource.deleteLicense}
 	 */
-	deleteLicense: AcqLicensesResource["deleteLicense"] = (...args) =>
+	deleteLicense: LicensesResource["deleteLicense"] = (...args) =>
 		this.licenses.deleteLicense(...args);
 
 	/**
-	 * @see {@link AcqLicensesResource.retrieveLicenseAmendmentsList}
+	 * @see {@link LicensesResource.retrieveLicenseAmendmentsList}
 	 */
-	retrieveLicenseAmendmentsList: AcqLicensesResource["retrieveLicenseAmendmentsList"] =
+	retrieveLicenseAmendmentsList: LicensesResource["retrieveLicenseAmendmentsList"] =
 		(...args) => this.licenses.retrieveLicenseAmendmentsList(...args);
 
 	/**
-	 * @see {@link AcqLicensesResource.retrieveLicenseAmendment}
+	 * @see {@link LicensesResource.retrieveLicenseAmendment}
 	 */
-	retrieveLicenseAmendment: AcqLicensesResource["retrieveLicenseAmendment"] = (
+	retrieveLicenseAmendment: LicensesResource["retrieveLicenseAmendment"] = (
 		...args
 	) => this.licenses.retrieveLicenseAmendment(...args);
 
 	/**
-	 * @see {@link AcqLicensesResource.createLicenseAmendment}
+	 * @see {@link LicensesResource.createLicenseAmendment}
 	 */
-	createLicenseAmendment: AcqLicensesResource["createLicenseAmendment"] = (
+	createLicenseAmendment: LicensesResource["createLicenseAmendment"] = (
 		...args
 	) => this.licenses.createLicenseAmendment(...args);
 
 	/**
-	 * @see {@link AcqLicensesResource.updateLicenseAmendment}
+	 * @see {@link LicensesResource.updateLicenseAmendment}
 	 */
-	updateLicenseAmendment: AcqLicensesResource["updateLicenseAmendment"] = (
+	updateLicenseAmendment: LicensesResource["updateLicenseAmendment"] = (
 		...args
 	) => this.licenses.updateLicenseAmendment(...args);
 
 	/**
-	 * @see {@link AcqLicensesResource.deleteLicenseAmendment}
+	 * @see {@link LicensesResource.deleteLicenseAmendment}
 	 */
-	deleteLicenseAmendment: AcqLicensesResource["deleteLicenseAmendment"] = (
+	deleteLicenseAmendment: LicensesResource["deleteLicenseAmendment"] = (
 		...args
 	) => this.licenses.deleteLicenseAmendment(...args);
 
 	/**
-	 * @see {@link AcqLicensesResource.retrieveLicenseAttachmentsList}
+	 * @see {@link LicensesResource.retrieveLicenseAttachmentsList}
 	 */
-	retrieveLicenseAttachmentsList: AcqLicensesResource["retrieveLicenseAttachmentsList"] =
+	retrieveLicenseAttachmentsList: LicensesResource["retrieveLicenseAttachmentsList"] =
 		(...args) => this.licenses.retrieveLicenseAttachmentsList(...args);
 
 	/**
-	 * @see {@link AcqLicensesResource.retrieveLicenseAttachment}
+	 * @see {@link LicensesResource.retrieveLicenseAttachment}
 	 */
-	retrieveLicenseAttachment: AcqLicensesResource["retrieveLicenseAttachment"] =
-		(...args) => this.licenses.retrieveLicenseAttachment(...args);
+	retrieveLicenseAttachment: LicensesResource["retrieveLicenseAttachment"] = (
+		...args
+	) => this.licenses.retrieveLicenseAttachment(...args);
 
 	/**
-	 * @see {@link AcqLicensesResource.createLicenseAttachment}
+	 * @see {@link LicensesResource.createLicenseAttachment}
 	 */
-	createLicenseAttachment: AcqLicensesResource["createLicenseAttachment"] = (
+	createLicenseAttachment: LicensesResource["createLicenseAttachment"] = (
 		...args
 	) => this.licenses.createLicenseAttachment(...args);
 
 	/**
-	 * @see {@link AcqLicensesResource.updateLicenseAttachment}
+	 * @see {@link LicensesResource.updateLicenseAttachment}
 	 */
-	updateLicenseAttachment: AcqLicensesResource["updateLicenseAttachment"] = (
+	updateLicenseAttachment: LicensesResource["updateLicenseAttachment"] = (
 		...args
 	) => this.licenses.updateLicenseAttachment(...args);
 
 	/**
-	 * @see {@link AcqLicensesResource.deleteLicenseAttachment}
+	 * @see {@link LicensesResource.deleteLicenseAttachment}
 	 */
-	deleteLicenseAttachment: AcqLicensesResource["deleteLicenseAttachment"] = (
+	deleteLicenseAttachment: LicensesResource["deleteLicenseAttachment"] = (
 		...args
 	) => this.licenses.deleteLicenseAttachment(...args);
 
 	// ── PO Lines ──────────────────────────────────────────────────────────────
 
 	/**
-	 * @see {@link AcqPoLinesResource.retrievePoLinesList}
+	 * @see {@link PoLinesResource.retrievePoLinesList}
 	 */
-	retrievePoLinesList: AcqPoLinesResource["retrievePoLinesList"] = (...args) =>
+	retrievePoLinesList: PoLinesResource["retrievePoLinesList"] = (...args) =>
 		this.poLines.retrievePoLinesList(...args);
 
 	/**
-	 * @see {@link AcqPoLinesResource.retrievePoLine}
+	 * @see {@link PoLinesResource.retrievePoLine}
 	 */
-	retrievePoLine: AcqPoLinesResource["retrievePoLine"] = (...args) =>
+	retrievePoLine: PoLinesResource["retrievePoLine"] = (...args) =>
 		this.poLines.retrievePoLine(...args);
 
 	/**
-	 * @see {@link AcqPoLinesResource.createPoLine}
+	 * @see {@link PoLinesResource.createPoLine}
 	 */
-	createPoLine: AcqPoLinesResource["createPoLine"] = (...args) =>
+	createPoLine: PoLinesResource["createPoLine"] = (...args) =>
 		this.poLines.createPoLine(...args);
 
 	/**
-	 * @see {@link AcqPoLinesResource.updatePoLine}
+	 * @see {@link PoLinesResource.updatePoLine}
 	 */
-	updatePoLine: AcqPoLinesResource["updatePoLine"] = (...args) =>
+	updatePoLine: PoLinesResource["updatePoLine"] = (...args) =>
 		this.poLines.updatePoLine(...args);
 
 	/**
-	 * @see {@link AcqPoLinesResource.deletePoLine}
+	 * @see {@link PoLinesResource.deletePoLine}
 	 */
-	deletePoLine: AcqPoLinesResource["deletePoLine"] = (...args) =>
+	deletePoLine: PoLinesResource["deletePoLine"] = (...args) =>
 		this.poLines.deletePoLine(...args);
 
 	/**
-	 * @see {@link AcqPoLinesResource.retrievePoLineItemsList}
+	 * @see {@link PoLinesResource.retrievePoLineItemsList}
 	 */
-	retrievePoLineItemsList: AcqPoLinesResource["retrievePoLineItemsList"] = (
+	retrievePoLineItemsList: PoLinesResource["retrievePoLineItemsList"] = (
 		...args
 	) => this.poLines.retrievePoLineItemsList(...args);
 
 	/**
-	 * @see {@link AcqPoLinesResource.createPoLineItem}
+	 * @see {@link PoLinesResource.createPoLineItem}
 	 */
-	createPoLineItem: AcqPoLinesResource["createPoLineItem"] = (...args) =>
+	createPoLineItem: PoLinesResource["createPoLineItem"] = (...args) =>
 		this.poLines.createPoLineItem(...args);
 
 	/**
-	 * @see {@link AcqPoLinesResource.operatePoLineItem}
+	 * @see {@link PoLinesResource.operatePoLineItem}
 	 */
-	operatePoLineItem: AcqPoLinesResource["operatePoLineItem"] = (...args) =>
+	operatePoLineItem: PoLinesResource["operatePoLineItem"] = (...args) =>
 		this.poLines.operatePoLineItem(...args);
 
 	// ── Vendors ───────────────────────────────────────────────────────────────
 
 	/**
-	 * @see {@link AcqVendorsResource.retrieveVendorsList}
+	 * @see {@link VendorsResource.retrieveVendorsList}
 	 */
-	retrieveVendorsList: AcqVendorsResource["retrieveVendorsList"] = (...args) =>
+	retrieveVendorsList: VendorsResource["retrieveVendorsList"] = (...args) =>
 		this.vendors.retrieveVendorsList(...args);
 
 	/**
-	 * @see {@link AcqVendorsResource.retrieveVendor}
+	 * @see {@link VendorsResource.retrieveVendor}
 	 */
-	retrieveVendor: AcqVendorsResource["retrieveVendor"] = (...args) =>
+	retrieveVendor: VendorsResource["retrieveVendor"] = (...args) =>
 		this.vendors.retrieveVendor(...args);
 
 	/**
-	 * @see {@link AcqVendorsResource.createVendor}
+	 * @see {@link VendorsResource.createVendor}
 	 */
-	createVendor: AcqVendorsResource["createVendor"] = (...args) =>
+	createVendor: VendorsResource["createVendor"] = (...args) =>
 		this.vendors.createVendor(...args);
 
 	/**
-	 * @see {@link AcqVendorsResource.updateVendor}
+	 * @see {@link VendorsResource.updateVendor}
 	 */
-	updateVendor: AcqVendorsResource["updateVendor"] = (...args) =>
+	updateVendor: VendorsResource["updateVendor"] = (...args) =>
 		this.vendors.updateVendor(...args);
 
 	/**
-	 * @see {@link AcqVendorsResource.deleteVendor}
+	 * @see {@link VendorsResource.deleteVendor}
 	 */
-	deleteVendor: AcqVendorsResource["deleteVendor"] = (...args) =>
+	deleteVendor: VendorsResource["deleteVendor"] = (...args) =>
 		this.vendors.deleteVendor(...args);
 
 	/**
-	 * @see {@link AcqVendorsResource.retrieveVendorInvoicesList}
+	 * @see {@link VendorsResource.retrieveVendorInvoicesList}
 	 */
-	retrieveVendorInvoicesList: AcqVendorsResource["retrieveVendorInvoicesList"] =
-		(...args) => this.vendors.retrieveVendorInvoicesList(...args);
+	retrieveVendorInvoicesList: VendorsResource["retrieveVendorInvoicesList"] = (
+		...args
+	) => this.vendors.retrieveVendorInvoicesList(...args);
 
 	/**
-	 * @see {@link AcqVendorsResource.retrieveVendorPoLinesList}
+	 * @see {@link VendorsResource.retrieveVendorPoLinesList}
 	 */
-	retrieveVendorPoLinesList: AcqVendorsResource["retrieveVendorPoLinesList"] = (
+	retrieveVendorPoLinesList: VendorsResource["retrieveVendorPoLinesList"] = (
 		...args
 	) => this.vendors.retrieveVendorPoLinesList(...args);
+
+	// ── Purchase requests ─────────────────────────────────────────────────────
+
+	/**
+	 * @see {@link MiscResource.retrievePurchaseRequestsList}
+	 */
+	retrievePurchaseRequestsList: PurchaseRequestsResource["retrievePurchaseRequestsList"] =
+		(...args) => this.purchaseRequests.retrievePurchaseRequestsList(...args);
+
+	/**
+	 * @see {@link PurchaseRequestsResource.retrievePurchaseRequest}
+	 */
+	retrievePurchaseRequest: PurchaseRequestsResource["retrievePurchaseRequest"] =
+		(...args) => this.purchaseRequests.retrievePurchaseRequest(...args);
+
+	/**
+	 * @see {@link PurchaseRequestsResource.operatePurchaseRequest}
+	 */
+	operatePurchaseRequest: PurchaseRequestsResource["operatePurchaseRequest"] = (
+		...args
+	) => this.purchaseRequests.operatePurchaseRequest(...args);
+
+	/**
+	 * @see {@link PurchaseRequestsResource.updatePurchaseRequest}
+	 */
+	updatePurchaseRequest: PurchaseRequestsResource["updatePurchaseRequest"] = (
+		...args
+	) => this.purchaseRequests.updatePurchaseRequest(...args);
+
+	/**
+	 * @see {@link PurchaseRequestsResource.deletePurchaseRequest}
+	 */
+	deletePurchaseRequest: PurchaseRequestsResource["deletePurchaseRequest"] = (
+		...args
+	) => this.purchaseRequests.deletePurchaseRequest(...args);
 
 	// ── Misc ──────────────────────────────────────────────────────────────────
 
 	/**
-	 * @see {@link AcqMiscResource.retrieveCurrencies}
+	 * @see {@link MiscResource.retrieveCurrencies}
 	 */
-	retrieveCurrencies: AcqMiscResource["retrieveCurrencies"] = (...args) =>
+	retrieveCurrencies: MiscResource["retrieveCurrencies"] = (...args) =>
 		this.misc.retrieveCurrencies(...args);
 
 	/**
-	 * @see {@link AcqMiscResource.retrieveFiscalPeriods}
+	 * @see {@link MiscResource.retrieveFiscalPeriods}
 	 */
-	retrieveFiscalPeriods: AcqMiscResource["retrieveFiscalPeriods"] = (...args) =>
+	retrieveFiscalPeriods: MiscResource["retrieveFiscalPeriods"] = (...args) =>
 		this.misc.retrieveFiscalPeriods(...args);
-
-	/**
-	 * @see {@link AcqMiscResource.retrievePurchaseRequestsList}
-	 */
-	retrievePurchaseRequestsList: AcqMiscResource["retrievePurchaseRequestsList"] =
-		(...args) => this.misc.retrievePurchaseRequestsList(...args);
-
-	/**
-	 * @see {@link AcqMiscResource.retrievePurchaseRequest}
-	 */
-	retrievePurchaseRequest: AcqMiscResource["retrievePurchaseRequest"] = (
-		...args
-	) => this.misc.retrievePurchaseRequest(...args);
-
-	/**
-	 * @see {@link AcqMiscResource.operatePurchaseRequest}
-	 */
-	operatePurchaseRequest: AcqMiscResource["operatePurchaseRequest"] = (
-		...args
-	) => this.misc.operatePurchaseRequest(...args);
-
-	/**
-	 * @see {@link AcqMiscResource.updatePurchaseRequest}
-	 */
-	updatePurchaseRequest: AcqMiscResource["updatePurchaseRequest"] = (...args) =>
-		this.misc.updatePurchaseRequest(...args);
-
-	/**
-	 * @see {@link AcqMiscResource.deletePurchaseRequest}
-	 */
-	deletePurchaseRequest: AcqMiscResource["deletePurchaseRequest"] = (...args) =>
-		this.misc.deletePurchaseRequest(...args);
 }

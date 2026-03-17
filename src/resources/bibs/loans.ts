@@ -7,7 +7,7 @@ import type { Loan, Loans } from "./types";
  * Methods for managing loans on bibliographic records and items
  * in the Alma Bibliographic API.
  */
-export class BibsLoansResource {
+export class LoansResource {
 	constructor(private readonly client: AlmaHttpClient) {}
 
 	/**

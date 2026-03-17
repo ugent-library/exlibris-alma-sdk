@@ -6,7 +6,7 @@ import type { User, UserAttachment, UserPersonalData, Users } from "./types";
 /**
  * Methods for managing user records and user-level resources in the Alma Users API.
  */
-export class UsersUsersResource {
+export class GeneralResource {
 	constructor(private readonly client: AlmaHttpClient) {}
 
 	/**

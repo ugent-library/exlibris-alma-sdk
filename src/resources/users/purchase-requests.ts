@@ -6,7 +6,7 @@ import type { UserPurchaseRequest, UserPurchaseRequests } from "./types";
 /**
  * Methods for managing user purchase requests in the Alma Users API.
  */
-export class UsersPurchaseRequestsResource {
+export class PurchaseRequestsResource {
 	constructor(private readonly client: AlmaHttpClient) {}
 
 	/**

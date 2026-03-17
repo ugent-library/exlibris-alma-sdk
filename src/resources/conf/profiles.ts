@@ -14,7 +14,7 @@ import type {
  * Methods for managing import profiles, integration profiles, and deposit
  * profiles in the Alma Configuration API.
  */
-export class ConfProfilesResource {
+export class ProfilesResource {
 	constructor(private readonly client: AlmaHttpClient) {}
 
 	/**

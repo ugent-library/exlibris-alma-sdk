@@ -8,7 +8,7 @@ import type { AlmaSet, SetMembers, Sets } from "./types";
  *
  * Sets are used to group records for bulk operations.
  */
-export class ConfSetsResource {
+export class SetsResource {
 	constructor(private readonly client: AlmaHttpClient) {}
 
 	/**

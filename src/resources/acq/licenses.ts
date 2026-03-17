@@ -14,7 +14,7 @@ import type {
  * Methods for managing licenses, amendments, and attachments
  * in the Alma Acquisitions API.
  */
-export class AcqLicensesResource {
+export class LicensesResource {
 	constructor(private readonly client: AlmaHttpClient) {}
 
 	/**

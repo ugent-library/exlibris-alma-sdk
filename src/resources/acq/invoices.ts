@@ -14,7 +14,7 @@ import type {
  * Methods for managing invoices, invoice lines, and invoice attachments
  * in the Alma Acquisitions API.
  */
-export class AcqInvoicesResource {
+export class InvoicesResource {
 	constructor(private readonly client: AlmaHttpClient) {}
 
 	/**

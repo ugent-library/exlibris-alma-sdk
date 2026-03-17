@@ -6,7 +6,7 @@ import type { UserDeposit, UserDeposits, UserFee, UserFees } from "./types";
 /**
  * Methods for managing user fees and deposits in the Alma Users API.
  */
-export class UsersFeesResource {
+export class FeesResource {
 	constructor(private readonly client: AlmaHttpClient) {}
 
 	/**

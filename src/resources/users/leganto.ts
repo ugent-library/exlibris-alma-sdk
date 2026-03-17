@@ -6,7 +6,7 @@ import type { LegantoNotifications } from "./types";
 /**
  * Methods for retrieving Leganto notifications for a user.
  */
-export class UsersLegantoResource {
+export class LegantoResource {
 	constructor(private readonly client: AlmaHttpClient) {}
 
 	/**

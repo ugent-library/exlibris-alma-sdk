@@ -12,7 +12,7 @@ import type {
  * Methods for managing requests and request options for bibliographic records
  * and items in the Alma Bibliographic API.
  */
-export class BibsRequestsResource {
+export class RequestsResource {
 	constructor(private readonly client: AlmaHttpClient) {}
 
 	/**

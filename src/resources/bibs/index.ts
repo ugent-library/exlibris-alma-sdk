@@ -1,12 +1,12 @@
 import type { AlmaHttpClient } from "@/client";
 
-import { BibsAuthoritiesResource } from "./authorities";
-import { BibsCatalogResource } from "./catalog";
-import { BibsCollectionsResource } from "./collections";
-import { BibsDigitalResource } from "./digital";
-import { BibsLoansResource } from "./loans";
-import { BibsRemindersResource } from "./reminders";
-import { BibsRequestsResource } from "./requests";
+import { AuthoritiesResource } from "./authorities";
+import { CatalogResource } from "./catalog";
+import { CollectionsResource } from "./collections";
+import { DigitalResource } from "./digital";
+import { LoansResource } from "./loans";
+import { RemindersResource } from "./reminders";
+import { RequestsResource } from "./requests";
 
 export type {
 	Authorities,
@@ -67,508 +67,502 @@ export type {
  */
 export class BibsResource {
 	/** Catalog sub-resource: bibs, holdings, items, portfolios, booking availability. */
-	readonly catalog: BibsCatalogResource;
+	readonly catalog: CatalogResource;
 	/** Loans sub-resource: bib-level and item-level loans. */
-	readonly loans: BibsLoansResource;
+	readonly loans: LoansResource;
 	/** Requests sub-resource: bib-level and item-level requests. */
-	readonly requests: BibsRequestsResource;
+	readonly requests: RequestsResource;
 	/** Collections sub-resource: collections and collection bibs. */
-	readonly collections: BibsCollectionsResource;
+	readonly collections: CollectionsResource;
 	/** Digital sub-resource: representations, files, e-collections. */
-	readonly digital: BibsDigitalResource;
+	readonly digital: DigitalResource;
 	/** Authorities sub-resource: authority records. */
-	readonly authorities: BibsAuthoritiesResource;
+	readonly authorities: AuthoritiesResource;
 	/** Reminders sub-resource: bib-level reminders. */
-	readonly reminders: BibsRemindersResource;
+	readonly reminders: RemindersResource;
 
 	constructor(client: AlmaHttpClient) {
-		this.catalog = new BibsCatalogResource(client);
-		this.loans = new BibsLoansResource(client);
-		this.requests = new BibsRequestsResource(client);
-		this.collections = new BibsCollectionsResource(client);
-		this.digital = new BibsDigitalResource(client);
-		this.authorities = new BibsAuthoritiesResource(client);
-		this.reminders = new BibsRemindersResource(client);
+		this.catalog = new CatalogResource(client);
+		this.loans = new LoansResource(client);
+		this.requests = new RequestsResource(client);
+		this.collections = new CollectionsResource(client);
+		this.digital = new DigitalResource(client);
+		this.authorities = new AuthoritiesResource(client);
+		this.reminders = new RemindersResource(client);
 	}
 
 	// ── Catalog ───────────────────────────────────────────────────────────────
 
 	/**
-	 * @see {@link BibsCatalogResource.retrieveBibs}
+	 * @see {@link CatalogResource.retrieveBibs}
 	 */
-	retrieveBibs: BibsCatalogResource["retrieveBibs"] = (...args) =>
+	retrieveBibs: CatalogResource["retrieveBibs"] = (...args) =>
 		this.catalog.retrieveBibs(...args);
 
 	/**
-	 * @see {@link BibsCatalogResource.retrieveBib}
+	 * @see {@link CatalogResource.retrieveBib}
 	 */
-	retrieveBib: BibsCatalogResource["retrieveBib"] = (...args) =>
+	retrieveBib: CatalogResource["retrieveBib"] = (...args) =>
 		this.catalog.retrieveBib(...args);
 
 	/**
-	 * @see {@link BibsCatalogResource.createBib}
+	 * @see {@link CatalogResource.createBib}
 	 */
-	createBib: BibsCatalogResource["createBib"] = (...args) =>
+	createBib: CatalogResource["createBib"] = (...args) =>
 		this.catalog.createBib(...args);
 
 	/**
-	 * @see {@link BibsCatalogResource.updateBib}
+	 * @see {@link CatalogResource.updateBib}
 	 */
-	updateBib: BibsCatalogResource["updateBib"] = (...args) =>
+	updateBib: CatalogResource["updateBib"] = (...args) =>
 		this.catalog.updateBib(...args);
 
 	/**
-	 * @see {@link BibsCatalogResource.operateBib}
+	 * @see {@link CatalogResource.operateBib}
 	 */
-	operateBib: BibsCatalogResource["operateBib"] = (...args) =>
+	operateBib: CatalogResource["operateBib"] = (...args) =>
 		this.catalog.operateBib(...args);
 
 	/**
-	 * @see {@link BibsCatalogResource.deleteBib}
+	 * @see {@link CatalogResource.deleteBib}
 	 */
-	deleteBib: BibsCatalogResource["deleteBib"] = (...args) =>
+	deleteBib: CatalogResource["deleteBib"] = (...args) =>
 		this.catalog.deleteBib(...args);
 
 	/**
-	 * @see {@link BibsCatalogResource.retrieveHoldingsList}
+	 * @see {@link CatalogResource.retrieveHoldingsList}
 	 */
-	retrieveHoldingsList: BibsCatalogResource["retrieveHoldingsList"] = (
-		...args
-	) => this.catalog.retrieveHoldingsList(...args);
+	retrieveHoldingsList: CatalogResource["retrieveHoldingsList"] = (...args) =>
+		this.catalog.retrieveHoldingsList(...args);
 
 	/**
-	 * @see {@link BibsCatalogResource.retrieveHolding}
+	 * @see {@link CatalogResource.retrieveHolding}
 	 */
-	retrieveHolding: BibsCatalogResource["retrieveHolding"] = (...args) =>
+	retrieveHolding: CatalogResource["retrieveHolding"] = (...args) =>
 		this.catalog.retrieveHolding(...args);
 
 	/**
-	 * @see {@link BibsCatalogResource.createHolding}
+	 * @see {@link CatalogResource.createHolding}
 	 */
-	createHolding: BibsCatalogResource["createHolding"] = (...args) =>
+	createHolding: CatalogResource["createHolding"] = (...args) =>
 		this.catalog.createHolding(...args);
 
 	/**
-	 * @see {@link BibsCatalogResource.updateHolding}
+	 * @see {@link CatalogResource.updateHolding}
 	 */
-	updateHolding: BibsCatalogResource["updateHolding"] = (...args) =>
+	updateHolding: CatalogResource["updateHolding"] = (...args) =>
 		this.catalog.updateHolding(...args);
 
 	/**
-	 * @see {@link BibsCatalogResource.deleteHolding}
+	 * @see {@link CatalogResource.deleteHolding}
 	 */
-	deleteHolding: BibsCatalogResource["deleteHolding"] = (...args) =>
+	deleteHolding: CatalogResource["deleteHolding"] = (...args) =>
 		this.catalog.deleteHolding(...args);
 
 	/**
-	 * @see {@link BibsCatalogResource.retrieveItemsList}
+	 * @see {@link CatalogResource.retrieveItemsList}
 	 */
-	retrieveItemsList: BibsCatalogResource["retrieveItemsList"] = (...args) =>
+	retrieveItemsList: CatalogResource["retrieveItemsList"] = (...args) =>
 		this.catalog.retrieveItemsList(...args);
 
 	/**
-	 * @see {@link BibsCatalogResource.retrieveItem}
+	 * @see {@link CatalogResource.retrieveItem}
 	 */
-	retrieveItem: BibsCatalogResource["retrieveItem"] = (...args) =>
+	retrieveItem: CatalogResource["retrieveItem"] = (...args) =>
 		this.catalog.retrieveItem(...args);
 
 	/**
-	 * @see {@link BibsCatalogResource.createItem}
+	 * @see {@link CatalogResource.createItem}
 	 */
-	createItem: BibsCatalogResource["createItem"] = (...args) =>
+	createItem: CatalogResource["createItem"] = (...args) =>
 		this.catalog.createItem(...args);
 
 	/**
-	 * @see {@link BibsCatalogResource.updateItem}
+	 * @see {@link CatalogResource.updateItem}
 	 */
-	updateItem: BibsCatalogResource["updateItem"] = (...args) =>
+	updateItem: CatalogResource["updateItem"] = (...args) =>
 		this.catalog.updateItem(...args);
 
 	/**
-	 * @see {@link BibsCatalogResource.operateItem}
+	 * @see {@link CatalogResource.operateItem}
 	 */
-	operateItem: BibsCatalogResource["operateItem"] = (...args) =>
+	operateItem: CatalogResource["operateItem"] = (...args) =>
 		this.catalog.operateItem(...args);
 
 	/**
-	 * @see {@link BibsCatalogResource.deleteItem}
+	 * @see {@link CatalogResource.deleteItem}
 	 */
-	deleteItem: BibsCatalogResource["deleteItem"] = (...args) =>
+	deleteItem: CatalogResource["deleteItem"] = (...args) =>
 		this.catalog.deleteItem(...args);
 
 	/**
-	 * @see {@link BibsCatalogResource.retrievePortfoliosList}
+	 * @see {@link CatalogResource.retrievePortfoliosList}
 	 */
-	retrievePortfoliosList: BibsCatalogResource["retrievePortfoliosList"] = (
+	retrievePortfoliosList: CatalogResource["retrievePortfoliosList"] = (
 		...args
 	) => this.catalog.retrievePortfoliosList(...args);
 
 	/**
-	 * @see {@link BibsCatalogResource.retrievePortfolio}
+	 * @see {@link CatalogResource.retrievePortfolio}
 	 */
-	retrievePortfolio: BibsCatalogResource["retrievePortfolio"] = (...args) =>
+	retrievePortfolio: CatalogResource["retrievePortfolio"] = (...args) =>
 		this.catalog.retrievePortfolio(...args);
 
 	/**
-	 * @see {@link BibsCatalogResource.createPortfolio}
+	 * @see {@link CatalogResource.createPortfolio}
 	 */
-	createPortfolio: BibsCatalogResource["createPortfolio"] = (...args) =>
+	createPortfolio: CatalogResource["createPortfolio"] = (...args) =>
 		this.catalog.createPortfolio(...args);
 
 	/**
-	 * @see {@link BibsCatalogResource.updatePortfolio}
+	 * @see {@link CatalogResource.updatePortfolio}
 	 */
-	updatePortfolio: BibsCatalogResource["updatePortfolio"] = (...args) =>
+	updatePortfolio: CatalogResource["updatePortfolio"] = (...args) =>
 		this.catalog.updatePortfolio(...args);
 
 	/**
-	 * @see {@link BibsCatalogResource.deletePortfolio}
+	 * @see {@link CatalogResource.deletePortfolio}
 	 */
-	deletePortfolio: BibsCatalogResource["deletePortfolio"] = (...args) =>
+	deletePortfolio: CatalogResource["deletePortfolio"] = (...args) =>
 		this.catalog.deletePortfolio(...args);
 
 	/**
-	 * @see {@link BibsCatalogResource.retrieveBookingAvailability}
+	 * @see {@link CatalogResource.retrieveBookingAvailability}
 	 */
-	retrieveBookingAvailability: BibsCatalogResource["retrieveBookingAvailability"] =
+	retrieveBookingAvailability: CatalogResource["retrieveBookingAvailability"] =
 		(...args) => this.catalog.retrieveBookingAvailability(...args);
 
 	// ── Loans ─────────────────────────────────────────────────────────────────
 
 	/**
-	 * @see {@link BibsLoansResource.retrieveBibLoansList}
+	 * @see {@link LoansResource.retrieveBibLoansList}
 	 */
-	retrieveBibLoansList: BibsLoansResource["retrieveBibLoansList"] = (...args) =>
+	retrieveBibLoansList: LoansResource["retrieveBibLoansList"] = (...args) =>
 		this.loans.retrieveBibLoansList(...args);
 
 	/**
-	 * @see {@link BibsLoansResource.retrieveBibLoan}
+	 * @see {@link LoansResource.retrieveBibLoan}
 	 */
-	retrieveBibLoan: BibsLoansResource["retrieveBibLoan"] = (...args) =>
+	retrieveBibLoan: LoansResource["retrieveBibLoan"] = (...args) =>
 		this.loans.retrieveBibLoan(...args);
 
 	/**
-	 * @see {@link BibsLoansResource.retrieveItemLoansList}
+	 * @see {@link LoansResource.retrieveItemLoansList}
 	 */
-	retrieveItemLoansList: BibsLoansResource["retrieveItemLoansList"] = (
-		...args
-	) => this.loans.retrieveItemLoansList(...args);
+	retrieveItemLoansList: LoansResource["retrieveItemLoansList"] = (...args) =>
+		this.loans.retrieveItemLoansList(...args);
 
 	/**
-	 * @see {@link BibsLoansResource.retrieveItemLoan}
+	 * @see {@link LoansResource.retrieveItemLoan}
 	 */
-	retrieveItemLoan: BibsLoansResource["retrieveItemLoan"] = (...args) =>
+	retrieveItemLoan: LoansResource["retrieveItemLoan"] = (...args) =>
 		this.loans.retrieveItemLoan(...args);
 
 	/**
-	 * @see {@link BibsLoansResource.createItemLoan}
+	 * @see {@link LoansResource.createItemLoan}
 	 */
-	createItemLoan: BibsLoansResource["createItemLoan"] = (...args) =>
+	createItemLoan: LoansResource["createItemLoan"] = (...args) =>
 		this.loans.createItemLoan(...args);
 
 	/**
-	 * @see {@link BibsLoansResource.updateItemLoan}
+	 * @see {@link LoansResource.updateItemLoan}
 	 */
-	updateItemLoan: BibsLoansResource["updateItemLoan"] = (...args) =>
+	updateItemLoan: LoansResource["updateItemLoan"] = (...args) =>
 		this.loans.updateItemLoan(...args);
 
 	/**
-	 * @see {@link BibsLoansResource.operateItemLoan}
+	 * @see {@link LoansResource.operateItemLoan}
 	 */
-	operateItemLoan: BibsLoansResource["operateItemLoan"] = (...args) =>
+	operateItemLoan: LoansResource["operateItemLoan"] = (...args) =>
 		this.loans.operateItemLoan(...args);
 
 	// ── Requests ──────────────────────────────────────────────────────────────
 
 	/**
-	 * @see {@link BibsRequestsResource.retrieveBibRequestsList}
+	 * @see {@link RequestsResource.retrieveBibRequestsList}
 	 */
-	retrieveBibRequestsList: BibsRequestsResource["retrieveBibRequestsList"] = (
+	retrieveBibRequestsList: RequestsResource["retrieveBibRequestsList"] = (
 		...args
 	) => this.requests.retrieveBibRequestsList(...args);
 
 	/**
-	 * @see {@link BibsRequestsResource.retrieveBibRequest}
+	 * @see {@link RequestsResource.retrieveBibRequest}
 	 */
-	retrieveBibRequest: BibsRequestsResource["retrieveBibRequest"] = (...args) =>
+	retrieveBibRequest: RequestsResource["retrieveBibRequest"] = (...args) =>
 		this.requests.retrieveBibRequest(...args);
 
 	/**
-	 * @see {@link BibsRequestsResource.createBibRequest}
+	 * @see {@link RequestsResource.createBibRequest}
 	 */
-	createBibRequest: BibsRequestsResource["createBibRequest"] = (...args) =>
+	createBibRequest: RequestsResource["createBibRequest"] = (...args) =>
 		this.requests.createBibRequest(...args);
 
 	/**
-	 * @see {@link BibsRequestsResource.updateBibRequest}
+	 * @see {@link RequestsResource.updateBibRequest}
 	 */
-	updateBibRequest: BibsRequestsResource["updateBibRequest"] = (...args) =>
+	updateBibRequest: RequestsResource["updateBibRequest"] = (...args) =>
 		this.requests.updateBibRequest(...args);
 
 	/**
-	 * @see {@link BibsRequestsResource.operateBibRequest}
+	 * @see {@link RequestsResource.operateBibRequest}
 	 */
-	operateBibRequest: BibsRequestsResource["operateBibRequest"] = (...args) =>
+	operateBibRequest: RequestsResource["operateBibRequest"] = (...args) =>
 		this.requests.operateBibRequest(...args);
 
 	/**
-	 * @see {@link BibsRequestsResource.deleteBibRequest}
+	 * @see {@link RequestsResource.deleteBibRequest}
 	 */
-	deleteBibRequest: BibsRequestsResource["deleteBibRequest"] = (...args) =>
+	deleteBibRequest: RequestsResource["deleteBibRequest"] = (...args) =>
 		this.requests.deleteBibRequest(...args);
 
 	/**
-	 * @see {@link BibsRequestsResource.retrieveBibRequestOptions}
+	 * @see {@link RequestsResource.retrieveBibRequestOptions}
 	 */
-	retrieveBibRequestOptions: BibsRequestsResource["retrieveBibRequestOptions"] =
-		(...args) => this.requests.retrieveBibRequestOptions(...args);
+	retrieveBibRequestOptions: RequestsResource["retrieveBibRequestOptions"] = (
+		...args
+	) => this.requests.retrieveBibRequestOptions(...args);
 
 	/**
-	 * @see {@link BibsRequestsResource.retrieveItemRequestsList}
+	 * @see {@link RequestsResource.retrieveItemRequestsList}
 	 */
-	retrieveItemRequestsList: BibsRequestsResource["retrieveItemRequestsList"] = (
+	retrieveItemRequestsList: RequestsResource["retrieveItemRequestsList"] = (
 		...args
 	) => this.requests.retrieveItemRequestsList(...args);
 
 	/**
-	 * @see {@link BibsRequestsResource.retrieveItemRequest}
+	 * @see {@link RequestsResource.retrieveItemRequest}
 	 */
-	retrieveItemRequest: BibsRequestsResource["retrieveItemRequest"] = (
-		...args
-	) => this.requests.retrieveItemRequest(...args);
+	retrieveItemRequest: RequestsResource["retrieveItemRequest"] = (...args) =>
+		this.requests.retrieveItemRequest(...args);
 
 	/**
-	 * @see {@link BibsRequestsResource.createItemRequest}
+	 * @see {@link RequestsResource.createItemRequest}
 	 */
-	createItemRequest: BibsRequestsResource["createItemRequest"] = (...args) =>
+	createItemRequest: RequestsResource["createItemRequest"] = (...args) =>
 		this.requests.createItemRequest(...args);
 
 	/**
-	 * @see {@link BibsRequestsResource.updateItemRequest}
+	 * @see {@link RequestsResource.updateItemRequest}
 	 */
-	updateItemRequest: BibsRequestsResource["updateItemRequest"] = (...args) =>
+	updateItemRequest: RequestsResource["updateItemRequest"] = (...args) =>
 		this.requests.updateItemRequest(...args);
 
 	/**
-	 * @see {@link BibsRequestsResource.operateItemRequest}
+	 * @see {@link RequestsResource.operateItemRequest}
 	 */
-	operateItemRequest: BibsRequestsResource["operateItemRequest"] = (...args) =>
+	operateItemRequest: RequestsResource["operateItemRequest"] = (...args) =>
 		this.requests.operateItemRequest(...args);
 
 	/**
-	 * @see {@link BibsRequestsResource.deleteItemRequest}
+	 * @see {@link RequestsResource.deleteItemRequest}
 	 */
-	deleteItemRequest: BibsRequestsResource["deleteItemRequest"] = (...args) =>
+	deleteItemRequest: RequestsResource["deleteItemRequest"] = (...args) =>
 		this.requests.deleteItemRequest(...args);
 
 	/**
-	 * @see {@link BibsRequestsResource.retrieveItemRequestOptions}
+	 * @see {@link RequestsResource.retrieveItemRequestOptions}
 	 */
-	retrieveItemRequestOptions: BibsRequestsResource["retrieveItemRequestOptions"] =
-		(...args) => this.requests.retrieveItemRequestOptions(...args);
+	retrieveItemRequestOptions: RequestsResource["retrieveItemRequestOptions"] = (
+		...args
+	) => this.requests.retrieveItemRequestOptions(...args);
 
 	/**
-	 * @see {@link BibsRequestsResource.retrieveItemBookingAvailability}
+	 * @see {@link RequestsResource.retrieveItemBookingAvailability}
 	 */
-	retrieveItemBookingAvailability: BibsRequestsResource["retrieveItemBookingAvailability"] =
+	retrieveItemBookingAvailability: RequestsResource["retrieveItemBookingAvailability"] =
 		(...args) => this.requests.retrieveItemBookingAvailability(...args);
 
 	// ── Collections ───────────────────────────────────────────────────────────
 
 	/**
-	 * @see {@link BibsCollectionsResource.retrieveCollections}
+	 * @see {@link CollectionsResource.retrieveCollections}
 	 */
-	retrieveCollections: BibsCollectionsResource["retrieveCollections"] = (
-		...args
-	) => this.collections.retrieveCollections(...args);
+	retrieveCollections: CollectionsResource["retrieveCollections"] = (...args) =>
+		this.collections.retrieveCollections(...args);
 
 	/**
-	 * @see {@link BibsCollectionsResource.retrieveCollection}
+	 * @see {@link CollectionsResource.retrieveCollection}
 	 */
-	retrieveCollection: BibsCollectionsResource["retrieveCollection"] = (
-		...args
-	) => this.collections.retrieveCollection(...args);
+	retrieveCollection: CollectionsResource["retrieveCollection"] = (...args) =>
+		this.collections.retrieveCollection(...args);
 
 	/**
-	 * @see {@link BibsCollectionsResource.createCollection}
+	 * @see {@link CollectionsResource.createCollection}
 	 */
-	createCollection: BibsCollectionsResource["createCollection"] = (...args) =>
+	createCollection: CollectionsResource["createCollection"] = (...args) =>
 		this.collections.createCollection(...args);
 
 	/**
-	 * @see {@link BibsCollectionsResource.updateCollection}
+	 * @see {@link CollectionsResource.updateCollection}
 	 */
-	updateCollection: BibsCollectionsResource["updateCollection"] = (...args) =>
+	updateCollection: CollectionsResource["updateCollection"] = (...args) =>
 		this.collections.updateCollection(...args);
 
 	/**
-	 * @see {@link BibsCollectionsResource.deleteCollection}
+	 * @see {@link CollectionsResource.deleteCollection}
 	 */
-	deleteCollection: BibsCollectionsResource["deleteCollection"] = (...args) =>
+	deleteCollection: CollectionsResource["deleteCollection"] = (...args) =>
 		this.collections.deleteCollection(...args);
 
 	/**
-	 * @see {@link BibsCollectionsResource.retrieveCollectionBibsList}
+	 * @see {@link CollectionsResource.retrieveCollectionBibsList}
 	 */
-	retrieveCollectionBibsList: BibsCollectionsResource["retrieveCollectionBibsList"] =
+	retrieveCollectionBibsList: CollectionsResource["retrieveCollectionBibsList"] =
 		(...args) => this.collections.retrieveCollectionBibsList(...args);
 
-	/** @see {@link BibsCollectionsResource.addBibToCollection} */
-	addBibToCollection: BibsCollectionsResource["addBibToCollection"] = (
-		...args
-	) => this.collections.addBibToCollection(...args);
+	/** @see {@link CollectionsResource.addBibToCollection} */
+	addBibToCollection: CollectionsResource["addBibToCollection"] = (...args) =>
+		this.collections.addBibToCollection(...args);
 
 	/**
-	 * @see {@link BibsCollectionsResource.removeBibFromCollection}
+	 * @see {@link CollectionsResource.removeBibFromCollection}
 	 */
-	removeBibFromCollection: BibsCollectionsResource["removeBibFromCollection"] =
-		(...args) => this.collections.removeBibFromCollection(...args);
+	removeBibFromCollection: CollectionsResource["removeBibFromCollection"] = (
+		...args
+	) => this.collections.removeBibFromCollection(...args);
 
 	// ── Digital ───────────────────────────────────────────────────────────────
 
 	/**
-	 * @see {@link BibsDigitalResource.retrieveRepresentationsList}
+	 * @see {@link DigitalResource.retrieveRepresentationsList}
 	 */
-	retrieveRepresentationsList: BibsDigitalResource["retrieveRepresentationsList"] =
+	retrieveRepresentationsList: DigitalResource["retrieveRepresentationsList"] =
 		(...args) => this.digital.retrieveRepresentationsList(...args);
 
 	/**
-	 * @see {@link BibsDigitalResource.retrieveRepresentation}
+	 * @see {@link DigitalResource.retrieveRepresentation}
 	 */
-	retrieveRepresentation: BibsDigitalResource["retrieveRepresentation"] = (
+	retrieveRepresentation: DigitalResource["retrieveRepresentation"] = (
 		...args
 	) => this.digital.retrieveRepresentation(...args);
 
 	/**
-	 * @see {@link BibsDigitalResource.createRepresentation}
+	 * @see {@link DigitalResource.createRepresentation}
 	 */
-	createRepresentation: BibsDigitalResource["createRepresentation"] = (
-		...args
-	) => this.digital.createRepresentation(...args);
+	createRepresentation: DigitalResource["createRepresentation"] = (...args) =>
+		this.digital.createRepresentation(...args);
 
 	/**
-	 * @see {@link BibsDigitalResource.updateRepresentation}
+	 * @see {@link DigitalResource.updateRepresentation}
 	 */
-	updateRepresentation: BibsDigitalResource["updateRepresentation"] = (
-		...args
-	) => this.digital.updateRepresentation(...args);
+	updateRepresentation: DigitalResource["updateRepresentation"] = (...args) =>
+		this.digital.updateRepresentation(...args);
 
 	/**
-	 * @see {@link BibsDigitalResource.deleteRepresentation}
+	 * @see {@link DigitalResource.deleteRepresentation}
 	 */
-	deleteRepresentation: BibsDigitalResource["deleteRepresentation"] = (
-		...args
-	) => this.digital.deleteRepresentation(...args);
+	deleteRepresentation: DigitalResource["deleteRepresentation"] = (...args) =>
+		this.digital.deleteRepresentation(...args);
 
 	/**
-	 * @see {@link BibsDigitalResource.retrieveRepresentationFilesList}
+	 * @see {@link DigitalResource.retrieveRepresentationFilesList}
 	 */
-	retrieveRepresentationFilesList: BibsDigitalResource["retrieveRepresentationFilesList"] =
+	retrieveRepresentationFilesList: DigitalResource["retrieveRepresentationFilesList"] =
 		(...args) => this.digital.retrieveRepresentationFilesList(...args);
 
 	/**
-	 * @see {@link BibsDigitalResource.retrieveRepresentationFile}
+	 * @see {@link DigitalResource.retrieveRepresentationFile}
 	 */
-	retrieveRepresentationFile: BibsDigitalResource["retrieveRepresentationFile"] =
-		(...args) => this.digital.retrieveRepresentationFile(...args);
+	retrieveRepresentationFile: DigitalResource["retrieveRepresentationFile"] = (
+		...args
+	) => this.digital.retrieveRepresentationFile(...args);
 
 	/**
-	 * @see {@link BibsDigitalResource.createRepresentationFile}
+	 * @see {@link DigitalResource.createRepresentationFile}
 	 */
-	createRepresentationFile: BibsDigitalResource["createRepresentationFile"] = (
+	createRepresentationFile: DigitalResource["createRepresentationFile"] = (
 		...args
 	) => this.digital.createRepresentationFile(...args);
 
 	/**
-	 * @see {@link BibsDigitalResource.updateRepresentationFile}
+	 * @see {@link DigitalResource.updateRepresentationFile}
 	 */
-	updateRepresentationFile: BibsDigitalResource["updateRepresentationFile"] = (
+	updateRepresentationFile: DigitalResource["updateRepresentationFile"] = (
 		...args
 	) => this.digital.updateRepresentationFile(...args);
 
 	/**
-	 * @see {@link BibsDigitalResource.deleteRepresentationFile}
+	 * @see {@link DigitalResource.deleteRepresentationFile}
 	 */
-	deleteRepresentationFile: BibsDigitalResource["deleteRepresentationFile"] = (
+	deleteRepresentationFile: DigitalResource["deleteRepresentationFile"] = (
 		...args
 	) => this.digital.deleteRepresentationFile(...args);
 
 	/**
-	 * @see {@link BibsDigitalResource.retrieveECollectionsList}
+	 * @see {@link DigitalResource.retrieveECollectionsList}
 	 */
-	retrieveECollectionsList: BibsDigitalResource["retrieveECollectionsList"] = (
+	retrieveECollectionsList: DigitalResource["retrieveECollectionsList"] = (
 		...args
 	) => this.digital.retrieveECollectionsList(...args);
 
 	/**
-	 * @see {@link BibsDigitalResource.retrieveECollection}
+	 * @see {@link DigitalResource.retrieveECollection}
 	 */
-	retrieveECollection: BibsDigitalResource["retrieveECollection"] = (...args) =>
+	retrieveECollection: DigitalResource["retrieveECollection"] = (...args) =>
 		this.digital.retrieveECollection(...args);
 
 	// ── Authorities ───────────────────────────────────────────────────────────
 
 	/**
-	 * @see {@link BibsAuthoritiesResource.retrieveAuthorities}
+	 * @see {@link AuthoritiesResource.retrieveAuthorities}
 	 */
-	retrieveAuthorities: BibsAuthoritiesResource["retrieveAuthorities"] = (
-		...args
-	) => this.authorities.retrieveAuthorities(...args);
+	retrieveAuthorities: AuthoritiesResource["retrieveAuthorities"] = (...args) =>
+		this.authorities.retrieveAuthorities(...args);
 
 	/**
-	 * @see {@link BibsAuthoritiesResource.retrieveAuthority}
+	 * @see {@link AuthoritiesResource.retrieveAuthority}
 	 */
-	retrieveAuthority: BibsAuthoritiesResource["retrieveAuthority"] = (...args) =>
+	retrieveAuthority: AuthoritiesResource["retrieveAuthority"] = (...args) =>
 		this.authorities.retrieveAuthority(...args);
 
 	/**
-	 * @see {@link BibsAuthoritiesResource.createAuthority}
+	 * @see {@link AuthoritiesResource.createAuthority}
 	 */
-	createAuthority: BibsAuthoritiesResource["createAuthority"] = (...args) =>
+	createAuthority: AuthoritiesResource["createAuthority"] = (...args) =>
 		this.authorities.createAuthority(...args);
 
 	/**
-	 * @see {@link BibsAuthoritiesResource.updateAuthority}
+	 * @see {@link AuthoritiesResource.updateAuthority}
 	 */
-	updateAuthority: BibsAuthoritiesResource["updateAuthority"] = (...args) =>
+	updateAuthority: AuthoritiesResource["updateAuthority"] = (...args) =>
 		this.authorities.updateAuthority(...args);
 
 	/**
-	 * @see {@link BibsAuthoritiesResource.deleteAuthority}
+	 * @see {@link AuthoritiesResource.deleteAuthority}
 	 */
-	deleteAuthority: BibsAuthoritiesResource["deleteAuthority"] = (...args) =>
+	deleteAuthority: AuthoritiesResource["deleteAuthority"] = (...args) =>
 		this.authorities.deleteAuthority(...args);
 
 	// ── Reminders ─────────────────────────────────────────────────────────────
 
 	/**
-	 * @see {@link BibsRemindersResource.retrieveBibRemindersList}
+	 * @see {@link RemindersResource.retrieveBibRemindersList}
 	 */
-	retrieveBibRemindersList: BibsRemindersResource["retrieveBibRemindersList"] =
-		(...args) => this.reminders.retrieveBibRemindersList(...args);
-
-	/**
-	 * @see {@link BibsRemindersResource.retrieveBibReminder}
-	 */
-	retrieveBibReminder: BibsRemindersResource["retrieveBibReminder"] = (
+	retrieveBibRemindersList: RemindersResource["retrieveBibRemindersList"] = (
 		...args
-	) => this.reminders.retrieveBibReminder(...args);
+	) => this.reminders.retrieveBibRemindersList(...args);
 
 	/**
-	 * @see {@link BibsRemindersResource.createBibReminder}
+	 * @see {@link RemindersResource.retrieveBibReminder}
 	 */
-	createBibReminder: BibsRemindersResource["createBibReminder"] = (...args) =>
+	retrieveBibReminder: RemindersResource["retrieveBibReminder"] = (...args) =>
+		this.reminders.retrieveBibReminder(...args);
+
+	/**
+	 * @see {@link RemindersResource.createBibReminder}
+	 */
+	createBibReminder: RemindersResource["createBibReminder"] = (...args) =>
 		this.reminders.createBibReminder(...args);
 
 	/**
-	 * @see {@link BibsRemindersResource.updateBibReminder}
+	 * @see {@link RemindersResource.updateBibReminder}
 	 */
-	updateBibReminder: BibsRemindersResource["updateBibReminder"] = (...args) =>
+	updateBibReminder: RemindersResource["updateBibReminder"] = (...args) =>
 		this.reminders.updateBibReminder(...args);
 
 	/**
-	 * @see {@link BibsRemindersResource.deleteBibReminder}
+	 * @see {@link RemindersResource.deleteBibReminder}
 	 */
-	deleteBibReminder: BibsRemindersResource["deleteBibReminder"] = (...args) =>
+	deleteBibReminder: RemindersResource["deleteBibReminder"] = (...args) =>
 		this.reminders.deleteBibReminder(...args);
 }

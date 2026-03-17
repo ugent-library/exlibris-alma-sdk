@@ -17,7 +17,7 @@ import type {
  * Methods for managing bibliographic records, holdings, items, and portfolios
  * in the Alma Bibliographic API.
  */
-export class BibsCatalogResource {
+export class CatalogResource {
 	constructor(private readonly client: AlmaHttpClient) {}
 
 	/**

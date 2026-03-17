@@ -11,7 +11,7 @@ import type {
  * Methods for managing user requests and resource sharing requests
  * in the Alma Users API.
  */
-export class UsersRequestsResource {
+export class RequestsResource {
 	constructor(private readonly client: AlmaHttpClient) {}
 
 	/**

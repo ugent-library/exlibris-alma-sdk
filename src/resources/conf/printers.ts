@@ -6,7 +6,7 @@ import type { Printer, Printers } from "./types";
 /**
  * Methods for managing printers in the Alma Configuration API.
  */
-export class ConfPrintersResource {
+export class PrintersResource {
 	constructor(private readonly client: AlmaHttpClient) {}
 
 	/**
