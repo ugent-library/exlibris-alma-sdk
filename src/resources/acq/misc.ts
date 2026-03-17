@@ -9,8 +9,8 @@ import type {
 } from "./types";
 
 /**
- * Methods for miscellaneous acquisitions resources: currencies, fiscal periods,
- * purchase requests, and the API test endpoint.
+ * Methods for miscellaneous acquisitions resources: currencies, fiscal periods and
+ * purchase requests.
  */
 export class AcqMiscResource {
 	constructor(private readonly client: AlmaHttpClient) {}

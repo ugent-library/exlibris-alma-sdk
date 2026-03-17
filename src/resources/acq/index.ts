@@ -47,7 +47,7 @@ export type {
  * - `licenses` - licenses, amendments, attachments
  * - `poLines` - PO lines and PO line items
  * - `vendors` - vendors, vendor invoices, vendor PO lines
- * - `misc` - currencies, fiscal periods, purchase requests, test endpoint
+ * - `misc` - currencies, fiscal periods, purchase requests
  *
  * All methods can also be accessed directly on this resource object via
  * convenience delegations.
