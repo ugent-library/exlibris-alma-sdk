@@ -1,5 +1,5 @@
 {
-	"files": [
-		"https://developers.exlibrisgroup.com/wp-content/uploads/alma/openapi/conf.json"
-	]
+	"openApiDefinitions": {
+		"https://developers.exlibrisgroup.com/wp-content/uploads/alma/openapi/conf.json": {}
+	}
 }

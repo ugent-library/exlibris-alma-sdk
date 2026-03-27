@@ -5,10 +5,11 @@ import { $ } from "bun";
 import config from "./config.json" with { type: "json" };
 import type { OpenApi } from "./types";
 
+const openApiDefinitionsUrls = Object.keys(config.openApiDefinitions);
 const filesToDownloadMap = new Map<string, boolean | null>();
 
 export async function downloadFiles(): Promise<void> {
-	config.files.forEach((url) => {
+	openApiDefinitionsUrls.forEach((url) => {
 		filesToDownloadMap.set(url, null);
 	});
 
@@ -38,7 +39,7 @@ async function downloadFile(url: string) {
 	}
 
 	const definition = (await response.json()) as OpenApi;
-	const isRef = !config.files.includes(url);
+	const isRef = !openApiDefinitionsUrls.includes(url);
 
 	await saveFile(url, definition, isRef);
 
