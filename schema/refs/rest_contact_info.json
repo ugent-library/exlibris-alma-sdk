@@ -1,0 +1,305 @@
+{
+	"rest_contact_info": {
+		"description": "Information about a Contact in Alma.",
+		"$ref": "#/contact_info"
+	},
+	"contact_info": {
+		"description": "List of the contact information. In the PUT action, this list will replace the existing contacts.",
+		"type": "object",
+		"xml": {
+			"name": "contact_info"
+		},
+		"properties": {
+			"address": {
+				"$ref": "#/addresses",
+				"example": "",
+				"description": "List of contact's addresses."
+			},
+			"phone": {
+				"$ref": "#/phones",
+				"example": "",
+				"description": "List of contact's phone numbers."
+			},
+			"email": {
+				"$ref": "#/emails",
+				"example": "",
+				"description": "List of contact's email addresses."
+			}
+		}
+	},
+	"addresses": {
+		"description": "List of contact's addresses. In the PUT action the incoming list will replace the existing list. If the incoming list is empty, the existing list will be deleted.",
+		"type": "array",
+		"xml": {
+			"wrapped": true,
+			"name": "addresses"
+		},
+		"items": {
+			"$ref": "#/address",
+			"example": "",
+			"xml": {
+				"name": "address"
+			}
+		}
+	},
+	"phones": {
+		"description": "List of contact's phone numbers. In the PUT action the incoming list will replace the existing list. If the incoming list is empty, the existing list will be deleted.",
+		"type": "array",
+		"xml": {
+			"wrapped": true,
+			"name": "phones"
+		},
+		"items": {
+			"$ref": "#/phone",
+			"example": "",
+			"xml": {
+				"name": "phone"
+			}
+		}
+	},
+	"emails": {
+		"description": "List of contact's email addresses. In the PUT action the incoming list will replace the existing list. If the incoming list is empty, the existing list will be deleted.",
+		"type": "array",
+		"xml": {
+			"wrapped": true,
+			"name": "emails"
+		},
+		"items": {
+			"$ref": "#/email",
+			"example": "",
+			"xml": {
+				"name": "email"
+			}
+		}
+	},
+	"address": {
+		"description": "A contact's specific address.",
+		"type": "object",
+		"required": ["line1"],
+		"xml": {
+			"name": "address"
+		},
+		"properties": {
+			"preferred": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Indication whether the address is the preferred one.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"line1": {
+				"type": "string",
+				"example": "",
+				"description": "Line 1 of the address."
+			},
+			"line2": {
+				"type": "string",
+				"example": "",
+				"description": "Line 2 of the address."
+			},
+			"line3": {
+				"type": "string",
+				"example": "",
+				"description": "Line 3 of the address."
+			},
+			"line4": {
+				"type": "string",
+				"example": "",
+				"description": "Line 4 of the address."
+			},
+			"line5": {
+				"type": "string",
+				"example": "",
+				"description": "Line 5 of the address."
+			},
+			"city": {
+				"type": "string",
+				"example": "",
+				"description": "The address' relevant city."
+			},
+			"state_province": {
+				"type": "string",
+				"example": "",
+				"description": "The address' relevant state."
+			},
+			"postal_code": {
+				"type": "string",
+				"example": "",
+				"description": "The address' relevant postal code."
+			},
+			"country": {
+				"type": "object",
+				"description": "The address' relevant country. Possible codes are listed in 'Country Codes' code table.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "VUT",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"address_note": {
+				"type": "string",
+				"example": "",
+				"description": "The address' related note."
+			},
+			"start_date": {
+				"type": "string",
+				"format": "date",
+				"example": "2024-05-30Z",
+				"description": "The date from which the address is deemed to be active."
+			},
+			"end_date": {
+				"type": "string",
+				"format": "date",
+				"example": "2024-05-30Z",
+				"description": "The date after which the address is no longer active."
+			},
+			"address_type": {
+				"description": "Address types.",
+				"type": "array",
+				"xml": {
+					"wrapped": true,
+					"name": "address_types"
+				},
+				"items": {
+					"type": "string",
+					"enum": [
+						"order",
+						"claim",
+						"payment",
+						"returns",
+						"billing",
+						"shipping",
+						"office",
+						"ALL"
+					],
+					"xml": {
+						"name": "address_type"
+					}
+				}
+			}
+		}
+	},
+	"phone": {
+		"description": "A contact's specific phone number.",
+		"type": "object",
+		"xml": {
+			"name": "phone"
+		},
+		"properties": {
+			"preferred": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Indication whether the address is the preferred one.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"preferredSMS": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Indication whether the phone number is the preferred one for SMS sending.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"phone_number": {
+				"type": "string",
+				"example": "",
+				"description": "The phone number."
+			},
+			"phone_type": {
+				"description": "Phone types.",
+				"type": "array",
+				"xml": {
+					"wrapped": true,
+					"name": "phone_types"
+				},
+				"items": {
+					"type": "string",
+					"enum": [
+						"order_phone",
+						"claim_phone",
+						"payment_phone",
+						"returns_phone",
+						"order_fax",
+						"claim_fax",
+						"payment_fax",
+						"returns_fax",
+						"error_reporting",
+						"general",
+						"ALL"
+					],
+					"xml": {
+						"name": "phone_type"
+					}
+				}
+			}
+		}
+	},
+	"email": {
+		"description": "A contact's specific email address.",
+		"type": "object",
+		"xml": {
+			"name": "email"
+		},
+		"properties": {
+			"preferred": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Indication whether the email address is the preferred one.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"email_address": {
+				"type": "string",
+				"example": "",
+				"description": "The email address."
+			},
+			"description": {
+				"type": "string",
+				"example": "",
+				"description": "The email address' related description."
+			},
+			"email_type": {
+				"description": "Email types.",
+				"type": "array",
+				"xml": {
+					"wrapped": true,
+					"name": "email_types"
+				},
+				"items": {
+					"type": "string",
+					"enum": [
+						"order_mail",
+						"claim_mail",
+						"payment_mail",
+						"returns_mail",
+						"personal",
+						"school",
+						"work",
+						"order",
+						"queries",
+						"error_reporting",
+						"general",
+						"ALL"
+					],
+					"xml": {
+						"name": "email_type"
+					}
+				}
+			}
+		}
+	}
+}

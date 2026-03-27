@@ -1,0 +1,27 @@
+{
+	"rest_member-post": {
+		"description": "A member of a set is an entity of the set's content type. The set members can be permanent (in case the set is itemized) or a result of a search query (in case the set is logical).",
+		"$ref": "#/member"
+	},
+	"member": {
+		"description": "A member of the set.",
+		"type": "object",
+		"xml": {
+			"name": "member"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"id": {
+				"type": "string",
+				"example": "99100045050001021",
+				"description": "The member id. Mandatory in the POST action, and must be an id on an existing entity of the set's content type."
+			}
+		}
+	}
+}

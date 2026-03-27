@@ -1,0 +1,519 @@
+{
+	"rest_department": {
+		"description": "A department in Alma represents a location within a library or institution where a service is performed.",
+		"$ref": "#/department"
+	},
+	"department": {
+		"description": "Department Object.",
+		"type": "object",
+		"required": ["code", "name"],
+		"xml": {
+			"name": "department"
+		},
+		"properties": {
+			"code": {
+				"type": "string",
+				"example": "DIGI_DEPT_INST",
+				"description": "The department code."
+			},
+			"name": {
+				"type": "string",
+				"example": "Institutional Digitization Department",
+				"description": "The department name."
+			},
+			"description": {
+				"type": "string",
+				"example": "Digitization Department at the Main Library",
+				"description": "The department description."
+			},
+			"type": {
+				"type": "object",
+				"description": "The department type.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"work_days": {
+				"type": "integer",
+				"format": "int32",
+				"example": "9999",
+				"description": "The department work days."
+			},
+			"map": {
+				"type": "string",
+				"example": "",
+				"description": "The department map."
+			},
+			"printer": {
+				"type": "object",
+				"description": "The department printer.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Alma Printing",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "alma",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"owner": {
+				"type": "object",
+				"description": "The department owner which may be a library or an institution.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Digital and Electronic Rsources",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "DIG_ELECT",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"library": {
+				"$ref": "#/served_libraries",
+				"example": "",
+				"description": "List of libraries that the department works with."
+			},
+			"contact_info": {
+				"$ref": "#/contact_info",
+				"example": "",
+				"description": "List of the departments contact information."
+			},
+			"operator": {
+				"$ref": "#/operators",
+				"example": "",
+				"description": "List of operators for the department."
+			},
+			"circ_desk": {
+				"type": "object",
+				"description": "The Circulation Desk for which the department is managed by.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			}
+		}
+	},
+	"served_libraries": {
+		"description": "List of libraries related to the department.",
+		"type": "array",
+		"xml": {
+			"wrapped": true,
+			"name": "served_libraries"
+		},
+		"items": {
+			"type": "object",
+			"description": "Code of the specific library.",
+			"properties": {
+				"desc": {
+					"type": "string",
+					"example": "The Main Library",
+					"xml": {
+						"attribute": true
+					}
+				},
+				"value": {
+					"type": "string",
+					"example": "MAIN",
+					"xml": {
+						"name": "xml_value"
+					}
+				}
+			},
+			"xml": {
+				"name": "library"
+			}
+		}
+	},
+	"contact_info": {
+		"description": "All of the the department contact information.",
+		"type": "object",
+		"xml": {
+			"name": "contact_info"
+		},
+		"properties": {
+			"address": {
+				"$ref": "#/addresses",
+				"example": "",
+				"description": "List of contact mail addresses."
+			},
+			"email": {
+				"$ref": "#/emails",
+				"example": "",
+				"description": "List of contact email addresses."
+			},
+			"phone": {
+				"$ref": "#/phones",
+				"example": "",
+				"description": "List of contact phone numbers."
+			}
+		}
+	},
+	"emails": {
+		"description": "List of department email addresses.",
+		"type": "array",
+		"xml": {
+			"wrapped": true,
+			"name": "emails"
+		},
+		"items": {
+			"$ref": "#/email",
+			"example": "",
+			"xml": {
+				"name": "email"
+			}
+		}
+	},
+	"email": {
+		"description": "Specific department email address.",
+		"type": "object",
+		"xml": {
+			"name": "email"
+		},
+		"properties": {
+			"preferred": {
+				"type": "boolean",
+				"example": "true",
+				"description": "Indication whether the email address is the preferred one. Only one address can be defined as preferred.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"email_address": {
+				"type": "string",
+				"example": "digit@reedmemorial.edu",
+				"description": "The email address. Mandatory."
+			},
+			"description": {
+				"type": "string",
+				"example": "Digitization Department Email Address",
+				"description": "The email address' related description."
+			},
+			"email_type": {
+				"description": "The different email types. Mandatory.",
+				"type": "array",
+				"xml": {
+					"wrapped": true,
+					"name": "email_types"
+				},
+				"items": {
+					"type": "object",
+					"description": "Possible codes are listed in the 'UserEmailTypes' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API).",
+					"properties": {
+						"desc": {
+							"type": "string",
+							"example": "Departmental",
+							"xml": {
+								"attribute": true
+							}
+						},
+						"value": {
+							"type": "string",
+							"example": "departmental",
+							"xml": {
+								"name": "xml_value"
+							}
+						}
+					},
+					"xml": {
+						"name": "email_type"
+					}
+				}
+			}
+		}
+	},
+	"phones": {
+		"description": "List of department phone numbers.",
+		"type": "array",
+		"xml": {
+			"wrapped": true,
+			"name": "phones"
+		},
+		"items": {
+			"$ref": "#/phone",
+			"example": "",
+			"xml": {
+				"name": "phone"
+			}
+		}
+	},
+	"phone": {
+		"description": "Specific department phone number.",
+		"type": "object",
+		"xml": {
+			"name": "phone"
+		},
+		"properties": {
+			"preferred": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Indication whether the phone number is the preferred one. Only one address can be defined as preferred.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"preferred_sms": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Indication whether the phone number is the preferred one for SMS sending. Only one phone number can be defined as preferred.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"phone_number": {
+				"type": "string",
+				"example": "234-546-5698",
+				"description": "The phone number. Mandatory."
+			},
+			"phone_type": {
+				"description": "The different Phone types. Mandatory.",
+				"type": "array",
+				"xml": {
+					"wrapped": true,
+					"name": "phone_types"
+				},
+				"items": {
+					"type": "object",
+					"description": "Possible values are listed in the 'UserPhoneTypes' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API).",
+					"properties": {
+						"desc": {
+							"type": "string",
+							"example": "Departmental",
+							"xml": {
+								"attribute": true
+							}
+						},
+						"value": {
+							"type": "string",
+							"example": "departmental",
+							"xml": {
+								"name": "xml_value"
+							}
+						}
+					},
+					"xml": {
+						"name": "phone_type"
+					}
+				}
+			}
+		}
+	},
+	"addresses": {
+		"description": "List of department addresses.",
+		"type": "array",
+		"xml": {
+			"wrapped": true,
+			"name": "addresses"
+		},
+		"items": {
+			"$ref": "#/address",
+			"example": "",
+			"xml": {
+				"name": "address"
+			}
+		}
+	},
+	"address": {
+		"description": "Specific department address.",
+		"type": "object",
+		"xml": {
+			"name": "address"
+		},
+		"properties": {
+			"preferred": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Indication whether the address is the preferred one. Only one address can be defined as preferred.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"line1": {
+				"type": "string",
+				"example": "3459 W. Monroe Way",
+				"description": "Line 1 of the address. Mandatory."
+			},
+			"line2": {
+				"type": "string",
+				"example": "",
+				"description": "Line 2 of the address."
+			},
+			"line3": {
+				"type": "string",
+				"example": "",
+				"description": "Line 3 of the address."
+			},
+			"line4": {
+				"type": "string",
+				"example": "",
+				"description": "Line 4 of the address."
+			},
+			"line5": {
+				"type": "string",
+				"example": "",
+				"description": "Line 5 of the address."
+			},
+			"city": {
+				"type": "string",
+				"example": "Scottsdale",
+				"description": "The address' relevant city. Mandatory."
+			},
+			"state_province": {
+				"type": "string",
+				"example": "AZ",
+				"description": "The address' relevant state."
+			},
+			"postal_code": {
+				"type": "string",
+				"example": "85054",
+				"description": "The address' relevant postal code."
+			},
+			"country": {
+				"type": "object",
+				"description": "The address' relevant country. Possible codes are listed in the 'Country Codes' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API).",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "USA",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"address_note": {
+				"type": "string",
+				"example": "",
+				"description": "The address' related note."
+			},
+			"start_date": {
+				"type": "string",
+				"format": "date",
+				"example": "2024-05-30Z",
+				"description": "The date from which the address is deemed to be active."
+			},
+			"end_date": {
+				"type": "string",
+				"format": "date",
+				"example": "2024-05-30Z",
+				"description": "The date after which the address is no longer active."
+			},
+			"address_type": {
+				"description": "Address types. Mandatory.",
+				"type": "array",
+				"xml": {
+					"wrapped": true,
+					"name": "address_types"
+				},
+				"items": {
+					"type": "object",
+					"description": "Possible values are listed in the 'UserAddressTypes' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API).",
+					"properties": {
+						"desc": {
+							"type": "string",
+							"example": "Primary",
+							"xml": {
+								"attribute": true
+							}
+						},
+						"value": {
+							"type": "string",
+							"example": "primary",
+							"xml": {
+								"name": "xml_value"
+							}
+						}
+					},
+					"xml": {
+						"name": "address_type"
+					}
+				}
+			}
+		}
+	},
+	"operators": {
+		"description": "List of operators for the department.",
+		"type": "array",
+		"xml": {
+			"wrapped": true,
+			"name": "operators"
+		},
+		"items": {
+			"$ref": "#/operator",
+			"example": "",
+			"xml": {
+				"name": "operator"
+			}
+		}
+	},
+	"operator": {
+		"description": "A particular operator.",
+		"type": "object",
+		"xml": {
+			"name": "operator"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "https://api-na.hosted.exlibrisgroup.com/almaws/v1/users/automatic.tester",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"primary_id": {
+				"type": "string",
+				"example": "id1",
+				"description": "The primary identifying value."
+			},
+			"full_name": {
+				"type": "string",
+				"example": "Tester, Automatic",
+				"description": "The user full name."
+			}
+		}
+	}
+}

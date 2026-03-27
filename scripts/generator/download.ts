@@ -1,6 +1,7 @@
 import path from "node:path";
 
 import { $ } from "bun";
+import { isPlainObject } from "es-toolkit/predicate";
 
 import config from "./config.json" with { type: "json" };
 import type { OpenApi } from "./types";
@@ -21,12 +22,13 @@ export async function downloadFiles(): Promise<void> {
 
 	console.log("All files downloaded and formatted successfully.");
 }
+
 async function startToDownloadFiles() {
-	await Promise.all(
-		Array.from(filesToDownloadMap.entries())
-			.filter(([_, d]) => d === null)
-			.map(([url]) => downloadFile(url)),
-	);
+	const newFiles = Array.from(filesToDownloadMap.entries())
+		.filter(([_, status]) => status === null)
+		.map(([url]) => url);
+
+	await Promise.all(newFiles.map(downloadFile));
 }
 
 async function downloadFile(url: string) {
@@ -45,9 +47,7 @@ async function downloadFile(url: string) {
 
 	filesToDownloadMap.set(url, true); // Mark as completed
 
-	if (!isRef) {
-		findExternalReferences(definition);
-	}
+	findExternalReferences(definition, url);
 }
 
 async function saveFile(url: string, data: OpenApi, isRef: boolean) {
@@ -61,32 +61,24 @@ async function saveFile(url: string, data: OpenApi, isRef: boolean) {
 	console.log(`Downloaded and saved ${fileName}`);
 }
 
-function findExternalReferences(definition: OpenApi) {
-	Object.values(definition.paths).forEach((pathConfig) => {
-		Object.values(pathConfig).forEach((methodConfig) => {
-			verifyRef(
-				methodConfig.requestBody?.content["application/json"]?.schema.$ref,
-			);
-
-			Object.values(methodConfig.responses).forEach((response) => {
-				verifyRef(response.content?.["application/json"]?.schema.$ref);
-			});
-		});
-	});
+function findExternalReferences(obj: Record<string, unknown>, baseUrl: string) {
+	for (const key in obj) {
+		if (key === "$ref" && typeof obj[key] === "string") {
+			verifyRef(obj[key], baseUrl);
+		} else if (isPlainObject(obj[key])) {
+			findExternalReferences(obj[key], baseUrl);
+		}
+	}
 }
 
-function verifyRef(ref: string | undefined) {
+function verifyRef(ref: string | undefined, baseUrl: string) {
 	if (!ref) return;
 
-	if (!ref.startsWith("http")) {
-		return;
-	}
+	const fullRefUrl = new URL(ref, ref.startsWith("http") ? undefined : baseUrl);
+	const refUrl = `${fullRefUrl.origin}${fullRefUrl.pathname}`;
 
-	const url = new URL(ref);
-	const baseUrl = `${url.origin}${url.pathname}`;
-
-	if (!filesToDownloadMap.has(baseUrl)) {
-		filesToDownloadMap.set(baseUrl, null);
+	if (!filesToDownloadMap.has(refUrl)) {
+		filesToDownloadMap.set(refUrl, null);
 	}
 }
 

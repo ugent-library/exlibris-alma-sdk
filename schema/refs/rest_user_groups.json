@@ -1,0 +1,29 @@
+{
+	"rest_user_groups": {
+		"description": "A list of related User Groups in Alma.",
+		"$ref": "#/user_groups"
+	},
+	"user_groups": {
+		"description": "List of related user groups. Note: A list of all user groups can be retrieved by calling the /conf/code-tables/UserGroups API.",
+		"type": "array",
+		"xml": {
+			"wrapped": true,
+			"name": "user_groups"
+		},
+		"items": {
+			"$ref": "#/user_group",
+			"example": "",
+			"xml": {
+				"name": "user_group"
+			}
+		}
+	},
+	"user_group": {
+		"description": "Specific related user group.",
+		"type": "object",
+		"xml": {
+			"name": "user_group"
+		},
+		"properties": {}
+	}
+}

@@ -1,0 +1,32 @@
+{
+	"rest_member": {
+		"description": "A member of a set is an entity of the set's content type. The set members can be permanent (in case the set is itemized) or a result of a search query (in case the set is logical).",
+		"$ref": "#/member"
+	},
+	"member": {
+		"description": "A member of the set.",
+		"type": "object",
+		"xml": {
+			"name": "member"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"id": {
+				"type": "string",
+				"example": "99100045050001021",
+				"description": "The member id. Mandatory in the POST action, and must be an id on an existing entity of the set's content type."
+			},
+			"description": {
+				"type": "string",
+				"example": "Working capital management /, Preve, Lorenzo A.",
+				"description": "The member's general description. This field is built according to each content type: - For titles: title, author - For holdings: library, location - For items: barcode - For users: full name - For PO lines: related title - For collections: name - For authorities: title - For portfolios: title - For electronic collections: name - For digital files: label"
+			}
+		}
+	}
+}

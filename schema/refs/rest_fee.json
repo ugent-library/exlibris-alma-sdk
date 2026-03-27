@@ -1,0 +1,304 @@
+{
+	"rest_fee": {
+		"description": "Fine/fee is a charge made for a user, for receiving library services. Fine/fee might have related transactions, which indicate activities made on the fine/fee (such as payment, waiving etc.).",
+		"$ref": "#/fee"
+	},
+	"fee": {
+		"description": "Fee object",
+		"type": "object",
+		"xml": {
+			"name": "fee"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"id": {
+				"type": "string",
+				"example": "950645520000121",
+				"description": "Identifier of the fee in Alma. Should be used in subsequent queries regarding the fee. Output parameter."
+			},
+			"type": {
+				"type": "object",
+				"description": "The fine / fee type. Mandatory.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Overdue item fine",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "OVERDUEFINE",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"status": {
+				"type": "object",
+				"description": "The fine / fee status.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Active",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "ACTIVE",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"user_primary_id": {
+				"type": "object",
+				"description": "Primary ID of the charged user. Output parameter.",
+				"properties": {
+					"link": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "45231001001021",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"balance": {
+				"type": "number",
+				"format": "float",
+				"example": "200.0",
+				"description": "The fine / fee balance. Output parameter."
+			},
+			"remaining_vat_amount": {
+				"type": "number",
+				"format": "float",
+				"example": "250.0",
+				"description": "The fine / fee remaining vat amount. Output parameter."
+			},
+			"original_amount": {
+				"type": "number",
+				"format": "float",
+				"example": "400.0",
+				"description": "The fine / fee original amount. Mandatory for POST. For type CREDIT it is retrieved as a negative number, but for POST the number should be positive."
+			},
+			"original_vat_amount": {
+				"type": "number",
+				"format": "float",
+				"example": "400.0",
+				"description": "The fine / fee original vat amount. Output parameter."
+			},
+			"creation_time": {
+				"type": "string",
+				"format": "date-time",
+				"example": "2024-05-30T09:30:10Z",
+				"description": "Date the fine / fee was created."
+			},
+			"status_time": {
+				"type": "string",
+				"format": "date-time",
+				"example": "2019-12-18T14:36:48.659Z",
+				"description": "Date the fine / fee was last changed."
+			},
+			"comment": {
+				"type": "string",
+				"example": "",
+				"description": "Fine / fee comment."
+			},
+			"owner": {
+				"type": "object",
+				"description": "The fine / fee owner. Mandatory for POST.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Graduate Library",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "GRAD",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"title": {
+				"type": "string",
+				"example": "American Quest / by Bradford Smith",
+				"description": "The item title."
+			},
+			"barcode": {
+				"type": "object",
+				"description": "The item barcode.",
+				"properties": {
+					"link": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "00023705571000021",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"transaction": {
+				"$ref": "#/transactions",
+				"example": ""
+			},
+			"bursar_transaction_id": {
+				"type": "string",
+				"example": "",
+				"description": "The unique sequence used for the fine/fee identification when communicating with the Bursar system."
+			}
+		}
+	},
+	"transactions": {
+		"description": "A list of transactions.",
+		"type": "array",
+		"xml": {
+			"wrapped": true,
+			"name": "transactions"
+		},
+		"items": {
+			"$ref": "#/transaction",
+			"example": "",
+			"xml": {
+				"name": "transaction"
+			}
+		}
+	},
+	"transaction": {
+		"description": "Transaction object",
+		"type": "object",
+		"xml": {
+			"name": "transaction"
+		},
+		"properties": {
+			"transaction_id": {
+				"type": "string",
+				"example": "",
+				"description": "Identifier of the transaction in Alma."
+			},
+			"type": {
+				"type": "object",
+				"description": "The fine / fee transaction type.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "DEPOSIT",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"amount": {
+				"type": "number",
+				"format": "float",
+				"example": "400.0",
+				"description": "The transaction amount."
+			},
+			"vat_amount": {
+				"type": "number",
+				"format": "float",
+				"example": "400.0",
+				"description": "The transaction vat amount."
+			},
+			"reason": {
+				"type": "string",
+				"example": "null",
+				"description": "The reason for the transaction."
+			},
+			"comment": {
+				"type": "string",
+				"example": "Date generated: 10/21/2014, Due: 06/23/2014, Fine Policy: Overdue Fine for All Hours, Action: Renewed",
+				"description": "A note attached to the transaction."
+			},
+			"created_by": {
+				"type": "string",
+				"example": "John Smith",
+				"description": "The operator who last updated the transaction."
+			},
+			"external_transaction_id": {
+				"type": "string",
+				"example": "2010000121",
+				"description": "The transaction external ID."
+			},
+			"transaction_time": {
+				"type": "string",
+				"format": "date-time",
+				"example": "2019-12-18T14:36:48.659Z",
+				"description": "Date and time of the transaction."
+			},
+			"received_by": {
+				"type": "object",
+				"description": "The circulation desk in which the transaction was received. Output parameter. If no circulation desk indicated in this field, it is indicated as Not at desk.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "MDL",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"payment_method": {
+				"type": "object",
+				"description": "The payment method of the transaction. Output parameter.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "CASH",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			}
+		}
+	}
+}

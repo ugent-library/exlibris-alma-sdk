@@ -1,0 +1,99 @@
+{
+	"rest_open_hour-put": {
+		"description": "Library open hour, event, or exception.",
+		"$ref": "#/open_hour"
+	},
+	"open_hour": {
+		"description": "Library open hour, event, or exception.",
+		"type": "object",
+		"xml": {
+			"name": "open_hour"
+		},
+		"properties": {
+			"type": {
+				"type": "object",
+				"description": "Calendar record type. Standard opening hour, event or exception. Possible values are listed in 'CalendarRecordsTypes' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API).",
+				"properties": {
+					"value": {
+						"type": "string",
+						"example": "WEEK",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"inherited": {
+				"type": "boolean",
+				"example": "false",
+				"description": "False means that it is a change in the library scope."
+			},
+			"desc": {
+				"type": "string",
+				"example": "",
+				"description": "Description."
+			},
+			"recurrence_type": {
+				"type": "object",
+				"description": "Recurrence type. WEEKLY, YEARLY. Possible values are listed in 'RecurrenceType' [code-table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API).",
+				"properties": {
+					"value": {
+						"type": "string",
+						"example": "WEEKLY",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"from_date": {
+				"type": "string",
+				"format": "date",
+				"example": "2019-02-18Z",
+				"description": "From date."
+			},
+			"to_date": {
+				"type": "string",
+				"format": "date",
+				"example": "2019-02-22Z",
+				"description": "To date."
+			},
+			"from_hour": {
+				"type": "string",
+				"example": "07:30",
+				"description": "From hour."
+			},
+			"to_hour": {
+				"type": "string",
+				"example": "20:30",
+				"description": "To hour."
+			},
+			"day_of_week": {
+				"type": "object",
+				"description": "Day of week. SUNDAY, MONDAY, ... SATURDAY. Possible values are listed in 'DaysOfWeek' code table.",
+				"properties": {
+					"value": {
+						"type": "string",
+						"example": "MONDAY",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"status": {
+				"type": "object",
+				"description": "Calendar record status. OPEN or CLOSED. Possible values are listed in 'CalendarRecordStatuses' code-table.",
+				"properties": {
+					"value": {
+						"type": "string",
+						"example": "OPEN",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			}
+		}
+	}
+}

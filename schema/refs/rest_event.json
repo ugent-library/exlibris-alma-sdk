@@ -1,0 +1,59 @@
+{
+	"rest_event": {
+		"description": "An event in Alma. See [Working with the Alma Jobs API](https://developers.exlibrisgroup.com/blog/Working-with-the-Alma-Jobs-API) for general description of the API.",
+		"$ref": "#/event"
+	},
+	"event": {
+		"description": "An event object.",
+		"type": "object",
+		"xml": {
+			"name": "event"
+		},
+		"properties": {
+			"event_id": {
+				"type": "string",
+				"example": "26714670000011",
+				"description": "The event id."
+			},
+			"event_key": {
+				"$ref": "#/event_keys",
+				"example": "",
+				"description": "List of the event's related keys."
+			}
+		}
+	},
+	"event_keys": {
+		"description": "A list of the event's related keys.",
+		"type": "array",
+		"xml": {
+			"wrapped": true,
+			"name": "event_keys"
+		},
+		"items": {
+			"$ref": "#/event_key",
+			"example": "",
+			"xml": {
+				"name": "event_key"
+			}
+		}
+	},
+	"event_key": {
+		"description": "The event key.",
+		"type": "object",
+		"xml": {
+			"name": "event_key"
+		},
+		"properties": {
+			"code": {
+				"type": "string",
+				"example": "99122741130001021",
+				"description": "The event key code."
+			},
+			"value": {
+				"type": "string",
+				"example": "Some value.",
+				"description": "The event key value."
+			}
+		}
+	}
+}

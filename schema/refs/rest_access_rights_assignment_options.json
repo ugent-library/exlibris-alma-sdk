@@ -1,0 +1,29 @@
+{
+	"rest_access_rights_assignment_options": {
+		"description": "List of access rights policies from which the patron may assign to the deposited representation.",
+		"$ref": "#/access_rights_assignment_options"
+	},
+	"access_rights_assignment_options": {
+		"description": "List of access rights policies from which the patron may assign to the deposited representation.",
+		"type": "array",
+		"xml": {
+			"wrapped": true,
+			"name": "access_rights_assignment_options"
+		},
+		"items": {
+			"$ref": "#/access_rights_assignment_option",
+			"example": "",
+			"xml": {
+				"name": "access_rights_assignment_option"
+			}
+		}
+	},
+	"access_rights_assignment_option": {
+		"description": "Specific related access rights.",
+		"type": "object",
+		"xml": {
+			"name": "access_rights_assignment_option"
+		},
+		"properties": {}
+	}
+}
