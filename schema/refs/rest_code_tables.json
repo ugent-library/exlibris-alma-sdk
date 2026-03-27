@@ -1,0 +1,32 @@
+{
+	"rest_code_tables": {
+		"description": "List of code tables in Alma.",
+		"$ref": "#/code_tables"
+	},
+	"code_tables": {
+		"description": "A list of code tables.",
+		"type": "object",
+		"xml": {
+			"name": "code_tables"
+		},
+		"properties": {
+			"total_record_count": {
+				"type": "integer",
+				"format": "int32",
+				"example": "",
+				"description": "The total number of code tables in the list.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"code_table": {
+				"type": "array",
+				"items": {
+					"$ref": "./rest_code_table.json#/rest_code_table",
+					"example": ""
+				},
+				"description": "Code table object."
+			}
+		}
+	}
+}

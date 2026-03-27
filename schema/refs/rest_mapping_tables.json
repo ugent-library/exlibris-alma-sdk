@@ -1,0 +1,32 @@
+{
+	"rest_mapping_tables": {
+		"description": "List of mapping tables in Alma.",
+		"$ref": "#/mapping_tables"
+	},
+	"mapping_tables": {
+		"description": "A list of mapping tables.",
+		"type": "object",
+		"xml": {
+			"name": "mapping_tables"
+		},
+		"properties": {
+			"total_record_count": {
+				"type": "integer",
+				"format": "int32",
+				"example": "",
+				"description": "The total number of mapping tables in the list.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"mapping_table": {
+				"type": "array",
+				"items": {
+					"$ref": "./rest_mapping_table.json#/rest_mapping_table",
+					"example": ""
+				},
+				"description": "Mapping table object."
+			}
+		}
+	}
+}

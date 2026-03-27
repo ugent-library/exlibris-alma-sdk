@@ -1,0 +1,59 @@
+{
+	"rest_reminder-put": {
+		"description": "A resource reminder.",
+		"$ref": "#/reminder"
+	},
+	"reminder": {
+		"description": "Resource reminder.",
+		"type": "object",
+		"xml": {
+			"name": "reminder"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"type": {
+				"type": "object",
+				"description": "The reminder type. Mandatory. Possible codes are listed in ReminderTypes [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API).",
+				"properties": {
+					"value": {
+						"type": "string",
+						"example": "GENERAL",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"status": {
+				"type": "object",
+				"description": "The reminder status. Mandatory. Possible codes are listed in ReminderStatuses [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API).",
+				"properties": {
+					"value": {
+						"type": "string",
+						"example": "NEW",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"text": {
+				"type": "string",
+				"example": "uip",
+				"description": "Informational text."
+			},
+			"reminder_date": {
+				"type": "string",
+				"format": "date",
+				"example": "2016-08-29Z",
+				"description": "The date on which the reminder is applied. Mandatory."
+			}
+		}
+	}
+}

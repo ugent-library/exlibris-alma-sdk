@@ -1,0 +1,32 @@
+{
+	"rest_license_terms": {
+		"description": "List of License Terms.",
+		"$ref": "#/license_terms"
+	},
+	"license_terms": {
+		"description": "A list of License Term Objects.",
+		"type": "object",
+		"xml": {
+			"name": "license_terms"
+		},
+		"properties": {
+			"total_record_count": {
+				"type": "integer",
+				"format": "int32",
+				"example": "",
+				"description": "The total number of license terms.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"license_term": {
+				"type": "array",
+				"items": {
+					"$ref": "./rest_license_term.json#/rest_license_term",
+					"example": ""
+				},
+				"description": "License Term Object."
+			}
+		}
+	}
+}

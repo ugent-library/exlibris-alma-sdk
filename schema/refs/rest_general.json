@@ -1,0 +1,144 @@
+{
+	"rest_general": {
+		"description": "General Configuration",
+		"$ref": "#/general"
+	},
+	"general": {
+		"description": "General Configuration",
+		"type": "object",
+		"required": ["institution", "alma_url", "environment_type"],
+		"xml": {
+			"name": "general"
+		},
+		"properties": {
+			"institution": {
+				"type": "object",
+				"description": "Institution.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "01MY_INST",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"alma_url": {
+				"type": "string",
+				"example": "https://na01.alma.exlibrisgroup.com:1443/",
+				"description": "Alma backoffice URL."
+			},
+			"environment_type": {
+				"type": "string",
+				"example": "production",
+				"description": "Type of environment (production or sandbox)."
+			},
+			"digital": {
+				"$ref": "#/digital",
+				"example": "",
+				"description": "Digital related configuration."
+			}
+		}
+	},
+	"digital": {
+		"description": "",
+		"type": "object",
+		"required": ["bucket", "region", "ingest_url", "delivery_url"],
+		"xml": {
+			"name": "digital"
+		},
+		"properties": {
+			"bucket": {
+				"type": "string",
+				"example": "na-st01.ext.exlibrisgroup.com",
+				"description": "Bucket name."
+			},
+			"region": {
+				"type": "string",
+				"example": "us-east-1",
+				"description": "AWS region."
+			},
+			"ingest_url": {
+				"type": "string",
+				"example": "https://s3.amazonaws.com/na-st01.ext.exlibrisgroup.com",
+				"description": "Ingest URL."
+			},
+			"delivery_url": {
+				"type": "string",
+				"example": "https://na-st01.ext.exlibrisgroup.com",
+				"description": "Delivery URL."
+			},
+			"ingest_form": {
+				"$ref": "#/ingest_form",
+				"example": "",
+				"description": "HTML form information, to allow users to upload content to Amazon S3 by using their browsers. The form fields contain detailed request information. For more information see [here](https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-HTTPPOSTForms.html)."
+			}
+		}
+	},
+	"ingest_form": {
+		"description": "",
+		"type": "object",
+		"required": [
+			"acl",
+			"policy",
+			"x-amz-algorithm",
+			"x-amz-credential",
+			"x-amz-signature",
+			"success_action_status",
+			"x-amz-date",
+			"key"
+		],
+		"xml": {
+			"name": "ingest_form"
+		},
+		"properties": {
+			"acl": {
+				"type": "string",
+				"example": "public-read",
+				"description": "acl"
+			},
+			"policy": {
+				"type": "string",
+				"example": "eyJleHBpcmF0aW...19",
+				"description": "policy"
+			},
+			"x-amz-algorithm": {
+				"type": "string",
+				"example": "AWS4-HMAC-SHA256",
+				"description": "X-Amz-Algorithm"
+			},
+			"x-amz-credential": {
+				"type": "string",
+				"example": "AKIAJN6NPMNGJALPPWAQ/20210712/us-east-1/s3/aws4_request",
+				"description": "X-Amz-Credential"
+			},
+			"x-amz-signature": {
+				"type": "string",
+				"example": "2e3dc327bf16eb0a6...4c117",
+				"description": "X-Amz-Signature"
+			},
+			"success_action_status": {
+				"type": "string",
+				"example": "201",
+				"description": "success_action_status"
+			},
+			"x-amz-date": {
+				"type": "string",
+				"example": "20210712T000000Z",
+				"description": "X-Amz-Date"
+			},
+			"key": {
+				"type": "string",
+				"example": "01BC_INST/upload/${filename}",
+				"description": "{INST_CODE}/upload/${filename}"
+			}
+		}
+	}
+}

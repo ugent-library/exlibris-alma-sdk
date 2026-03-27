@@ -1,0 +1,156 @@
+{
+	"rest_deposit_profile": {
+		"description": "Deposit profiles determine the processing of a deposit.",
+		"$ref": "#/deposit_profile"
+	},
+	"deposit_profile": {
+		"description": "Deposit profile object.",
+		"type": "object",
+		"required": [
+			"id",
+			"name",
+			"target_format",
+			"collection_assignment",
+			"library",
+			"approval_method",
+			"unsuppress_on_approval"
+		],
+		"xml": {
+			"name": "deposit_profile"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "https://api-na.hosted.exlibrisgroup.com/almaws/v1/conf/deposit-profiles/3272704440000561",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"id": {
+				"type": "string",
+				"example": "3272704440000561",
+				"description": "Deposit profile ID."
+			},
+			"name": {
+				"type": "string",
+				"example": "Aeronautics and Astronautics",
+				"description": "Deposit profile name."
+			},
+			"active": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Indication if the deposit profile is active. Default is True. Implementations should confirm value is true before creating inventory."
+			},
+			"description": {
+				"type": "string",
+				"example": "Deposit Profile for Aeronautics and Astronautics",
+				"description": "Deposit profile description."
+			},
+			"instructions": {
+				"type": "string",
+				"example": "No special instructions; just follow standard procedures",
+				"description": "Deposit profile instructions and guidelines for patrons."
+			},
+			"target_format": {
+				"type": "object",
+				"description": "Deposit profile metadata target format (currently Dublin Core only). Implementations should confirm submitted bib confirms to returned value before creating inventory.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Qualified Dublin Core",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "DC",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"collection_assignment": {
+				"type": "object",
+				"description": "A collection to which the bib record will be assigned.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "NASA Materials",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "81136449300000561",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"access_rights_assignment_options": {
+				"$ref": "./rest_access_rights_assignment_options.json#/rest_access_rights_assignment_options",
+				"example": "",
+				"description": "List of access rights policies from which the patron may assign to the deposited representation."
+			},
+			"access_rights_policy_assignment": {
+				"type": "object",
+				"description": "The access rights policy that will be automatically assigned to the deposited representation.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Registered User",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "149576",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"library": {
+				"type": "object",
+				"description": "The library that is responsible for managing the deposit.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Main Library",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "MAIN",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"approval_method": {
+				"type": "string",
+				"example": "MANUAL",
+				"description": "Indication whether deposits submitted with this material flow require manual approval. Possible values are AUTO, MANUAL."
+			},
+			"unsuppress_on_approval": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Indication whether records submitted with this material flow will be automatically unsuppressed on approval. Possible values are TRUE (default), FALSE."
+			},
+			"user_groups": {
+				"$ref": "./rest_user_groups.json#/rest_user_groups",
+				"example": "",
+				"description": ""
+			}
+		}
+	}
+}

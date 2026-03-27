@@ -1,0 +1,57 @@
+{
+	"rest_matches": {
+		"description": "Information about a list of Matches in Alma.",
+		"$ref": "#/matches"
+	},
+	"matches": {
+		"description": "List of all single matches or multi matches found as part of an import.",
+		"type": "object",
+		"xml": {
+			"name": "matches"
+		},
+		"properties": {
+			"total_record_count": {
+				"type": "integer",
+				"format": "int32",
+				"example": "",
+				"description": "The total number of single matches or multi matches found as part of an import.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"match": {
+				"type": "array",
+				"items": {
+					"$ref": "#/match",
+					"example": ""
+				},
+				"description": "Match object."
+			}
+		}
+	},
+	"match": {
+		"description": "Specific match (single or multi) found.",
+		"type": "object",
+		"required": ["incoming_record_id", "mms_ids", "match_method"],
+		"xml": {
+			"name": "match"
+		},
+		"properties": {
+			"incoming_record_id": {
+				"type": "string",
+				"example": "2023022701",
+				"description": "An incoming record ID."
+			},
+			"mms_ids": {
+				"type": "string",
+				"example": "99138399065101021",
+				"description": "Alma record MMS ID/s."
+			},
+			"match_method": {
+				"type": "string",
+				"example": "024/035 Match Method",
+				"description": "Match method used by the import."
+			}
+		}
+	}
+}

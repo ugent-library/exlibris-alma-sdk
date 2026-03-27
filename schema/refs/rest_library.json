@@ -1,0 +1,134 @@
+{
+	"rest_library": {
+		"description": "A library in Alma represents a physical library in the institution, which gives library services.",
+		"$ref": "#/library"
+	},
+	"library": {
+		"description": "Library Object.",
+		"type": "object",
+		"required": ["code", "id", "name"],
+		"xml": {
+			"name": "library"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"code": {
+				"type": "string",
+				"example": "MAIN",
+				"description": "The library code. Should be used in subsequent queries regarding the library."
+			},
+			"id": {
+				"type": "string",
+				"example": "12900830000231",
+				"description": "The library id. For display only."
+			},
+			"path": {
+				"type": "string",
+				"example": "API_GUEST.API_GUEST_INST.MAIN",
+				"description": "Full path of codes identifying the library technically."
+			},
+			"name": {
+				"type": "string",
+				"example": "Main library",
+				"description": "The library name."
+			},
+			"description": {
+				"type": "string",
+				"example": "Supports undergraduate level programs",
+				"description": "The library description."
+			},
+			"resource_sharing": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Indication whether the library is defined as a Resource Sharing Library."
+			},
+			"campus": {
+				"type": "object",
+				"description": "Code of the campus to which the library belongs.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "MAINCAMPUS",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"proxy": {
+				"type": "string",
+				"example": "",
+				"description": "The proxy."
+			},
+			"default_location": {
+				"type": "object",
+				"description": "Code of the library default location.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "main",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"number_of_locations": {
+				"type": "object",
+				"description": "A count of the number of Locations.",
+				"properties": {
+					"link": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "5",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"number_of_circ_desks": {
+				"type": "object",
+				"description": "A count of the number of Circulation Desks.",
+				"properties": {
+					"link": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "6",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			}
+		}
+	}
+}

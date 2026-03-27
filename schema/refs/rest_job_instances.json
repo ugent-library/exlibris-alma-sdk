@@ -1,0 +1,32 @@
+{
+	"rest_job_instances": {
+		"description": "List of job instances of a specific job.",
+		"$ref": "#/job_instances"
+	},
+	"job_instances": {
+		"description": "A list of job instances.",
+		"type": "object",
+		"xml": {
+			"name": "job_instances"
+		},
+		"properties": {
+			"total_record_count": {
+				"type": "integer",
+				"format": "int32",
+				"example": "",
+				"description": "The total number of job instances.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"job_instance": {
+				"type": "array",
+				"items": {
+					"$ref": "./rest_job_instance.json#/rest_job_instance",
+					"example": ""
+				},
+				"description": "job_instance object."
+			}
+		}
+	}
+}

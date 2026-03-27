@@ -1,0 +1,94 @@
+{
+	"rest_open_days": {
+		"description": "List of start times and end times for the library open hours.",
+		"$ref": "#/days"
+	},
+	"days": {
+		"description": "A list of start times and end times for the library open hours.",
+		"type": "array",
+		"xml": {
+			"wrapped": true,
+			"name": "days"
+		},
+		"items": {
+			"$ref": "#/day",
+			"example": "",
+			"xml": {
+				"name": "day"
+			}
+		}
+	},
+	"day": {
+		"description": "Library open hours for a specific day.",
+		"type": "object",
+		"xml": {
+			"name": "day"
+		},
+		"properties": {
+			"date": {
+				"type": "string",
+				"format": "date",
+				"example": "2019-02-15Z",
+				"description": "Date."
+			},
+			"day_of_week": {
+				"type": "object",
+				"description": "Day of week. SUNDAY, MONDAY, ... SATURDAY. Possible values are listed in 'DaysOfWeek' code table.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Friday",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "6",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"hour": {
+				"$ref": "#/hours",
+				"example": ""
+			}
+		}
+	},
+	"hours": {
+		"description": "A list of start times and end times for a specific day.",
+		"type": "array",
+		"xml": {
+			"wrapped": true,
+			"name": "hours"
+		},
+		"items": {
+			"$ref": "#/hour",
+			"example": "",
+			"xml": {
+				"name": "hour"
+			}
+		}
+	},
+	"hour": {
+		"description": "Start times and end times for which the library is open.",
+		"type": "object",
+		"xml": {
+			"name": "hour"
+		},
+		"properties": {
+			"from": {
+				"type": "string",
+				"example": "08:00",
+				"description": "From hour."
+			},
+			"to": {
+				"type": "string",
+				"example": "21:00",
+				"description": "To hour."
+			}
+		}
+	}
+}

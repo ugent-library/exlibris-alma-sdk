@@ -1,0 +1,100 @@
+{
+	"rest_license_term-post": {
+		"description": "Configuration for the licenses terms as appear at the License Terms tab, such as its terms of use, restrictions, and perpetual rights.",
+		"$ref": "#/license_term"
+	},
+	"license_term": {
+		"description": "License Term Object.",
+		"type": "object",
+		"xml": {
+			"name": "license_term"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"name": {
+				"type": "string",
+				"example": "Accessibility compliance indicator",
+				"description": "The license term name. Mandatory when creating a new license terms."
+			},
+			"code": {
+				"type": "string",
+				"example": "CODE123",
+				"description": "The license term code."
+			},
+			"license_term_type": {
+				"type": "object",
+				"description": "License terms type. Optional types: FREE-TEXT/NUMERIC/LicenseTermsYesNo/LicenseTermsPermittedProhibited/LicenseTermsUOM/LicenseTermsRenewalType Possible values are listed in 'LicenseTermsAndTypes' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API).",
+				"properties": {
+					"value": {
+						"type": "string",
+						"example": "LicenseTermsYesNo",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"controlled_vocabulary_value": {
+				"description": "A list of Controlled Vocabulary values.",
+				"type": "array",
+				"xml": {
+					"wrapped": true,
+					"name": "controlled_vocabulary_values"
+				},
+				"items": {
+					"description": "License term type 'Controlled Vocabulary' stored in a mapping table.",
+					"type": "object",
+					"xml": {
+						"name": "controlled_vocabulary_value"
+					},
+					"properties": {
+						"code": {
+							"type": "string",
+							"example": "LT123",
+							"description": "The license term code. Mandatory."
+						},
+						"value": {
+							"type": "string",
+							"example": "v01",
+							"description": "A value in the Controlled Vocabulary table."
+						}
+					}
+				}
+			},
+			"license_section": {
+				"type": "object",
+				"description": "License terms section. Optional sections: Terms of Use, Restrictions, Perpetual Rights, Obligations, Termination Obligations, Authorized User Possible values are listed in 'LicenseSections' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API).",
+				"properties": {
+					"value": {
+						"type": "string",
+						"example": "Restrictions",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"order": {
+				"type": "string",
+				"example": "1",
+				"description": "The order of the license term in the section."
+			},
+			"display": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Display to public - true/false."
+			},
+			"otb": {
+				"type": "boolean",
+				"example": "true",
+				"description": "Setup by the system - true/false. Used to indicate which license term can be edited/deleted by the user."
+			}
+		}
+	}
+}

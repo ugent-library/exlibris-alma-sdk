@@ -1,0 +1,220 @@
+{
+	"rest_job": {
+		"description": "A job in Alma is a process that can be submitted. See [Working with the Alma Jobs API](https://developers.exlibrisgroup.com/blog/Working-with-the-Alma-Jobs-API) for general description of the API.",
+		"$ref": "#/job"
+	},
+	"job": {
+		"description": "job Object.",
+		"type": "object",
+		"xml": {
+			"name": "job"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"id": {
+				"type": "string",
+				"example": "M26714670000011",
+				"description": "The job id. Should be used in subsequent queries."
+			},
+			"name": {
+				"type": "string",
+				"example": "Export Physical Items",
+				"description": "The job name."
+			},
+			"description": {
+				"type": "string",
+				"example": "Export Physical Items",
+				"description": "The job description."
+			},
+			"type": {
+				"type": "object",
+				"description": "The type of the job. Possible codes are listed in 'JobsApiJobTypes' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API).",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Manual",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "MANUAL",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"category": {
+				"type": "object",
+				"description": "The sub type of the job. For manual jobs, possible codes are listed in 'HPaTaskChain.type' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API). For scheduled or other jobs, possible codes are listed in 'systemJobsGroups' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API).",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Normalization",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "NORMALIZATION",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"content": {
+				"type": "object",
+				"description": "The type of the population on which the job will run. Relevant for manual jobs. Possible codes are listed in 'HPaTaskChain.businessEntity' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API).",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "All Titles",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "BIB_MMS",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"schedule": {
+				"type": "object",
+				"description": "The schedule defined for the job. Relevant only for scheduled jobs. Possible codes are listed in 'jobScheduleNames' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API).",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Not scheduled",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "NOT_SCHEDULED",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"creator": {
+				"type": "string",
+				"example": "",
+				"description": "The staff user which created the job. Relevant only for scheduled jobs."
+			},
+			"next_run": {
+				"type": "string",
+				"format": "date-time",
+				"example": "2024-05-30T09:30:10Z",
+				"description": "The time of next run. Relevant only for scheduled jobs."
+			},
+			"parameter": {
+				"$ref": "#/parameters",
+				"example": "",
+				"description": "List of the job's related parameters. In order to submit a manual job by API, the relevant parameters should be supplied in the input. See [Working with the Alma Jobs API](https://developers.exlibrisgroup.com/blog/Working-with-the-Alma-Jobs-API) for more details. Scheduled jobs can be submitted without specified parameters, as the parameters are defined on the profile."
+			},
+			"related_profile": {
+				"type": "object",
+				"description": "ID of the related profile. Output parameter. Relevant only for scheduled jobs that have a related profile (e.g. import, bursar etc.) The link attribute includes a link for retrieving information about the profile definitions.",
+				"properties": {
+					"link": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "ID123",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"additional_info": {
+				"type": "object",
+				"description": "Details about submission of the job. Output parameter. This information will be returned as part of the response for job run action. The link attribute will include link for retrieving information about the submitted job instance.",
+				"properties": {
+					"link": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			}
+		}
+	},
+	"parameters": {
+		"description": "List of the job's related parameters. The relevant parameters for each manual job can be viewed in Alma UI, as part of the run a job list, summary step. The relevant parameters should be sent as part of the payload for manual job submission. See [Working with the Alma Jobs API](https://developers.exlibrisgroup.com/blog/Working-with-the-Alma-Jobs-API) for more details. Scheduled jobs can be submitted without specified parameters, as the parameters are defined on the profile.",
+		"type": "array",
+		"xml": {
+			"wrapped": true,
+			"name": "parameters"
+		},
+		"items": {
+			"$ref": "#/parameter",
+			"example": "",
+			"xml": {
+				"name": "parameter"
+			}
+		}
+	},
+	"parameter": {
+		"description": "Specific job parameter.",
+		"type": "object",
+		"required": ["name"],
+		"xml": {
+			"name": "parameter"
+		},
+		"properties": {
+			"name": {
+				"type": "object",
+				"description": "The name of the parameter.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"value": {
+				"type": "string",
+				"example": "",
+				"description": "The parameter value."
+			}
+		}
+	}
+}

@@ -1,0 +1,155 @@
+{
+	"rest_letter": {
+		"description": "For letters and XSL templates.",
+		"$ref": "#/letter"
+	},
+	"letter": {
+		"description": "Letter Object.",
+		"type": "object",
+		"required": ["code", "name", "retention_period"],
+		"xml": {
+			"name": "letter"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"code": {
+				"type": "string",
+				"example": "FulBorrowedByLetter",
+				"description": "The letter unique code. Mandatory."
+			},
+			"enabled": {
+				"type": "object",
+				"description": "Whether to enable the letter. Possible code are listed in BooleanYesNoNumericCode [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API).",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "true",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"name": {
+				"type": "string",
+				"example": "Borrowed By Letter",
+				"description": "The letter name. Mandatory."
+			},
+			"description": {
+				"type": "string",
+				"example": "A description...",
+				"description": "The letter description."
+			},
+			"channel": {
+				"type": "string",
+				"example": "sso",
+				"description": "Letter channel Possible values are listed in 'LetterChannelFilter' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API)."
+			},
+			"retention_period": {
+				"type": "string",
+				"example": "124",
+				"description": "The days to retain the letter."
+			},
+			"customized": {
+				"type": "object",
+				"description": "Whether letter may be customized. Possible code are listed in BooleanYesNoNumericCode [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API).",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "true",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"patron_facing": {
+				"type": "object",
+				"description": "Letter is viewable by patrons. Possible code are listed in BooleanYesNoNumericCode [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API).",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "true",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"updated_by": {
+				"type": "object",
+				"description": "The ID of the user who updated.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "BR123",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "BR123",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"update_date": {
+				"type": "string",
+				"format": "date",
+				"example": "2021-06-01Z",
+				"description": "The last update date."
+			},
+			"labels": {
+				"type": "object",
+				"description": "Link to the code table.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "FulBorrowedByLetter",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "FulBorrowedByLetter",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"xsl": {
+				"type": "string",
+				"description": "The XSL itself (XML escaped)."
+			}
+		}
+	}
+}

@@ -1,0 +1,32 @@
+{
+	"rest_letters": {
+		"description": "List of letters.",
+		"$ref": "#/letters"
+	},
+	"letters": {
+		"description": "A list of letters.",
+		"type": "object",
+		"xml": {
+			"name": "letters"
+		},
+		"properties": {
+			"total_record_count": {
+				"type": "integer",
+				"format": "int32",
+				"example": "",
+				"description": "The total number of letters. This can be used when retrieving the letters list.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"letter": {
+				"type": "array",
+				"items": {
+					"$ref": "./rest_letter.json#/rest_letter",
+					"example": ""
+				},
+				"description": "letter object."
+			}
+		}
+	}
+}

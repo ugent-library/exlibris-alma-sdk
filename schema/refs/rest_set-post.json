@@ -1,0 +1,120 @@
+{
+	"rest_set-post": {
+		"description": "A set is a collection of items, such as users or the results of a repository search. Sets may be used for publishing metadata in bulk, moving a group of records, or to run jobs.",
+		"$ref": "#/set"
+	},
+	"set": {
+		"description": "Set Object.",
+		"type": "object",
+		"xml": {
+			"name": "set"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"name": {
+				"type": "string",
+				"example": "Testing",
+				"description": "The set name. Mandatory."
+			},
+			"description": {
+				"type": "string",
+				"example": "02.26.13",
+				"description": "The set description."
+			},
+			"type": {
+				"type": "object",
+				"description": "The type of the set (Logical/Itemized). Possible codes are listed in 'SetType' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API). Mandatory.",
+				"properties": {
+					"value": {
+						"type": "string",
+						"example": "LOGICAL",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"content": {
+				"type": "object",
+				"description": "The type of the content of the set. Possible codes are listed in 'SetContentType' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API). Mandatory.",
+				"properties": {
+					"value": {
+						"type": "string",
+						"example": "BIB_MMS",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"private": {
+				"type": "object",
+				"description": "Indication if the set is private. Possible codes are listed in 'SetPrivacy' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API). Default is true.",
+				"properties": {
+					"value": {
+						"type": "string",
+						"example": "true",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"status": {
+				"type": "object",
+				"description": "Status of the set (Active/Inactive). Possible codes are listed in 'SetStatus' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API). Default is 'Active'.",
+				"properties": {
+					"value": {
+						"type": "string",
+						"example": "ACTIVE",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"note": {
+				"type": "string",
+				"example": "",
+				"description": "The sets' related note."
+			},
+			"query": {
+				"type": "object",
+				"description": "The logical set's related query. Relevant and mandatory for logical sets.",
+				"properties": {
+					"value": {
+						"type": "string",
+						"example": "",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"members": {
+				"$ref": "./rest_members-post.json#/rest_members-post",
+				"example": "",
+				"description": "List members of the set. After the set exists, it is possible to add/delete list of members using [Manage members API](https://developers.exlibrisgroup.com/alma/apis/conf/POST/gwPcGly021p29HpB7XTI4IF+TlIDCf8cxnd2EMydYPE=/37088dc9-c685-4641-bc7f-60b5ca7cabed). The payload for this action is a set structure including the members list in this field. The following id types are expected: - Titles: mms_id - Item: item pid or barcode - User: primary id or other id - PO line: pol number - Collections : collection id - Portfolios: portfolio id - File: file id"
+			},
+			"origin": {
+				"type": "object",
+				"description": "The origin of the members of the set (Institution only/Community Zone). Possible codes are listed in 'SetOrigin' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API). Default is UI.",
+				"properties": {
+					"value": {
+						"type": "string",
+						"example": "UI",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			}
+		}
+	}
+}

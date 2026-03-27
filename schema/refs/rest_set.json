@@ -1,0 +1,234 @@
+{
+	"rest_set": {
+		"description": "A set is a collection of items, such as users or the results of a repository search. Sets may be used for publishing metadata in bulk, moving a group of records, or to run jobs.",
+		"$ref": "#/set"
+	},
+	"set": {
+		"description": "Set Object.",
+		"type": "object",
+		"xml": {
+			"name": "set"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"id": {
+				"type": "string",
+				"example": "6491540120001021",
+				"description": "The set id. Should be used in subsequent queries. Output parameter."
+			},
+			"name": {
+				"type": "string",
+				"example": "Testing",
+				"description": "The set name. Mandatory."
+			},
+			"description": {
+				"type": "string",
+				"example": "02.26.13",
+				"description": "The set description."
+			},
+			"type": {
+				"type": "object",
+				"description": "The type of the set (Logical/Itemized). Possible codes are listed in 'SetType' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API). Mandatory.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Logical",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "LOGICAL",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"content": {
+				"type": "object",
+				"description": "The type of the content of the set. Possible codes are listed in 'SetContentType' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API). Mandatory.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "All Titles",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "BIB_MMS",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"private": {
+				"type": "object",
+				"description": "Indication if the set is private. Possible codes are listed in 'SetPrivacy' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API). Default is true.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "true",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"status": {
+				"type": "object",
+				"description": "Status of the set (Active/Inactive). Possible codes are listed in 'SetStatus' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API). Default is 'Active'.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Active",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "ACTIVE",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"status_date": {
+				"type": "string",
+				"format": "date-time",
+				"example": "2013-02-26T17:29:28.747Z",
+				"description": "Date of the last status change of the set. Output parameter."
+			},
+			"note": {
+				"type": "string",
+				"example": "",
+				"description": "The sets' related note."
+			},
+			"created_by": {
+				"type": "object",
+				"description": "Creator of the set. Output parameter.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "Lefebvre, Gail",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"created_date": {
+				"type": "string",
+				"format": "date-time",
+				"example": "2013-02-26T17:29:28.747Z",
+				"description": "Creation date of the set. Output parameter."
+			},
+			"query": {
+				"type": "object",
+				"description": "The logical set's related query. Relevant and mandatory for logical sets.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"number_of_members": {
+				"type": "object",
+				"description": "A count of the number of members. Output parameter.",
+				"properties": {
+					"link": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "100",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"members": {
+				"$ref": "./rest_members.json#/rest_members",
+				"example": "",
+				"description": "List members of the set. After the set exists, it is possible to add/delete list of members using [Manage members API](https://developers.exlibrisgroup.com/alma/apis/conf/POST/gwPcGly021p29HpB7XTI4IF+TlIDCf8cxnd2EMydYPE=/37088dc9-c685-4641-bc7f-60b5ca7cabed). The payload for this action is a set structure including the members list in this field. The following id types are expected: - Titles: mms_id - Item: item pid or barcode - User: primary id or other id - PO line: pol number - Collections : collection id - Portfolios: portfolio id - File: file id"
+			},
+			"additional_info": {
+				"type": "object",
+				"description": "Details about submission of a 'create itemized set' job. Output parameter. This information will be returned when creating a set from MD import population (POST set with population parameter). The link attribute will include link for retrieving information about the submitted job instance.",
+				"properties": {
+					"link": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"origin": {
+				"type": "object",
+				"description": "The origin of the members of the set (Institution only/Community Zone). Possible codes are listed in 'SetOrigin' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API). Default is UI.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Institution only",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "UI",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			}
+		}
+	}
+}

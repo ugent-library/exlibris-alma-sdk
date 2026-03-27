@@ -1,0 +1,27 @@
+{
+	"rest_letter-put": {
+		"description": "For letters and XSL templates.",
+		"$ref": "#/letter"
+	},
+	"letter": {
+		"description": "Letter Object.",
+		"type": "object",
+		"required": ["code", "name", "retention_period"],
+		"xml": {
+			"name": "letter"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"xsl": {
+				"type": "string",
+				"description": "The XSL itself (XML escaped)."
+			}
+		}
+	}
+}

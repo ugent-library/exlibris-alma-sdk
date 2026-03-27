@@ -1,0 +1,32 @@
+{
+	"rest_printers": {
+		"description": "List of the Printouts.",
+		"$ref": "#/printers"
+	},
+	"printers": {
+		"description": "A list of printers.",
+		"type": "object",
+		"xml": {
+			"name": "printers"
+		},
+		"properties": {
+			"total_record_count": {
+				"type": "integer",
+				"format": "int32",
+				"example": "",
+				"description": "The total number of printers.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"printer": {
+				"type": "array",
+				"items": {
+					"$ref": "./rest_printer.json#/rest_printer",
+					"example": ""
+				},
+				"description": "printer object."
+			}
+		}
+	}
+}

@@ -1,0 +1,32 @@
+{
+	"rest_members": {
+		"description": "List of the members in the set.",
+		"$ref": "#/members"
+	},
+	"members": {
+		"description": "A list of members of the set.",
+		"type": "object",
+		"xml": {
+			"name": "members"
+		},
+		"properties": {
+			"total_record_count": {
+				"type": "integer",
+				"format": "int32",
+				"example": "",
+				"description": "The total number of sets.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"member": {
+				"type": "array",
+				"items": {
+					"$ref": "./rest_member.json#/rest_member",
+					"example": ""
+				},
+				"description": "Member object."
+			}
+		}
+	}
+}

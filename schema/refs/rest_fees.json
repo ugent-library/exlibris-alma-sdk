@@ -1,0 +1,49 @@
+{
+	"rest_fees": {
+		"description": "This Web service retrieves information related to a given user - the user's balance, active/disputed fines/fees, and a list of fine/fee transactions - if the input parameters provide a match.",
+		"$ref": "#/fees"
+	},
+	"fees": {
+		"description": "A list of fees.",
+		"type": "object",
+		"xml": {
+			"name": "fees"
+		},
+		"properties": {
+			"total_record_count": {
+				"type": "integer",
+				"format": "int64",
+				"example": "",
+				"description": "The total number of fees. This can be used when retrieving the fees list using pagination.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"total_sum": {
+				"type": "number",
+				"format": "float",
+				"example": "",
+				"description": "The total sum of the fees.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"currency": {
+				"type": "string",
+				"example": "",
+				"description": "The currency code for the fees.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"fee": {
+				"type": "array",
+				"items": {
+					"$ref": "./rest_fee.json#/rest_fee",
+					"example": ""
+				},
+				"description": "Fee Object."
+			}
+		}
+	}
+}

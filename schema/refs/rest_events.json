@@ -1,0 +1,32 @@
+{
+	"rest_events": {
+		"description": "List of the events for a job instance.",
+		"$ref": "#/events"
+	},
+	"events": {
+		"description": "A list of events.",
+		"type": "object",
+		"xml": {
+			"name": "events"
+		},
+		"properties": {
+			"total_record_count": {
+				"type": "integer",
+				"format": "int32",
+				"example": "",
+				"description": "The total number of events.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"event": {
+				"type": "array",
+				"items": {
+					"$ref": "./rest_event.json#/rest_event",
+					"example": ""
+				},
+				"description": "event object."
+			}
+		}
+	}
+}

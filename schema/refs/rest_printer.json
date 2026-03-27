@@ -1,0 +1,73 @@
+{
+	"rest_printer": {
+		"description": "Printer Details - printing in Alma works using email or a printout queue.",
+		"$ref": "#/printer"
+	},
+	"printer": {
+		"description": "Printer Object.",
+		"type": "object",
+		"required": ["code"],
+		"xml": {
+			"name": "printer"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"id": {
+				"type": "string",
+				"example": "16186290000121",
+				"description": "The printer id."
+			},
+			"code": {
+				"type": "string",
+				"example": "MAINPRT1",
+				"description": "The printer's code."
+			},
+			"name": {
+				"type": "string",
+				"example": "Main Circ Desk Prt1",
+				"description": "The printer's name."
+			},
+			"description": {
+				"type": "string",
+				"example": "Main Circ Desk - Printout Queue",
+				"description": "The printer's description."
+			},
+			"email": {
+				"type": "string",
+				"example": "AlmaPrint@printer.com",
+				"description": "The email address to where the letters are sent."
+			},
+			"printout_queue": {
+				"type": "boolean",
+				"example": "True",
+				"description": "When True - print routed to a queue in addition to an email address."
+			},
+			"library": {
+				"type": "object",
+				"description": "The printer's library..",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Main Library",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "ULINC",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			}
+		}
+	}
+}

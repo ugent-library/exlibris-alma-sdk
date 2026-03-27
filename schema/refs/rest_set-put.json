@@ -1,0 +1,76 @@
+{
+	"rest_set-put": {
+		"description": "A set is a collection of items, such as users or the results of a repository search. Sets may be used for publishing metadata in bulk, moving a group of records, or to run jobs.",
+		"$ref": "#/set"
+	},
+	"set": {
+		"description": "Set Object.",
+		"type": "object",
+		"xml": {
+			"name": "set"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"name": {
+				"type": "string",
+				"example": "Testing",
+				"description": "The set name. Mandatory."
+			},
+			"description": {
+				"type": "string",
+				"example": "02.26.13",
+				"description": "The set description."
+			},
+			"private": {
+				"type": "object",
+				"description": "Indication if the set is private. Possible codes are listed in 'SetPrivacy' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API). Default is true.",
+				"properties": {
+					"value": {
+						"type": "string",
+						"example": "true",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"status": {
+				"type": "object",
+				"description": "Status of the set (Active/Inactive). Possible codes are listed in 'SetStatus' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API). Default is 'Active'.",
+				"properties": {
+					"value": {
+						"type": "string",
+						"example": "ACTIVE",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"note": {
+				"type": "string",
+				"example": "",
+				"description": "The sets' related note."
+			},
+			"query": {
+				"type": "object",
+				"description": "The logical set's related query. Relevant and mandatory for logical sets.",
+				"properties": {
+					"value": {
+						"type": "string",
+						"example": "",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,79 @@
+{
+	"rest_integration_profile-put": {
+		"description": "Alma integrates with external systems such as vendor systems, Enterprise Resource Planning systems, catalog systems, remote storage systems, etc. using standard protocols. Integration profiles define the way an integration is being performed.",
+		"$ref": "#/integration_profile"
+	},
+	"integration_profile": {
+		"description": "Integration profile object.",
+		"type": "object",
+		"required": ["code", "name", "system", "ftp_connection"],
+		"xml": {
+			"name": "integration_profile"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "https://api-na.hosted.exlibrisgroup.com/almaws/v1/conf/integration-profiles/2844177570001021",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"code": {
+				"type": "string",
+				"example": "SIS",
+				"description": "Integration profile code. Mandatory."
+			},
+			"name": {
+				"type": "string",
+				"example": "Users Integration with SIS",
+				"description": "Integration profile name. Mandatory."
+			},
+			"system": {
+				"type": "object",
+				"description": "The system with which you are integrating (for informational purposes).mandatory. Possible codes are listed in 'ExternalSystemTypes' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API).",
+				"properties": {
+					"value": {
+						"type": "string",
+						"example": "AGRESSO",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"ftp_connection": {
+				"type": "object",
+				"description": "S/FTP connection to transfer files between Alma and the external system.",
+				"properties": {
+					"value": {
+						"type": "string",
+						"example": "Ex Libris Secure FTP Service",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"default": {
+				"type": "boolean",
+				"example": "",
+				"description": "Indication whether the profile is a default profile. Default is false."
+			},
+			"system_description": {
+				"type": "string",
+				"example": "",
+				"description": "Integration profile code. Mandatory."
+			},
+			"description": {
+				"type": "string",
+				"example": "Agresso is our system for users",
+				"description": "Deposit profile description."
+			},
+			"contact_info": {
+				"$ref": "./rest_contact_info-put.json#/rest_contact_info-put",
+				"example": "",
+				"description": "The Integration Profile Contact information."
+			}
+		}
+	}
+}

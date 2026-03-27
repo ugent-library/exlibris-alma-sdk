@@ -1,0 +1,36 @@
+{
+	"rest_open_hours-put": {
+		"description": "List of library open hours and any exception.",
+		"$ref": "#/open_hours"
+	},
+	"open_hours": {
+		"description": "A list of library open hours, events and any exception.",
+		"type": "object",
+		"xml": {
+			"name": "open_hours"
+		},
+		"properties": {
+			"open_hour": {
+				"type": "array",
+				"items": {
+					"$ref": "./rest_open_hour-put.json#/rest_open_hour-put",
+					"example": ""
+				},
+				"description": "Open hour object."
+			},
+			"additional_info": {
+				"type": "object",
+				"description": "Details about submission of a 'create itemized set' job. Output parameter. This information will be returned when creating a set from MD import population (POST set with population parameter). The link attribute will include link for retrieving information about the submitted job instance.",
+				"properties": {
+					"value": {
+						"type": "string",
+						"example": "",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			}
+		}
+	}
+}

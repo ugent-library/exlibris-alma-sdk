@@ -1,0 +1,476 @@
+{
+	"rest_circ_desk": {
+		"description": "Circulation desk is the service point for physical inventory.",
+		"$ref": "#/circ_desk"
+	},
+	"circ_desk": {
+		"description": "Circulation desk Object.",
+		"type": "object",
+		"required": ["code", "name"],
+		"xml": {
+			"name": "circ_desk"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"code": {
+				"type": "string",
+				"example": "CIRC1",
+				"description": "The circulation desk code. Should be used in subsequent queries."
+			},
+			"name": {
+				"type": "string",
+				"example": "Main desk",
+				"description": "The circulation desk name."
+			},
+			"primary": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Whether the circulation desk can perform check-out and check-in services for another library."
+			},
+			"reading_room_desk": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Whether the circulation desk serves a reading room."
+			},
+			"location_to_move_items": {
+				"type": "object",
+				"description": "Relevant when reading_room_desk is true. Can be empty.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Art Stacks",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "ART",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"restore_from_reading_room_at_checkin": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Whether the circulation desk restore items to permanent location when scan in at reading room desk. Relevant when reading_room_desk is true and location_to_move_items is not empty. This functionality is under constructions and will be available as part of the May 2023 release"
+			},
+			"picks_from_shelf": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Whether the circulation desk can pick up items from the shelf."
+			},
+			"supports_personal_delivery": {
+				"type": "boolean",
+				"example": "true",
+				"description": "Whether the circulation desk can process personal delivery requests for users."
+			},
+			"supports_registering_new_users": {
+				"type": "boolean",
+				"example": "true",
+				"description": "Whether the circulation desk can register new users that do not exist in Alma."
+			},
+			"supports_overriding_return_date": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Whether to have the Override return date and time option available on the Return Items page."
+			},
+			"hours_to_reshelve": {
+				"type": "number",
+				"format": "double",
+				"example": "8.5",
+				"description": "The period of time that the item is considered as available."
+			},
+			"minutes_delay_for_hold_notification": {
+				"type": "integer",
+				"format": "int32",
+				"example": "80",
+				"description": "How long Alma waits before sending a hold notification to a patron."
+			},
+			"description": {
+				"type": "string",
+				"example": "Main circulation desk",
+				"description": "The circulation desk description."
+			},
+			"default_printer": {
+				"type": "object",
+				"description": "The default printer associated with the circulation desk.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Bapst Printer",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "ART",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"additional_printer": {
+				"$ref": "#/additional_printers",
+				"example": "",
+				"description": "List of additional printers."
+			},
+			"creates_return_receipts": {
+				"type": "boolean",
+				"example": "true",
+				"description": "Whether receipts will automatically be printed at the circulation desk."
+			},
+			"return_receipt_destination": {
+				"type": "object",
+				"description": "Relevant when creates_return_receipts is selected. The destination for the return receipt.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "User preferred email",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "EMAIL",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"creates_loan_receipts": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Whether loan receipts to automatically be printed at the circulation desk."
+			},
+			"loan_receipt_destination": {
+				"type": "object",
+				"description": "Relevant when creates_loan_receipts is selected. The destination for the loan receipt.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Circulation desk printer",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "PRINTER",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"has_hold_shelf": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Whether the circulation desk has a hold shelf."
+			},
+			"hold_shelf_sorting": {
+				"type": "object",
+				"description": "Relevant when has_hold_shelf is selected. The criteria by which hold shelf items are sorted.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Call Number",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "ART",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"maximum_days_on_hold_shelf": {
+				"type": "integer",
+				"format": "int32",
+				"example": "7",
+				"description": "Displayed only when has_hold_shelf is selected. The maximum number of open days that an item can stay on the hold shelf."
+			},
+			"has_hold_shelf_processing": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Displayed only when has_hold_shelf is selected. Whether the circulation desk can store items that need to be processed before arriving at the hold shelf."
+			},
+			"notify_patron_of_canceling_expired_hold": {
+				"type": "boolean",
+				"example": "true",
+				"description": "Whether to notify the patron when their item on the hold shelf has expired."
+			},
+			"supports_digitization": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Whether the circulation desk supports digitization."
+			},
+			"work_time_days": {
+				"type": "integer",
+				"format": "int32",
+				"example": "10",
+				"description": "Relevant when supports_digitization is true. Indicates the number of days for which the item is unavailable."
+			},
+			"accept_credit_card": {
+				"type": "boolean",
+				"example": "true",
+				"description": "Whether the circulation desk can accept payment by credit card."
+			},
+			"accept_debit_card": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Whether the circulation desk can accept payment by debit card."
+			},
+			"accept_cash": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Whether the circulation desk can accept payment by cash."
+			},
+			"accept_online": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Whether the circulation desk can accept payment performed online."
+			},
+			"accept_check": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Whether the circulation desk can accept payment by check."
+			},
+			"print_receipt": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Whether the circulation desk can print a receipt."
+			},
+			"receipt_email": {
+				"type": "string",
+				"example": "recp@example.com",
+				"description": "The e-mail address to which receipts for payment to be sent."
+			},
+			"has_self_check": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Whether the circulation desk allows patrons to check in and check out resources using a self-check machine."
+			},
+			"integration_profile": {
+				"type": "object",
+				"description": "Integration Profile of type Self-Check, related to desk. Relevant when has_self_check is selected.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Profile",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "ART",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"terminal_password": {
+				"type": "string",
+				"example": "1234",
+				"description": "The terminal's password. Relevant when has_self_check is selected."
+			},
+			"location": {
+				"$ref": "#/locations",
+				"example": "",
+				"description": "List of locations."
+			},
+			"work_order_type": {
+				"$ref": "#/work_order_types",
+				"example": "",
+				"description": "List of work order types."
+			}
+		}
+	},
+	"locations": {
+		"description": "List of locations.",
+		"type": "array",
+		"xml": {
+			"wrapped": true,
+			"name": "locations"
+		},
+		"items": {
+			"$ref": "#/location",
+			"example": "",
+			"xml": {
+				"name": "location"
+			}
+		}
+	},
+	"location": {
+		"description": "Specific location.",
+		"type": "object",
+		"xml": {
+			"name": "location"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"location_code": {
+				"type": "string",
+				"example": "LOC1",
+				"description": "Location code."
+			},
+			"location_name": {
+				"type": "string",
+				"example": "LOC1",
+				"description": "Location name."
+			},
+			"location_type": {
+				"type": "object",
+				"description": "The location type code. Possible codes are OPEN/CLOSED/REMOTE as listed in the 'HLocation.locationType' code-table.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "OPEN",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"check_in": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Check in."
+			},
+			"check_out": {
+				"type": "boolean",
+				"example": "true",
+				"description": "Check out."
+			},
+			"reshelve": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Reshelve."
+			}
+		}
+	},
+	"work_order_types": {
+		"description": "List of work order types.",
+		"type": "array",
+		"xml": {
+			"wrapped": true,
+			"name": "work_order_types"
+		},
+		"items": {
+			"$ref": "#/work_order_type",
+			"example": "",
+			"xml": {
+				"name": "work_order_type"
+			}
+		}
+	},
+	"work_order_type": {
+		"description": "Specific work order type.",
+		"type": "object",
+		"xml": {
+			"name": "work_order_type"
+		},
+		"properties": {
+			"work_order_type_code": {
+				"type": "object",
+				"description": "Work order type code. Desc attribute holds the name.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Work order type 1",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "WOT1",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"work_order_time_days": {
+				"type": "integer",
+				"format": "int32",
+				"example": "5",
+				"description": "The number of days for which the work order to be handled by the circulation desk."
+			}
+		}
+	},
+	"additional_printers": {
+		"description": "List of additional printers.",
+		"type": "array",
+		"xml": {
+			"wrapped": true,
+			"name": "additional_printers"
+		},
+		"items": {
+			"$ref": "#/additional_printer",
+			"example": "",
+			"xml": {
+				"name": "additional_printer"
+			}
+		}
+	},
+	"additional_printer": {
+		"description": "Specific additional printer.",
+		"type": "object",
+		"xml": {
+			"name": "additional_printer"
+		},
+		"properties": {
+			"additional_printer_details": {
+				"type": "object",
+				"description": "Additional printer associated with the circulation desk.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Bapst Printer",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "ART",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			}
+		}
+	}
+}

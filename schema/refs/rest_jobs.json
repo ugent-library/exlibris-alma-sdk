@@ -1,0 +1,32 @@
+{
+	"rest_jobs": {
+		"description": "List of the jobs that can be submmited.",
+		"$ref": "#/jobs"
+	},
+	"jobs": {
+		"description": "A list of jobs.",
+		"type": "object",
+		"xml": {
+			"name": "jobs"
+		},
+		"properties": {
+			"total_record_count": {
+				"type": "integer",
+				"format": "int32",
+				"example": "",
+				"description": "The total number of jobs.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"job": {
+				"type": "array",
+				"items": {
+					"$ref": "./rest_job.json#/rest_job",
+					"example": ""
+				},
+				"description": "job object."
+			}
+		}
+	}
+}

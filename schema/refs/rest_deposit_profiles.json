@@ -1,0 +1,32 @@
+{
+	"rest_deposit_profiles": {
+		"description": "List of deposit profiles.",
+		"$ref": "#/deposit_profiles"
+	},
+	"deposit_profiles": {
+		"description": "A list of deposit profiles.",
+		"type": "object",
+		"xml": {
+			"name": "deposit_profiles"
+		},
+		"properties": {
+			"total_record_count": {
+				"type": "integer",
+				"format": "int32",
+				"example": "",
+				"description": "The total number of deposit profiles. This can be used when retrieving a long list of deposit profiles using pagination.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"deposit_profile": {
+				"type": "array",
+				"items": {
+					"$ref": "./rest_deposit_profile.json#/rest_deposit_profile",
+					"example": ""
+				},
+				"description": "A deposit profile object."
+			}
+		}
+	}
+}

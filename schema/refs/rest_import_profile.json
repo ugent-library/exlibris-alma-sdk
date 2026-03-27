@@ -1,0 +1,427 @@
+{
+	"rest_import_profile": {
+		"description": "Import profiles define how input file records are imported into Alma and how they are mapped to corresponding records in the Alma system.",
+		"$ref": "#/import_profile"
+	},
+	"import_profile": {
+		"description": "Import profile object",
+		"type": "object",
+		"required": ["type", "name"],
+		"xml": {
+			"name": "import_profile"
+		},
+		"properties": {
+			"id": {
+				"type": "string",
+				"example": "3152547460000561",
+				"description": "Import profile id. Should be used in subsequent queries regarding the course. Output parameter."
+			},
+			"job_id": {
+				"type": "object",
+				"description": "The related job id. This job id should be used for running an import job for this profile. See [Run a job API]([https://developers.exlibrisgroup.com/alma/apis/docs/conf/UE9TVCAvYWxtYXdzL3YxL2NvbmYvam9icy97am9iX2lkfQ==/)]",
+				"properties": {
+					"link": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "S1234",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"type": {
+				"type": "object",
+				"description": "Import profile type. Currently, only Digital is supported.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Repository",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "REPOSITORY",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"name": {
+				"type": "string",
+				"example": "00416316 Import",
+				"description": "Import profile name."
+			},
+			"description": {
+				"type": "string",
+				"example": "",
+				"description": "Import profile description."
+			},
+			"active": {
+				"type": "boolean",
+				"example": "true",
+				"description": "Indication if the import profile is active. Default is True."
+			},
+			"source_format": {
+				"type": "object",
+				"description": "The source format of the bibliographic, authority, or EOD file, such as MARC21 Bibliographic.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "MARC21 Bibliographic",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "MARC21_BIBLIOGRAPHIC",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"target_format": {
+				"type": "object",
+				"description": "The format for the target file. For example, Marc21 Bibliographic.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "MARC21 Bibliographic",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "MARC21_BIBLIOGRAPHIC",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"file_name_patterns": {
+				"type": "string",
+				"example": "^UCN_HEINu*",
+				"description": "File name pattern (such as *.xml) to filter out certain records that do not conform to the pattern."
+			},
+			"files_to_import": {
+				"type": "object",
+				"description": "Import files policy. Possible values: All ,New.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "New",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"scheduler_status": {
+				"type": "object",
+				"description": "Active / Inactive indication whether the schedule is on.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Inactive",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "INACTIVE",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"import_scheduler": {
+				"type": "object",
+				"description": "Schedule. For example, (every) SATURDAY (11 AM).",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Not scheduled",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "NOT_SCHEDULED",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"digital_details": {
+				"$ref": "#/digital_details",
+				"example": "",
+				"description": "Detailed digital related information of the profile. Relevant only if the profile type is Digital."
+			},
+			"contributed_by": {
+				"type": "object",
+				"description": "Institution which contributed the configuration.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "State University Library",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "01ABCDE_INST",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"contribution_date": {
+				"type": "string",
+				"format": "date",
+				"example": "2020-02-22Z",
+				"description": "The date when the profile was contributed."
+			},
+			"additional_info": {
+				"type": "string",
+				"example": "",
+				"description": "Additional information following an action on the item. Output parameter."
+			}
+		}
+	},
+	"digital_details": {
+		"description": "Detailed digital related information of the profile. Relevant only if the profile type is Digital.",
+		"type": "object",
+		"required": ["collection_assignment", "library"],
+		"xml": {
+			"name": "digital_details"
+		},
+		"properties": {
+			"remote": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Indication whether the profile is for remote digital."
+			},
+			"remote_repository_instance": {
+				"type": "object",
+				"description": "The name of the remote digital repository instance used by this profile. Relevant when remote.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"ie_type": {
+				"type": "object",
+				"description": "The type of IE Entity that will be created as a result of the import. For example, book.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Generic Resource",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"ie_status": {
+				"type": "object",
+				"description": "The status of IE Entity that will be created as a result of the import. For example, SUPPRESSED.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"collection_assignment": {
+				"type": "object",
+				"description": "The collection to which the imported records will be assigned.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Biology",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "8183389980000561",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"active": {
+				"type": "object",
+				"description": "Active or inactive indication for the remote representation. Active or inactive indication for local digital representation in defined for each local digital representation in the local digital representation list.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Active",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "ACTIVE",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"library": {
+				"type": "object",
+				"description": "The library that owns the imported digital resources.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Central Library UNB3",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "CL_UNB",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"representation": {
+				"$ref": "#/representations",
+				"example": "",
+				"description": "List of related digital representations. Relevant when not remote."
+			}
+		}
+	},
+	"representations": {
+		"description": "List of related digital representations. Relevant when not remote.",
+		"type": "array",
+		"xml": {
+			"wrapped": true,
+			"name": "representations"
+		},
+		"items": {
+			"$ref": "#/representation",
+			"example": "",
+			"xml": {
+				"name": "representation"
+			}
+		}
+	},
+	"representation": {
+		"description": "",
+		"type": "object",
+		"xml": {
+			"name": "representation"
+		},
+		"properties": {
+			"active": {
+				"type": "object",
+				"description": "Active or inactive indication of the representation.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Active",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "ACTIVE",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"library": {
+				"type": "object",
+				"description": "Library of the material.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"example": "Central Library UNB3",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "CL_UNB",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"group_files_by": {
+				"type": "string",
+				"example": "(.*)",
+				"description": "File types used to group for import. For example, (.xml)."
+			},
+			"label": {
+				"type": "string",
+				"example": "245 - a",
+				"description": "The display label for the representation."
+			}
+		}
+	}
+}

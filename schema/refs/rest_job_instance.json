@@ -1,0 +1,349 @@
+{
+	"rest_job_instance": {
+		"description": "Job instance object represents a specific submittion of the job.",
+		"$ref": "#/job_instance"
+	},
+	"job_instance": {
+		"description": "job_instance Object.",
+		"type": "object",
+		"xml": {
+			"name": "job_instance"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"id": {
+				"type": "string",
+				"example": "1108569450000121",
+				"description": "Unique id of the specific job instance. Should be used in subsequent queries."
+			},
+			"external_id": {
+				"type": "string",
+				"example": "1108569450000121",
+				"description": "External id of the specific job instance."
+			},
+			"name": {
+				"type": "string",
+				"example": "Export Physical Items - war and love - 04/15/2015 16:07",
+				"description": "The job instance name."
+			},
+			"submitted_by": {
+				"type": "object",
+				"description": "The person who ran the job. This can be System for system jobs, API for jobs which were initiated by API, or the praimary_id of a specific staff. In case of a staff, the desc attribute will contain the user's full name.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "exl_impl",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"submit_time": {
+				"type": "string",
+				"format": "date-time",
+				"example": "2015-04-15T13:07:40.800Z",
+				"description": "The date and time when the job was submitted."
+			},
+			"start_time": {
+				"type": "string",
+				"format": "date-time",
+				"example": "2015-04-15T13:07:40.868Z",
+				"description": "The date and time when the job started."
+			},
+			"end_time": {
+				"type": "string",
+				"format": "date-time",
+				"example": "2015-04-15T13:07:44.359Z",
+				"description": "The date and time when the job ended."
+			},
+			"progress": {
+				"type": "number",
+				"format": "double",
+				"example": "100",
+				"description": "The progress (percent) of the job instance so far."
+			},
+			"status": {
+				"type": "object",
+				"description": "The current status of the job. Possible codes are listed in 'systemJobStatus' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API)",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "QUEUED",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"status_date": {
+				"type": "string",
+				"format": "date",
+				"example": "2015-04-15Z",
+				"description": "The date in which the status was last updated."
+			},
+			"alert": {
+				"$ref": "#/alerts",
+				"example": "",
+				"description": "List of Alerts that are related to the job run."
+			},
+			"counter": {
+				"$ref": "#/counters",
+				"example": "",
+				"description": "List of the job instance's related counters. In the Alma UI, theses are counters, statistics and errors lists."
+			},
+			"action": {
+				"$ref": "#/actions",
+				"example": "",
+				"description": "Relevant for MD import job instances. List of the job instance's related actions."
+			},
+			"job_info": {
+				"$ref": "#/job_info",
+				"example": "",
+				"description": "Related job information."
+			}
+		}
+	},
+	"alerts": {
+		"description": "List of Alerts thar are related to the job instance.",
+		"type": "array",
+		"xml": {
+			"wrapped": true,
+			"name": "alerts"
+		},
+		"items": {
+			"type": "object",
+			"description": "Specific alert. Possible codes are listed in 'SystemJobReportAlertMessage' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API).",
+			"properties": {
+				"desc": {
+					"type": "string",
+					"xml": {
+						"attribute": true
+					}
+				},
+				"value": {
+					"type": "string",
+					"example": "alert_general_success",
+					"xml": {
+						"name": "xml_value"
+					}
+				}
+			},
+			"xml": {
+				"name": "alert"
+			}
+		}
+	},
+	"counters": {
+		"description": "List of the job instance's related counters. In the Alma UI, theses are counters, statistics and errors lists.",
+		"type": "array",
+		"xml": {
+			"wrapped": true,
+			"name": "counters"
+		},
+		"items": {
+			"$ref": "#/counter",
+			"example": "",
+			"xml": {
+				"name": "counter"
+			}
+		}
+	},
+	"counter": {
+		"description": "Specific counter.",
+		"type": "object",
+		"required": ["type", "value"],
+		"xml": {
+			"name": "counter"
+		},
+		"properties": {
+			"type": {
+				"type": "object",
+				"description": "The counter type. Mandatory.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "4",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"value": {
+				"type": "string",
+				"example": "",
+				"description": "The counter value. Mandatory."
+			}
+		}
+	},
+	"actions": {
+		"description": "Relevant for MD import job instances. List of the job instance's related actions.",
+		"type": "array",
+		"xml": {
+			"wrapped": true,
+			"name": "actions"
+		},
+		"items": {
+			"$ref": "#/action",
+			"example": "",
+			"xml": {
+				"name": "action"
+			}
+		}
+	},
+	"action": {
+		"description": "Specific action.",
+		"type": "object",
+		"required": ["type", "population", "members"],
+		"xml": {
+			"name": "action"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"type": {
+				"type": "object",
+				"description": "The action type. Currently, only CREATE_SET is supported. This action is parallel to the create title set option from the Alma UI for MD import job instance. Note that in order to submit this action, you can use the link URL with POST.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "CREATE_SET",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"population": {
+				"type": "object",
+				"description": "The population that will be part of the create set action.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"members": {
+				"type": "integer",
+				"format": "int32",
+				"example": "",
+				"description": "The estimated numbers of members in the population."
+			}
+		}
+	},
+	"job_info": {
+		"description": "Related job information.",
+		"type": "object",
+		"xml": {
+			"name": "job_info"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"id": {
+				"type": "string",
+				"example": "1108569450000121",
+				"description": "The job id."
+			},
+			"name": {
+				"type": "string",
+				"example": "Export Physical Items - war and love - 04/15/2015 16:07",
+				"description": "The job name."
+			},
+			"description": {
+				"type": "string",
+				"example": "",
+				"description": "The job description."
+			},
+			"type": {
+				"type": "object",
+				"description": "The type of the job: MANUAL or SCHEDULED.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "CREATE_SET",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"category": {
+				"type": "object",
+				"description": "The sub type of the job. For manual jobs, possible codes are listed in 'HPaTaskChain.type' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API). For scheduled jobs, possible codes are listed in 'systemJobsGroups' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API).",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "NORMALIZATION",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			}
+		}
+	}
+}

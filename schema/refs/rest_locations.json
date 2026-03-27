@@ -1,0 +1,32 @@
+{
+	"rest_locations": {
+		"description": "List of locations in a library.",
+		"$ref": "#/locations"
+	},
+	"locations": {
+		"description": "A list of locations.",
+		"type": "object",
+		"xml": {
+			"name": "locations"
+		},
+		"properties": {
+			"total_record_count": {
+				"type": "integer",
+				"format": "int32",
+				"example": "",
+				"description": "The total number of locations.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"location": {
+				"type": "array",
+				"items": {
+					"$ref": "./rest_location.json#/rest_location",
+					"example": ""
+				},
+				"description": "location object."
+			}
+		}
+	}
+}

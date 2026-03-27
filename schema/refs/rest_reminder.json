@@ -1,0 +1,176 @@
+{
+	"rest_reminder": {
+		"description": "A resource reminder.",
+		"$ref": "#/reminder"
+	},
+	"reminder": {
+		"description": "Resource reminder.",
+		"type": "object",
+		"xml": {
+			"name": "reminder"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"id": {
+				"type": "string",
+				"example": "16058656570001021",
+				"description": "Identifier of the reminder in Alma. Output parameter."
+			},
+			"entity": {
+				"$ref": "#/entity",
+				"example": "",
+				"description": "Entity related information."
+			},
+			"type": {
+				"type": "object",
+				"description": "The reminder type. Mandatory. Possible codes are listed in ReminderTypes [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API).",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "GENERAL",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"status": {
+				"type": "object",
+				"description": "The reminder status. Mandatory. Possible codes are listed in ReminderStatuses [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API).",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "NEW",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"text": {
+				"type": "string",
+				"example": "uip",
+				"description": "Informational text."
+			},
+			"reminder_date": {
+				"type": "string",
+				"format": "date",
+				"example": "2016-08-29Z",
+				"description": "The date on which the reminder is applied. Mandatory."
+			},
+			"created_by": {
+				"type": "object",
+				"description": "The creator of the reminder.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "exl_impl",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"created_date": {
+				"type": "string",
+				"format": "date",
+				"example": "2016-08-29Z",
+				"description": "The date on which the reminder was created."
+			},
+			"last_modified_by": {
+				"type": "object",
+				"description": "The last modifier of the reminder.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "exl_impl",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"last_modified_date": {
+				"type": "string",
+				"format": "date",
+				"example": "2016-08-29Z",
+				"description": "The date on which the reminder was modified."
+			}
+		}
+	},
+	"entity": {
+		"description": "Entity related information.",
+		"type": "object",
+		"xml": {
+			"name": "entity"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"entity_type": {
+				"type": "object",
+				"description": "The entity type. Cannot be modified for a PUT. Possible codes are listed in SetContentType [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API).",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "BIB_MMS",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"entity_id": {
+				"type": "string",
+				"example": "99122741130001021",
+				"description": "The entity ID."
+			},
+			"description": {
+				"type": "string",
+				"example": "Chibi [videorecording] = Red cliff.",
+				"description": "The description."
+			}
+		}
+	}
+}

@@ -1,0 +1,81 @@
+{
+	"rest_job-post": {
+		"description": "A job in Alma is a process that can be submitted. See [Working with the Alma Jobs API](https://developers.exlibrisgroup.com/blog/Working-with-the-Alma-Jobs-API) for general description of the API.",
+		"$ref": "#/job"
+	},
+	"job": {
+		"description": "job Object.",
+		"type": "object",
+		"xml": {
+			"name": "job"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"creator": {
+				"type": "string",
+				"example": "",
+				"description": "The staff user which created the job. Relevant only for scheduled jobs."
+			},
+			"next_run": {
+				"type": "string",
+				"format": "date-time",
+				"example": "2024-05-30T09:30:10Z",
+				"description": "The time of next run. Relevant only for scheduled jobs."
+			},
+			"parameter": {
+				"$ref": "#/parameters",
+				"example": "",
+				"description": "List of the job's related parameters. In order to submit a manual job by API, the relevant parameters should be supplied in the input. See [Working with the Alma Jobs API](https://developers.exlibrisgroup.com/blog/Working-with-the-Alma-Jobs-API) for more details. Scheduled jobs can be submitted without specified parameters, as the parameters are defined on the profile."
+			}
+		}
+	},
+	"parameters": {
+		"description": "List of the job's related parameters. The relevant parameters for each manual job can be viewed in Alma UI, as part of the run a job list, summary step. The relevant parameters should be sent as part of the payload for manual job submission. See [Working with the Alma Jobs API](https://developers.exlibrisgroup.com/blog/Working-with-the-Alma-Jobs-API) for more details. Scheduled jobs can be submitted without specified parameters, as the parameters are defined on the profile.",
+		"type": "array",
+		"xml": {
+			"wrapped": true,
+			"name": "parameters"
+		},
+		"items": {
+			"$ref": "#/parameter",
+			"example": "",
+			"xml": {
+				"name": "parameter"
+			}
+		}
+	},
+	"parameter": {
+		"description": "Specific job parameter.",
+		"type": "object",
+		"required": ["name"],
+		"xml": {
+			"name": "parameter"
+		},
+		"properties": {
+			"name": {
+				"type": "object",
+				"description": "The name of the parameter.",
+				"properties": {
+					"value": {
+						"type": "string",
+						"example": "",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"value": {
+				"type": "string",
+				"example": "",
+				"description": "The parameter value."
+			}
+		}
+	}
+}

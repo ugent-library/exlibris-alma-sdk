@@ -1,0 +1,201 @@
+{
+	"rest_location": {
+		"description": "A location in Alma represents a physical location in a library. This location might be used for storing physical items.",
+		"$ref": "#/location"
+	},
+	"location": {
+		"description": "Location Object.",
+		"type": "object",
+		"required": ["code", "name"],
+		"xml": {
+			"name": "location"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"code": {
+				"type": "string",
+				"example": "LOC1",
+				"description": "The location code. Should be used in subsequent queries regarding the location."
+			},
+			"id": {
+				"type": "string",
+				"example": "62387556060009999",
+				"description": "Identifier of the Location. Output parameter."
+			},
+			"name": {
+				"type": "string",
+				"example": "LOC1 location",
+				"description": "The location name."
+			},
+			"external_name": {
+				"type": "string",
+				"example": "",
+				"description": "If defined, this is the name which will be displayed to end users."
+			},
+			"type": {
+				"type": "object",
+				"description": "The location type code. Optional. Possible codes are OPEN/CLOSED/REMOTE as listed in the 'HLocation.locationType' code-table.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "OPEN",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"remote_storage": {
+				"type": "string",
+				"example": "",
+				"description": "Remote Storage code."
+			},
+			"map": {
+				"type": "string",
+				"example": "",
+				"description": "The map ID."
+			},
+			"suppress_from_publishing": {
+				"type": "string",
+				"example": "true",
+				"description": "Indication whether the records in this location should be suppressed from Discovery."
+			},
+			"fulfillment_unit": {
+				"type": "object",
+				"description": "The related fulfillment unit's code. The fulfillment unit defines the policy rule to be applied when circulating items from this location.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "FU1",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"circ_desk": {
+				"$ref": "#/circulationDesksList",
+				"example": "",
+				"description": "this is a list of all the contacts of the circulation desk."
+			},
+			"accession_placement": {
+				"type": "object",
+				"description": "The MARC subfield to use for accession number.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "852p",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"call_number_type": {
+				"type": "object",
+				"description": "The method in which the call number is generated.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "#",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			}
+		}
+	},
+	"circulationDesksList": {
+		"description": "",
+		"type": "array",
+		"xml": {
+			"wrapped": true,
+			"name": "circulationDesksList"
+		},
+		"items": {
+			"$ref": "#/circulationDesk",
+			"example": "",
+			"xml": {
+				"name": "circ_desk"
+			}
+		}
+	},
+	"circulationDesk": {
+		"description": "",
+		"type": "object",
+		"required": ["circ_desk_code", "circ_desk_name", "circulation_desk_link"],
+		"xml": {
+			"name": "circulationDesk"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"circ_desk_code": {
+				"type": "string",
+				"example": "",
+				"description": "Circulation desk code ."
+			},
+			"circ_desk_name": {
+				"type": "string",
+				"example": "",
+				"description": "Circulation desk name ."
+			},
+			"circulation_desk_link": {
+				"type": "string",
+				"example": "",
+				"description": "Circulation desk link ."
+			},
+			"check_in": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Check in."
+			},
+			"check_out": {
+				"type": "boolean",
+				"example": "true",
+				"description": "Check out."
+			},
+			"reshelve": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Reshelve."
+			}
+		}
+	}
+}

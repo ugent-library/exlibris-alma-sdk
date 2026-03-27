@@ -1,0 +1,32 @@
+{
+	"rest_reminders": {
+		"description": "List of resource management cataloging reminders.",
+		"$ref": "#/reminders"
+	},
+	"reminders": {
+		"description": "A list of resource reminders.",
+		"type": "object",
+		"xml": {
+			"name": "reminders"
+		},
+		"properties": {
+			"total_record_count": {
+				"type": "integer",
+				"format": "int32",
+				"example": "",
+				"description": "The total number of reminders.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"reminder": {
+				"type": "array",
+				"items": {
+					"$ref": "./rest_reminder.json#/rest_reminder",
+					"example": ""
+				},
+				"description": "Reminder object."
+			}
+		}
+	}
+}

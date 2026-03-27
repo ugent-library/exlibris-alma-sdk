@@ -1,0 +1,32 @@
+{
+	"rest_import_profiles": {
+		"description": "List of import profiles.",
+		"$ref": "#/import_profiles"
+	},
+	"import_profiles": {
+		"description": "A list of import profiles.",
+		"type": "object",
+		"xml": {
+			"name": "import_profiles"
+		},
+		"properties": {
+			"total_record_count": {
+				"type": "integer",
+				"format": "int32",
+				"example": "",
+				"description": "The total number of import profiles. This can be used when retrieving a long list of import profiles using pagination.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"import_profile": {
+				"type": "array",
+				"items": {
+					"$ref": "./rest_import_profile.json#/rest_import_profile",
+					"example": ""
+				},
+				"description": "Import profile object."
+			}
+		}
+	}
+}

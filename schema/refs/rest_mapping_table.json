@@ -1,0 +1,284 @@
+{
+	"rest_mapping_table": {
+		"description": "Mapping tables are used to configure various aspects of the system. Although many of the mapping tables that are used in the system can be managed by using a specific wizard, There are few Mapping Tables that might be defined in the scope of a library - e.g. TransactionTypeReason",
+		"$ref": "#/mapping_table"
+	},
+	"mapping_table": {
+		"description": "Mapping Table Object.",
+		"type": "object",
+		"required": ["code", "name", "sub_system", "customized", "scope"],
+		"xml": {
+			"name": "mapping_table"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"code": {
+				"type": "string",
+				"example": "",
+				"description": "The mapping table code."
+			},
+			"name": {
+				"type": "string",
+				"example": "",
+				"description": "The mapping table name."
+			},
+			"description": {
+				"type": "string",
+				"example": "",
+				"description": "The mapping table's related description."
+			},
+			"sub_system": {
+				"type": "object",
+				"description": "The mapping table's related sub system. Possible codes are listed in 'Sub Systems' [code table](https://developers.exlibrisgroup.com/blog/Working-with-the-code-tables-API).",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "ALL",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"customized": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Indication whether the mapping table is customized or not."
+			},
+			"updated_by": {
+				"type": "string",
+				"example": "",
+				"description": "The last staff user which updated the code table. Output parameter."
+			},
+			"update_date": {
+				"type": "string",
+				"format": "date",
+				"example": "2024-05-30Z",
+				"description": "The last date in which the code table was updated. Output parameter."
+			},
+			"scope": {
+				"$ref": "#/scope",
+				"example": "",
+				"description": "Mapping Tables are usually defined in the scope of the institution."
+			},
+			"header": {
+				"$ref": "#/headers",
+				"example": "",
+				"description": "The mapping table's headers."
+			},
+			"row": {
+				"$ref": "#/rows",
+				"example": "",
+				"description": "The mapping table's rows."
+			}
+		}
+	},
+	"scope": {
+		"description": "",
+		"type": "object",
+		"required": ["institution_id"],
+		"xml": {
+			"name": "scope"
+		},
+		"properties": {
+			"institution_id": {
+				"type": "object",
+				"description": "The institution in which the mapping table is defined.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			},
+			"library_id": {
+				"type": "object",
+				"description": "The library in which the mapping table is defined. Relevant only for Mapping Tables that might be defined in the scope of a library - e.g. WorkOrderTypeStatuses.",
+				"properties": {
+					"desc": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			}
+		}
+	},
+	"headers": {
+		"description": "The mapping table's headers.",
+		"type": "array",
+		"xml": {
+			"wrapped": true,
+			"name": "headers"
+		},
+		"items": {
+			"$ref": "#/header",
+			"example": "",
+			"xml": {
+				"name": "header"
+			}
+		}
+	},
+	"header": {
+		"description": "",
+		"type": "object",
+		"required": ["number", "name", "description", "type"],
+		"xml": {
+			"name": "header"
+		},
+		"properties": {
+			"number": {
+				"type": "string",
+				"example": "",
+				"description": "Column number (0-6)"
+			},
+			"name": {
+				"type": "string",
+				"example": "",
+				"description": "Column name"
+			},
+			"description": {
+				"type": "string",
+				"example": "",
+				"description": "Column description"
+			},
+			"type": {
+				"type": "object",
+				"description": "Column type : TextField / date / code-tables/ mapping-tables / Custom Option List .",
+				"properties": {
+					"link": {
+						"type": "string",
+						"xml": {
+							"attribute": true
+						}
+					},
+					"value": {
+						"type": "string",
+						"example": "",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			}
+		}
+	},
+	"rows": {
+		"description": "The mapping table's rows.",
+		"type": "array",
+		"xml": {
+			"wrapped": true,
+			"name": "rows"
+		},
+		"items": {
+			"$ref": "#/row",
+			"example": "",
+			"xml": {
+				"name": "row"
+			}
+		}
+	},
+	"row": {
+		"description": "Specific mapping table's row.",
+		"type": "object",
+		"required": [
+			"column0",
+			"column1",
+			"column2",
+			"column3",
+			"column4",
+			"column5",
+			"column6"
+		],
+		"xml": {
+			"name": "row"
+		},
+		"properties": {
+			"column0": {
+				"type": "string",
+				"example": "",
+				"description": "Column 0"
+			},
+			"column1": {
+				"type": "string",
+				"example": "",
+				"description": "Column 1"
+			},
+			"column2": {
+				"type": "string",
+				"example": "",
+				"description": "Column 2"
+			},
+			"column3": {
+				"type": "string",
+				"example": "",
+				"description": "Column 3"
+			},
+			"column4": {
+				"type": "string",
+				"example": "",
+				"description": "Column 4"
+			},
+			"column5": {
+				"type": "string",
+				"example": "",
+				"description": "Column 5"
+			},
+			"column6": {
+				"type": "string",
+				"example": "",
+				"description": "Column 6"
+			},
+			"enabled": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Indication if this is an enabled row. Optional. Default is True."
+			},
+			"managed_in_network": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Relevant only for NZ. Can be changed with PUT. Optional. Default is False."
+			},
+			"updated_by": {
+				"type": "string",
+				"example": "",
+				"description": "The last staff user which updated the row."
+			},
+			"update_date": {
+				"type": "string",
+				"format": "date",
+				"example": "2024-05-30Z",
+				"description": "The last date in which the row was updated. Output parameter."
+			}
+		}
+	}
+}

@@ -36,7 +36,8 @@
 		"test": "bun test",
 		"test:coverage": "bun test --coverage",
 		"test:watch": "bun test --watch",
-		"type-check": "tsc --noEmit"
+		"type-check": "tsc --noEmit",
+		"generate": "bun run scripts/generator/index.ts"
 	},
 	"simple-git-hooks": {
 		"pre-commit": "bun run lint && bun run type-check && bun run test",

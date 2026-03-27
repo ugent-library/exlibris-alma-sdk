@@ -1,0 +1,32 @@
+{
+	"rest_circ_desks": {
+		"description": "List of circulation desks in a library. Circulation desks are the service point for physical inventory.",
+		"$ref": "#/circ_desks"
+	},
+	"circ_desks": {
+		"description": "A list of circulation desks.",
+		"type": "object",
+		"xml": {
+			"name": "circ_desks"
+		},
+		"properties": {
+			"total_record_count": {
+				"type": "integer",
+				"format": "int32",
+				"example": "",
+				"description": "The total number of circulation desks.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"circ_desk": {
+				"type": "array",
+				"items": {
+					"$ref": "./rest_circ_desk.json#/rest_circ_desk",
+					"example": ""
+				},
+				"description": "Circulation desks object."
+			}
+		}
+	}
+}

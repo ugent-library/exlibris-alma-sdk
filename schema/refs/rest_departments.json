@@ -1,0 +1,32 @@
+{
+	"rest_departments": {
+		"description": "List of the institution's departments.",
+		"$ref": "#/departments"
+	},
+	"departments": {
+		"description": "A list of departments.",
+		"type": "object",
+		"xml": {
+			"name": "departments"
+		},
+		"properties": {
+			"total_record_count": {
+				"type": "integer",
+				"format": "int32",
+				"example": "",
+				"description": "The total number of departments.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"department": {
+				"type": "array",
+				"items": {
+					"$ref": "./rest_department.json#/rest_department",
+					"example": ""
+				},
+				"description": "department object."
+			}
+		}
+	}
+}

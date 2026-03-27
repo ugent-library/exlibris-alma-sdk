@@ -1,0 +1,32 @@
+{
+	"rest_libraries": {
+		"description": "List of the institution's libraries.",
+		"$ref": "#/libraries"
+	},
+	"libraries": {
+		"description": "A list of libraries.",
+		"type": "object",
+		"xml": {
+			"name": "libraries"
+		},
+		"properties": {
+			"total_record_count": {
+				"type": "integer",
+				"format": "int32",
+				"example": "",
+				"description": "The total number of libraries.",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"library": {
+				"type": "array",
+				"items": {
+					"$ref": "./rest_library.json#/rest_library",
+					"example": ""
+				},
+				"description": "library object."
+			}
+		}
+	}
+}

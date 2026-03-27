@@ -1,0 +1,138 @@
+{
+	"rest_mapping_table-put": {
+		"description": "Mapping tables are used to configure various aspects of the system. Although many of the mapping tables that are used in the system can be managed by using a specific wizard, There are few Mapping Tables that might be defined in the scope of a library - e.g. TransactionTypeReason",
+		"$ref": "#/mapping_table"
+	},
+	"mapping_table": {
+		"description": "Mapping Table Object.",
+		"type": "object",
+		"required": ["code", "name", "sub_system", "customized", "scope"],
+		"xml": {
+			"name": "mapping_table"
+		},
+		"properties": {
+			"link": {
+				"type": "string",
+				"example": "",
+				"xml": {
+					"attribute": true
+				}
+			},
+			"scope": {
+				"$ref": "#/scope",
+				"example": "",
+				"description": "Mapping Tables are usually defined in the scope of the institution."
+			},
+			"row": {
+				"$ref": "#/rows",
+				"example": "",
+				"description": "The mapping table's rows."
+			}
+		}
+	},
+	"scope": {
+		"description": "",
+		"type": "object",
+		"required": ["institution_id"],
+		"xml": {
+			"name": "scope"
+		},
+		"properties": {
+			"library_id": {
+				"type": "object",
+				"description": "The library in which the mapping table is defined. Relevant only for Mapping Tables that might be defined in the scope of a library - e.g. WorkOrderTypeStatuses.",
+				"properties": {
+					"value": {
+						"type": "string",
+						"example": "",
+						"xml": {
+							"name": "xml_value"
+						}
+					}
+				}
+			}
+		}
+	},
+	"header": {
+		"description": "",
+		"type": "object",
+		"required": ["number", "name", "description", "type"],
+		"xml": {
+			"name": "header"
+		},
+		"properties": {}
+	},
+	"rows": {
+		"description": "The mapping table's rows.",
+		"type": "array",
+		"xml": {
+			"wrapped": true,
+			"name": "rows"
+		},
+		"items": {
+			"$ref": "#/row",
+			"example": "",
+			"xml": {
+				"name": "row"
+			}
+		}
+	},
+	"row": {
+		"description": "Specific mapping table's row.",
+		"type": "object",
+		"required": [
+			"column0",
+			"column1",
+			"column2",
+			"column3",
+			"column4",
+			"column5",
+			"column6"
+		],
+		"xml": {
+			"name": "row"
+		},
+		"properties": {
+			"column0": {
+				"type": "string",
+				"example": "",
+				"description": "Column 0"
+			},
+			"column1": {
+				"type": "string",
+				"example": "",
+				"description": "Column 1"
+			},
+			"column2": {
+				"type": "string",
+				"example": "",
+				"description": "Column 2"
+			},
+			"column3": {
+				"type": "string",
+				"example": "",
+				"description": "Column 3"
+			},
+			"column4": {
+				"type": "string",
+				"example": "",
+				"description": "Column 4"
+			},
+			"column5": {
+				"type": "string",
+				"example": "",
+				"description": "Column 5"
+			},
+			"column6": {
+				"type": "string",
+				"example": "",
+				"description": "Column 6"
+			},
+			"enabled": {
+				"type": "boolean",
+				"example": "false",
+				"description": "Indication if this is an enabled row. Optional. Default is True."
+			}
+		}
+	}
+}
